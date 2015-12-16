@@ -31,15 +31,12 @@
     <Reference Include="System" />
     <Reference Include="InMemoryLoader">
       <HintPath>..\packages\InMemoryLoader.0.0.1\lib\InMemoryLoader.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
       <HintPath>..\packages\InMemoryLoader.0.0.1\lib\InMemoryLoaderBase.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\InMemoryLoader.0.0.1\lib\log4net.dll</HintPath>
-      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -47,9 +44,6 @@
     <Compile Include="CommonComponentLoader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
       <Project>{CE40C941-6632-42B1-8250-01567C495FC5}</Project>
@@ -87,5 +81,8 @@
       <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
       <Name>PowerUpXmlUtils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
