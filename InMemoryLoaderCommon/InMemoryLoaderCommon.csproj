@@ -31,12 +31,15 @@
     <Reference Include="System" />
     <Reference Include="InMemoryLoader">
       <HintPath>..\packages\InMemoryLoader.0.0.1\lib\InMemoryLoader.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
       <HintPath>..\packages\InMemoryLoader.0.0.1\lib\InMemoryLoaderBase.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\InMemoryLoader.0.0.1\lib\log4net.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
