@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2C89A2FF-02A6-4573-9905-705ADC442A8F}</ProjectGuid>
+    <ProjectGuid>{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>PowerUpGetUtils</RootNamespace>
-    <AssemblyName>PowerUpGetUtils</AssemblyName>
+    <RootNamespace>PowerUpEmailUtils</RootNamespace>
+    <AssemblyName>PowerUpEmailUtils</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ReleaseVersion>0.2</ReleaseVersion>
   </PropertyGroup>
@@ -36,10 +36,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GetUtils.cs" />
-    <Compile Include="GetUtils.GetDateTime.cs" />
-    <Compile Include="GetUtils.GetGuid.cs" />
-    <Compile Include="GetUtils.GetRandomNumbers.cs" />
+    <Compile Include="EmailUtils.cs" />
+    <Compile Include="EmailUtils.SendSimple.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

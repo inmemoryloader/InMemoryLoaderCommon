@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9DF645D5-01BF-4C27-9998-D3B487A34828}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>PowerUpStringUtils</RootNamespace>
@@ -56,12 +54,6 @@
     <Compile Include="StringUtils.WordWrap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\PowerUpBase\PowerUpBase.csproj">
-      <Project>{EF9D19BE-1AB7-49F3-BBA1-42C9FEE19B4F}</Project>
-      <Name>PowerUpBase</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

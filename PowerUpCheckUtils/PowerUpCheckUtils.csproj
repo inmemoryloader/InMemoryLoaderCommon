@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CE40C941-6632-42B1-8250-01567C495FC5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>PowerUpCheckUtils</RootNamespace>
@@ -50,12 +48,6 @@
     <Compile Include="CheckUtils.Url.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\PowerUpBase\PowerUpBase.csproj">
-      <Project>{EF9D19BE-1AB7-49F3-BBA1-42C9FEE19B4F}</Project>
-      <Name>PowerUpBase</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

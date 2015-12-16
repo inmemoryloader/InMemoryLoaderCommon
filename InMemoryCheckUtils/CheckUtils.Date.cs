@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Globalization;
+using InMemoryLoaderBase;
+using log4net;
 
 namespace InMemoryCheckUtils
 {
-	public class CheckUtils
+	/// <summary>
+	/// Check utils.
+	/// </summary>
+	public partial class CheckUtils : AbstractPowerUpComponent
 	{
-		public CheckUtils ()
-		{
-		}
+
 	}
 }
 

@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{037A6543-CA5B-4DD3-97E6-1A526525C7F6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>PowerUpCryptUtils</RootNamespace>
@@ -45,12 +43,6 @@
     <Compile Include="Crypttils.HashUtils.ComputeHash.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\PowerUpBase\PowerUpBase.csproj">
-      <Project>{EF9D19BE-1AB7-49F3-BBA1-42C9FEE19B4F}</Project>
-      <Name>PowerUpBase</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
