@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerUpXmlUtils", "PowerUpX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommon", "InMemoryLoaderCommon\InMemoryLoaderCommon.csproj", "{14803A71-3990-4D53-8BEC-085B76B200B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommonUnitTest", "InMemoryLoaderCommonUnitTest\InMemoryLoaderCommonUnitTest.csproj", "{227226F2-9FE6-4645-B118-A3EF32D78931}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -41,6 +43,10 @@ Global
 		{14803A71-3990-4D53-8BEC-085B76B200B2}.Debug|x86.Build.0 = Debug|Any CPU
 		{14803A71-3990-4D53-8BEC-085B76B200B2}.Release|x86.ActiveCfg = Release|Any CPU
 		{14803A71-3990-4D53-8BEC-085B76B200B2}.Release|x86.Build.0 = Release|Any CPU
+		{227226F2-9FE6-4645-B118-A3EF32D78931}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{227226F2-9FE6-4645-B118-A3EF32D78931}.Debug|x86.Build.0 = Debug|Any CPU
+		{227226F2-9FE6-4645-B118-A3EF32D78931}.Release|x86.ActiveCfg = Release|Any CPU
+		{227226F2-9FE6-4645-B118-A3EF32D78931}.Release|x86.Build.0 = Release|Any CPU
 		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Debug|x86.Build.0 = Debug|Any CPU
 		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Release|x86.ActiveCfg = Release|Any CPU
