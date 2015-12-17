@@ -7,11 +7,74 @@ using log4net;
 
 namespace InMemoryLoaderCommonUnitTest
 {
+	/// <summary>
+	/// Check utils test.
+	/// </summary>
 	[TestFixture ()]
 	public class CheckUtilsTest
 	{
+		/// <summary>
+		/// The log.
+		/// </summary>
 		private static readonly ILog log = LogManager.GetLogger (typeof(CheckUtilsTest));
 
+		// IDynamicClassInfo classInfo = compLoader.ComponentRegistry.Where (str => str.Key.Class.Contains("CheckUtils")).SingleOrDefault().Value;
+
+		[Test ()]
+		public void CheckUtilsDecimalTestCase ()
+		{
+			try {
+				log.InfoFormat ("{0}", "CheckUtilsDecimalTestCase");
+
+				// Is true
+				var isTrue1 = CheckUtilsDecimalTests.IsDecimalTest1();
+				Assert.IsTrue(isTrue1);
+				log.InfoFormat ("IsDecimalTest1 = true is {0}", isTrue1);
+
+				// Is true
+				var isTrue2 = CheckUtilsDecimalTests.IsDecimalTest2();
+				Assert.IsTrue(isTrue2);
+				log.InfoFormat ("IsDecimalTest2 = true is {0}", isTrue2);
+
+				// Is false
+				var isTrue3 = CheckUtilsDecimalTests.IsDecimalTest3();
+				Assert.IsFalse(isTrue3);
+				log.InfoFormat ("IsDecimalTest3 = false is {0}", isTrue3);
+
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString());
+			}
+		}
+
+		[Test ()]
+		public void CheckUtilsDateTestCase ()
+		{
+			try {
+				log.InfoFormat ("{0}", "CheckUtilsDateTestCase");
+
+				// Is true
+				var isTrue1 = CheckUtilsDateTests.IsDateTest1();
+				Assert.IsTrue(isTrue1);
+				log.InfoFormat ("IsDateTest1 = true is {0}", isTrue1);
+
+				// Is true
+				var isTrue2 = CheckUtilsDateTests.IsDateTest2();
+				Assert.IsTrue(isTrue2);
+				log.InfoFormat ("IsDateTest2 = true is {0}", isTrue2);
+
+				// Is false
+				var isTrue3 = CheckUtilsDateTests.IsDateTest3();
+				Assert.IsFalse(isTrue3);
+				log.InfoFormat ("IsDateTest3 = false is {0}", isTrue3);
+
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString());
+			}
+		}
+
+		/// <summary>
+		/// Checks the utils byte test cases.
+		/// </summary>
 		[Test ()]
 		public void CheckUtilsByteTestCase ()
 		{

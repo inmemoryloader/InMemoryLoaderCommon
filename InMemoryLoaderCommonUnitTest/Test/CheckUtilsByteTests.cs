@@ -5,17 +5,31 @@ using InMemoryLoaderBase;
 using InMemoryLoaderCommon;
 using log4net;
 using System.Globalization;
+using System.Linq;
 
 namespace InMemoryLoaderCommonUnitTest
 {
+	/// <summary>
+	/// Check utils byte tests.
+	/// </summary>
 	public class CheckUtilsByteTests
 	{
+		/// <summary>
+		/// The app base.
+		/// </summary>
 		private static AppBase appBase = AppBase.Instance;
+		/// <summary>
+		/// The check utils.
+		/// </summary>
+		private static IDynamicClassSetup checkUtils = appBase.CommonComponentLoader.CheckComponent;
 
-		private static IDynamicClassSetup checkComponent = appBase.CommonComponentLoader.CheckComponent;
-
+		/// <summary>
+		/// The is int.
+		/// </summary>
 		private const int isInt = 64;
-
+		/// <summary>
+		/// The is byte.
+		/// </summary>
 		private static byte[] isByte = new byte[isInt];
 
 		/// <summary>
@@ -27,7 +41,7 @@ namespace InMemoryLoaderCommonUnitTest
 			try {
 				object[] paramArg = { isByte[2] };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkComponent.Assembly, checkComponent.Class, "IsStringByte", paramArg);
+				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
 				var isTrue = Convert.ToBoolean(result);
 
 				return isTrue;
@@ -44,7 +58,7 @@ namespace InMemoryLoaderCommonUnitTest
 			try {
 				object[] paramArg = { "SomeString" };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkComponent.Assembly, checkComponent.Class, "IsStringByte", paramArg);
+				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
 				var isTrue = Convert.ToBoolean(result);
 
 				return isTrue;
@@ -61,7 +75,7 @@ namespace InMemoryLoaderCommonUnitTest
 			try {
 				object[] paramArg = { isByte[2], NumberStyles.None };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkComponent.Assembly, checkComponent.Class, "IsStringByte", paramArg);
+				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
 				var isTrue = Convert.ToBoolean(result);
 
 				return isTrue;
@@ -78,7 +92,7 @@ namespace InMemoryLoaderCommonUnitTest
 			try {
 				object[] paramArg = { "SomeString", NumberStyles.None, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkComponent.Assembly, checkComponent.Class, "IsStringByte", paramArg);
+				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
 				var isTrue = Convert.ToBoolean(result);
 
 				return isTrue;
@@ -95,7 +109,7 @@ namespace InMemoryLoaderCommonUnitTest
 			try {
 				object[] paramArg = { isByte[2], NumberStyles.None, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkComponent.Assembly, checkComponent.Class, "IsStringByte", paramArg);
+				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
 				var isTrue = Convert.ToBoolean(result);
 
 				return isTrue;

@@ -48,6 +48,8 @@
     <Compile Include="BaseTest.cs" />
     <Compile Include="CheckUtilsTest.cs" />
     <Compile Include="Test\CheckUtilsByteTests.cs" />
+    <Compile Include="Test\CheckUtilsDateTests.cs" />
+    <Compile Include="Test\CheckUtilsDecimalTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
