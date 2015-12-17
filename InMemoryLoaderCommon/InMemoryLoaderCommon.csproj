@@ -32,10 +32,12 @@
     <Reference Include="InMemoryLoaderBase">
       <HintPath>..\packages\InMemoryLoaderBase.0.0.4\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="InMemoryLoader">
       <HintPath>..\packages\InMemoryLoader.0.0.2\lib\InMemoryLoader.dll</HintPath>
     </Reference>
-    <Reference Include="log4net" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
