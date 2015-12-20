@@ -39,7 +39,7 @@ namespace InMemoryLoaderCommonUnitTest
 				object[] paramArg = { isDecimal };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringDecimal", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {
@@ -57,7 +57,7 @@ namespace InMemoryLoaderCommonUnitTest
 				object[] paramArg = { isDecimal, CultureInfo.CurrentCulture };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringDecimal", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {
@@ -75,7 +75,7 @@ namespace InMemoryLoaderCommonUnitTest
 				object[] paramArg = { isString, CultureInfo.CurrentCulture };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringDecimal", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {

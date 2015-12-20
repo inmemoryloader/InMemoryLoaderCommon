@@ -50,6 +50,9 @@
     <Compile Include="Test\CheckUtilsByteTests.cs" />
     <Compile Include="Test\CheckUtilsDateTests.cs" />
     <Compile Include="Test\CheckUtilsDecimalTests.cs" />
+    <Compile Include="Test\CheckUtilsDoubleTests.cs" />
+    <Compile Include="Test\CheckUtilsFloatTests.cs" />
+    <Compile Include="Test\CheckUtilsIntegerTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

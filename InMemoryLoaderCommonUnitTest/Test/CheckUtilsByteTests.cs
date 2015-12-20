@@ -39,16 +39,17 @@ namespace InMemoryLoaderCommonUnitTest
 		public static bool IsByteTest1 ()
 		{
 			try {
-				object[] paramArg = { isByte[2] };
+				object[] paramArg = { isByte [2] };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {
 				throw ex;
 			}
 		}
+
 		/// <summary>
 		/// Determines if is byte = false
 		/// </summary>
@@ -59,13 +60,14 @@ namespace InMemoryLoaderCommonUnitTest
 				object[] paramArg = { "SomeString" };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {
 				throw ex;
 			}
 		}
+
 		/// <summary>
 		/// Determines if is byte = true
 		/// </summary>
@@ -73,16 +75,17 @@ namespace InMemoryLoaderCommonUnitTest
 		public static bool IsByteTest3 ()
 		{
 			try {
-				object[] paramArg = { isByte[2], NumberStyles.None };
+				object[] paramArg = { isByte [2], NumberStyles.None };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {
 				throw ex;
 			}
 		}
+
 		/// <summary>
 		/// Determines if is byte = false
 		/// </summary>
@@ -93,13 +96,14 @@ namespace InMemoryLoaderCommonUnitTest
 				object[] paramArg = { "SomeString", NumberStyles.None, CultureInfo.CurrentCulture };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {
 				throw ex;
 			}
 		}
+
 		/// <summary>
 		/// Determines if is byte = true
 		/// </summary>
@@ -107,10 +111,10 @@ namespace InMemoryLoaderCommonUnitTest
 		public static bool IsByteTest5 ()
 		{
 			try {
-				object[] paramArg = { isByte[2], NumberStyles.None, CultureInfo.CurrentCulture };
+				object[] paramArg = { isByte [2], NumberStyles.None, CultureInfo.CurrentCulture };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {

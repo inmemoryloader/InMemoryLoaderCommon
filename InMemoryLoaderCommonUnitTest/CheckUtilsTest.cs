@@ -21,6 +21,53 @@ namespace InMemoryLoaderCommonUnitTest
 		// IDynamicClassInfo classInfo = compLoader.ComponentRegistry.Where (str => str.Key.Class.Contains("CheckUtils")).SingleOrDefault().Value;
 
 		[Test ()]
+		public void CheckUtilsFloatTestCase ()
+		{
+			try {
+				log.InfoFormat ("{0}", "CheckUtilsDecimalTestCase");
+
+				// Is true
+				var isTrue1 = CheckUtilsFloatTests.IsFloatTest1();
+				Assert.IsTrue(isTrue1);
+				log.InfoFormat ("IsFloatTest1 = true is {0}", isTrue1);
+
+				// Is false
+				var isTrue2 = CheckUtilsFloatTests.IsFloatTest2();
+				Assert.IsFalse(isTrue2);
+				log.InfoFormat ("IsFloatTest2 = true is {0}", isTrue2);
+
+				// Is true
+				var isTrue3 = CheckUtilsFloatTests.IsFloatTest3();
+				Assert.IsTrue(isTrue3);
+				log.InfoFormat ("IsFloatTest3 = true is {0}", isTrue3);
+
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString());
+			}
+		}
+
+		[Test ()]
+		public void CheckUtilsDoubleTestCase ()
+		{
+			try {
+				log.InfoFormat ("{0}", "CheckUtilsDecimalTestCase");
+
+				// Is true
+				var isTrue1 = CheckUtilsDoubleTests.IsDoubleTest1();
+				Assert.IsTrue(isTrue1);
+				log.InfoFormat ("IsDoubleTest1 = true is {0}", isTrue1);
+
+				// Is false
+				var isTrue2 = CheckUtilsDoubleTests.IsDoubleTest2();
+				Assert.IsFalse(isTrue2);
+				log.InfoFormat ("IsDoubleTest2 = true is {0}", isTrue2);
+
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString());
+			}
+		}
+
+		[Test ()]
 		public void CheckUtilsDecimalTestCase ()
 		{
 			try {

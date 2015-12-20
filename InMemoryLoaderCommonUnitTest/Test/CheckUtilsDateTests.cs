@@ -24,10 +24,10 @@ namespace InMemoryLoaderCommonUnitTest
 		public static bool IsDateTest1 ()
 		{
 			try {
-				object[] paramArg = { isDate.ToString() };
+				object[] paramArg = { isDate.ToString () };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringDate", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {
@@ -42,10 +42,10 @@ namespace InMemoryLoaderCommonUnitTest
 		public static bool IsDateTest2 ()
 		{
 			try {
-				object[] paramArg = { isDate.ToString(), CultureInfo.CurrentCulture };
+				object[] paramArg = { isDate.ToString (), CultureInfo.CurrentCulture };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringDate", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {
@@ -63,7 +63,7 @@ namespace InMemoryLoaderCommonUnitTest
 				object[] paramArg = { isString, CultureInfo.CurrentCulture };
 
 				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringDate", paramArg);
-				var isTrue = Convert.ToBoolean(result);
+				var isTrue = Convert.ToBoolean (result);
 
 				return isTrue;
 			} catch (Exception ex) {
