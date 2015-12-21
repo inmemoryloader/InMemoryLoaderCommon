@@ -50,6 +50,60 @@ namespace InMemoryLoaderCommonUnitTest
 				throw ex;
 			}
 		}
+
+		/// <summary>
+		/// Determines if is int = true
+		/// </summary>
+		/// <returns><c>true</c> if is int test2; otherwise, <c>false</c>.</returns>
+		public static bool IsIntTest2 ()
+		{
+			try {
+				object[] paramArg = { isStringInt };
+
+				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringInt", paramArg);
+				var isTrue = Convert.ToBoolean (result);
+
+				return isTrue;
+			} catch (Exception ex) {
+				throw ex;
+			}
+		}
+
+		/// <summary>
+		/// Determines if is int = true
+		/// </summary>
+		/// <returns><c>true</c> if is int test3; otherwise, <c>false</c>.</returns>
+		public static bool IsIntTest3 ()
+		{
+			try {
+				object[] paramArg = { isStringInt, CultureInfo.CurrentCulture };
+
+				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringInt", paramArg);
+				var isTrue = Convert.ToBoolean (result);
+
+				return isTrue;
+			} catch (Exception ex) {
+				throw ex;
+			}
+		}
+
+		/// <summary>
+		/// Determines if is int = false
+		/// </summary>
+		/// <returns><c>true</c> if is int test4; otherwise, <c>false</c>.</returns>
+		public static bool IsIntTest4 ()
+		{
+			try {
+				object[] paramArg = { isString, CultureInfo.CurrentCulture };
+
+				var result = appBase.ComponentLoader.InvokeMethod (checkUtils.Assembly, checkUtils.Class, "IsStringInt", paramArg);
+				var isTrue = Convert.ToBoolean (result);
+
+				return isTrue;
+			} catch (Exception ex) {
+				throw ex;
+			}
+		}
 	}
 }
 

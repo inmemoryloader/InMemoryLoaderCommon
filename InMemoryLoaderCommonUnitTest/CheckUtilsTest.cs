@@ -21,10 +21,88 @@ namespace InMemoryLoaderCommonUnitTest
 		// IDynamicClassInfo classInfo = compLoader.ComponentRegistry.Where (str => str.Key.Class.Contains("CheckUtils")).SingleOrDefault().Value;
 
 		[Test ()]
+		public void CheckUtilsUrlTestCase ()
+		{
+			try {
+				log.InfoFormat ("{0}", "CheckUtilsUrlTestCase");
+
+				// Is true
+				var isTrue1 = CheckUtilsUrlTests.IsUrlTest1();
+				Assert.IsTrue(isTrue1);
+				log.InfoFormat ("IsUrlTest1 = true is {0}", isTrue1);
+
+				// Is false
+				var isTrue2 = CheckUtilsUrlTests.IsUrlTest2();
+				Assert.IsFalse(isTrue2);
+				log.InfoFormat ("IsUrlTest2 = true is {0}", isTrue2);
+
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString());
+			}
+		}
+
+		[Test ()]
+		public void CheckUtilsLongTestCase ()
+		{
+			try {
+				log.InfoFormat ("{0}", "CheckUtilsLongTestCase");
+
+				// Is true
+				var isTrue1 = CheckUtilsLongTests.IsLongTest1();
+				Assert.IsTrue(isTrue1);
+				log.InfoFormat ("IsLongTest1 = true is {0}", isTrue1);
+
+				// Is true
+				var isTrue2 = CheckUtilsLongTests.IsLongTest2();
+				Assert.IsTrue(isTrue2);
+				log.InfoFormat ("IsLongTest2 = true is {0}", isTrue2);
+
+				// Is false
+				var isTrue3 = CheckUtilsLongTests.IsLongTest3();
+				Assert.IsFalse(isTrue3);
+				log.InfoFormat ("IsLongTest3 = true is {0}", isTrue3);
+
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString());
+			}
+		}
+
+		[Test ()]
+		public void CheckUtilsIntTestCase ()
+		{
+			try {
+				log.InfoFormat ("{0}", "CheckUtilsIntTestCase");
+
+				// Is true
+				var isTrue1 = CheckUtilsIntegerTests.IsIntTest1();
+				Assert.IsTrue(isTrue1);
+				log.InfoFormat ("IsIntTest1 = true is {0}", isTrue1);
+
+				// Is true
+				var isTrue2 = CheckUtilsIntegerTests.IsIntTest2();
+				Assert.IsTrue(isTrue2);
+				log.InfoFormat ("IsIntTest2 = true is {0}", isTrue2);
+
+				// Is true
+				var isTrue3 = CheckUtilsIntegerTests.IsIntTest3();
+				Assert.IsTrue(isTrue3);
+				log.InfoFormat ("IsIntTest3 = true is {0}", isTrue3);
+
+				// Is false
+				var isTrue4 = CheckUtilsIntegerTests.IsIntTest4();
+				Assert.IsFalse(isTrue4);
+				log.InfoFormat ("IsIntTest4 = true is {0}", isTrue4);
+
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString());
+			}
+		}
+
+		[Test ()]
 		public void CheckUtilsFloatTestCase ()
 		{
 			try {
-				log.InfoFormat ("{0}", "CheckUtilsDecimalTestCase");
+				log.InfoFormat ("{0}", "CheckUtilsFloatTestCase");
 
 				// Is true
 				var isTrue1 = CheckUtilsFloatTests.IsFloatTest1();
@@ -50,7 +128,7 @@ namespace InMemoryLoaderCommonUnitTest
 		public void CheckUtilsDoubleTestCase ()
 		{
 			try {
-				log.InfoFormat ("{0}", "CheckUtilsDecimalTestCase");
+				log.InfoFormat ("{0}", "CheckUtilsDoubleTestCase");
 
 				// Is true
 				var isTrue1 = CheckUtilsDoubleTests.IsDoubleTest1();

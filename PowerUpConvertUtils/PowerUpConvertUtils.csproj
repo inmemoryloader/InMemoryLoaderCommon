@@ -44,14 +44,9 @@
     <Compile Include="ConvertUtils.Bool.cs" />
     <Compile Include="ConvertUtils.ByteArray.cs" />
     <Compile Include="ConvertUtils.Collection.cs" />
-    <Compile Include="ConverterUtils.Date.cs" />
     <Compile Include="ConvertUtils.NormalizeDate.cs" />
-    <Compile Include="ConvertUtils.Decimal.cs" />
     <Compile Include="ConvertUtils.Hashtable.cs" />
-    <Compile Include="ConvertUtils.Integer.cs" />
-    <Compile Include="ConvertUtils.Long.cs" />
     <Compile Include="ConvertUtils.String.cs" />
-    <Compile Include="ConvertUtils.ULong.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

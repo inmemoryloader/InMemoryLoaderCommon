@@ -15,15 +15,20 @@ namespace PowerUpCheckUtils
 		/// <param name="parmURL">Parm UR.</param>
 		public bool IsUrlValid(object parmURL)
 		{
-			HttpWebRequest reqFP = (HttpWebRequest)HttpWebRequest.Create(parmURL.ToString());
-			HttpWebResponse rspFP = (HttpWebResponse)reqFP.GetResponse();
-			if (HttpStatusCode.OK == rspFP.StatusCode)
-			{
-				rspFP.Close();
-				return true;
-			}
-			else
-			{
+			try {
+				HttpWebRequest reqFP = (HttpWebRequest)HttpWebRequest.Create(parmURL.ToString());
+				HttpWebResponse rspFP = (HttpWebResponse)reqFP.GetResponse();
+				if (HttpStatusCode.OK == rspFP.StatusCode)
+				{
+					rspFP.Close();
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			} catch (Exception ex) {
+				log.FatalFormat ("{0}", ex.ToString());
 				return false;
 			}
 		}

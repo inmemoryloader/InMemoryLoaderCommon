@@ -46,7 +46,6 @@
     <Compile Include="CheckUtils.Float.cs" />
     <Compile Include="CheckUtils.Integer.cs" />
     <Compile Include="CheckUtils.Long.cs" />
-    <Compile Include="CheckUtils.NullOrEmpty.cs" />
     <Compile Include="CheckUtils.Url.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
