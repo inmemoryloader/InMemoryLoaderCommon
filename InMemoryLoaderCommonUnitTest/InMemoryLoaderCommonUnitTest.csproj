@@ -55,6 +55,8 @@
     <Compile Include="Test\CheckUtilsIntegerTests.cs" />
     <Compile Include="Test\CheckUtilsLongTests.cs" />
     <Compile Include="Test\CheckUtilsUrlTests.cs" />
+    <Compile Include="Test\ConvertUtilsBoolests.cs" />
+    <Compile Include="ConvertUtilsTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
