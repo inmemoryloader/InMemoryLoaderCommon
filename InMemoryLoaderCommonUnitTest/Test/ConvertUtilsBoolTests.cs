@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace InMemoryLoaderCommonUnitTest
 {
-	public class ConvertUtilsBoolests
+	public class ConvertUtilsBoolTests
 	{
 		/// <summary>
 		/// The app base.
@@ -73,6 +73,10 @@ namespace InMemoryLoaderCommonUnitTest
 			}		
 		}
 
+		/// <summary>
+		/// Converts the bool = true
+		/// </summary>
+		/// <returns><c>true</c>, if bool test3 was converted, <c>false</c> otherwise.</returns>
 		public static bool ConvertBoolTest3 ()
 		{
 			try {
