@@ -73,7 +73,19 @@ namespace InMemoryLoaderCommonUnitTest
 			}		
 		}
 
+		public static bool ConvertBoolTest3 ()
+		{
+			try {
+				object[] paramArg = { true };
 
+				var result = appBase.ComponentLoader.InvokeMethod (convertUtils.Assembly, convertUtils.Class, "BooleanToString", paramArg);
+				var isTrue = Convert.ToString (result);
+
+				return isTrue == "1";
+			} catch (Exception ex) {
+				throw ex;
+			}		
+		}
 
 	}
 }

@@ -22,18 +22,23 @@ namespace InMemoryLoaderCommonUnitTest
 				log.InfoFormat ("{0}", "ConvertUtilsBoolTestCase");
 
 				// Is true
-				var isTrue1 = ConvertUtilsBoolests.ConvertBoolTest1();
-				Assert.IsTrue(isTrue1);
+				var isTrue1 = ConvertUtilsBoolests.ConvertBoolTest1 ();
+				Assert.IsTrue (isTrue1);
 				log.InfoFormat ("ConvertBoolTest1 = true is {0}", isTrue1);
 
 				// Is false
-				var isTrue2 = ConvertUtilsBoolests.ConvertBoolTest2();
-				Assert.IsFalse(isTrue2);
+				var isTrue2 = ConvertUtilsBoolests.ConvertBoolTest2 ();
+				Assert.IsFalse (isTrue2);
 				log.InfoFormat ("ConvertBoolTest1 = false is {0}", isTrue2);
+
+				// Is true
+				var isTrue3 = ConvertUtilsBoolests.ConvertBoolTest3 ();
+				Assert.IsTrue (isTrue3);
+				log.InfoFormat ("ConvertBoolTest3 = true is {0}", isTrue3);
 
 
 			} catch (Exception ex) {
-				log.FatalFormat (ex.ToString());
+				log.FatalFormat (ex.ToString ());
 			}
 		}
 	}
