@@ -22,8 +22,10 @@ namespace InMemoryLoaderCommonUnitTest
 		/// </summary>
 		private static IDynamicClassSetup convertUtils = appBase.CommonComponentLoader.ConvertComponent;
 
-
-
+		/// <summary>
+		/// Converts the byte array = true
+		/// </summary>
+		/// <returns><c>true</c>, if byte array test1 was converted, <c>false</c> otherwise.</returns>
 		public static bool ConvertByteArrayTest1 ()
 		{
 			try {
@@ -37,6 +39,10 @@ namespace InMemoryLoaderCommonUnitTest
 			}		
 		}
 
+		/// <summary>
+		/// Converts the byte array = true
+		/// </summary>
+		/// <returns><c>true</c>, if byte array test2 was converted, <c>false</c> otherwise.</returns>
 		public static bool ConvertByteArrayTest2 ()
 		{
 			try {
@@ -50,6 +56,10 @@ namespace InMemoryLoaderCommonUnitTest
 			}		
 		}
 
+		/// <summary>
+		/// Converts the byte array = true
+		/// </summary>
+		/// <returns><c>true</c>, if byte array test3 was converted, <c>false</c> otherwise.</returns>
 		public static bool ConvertByteArrayTest3 ()
 		{
 			try {

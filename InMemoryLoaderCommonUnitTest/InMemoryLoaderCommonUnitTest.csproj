@@ -58,6 +58,8 @@
     <Compile Include="ConvertUtilsTest.cs" />
     <Compile Include="Test\ConvertUtilsByteArrayTests.cs" />
     <Compile Include="Test\ConvertUtilsBoolTests.cs" />
+    <Compile Include="CryptUtilsTest.cs" />
+    <Compile Include="Test\CryptUtilsRijndaelTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
