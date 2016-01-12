@@ -16,7 +16,117 @@ namespace InMemoryLoaderCommonUnitTest
 		/// </summary>
 		private static readonly ILog log = LogManager.GetLogger (typeof(CryptUtilsTest));
 
+		/// <summary>
+		/// Determines whether this instance is potential date test case1.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is potential date test case1; otherwise, <c>false</c>.</returns>
+		[Test ()]
+		public void IsPotentialDateTestCase1 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "IsPotentialDateTimeTestCase1");
 
+				var isPotetialDateTime = "01/08/2008";
+				var allowZeroForDayAndMonth = true;
+				var culture = new CultureInfo ("en-GB");
+
+				var returnGet = DateTimeUtilsIsPotentialTests.IsPotentialDateTest1 (isPotetialDateTime, allowZeroForDayAndMonth, culture);
+
+				var isTrue = Convert.ToBoolean (returnGet);
+
+				Assert.IsTrue (isTrue);
+
+				log.InfoFormat ("IsPotentialDateTest1 is true = {0}", isTrue);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
+		/// Determines whether this instance is potential time test case1.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is potential time test case1; otherwise, <c>false</c>.</returns>
+		[Test ()]
+		public void IsPotentialTimeTestCase1 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "IsPotentialTimeTestCase1");
+
+				var isPotetialDateTime = "14:50:50";
+				var culture = new CultureInfo ("en-GB");
+
+				var returnGet = DateTimeUtilsIsPotentialTests.IsPotentialTimeTest1 (isPotetialDateTime, culture);
+
+				var isTrue = Convert.ToBoolean (returnGet);
+
+				Assert.IsTrue (isTrue);
+
+				log.InfoFormat ("IsPotentialTimeTest1 is true = {0}", isTrue);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
+		/// Determines whether this instance is potential date time test case2.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is potential date time test case2; otherwise, <c>false</c>.</returns>
+		[Test ()]
+		public void IsPotentialDateTimeTestCase2 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "IsPotentialDateTimeTestCase2");
+
+				var isPotetialDateTime = "01/08/2008 14:50:50";
+				var includeDate = true;
+				var includeTime = true;
+				var allowZeroForDayAndMonth = true;
+				var culture = new CultureInfo ("en-GB");
+
+				var returnGet1 = DateTimeUtilsIsPotentialTests.IsPotentialDateTimeTest2 (isPotetialDateTime, includeDate, includeTime, allowZeroForDayAndMonth, culture);
+				var isTrue1 = Convert.ToBoolean (returnGet1);
+				Assert.IsTrue (isTrue1);
+				log.InfoFormat ("IsPotentialDateTimeTest2 is true = {0}", isTrue1);
+
+				var returnGet2 = DateTimeUtilsIsPotentialTests.IsPotentialDateTimeTest3 (isPotetialDateTime, includeDate, includeTime, allowZeroForDayAndMonth, culture);
+				var isTrue2 = Convert.ToBoolean (returnGet2);
+				Assert.IsTrue (isTrue2);
+				log.InfoFormat ("IsPotentialDateTimeTest3 is true = {0}", isTrue2);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
+		/// Determines whether this instance is potential date time test case1.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is potential date time test case1; otherwise, <c>false</c>.</returns>
+		[Test ()]
+		public void IsPotentialDateTimeTestCase1 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "IsPotentialDateTimeTestCase1");
+
+				var isPotetialDateTime = "01/08/2008 14:50:50";
+				var includeDate = true;
+				var includeTime = true;
+				var allowZeroForDayAndMonth = true;
+
+				var returnGet = DateTimeUtilsIsPotentialTests.IsPotentialDateTimeTest1 (isPotetialDateTime, includeDate, includeTime, allowZeroForDayAndMonth);
+
+				var isTrue = Convert.ToBoolean (returnGet);
+
+				Assert.IsTrue (isTrue);
+
+				log.InfoFormat ("IsPotentialDateTimeTest1 is true = {0}", isTrue);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
+		/// Getters the test case4.
+		/// </summary>
 		[Test ()]
 		public void GetterTestCase4 ()
 		{
@@ -36,6 +146,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Getters the test case3.
+		/// </summary>
 		[Test ()]
 		public void GetterTestCase3 ()
 		{
@@ -56,6 +169,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Getters the test case2.
+		/// </summary>
 		[Test ()]
 		public void GetterTestCase2 ()
 		{
@@ -75,6 +191,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Getters the test case1.
+		/// </summary>
 		[Test ()]
 		public void GetterTestCase1 ()
 		{

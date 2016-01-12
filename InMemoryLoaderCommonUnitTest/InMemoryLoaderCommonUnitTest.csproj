@@ -65,6 +65,7 @@
     <Compile Include="Test\DateTimeUtilsDateDiffTests.cs" />
     <Compile Include="Test\DateTimeUtilsGetAgeTests.cs" />
     <Compile Include="Test\DateTimeUtilsGetterTests.cs" />
+    <Compile Include="Test\DateTimeUtilsIsPotentialTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

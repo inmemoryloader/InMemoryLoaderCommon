@@ -23,6 +23,11 @@ namespace InMemoryLoaderCommonUnitTest
 		/// </summary>
 		private static IDynamicClassSetup dateTimeUtils = appBase.CommonComponentLoader.DateTimeComponent;
 
+		/// <summary>
+		/// Gets the calendar week count test.
+		/// </summary>
+		/// <returns>The calendar week count test.</returns>
+		/// <param name="year">Year.</param>
 		public static object GetCalendarWeekCountTest (int year)
 		{
 			try {
@@ -36,6 +41,11 @@ namespace InMemoryLoaderCommonUnitTest
 			}		
 		}
 
+		/// <summary>
+		/// Gets the day name test1.
+		/// </summary>
+		/// <returns>The day name test1.</returns>
+		/// <param name="dayOfWeek">Day of week.</param>
 		public static object GetDayNameTest1 (DayOfWeek dayOfWeek)
 		{
 			try {
@@ -49,6 +59,12 @@ namespace InMemoryLoaderCommonUnitTest
 			}		
 		}
 
+		/// <summary>
+		/// Gets the day name test2.
+		/// </summary>
+		/// <returns>The day name test2.</returns>
+		/// <param name="dayOfWeek">Day of week.</param>
+		/// <param name="cultureInfo">Culture info.</param>
 		public static object GetDayNameTest2 (DayOfWeek dayOfWeek, CultureInfo cultureInfo)
 		{
 			try {
@@ -62,6 +78,11 @@ namespace InMemoryLoaderCommonUnitTest
 			}		
 		}
 
+		/// <summary>
+		/// Gets the quarter test.
+		/// </summary>
+		/// <returns>The quarter test.</returns>
+		/// <param name="date">Date.</param>
 		public static object GetQuarterTest (DateTime date)
 		{
 			try {
