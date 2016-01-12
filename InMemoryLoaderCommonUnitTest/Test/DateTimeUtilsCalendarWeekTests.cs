@@ -45,6 +45,31 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Gets the calendar week start date test.
+		/// </summary>
+		/// <returns>The calendar week start date test.</returns>
+		/// <param name="calendarWeek">Calendar week.</param>
+		/// <param name="year">Year.</param>
+		public static object GetCalendarWeekStartDateTest (int calendarWeek, int year)
+		{
+			try {
+				object[] paramDate = { calendarWeek, year };
+
+				var weekStartDate = appBase.ComponentLoader.InvokeMethod (dateTimeUtils.Assembly, dateTimeUtils.Class, "GetCalendarWeekStartDate", paramDate);
+
+				return weekStartDate;
+			} catch (Exception ex) {
+				throw ex;
+			}		
+		}
+
+		/// <summary>
+		/// Gets the german calendar week start date test.
+		/// </summary>
+		/// <returns>The german calendar week start date test.</returns>
+		/// <param name="calendarWeek">Calendar week.</param>
+		/// <param name="year">Year.</param>
 		public static object GetGermanCalendarWeekStartDateTest (int calendarWeek, int year)
 		{
 			try {
