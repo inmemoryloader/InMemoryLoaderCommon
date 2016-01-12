@@ -26,7 +26,7 @@ namespace InMemoryLoaderCommonUnitTest
 
 				var returnVoid = EmailUtilsTests.SendSimpleTest1 ();
 
-				log.InfoFormat ("GetGermanCalendarWeekTest is Year {0} and Week {1}", returnVoid);
+				log.InfoFormat ("SendSimpleTest1 was {0}", returnVoid);
 			} catch (Exception ex) {
 				log.FatalFormat (ex.ToString ());
 			}

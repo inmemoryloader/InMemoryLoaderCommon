@@ -68,6 +68,8 @@
     <Compile Include="Test\DateTimeUtilsIsPotentialTests.cs" />
     <Compile Include="EmailUtilsTest.cs" />
     <Compile Include="Test\EmailUtilsTests.cs" />
+    <Compile Include="FileSystemUtilsTest.cs" />
+    <Compile Include="Test\FileSystemUtilsTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
