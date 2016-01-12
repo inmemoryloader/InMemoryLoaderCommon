@@ -26,8 +26,12 @@ namespace InMemoryLoaderCommonUnitTest
 		/// </summary>
 		private static IDynamicClassSetup convertUtils = appBase.CommonComponentLoader.ConvertComponent;
 
-
-		private static DateTime FirstWeekInThisYear (string dateString)
+		/// <summary>
+		/// Returns the CalendarWeek of the submitted Date (Year)
+		/// </summary>
+		/// <returns>The week in this year.</returns>
+		/// <param name="dateString">Date string.</param>
+		private static DateTime CalendarWeekInThisYear (string dateString)
 		{
 			try {
 				
@@ -41,10 +45,28 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		public static object GetGermanCalendarWeekStartDateTest (int calendarWeek, int year)
+		{
+			try {
+				object[] paramDate = { calendarWeek, year };
+
+				var weekStartDate = appBase.ComponentLoader.InvokeMethod (dateTimeUtils.Assembly, dateTimeUtils.Class, "GetGermanCalendarWeekStartDate", paramDate);
+
+				return weekStartDate;
+			} catch (Exception ex) {
+				throw ex;
+			}		
+		}
+
+		/// <summary>
+		/// Gets the calendar week test.
+		/// </summary>
+		/// <returns>The calendar week test.</returns>
+		/// <param name="paramDateString">Parameter date string.</param>
 		public static object GetCalendarWeekTest (string paramDateString)
 		{
 			try {
-				var varDate = FirstWeekInThisYear(paramDateString);
+				var varDate = CalendarWeekInThisYear (paramDateString);
 				object[] paramDate = { varDate };
 
 				var calendarWeek = appBase.ComponentLoader.InvokeMethod (dateTimeUtils.Assembly, dateTimeUtils.Class, "GetCalendarWeek", paramDate);
@@ -55,10 +77,15 @@ namespace InMemoryLoaderCommonUnitTest
 			}		
 		}
 
+		/// <summary>
+		/// Gets the german calendar week test.
+		/// </summary>
+		/// <returns>The german calendar week test.</returns>
+		/// <param name="paramDateString">Parameter date string.</param>
 		public static object GetGermanCalendarWeekTest (string paramDateString)
 		{
 			try {
-				var varDate = FirstWeekInThisYear(paramDateString);
+				var varDate = CalendarWeekInThisYear (paramDateString);
 				object[] paramDate = { varDate };
 
 				var calendarWeek = appBase.ComponentLoader.InvokeMethod (dateTimeUtils.Assembly, dateTimeUtils.Class, "GetGermanCalendarWeek", paramDate);

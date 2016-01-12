@@ -1,0 +1,4 @@
+January 12. 2016
+
+- New Helper-Class "ObjectHelper"
+-- GetFieldValue returns the Field Value from the submited Parameter-Object via Reflection

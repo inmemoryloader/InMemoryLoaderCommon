@@ -16,26 +16,23 @@ namespace PowerUpDateTimeUtils
 		/// <param name="calendarWeek">Die Kalenderwoche</param>
 		/// <param name="year">Das Jahr</param>
 		/// <returns>Gibt das Datum zurück, an dem die Kalenderwoche beginnt</returns>
-		public DateTime GetGermanCalendarWeekStartDate(int calendarWeek, int year)
+		public DateTime GetGermanCalendarWeekStartDate (int calendarWeek, int year)
 		{
 			// Datum für den 4.1. des Jahres ermitteln
-			DateTime baseDate = new DateTime(year, 1, 4);
+			DateTime baseDate = new DateTime (year, 1, 4);
 
 			// Den Montag dieser Woche ermitteln
 			int dayOfWeek = (int)baseDate.DayOfWeek;
-			if (dayOfWeek > 0)
-			{
+			if (dayOfWeek > 0) {
 				// Montag bis Samstag
-				baseDate = baseDate.AddDays((dayOfWeek - 1) * -1);
-			}
-			else
-			{
+				baseDate = baseDate.AddDays ((dayOfWeek - 1) * -1);
+			} else {
 				// Sonntag
-				baseDate = baseDate.AddDays(-6);
+				baseDate = baseDate.AddDays (-6);
 			}
 
 			// Das Ergebnisdatum ermitteln
-			return baseDate.AddDays((calendarWeek - 1) * 7);
+			return baseDate.AddDays ((calendarWeek - 1) * 7);
 		}
 
 		/// <summary>
@@ -44,26 +41,24 @@ namespace PowerUpDateTimeUtils
 		/// <param name="calendarWeek">Die Kalenderwoche</param>
 		/// <param name="year">Das Jahr</param>
 		/// <returns>Gibt das Datum zurück, an dem die Kalenderwoche beginnt</returns>
-		public DateTime GetCalendarWeekStartDate(int calendarWeek, int year)
+		public DateTime GetCalendarWeekStartDate (int calendarWeek, int year)
 		{
 			// Basisdatum (1.1. des angegebenen Jahres) ermitteln
-			DateTime startDate = new DateTime(year, 1, 1);
+			DateTime startDate = new DateTime (year, 1, 1);
 
 			// Das Datum des ersten Wochentags dieser Woche ermitteln
-			while (startDate.DayOfWeek != CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek)
-			{
-				startDate = startDate.AddDays(-1);
+			while (startDate.DayOfWeek != CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek) {
+				startDate = startDate.AddDays (-1);
 			}
 			// Die Kalenderwoche ermitteln: Wenn es sich um die Woche 1 handelt,
 			// ist dies das Basisdatum für die Berechnung, wenn nicht, müssen
 			// sieben Tage aufaddiert werden
-			CalendarWeek cw = GetCalendarWeek(startDate);
-			if (cw.Week != 1)
-			{
-				startDate = startDate.AddDays(7);
+			CalendarWeek cw = GetCalendarWeek (startDate);
+			if (cw.Week != 1) {
+				startDate = startDate.AddDays (7);
 			}
 			// Das Ergebnisdatum ermitteln
-			return startDate.AddDays((calendarWeek - 1) * 7);
+			return startDate.AddDays ((calendarWeek - 1) * 7);
 		}
 	}
 }
