@@ -24,28 +24,28 @@ namespace InMemoryLoaderCommonUnitTest
 		/// <summary>
 		/// The file1.
 		/// </summary>
-		private static string file1 = "/home/kaysta/github.com/InMemoryLoaderCommon/CompareFile1.txt";
+		private static string file1 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommonUnitTest/CompareFile1.txt";
 		/// <summary>
 		/// The file2.
 		/// </summary>
-		private static string file2 = "/media/kaysta/18B66500B664DFAC/Temp/IsNotYourShit.txt";
+		private static string file2 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommonUnitTest/CompareFile2.txt";
 		/// <summary>
 		/// The file3.
 		/// </summary>
-		private static string file3 = "/home/kaysta/github.com/InMemoryLoaderCommon/CompareFile2.txt";
+		private static string file3 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommonUnitTest/CompareFile3.txt";
 
 		/// <summary>
 		/// The folder1.
 		/// </summary>
-		private static string folder1 = "/home/kaysta/github.com/InMemoryLoaderCommon/CompareFolder1/";
+		private static string folder1 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommonUnitTest/CompareFolder1/";
 		/// <summary>
 		/// The folder2.
 		/// </summary>
-		private static string folder2 = "/home/kaysta/github.com/InMemoryLoaderCommon/CompareFolder2/";
+		private static string folder2 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommonUnitTest/CompareFolder2/";
 		/// <summary>
 		/// The folder3.
 		/// </summary>
-		private static string folder3 = "/home/kaysta/github.com/InMemoryLoaderCommon/CompareFolder3/";
+		private static string folder3 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommonUnitTest/CompareFolder3/";
 
 		/// <summary>
 		/// Files the system utils case4.
