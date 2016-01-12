@@ -57,10 +57,6 @@
       <Project>{037A6543-CA5B-4DD3-97E6-1A526525C7F6}</Project>
       <Name>PowerUpCryptUtils</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
-      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
-      <Name>PowerUpDateTimeUtils</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PowerUpEmailUtils\PowerUpEmailUtils.csproj">
       <Project>{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}</Project>
       <Name>PowerUpEmailUtils</Name>
@@ -80,6 +76,10 @@
     <ProjectReference Include="..\PowerUpXmlUtils\PowerUpXmlUtils.csproj">
       <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
       <Name>PowerUpXmlUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
+      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
+      <Name>PowerUpDateTimeUtils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

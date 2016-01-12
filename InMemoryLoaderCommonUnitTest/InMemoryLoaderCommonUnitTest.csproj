@@ -77,9 +77,5 @@
       <Project>{14803A71-3990-4D53-8BEC-085B76B200B2}</Project>
       <Name>InMemoryLoaderCommon</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
-      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
-      <Name>PowerUpDateTimeUtils</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -54,9 +54,12 @@ namespace PowerUpDateTimeUtils
 			{
 				year++;
 			}
-			if (calendarWeek >= 52 && date.Month == 1)
-			{
-				year--;
+			if (calendarWeek >= 52 && date.Month == 1) {
+				// TODO: Check if Datum jetzt immer korrekt
+				// year--;
+				calendarWeek = 1;
+			} else {
+				calendarWeek++;
 			}
 			// Die ermittelte Kalenderwoche zurückgeben
 			return new CalendarWeek(year, calendarWeek);
@@ -102,9 +105,12 @@ namespace PowerUpDateTimeUtils
 			{
 				year++;
 			}
-			if (calendarWeek >= 52 && date.Month == 1)
-			{
-				year--;
+			if (calendarWeek >= 52 && date.Month == 1) {
+				// TODO: Check if Datum jetzt immer korrekt
+				// year--;
+				calendarWeek = 1;
+			} else {
+				calendarWeek++;
 			}
 			// Die ermittelte Kalenderwoche zurückgeben
 			return new CalendarWeek(year, calendarWeek);

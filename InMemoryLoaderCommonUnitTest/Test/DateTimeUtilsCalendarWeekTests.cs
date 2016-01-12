@@ -8,7 +8,6 @@ using System.Globalization;
 using System.Linq;
 using System.IO;
 using System.Text;
-using PowerUpDateTimeUtils;
 
 namespace InMemoryLoaderCommonUnitTest
 {
@@ -28,10 +27,10 @@ namespace InMemoryLoaderCommonUnitTest
 		private static IDynamicClassSetup convertUtils = appBase.CommonComponentLoader.ConvertComponent;
 
 
-		private static DateTime FirstWeekInThisYear ()
+		private static DateTime FirstWeekInThisYear (string dateString)
 		{
 			try {
-				var dateString = "01.01.2016";
+				
 				object[] paramDateString = { dateString };
 
 				var returnDate = appBase.ComponentLoader.InvokeMethod (convertUtils.Assembly, convertUtils.Class, "NormalizeDate", paramDateString);
@@ -42,15 +41,29 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
-		public static CalendarWeek GetCalendarWeekTest ()
+		public static object GetCalendarWeekTest (string paramDateString)
 		{
 			try {
-				var varDate = FirstWeekInThisYear();
+				var varDate = FirstWeekInThisYear(paramDateString);
 				object[] paramDate = { varDate };
 
 				var calendarWeek = appBase.ComponentLoader.InvokeMethod (dateTimeUtils.Assembly, dateTimeUtils.Class, "GetCalendarWeek", paramDate);
 
-				return (CalendarWeek)calendarWeek;
+				return calendarWeek;
+			} catch (Exception ex) {
+				throw ex;
+			}		
+		}
+
+		public static object GetGermanCalendarWeekTest (string paramDateString)
+		{
+			try {
+				var varDate = FirstWeekInThisYear(paramDateString);
+				object[] paramDate = { varDate };
+
+				var calendarWeek = appBase.ComponentLoader.InvokeMethod (dateTimeUtils.Assembly, dateTimeUtils.Class, "GetGermanCalendarWeek", paramDate);
+
+				return calendarWeek;
 			} catch (Exception ex) {
 				throw ex;
 			}		
