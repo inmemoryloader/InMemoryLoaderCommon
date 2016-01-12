@@ -16,6 +16,81 @@ namespace InMemoryLoaderCommonUnitTest
 		private static readonly ILog log = LogManager.GetLogger (typeof(CryptUtilsTest));
 
 		/// <summary>
+		/// Gets the date diff test case3.
+		/// </summary>
+		[Test ()]
+		public void GetDateDiffTestCase3 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "GetDateDiffTestCase3");
+
+				var firstDate = new DateTime (1975, 12, 08);
+				var lastDate = new DateTime (2016, 12, 08);
+				var expectedValue = 2139;
+
+				var returnDate = DateTimeUtilsCalendarWeekTests.GetWeekDifferenceTest (firstDate, lastDate);
+
+				var weekDifference = Convert.ToInt32 (returnDate);
+
+				Assert.AreEqual (expectedValue, weekDifference);
+
+				log.InfoFormat ("GetWeekDifferenceTest is {0}", weekDifference);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
+		/// Gets the date diff test case2.
+		/// </summary>
+		[Test ()]
+		public void GetDateDiffTestCase2 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "GetDateDiffTestCase2");
+
+				var firstDate = new DateTime (1975, 12, 08);
+				var lastDate = new DateTime (2016, 12, 08);
+				var expectedValue = 492;
+
+				var returnDate = DateTimeUtilsCalendarWeekTests.GetMonthDifferenceTest (firstDate, lastDate);
+
+				var monthDifference = Convert.ToInt32 (returnDate);
+
+				Assert.AreEqual (expectedValue, monthDifference);
+
+				log.InfoFormat ("GetMonthDifferenceTest is {0}", monthDifference);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
+		/// Gets the date diff test case1.
+		/// </summary>
+		[Test ()]
+		public void GetDateDiffTestCase1 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "GetDateDiffTestCase1");
+
+				var firstDate = new DateTime (1975, 12, 08);
+				var lastDate = new DateTime (2016, 12, 08);
+				var expectedValue = 41;
+
+				var returnDate = DateTimeUtilsCalendarWeekTests.GetYearDifferenceTest (firstDate, lastDate);
+
+				var yearDifference = Convert.ToInt32 (returnDate);
+
+				Assert.AreEqual (expectedValue, yearDifference);
+
+				log.InfoFormat ("GetYearDifferenceTest is {0}", yearDifference);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
 		/// Gets the calendar week start date test case1.
 		/// </summary>
 		[Test ()]
@@ -29,9 +104,9 @@ namespace InMemoryLoaderCommonUnitTest
 
 				var returnDate = DateTimeUtilsCalendarWeekTests.GetCalendarWeekStartDateTest (weekInt, yearInt);
 
-				var startDate = new DateTime(2016, 01, 04);
+				var startDate = new DateTime (2016, 01, 04);
 
-				Assert.AreEqual(startDate, returnDate);
+				Assert.AreEqual (startDate, returnDate);
 
 				log.InfoFormat ("GetCalendarWeekStartDateTest is Year {0}", returnDate);
 			} catch (Exception ex) {
@@ -53,9 +128,9 @@ namespace InMemoryLoaderCommonUnitTest
 
 				var returnDate = DateTimeUtilsCalendarWeekTests.GetGermanCalendarWeekStartDateTest (weekInt, yearInt);
 
-				var startDate = new DateTime(2016, 01, 04);
+				var startDate = new DateTime (2016, 01, 04);
 
-				Assert.AreEqual(startDate, returnDate);
+				Assert.AreEqual (startDate, returnDate);
 
 				log.InfoFormat ("GetGermanCalendarWeekStartDateTest is Year {0}", returnDate);
 			} catch (Exception ex) {
