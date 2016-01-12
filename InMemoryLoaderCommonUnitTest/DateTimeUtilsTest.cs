@@ -4,6 +4,7 @@ using InMemoryLoader;
 using InMemoryLoaderBase;
 using InMemoryLoaderCommon;
 using log4net;
+using System.Globalization;
 
 namespace InMemoryLoaderCommonUnitTest
 {
@@ -14,6 +15,140 @@ namespace InMemoryLoaderCommonUnitTest
 		/// The log.
 		/// </summary>
 		private static readonly ILog log = LogManager.GetLogger (typeof(CryptUtilsTest));
+
+
+		[Test ()]
+		public void GetterTestCase4 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "GetterTestCase3");
+
+				var dayOfWeek = new DateTime (2016, 12, 08);
+				var expected = 4;
+
+				var returnGet = DateTimeUtilsGetterTests.GetQuarterTest (dayOfWeek);
+
+				Assert.AreEqual (expected, returnGet);
+
+				log.InfoFormat ("GetQuarterTest is {0}", returnGet);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		[Test ()]
+		public void GetterTestCase3 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "GetterTestCase3");
+
+				var dayOfWeek = new DateTime (2016, 01, 25).DayOfWeek;
+				var expected = "Montag";
+				var culture = new CultureInfo ("de");
+
+				var returnGet = DateTimeUtilsGetterTests.GetDayNameTest2 (dayOfWeek, culture);
+
+				Assert.AreEqual (expected, returnGet);
+
+				log.InfoFormat ("GetDayNameTest2 is {0}", returnGet);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		[Test ()]
+		public void GetterTestCase2 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "GetterTestCase2");
+
+				var dayOfWeek = new DateTime (2016, 01, 25).DayOfWeek;
+				var expected = "Monday";
+
+				var returnGet = DateTimeUtilsGetterTests.GetDayNameTest1 (dayOfWeek);
+
+				Assert.AreEqual (expected, returnGet);
+
+				log.InfoFormat ("GetDayNameTest1 is {0}", returnGet);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		[Test ()]
+		public void GetterTestCase1 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "GetterTestCase1");
+
+				var year = 2015;
+				var expected = 53;
+
+				var returnGet = DateTimeUtilsGetterTests.GetCalendarWeekCountTest (year);
+
+				var getter = Convert.ToInt32 (returnGet);
+
+				Assert.AreEqual (expected, getter);
+
+				log.InfoFormat ("GetCalendarWeekCountTest is {0}", getter);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
+		/// Gets the age test case2.
+		/// </summary>
+		[Test ()]
+		public void GetAgeTestCase2 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "GetAgeTestCase2");
+
+				var firstDateTime = new DateTime (1975, 12, 08);
+				var lastDateTime = new DateTime (2016, 12, 08);
+
+				var firstDate = new DateTimeOffset (firstDateTime);
+				var lastDate = new DateTimeOffset (lastDateTime);
+
+				var expectedValue = 41;
+
+				var returnDate = DateTimeUtilsGetAgeTests.GetAgeTest2 (firstDate, lastDate);
+
+				var getAge = Convert.ToInt32 (returnDate);
+
+				Assert.AreEqual (expectedValue, getAge);
+
+				log.InfoFormat ("GetAgeTest2 is {0}", getAge);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
+		/// Gets the age test case1.
+		/// </summary>
+		[Test ()]
+		public void GetAgeTestCase1 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "GetAgeTestCase1");
+
+				var firstDate = new DateTime (1975, 12, 08);
+				var lastDate = new DateTime (2016, 12, 08);
+				var expectedValue = 41;
+
+				var returnDate = DateTimeUtilsGetAgeTests.GetAgeTest1 (firstDate, lastDate);
+
+				var getAge = Convert.ToInt32 (returnDate);
+
+				Assert.AreEqual (expectedValue, getAge);
+
+				log.InfoFormat ("GetAgeTest1 is {0}", getAge);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
 
 		/// <summary>
 		/// Gets the date diff test case3.
@@ -28,7 +163,7 @@ namespace InMemoryLoaderCommonUnitTest
 				var lastDate = new DateTime (2016, 12, 08);
 				var expectedValue = 2139;
 
-				var returnDate = DateTimeUtilsCalendarWeekTests.GetWeekDifferenceTest (firstDate, lastDate);
+				var returnDate = DateTimeUtilsDateDiffTests.GetWeekDifferenceTest (firstDate, lastDate);
 
 				var weekDifference = Convert.ToInt32 (returnDate);
 
@@ -53,7 +188,7 @@ namespace InMemoryLoaderCommonUnitTest
 				var lastDate = new DateTime (2016, 12, 08);
 				var expectedValue = 492;
 
-				var returnDate = DateTimeUtilsCalendarWeekTests.GetMonthDifferenceTest (firstDate, lastDate);
+				var returnDate = DateTimeUtilsDateDiffTests.GetMonthDifferenceTest (firstDate, lastDate);
 
 				var monthDifference = Convert.ToInt32 (returnDate);
 
@@ -78,7 +213,7 @@ namespace InMemoryLoaderCommonUnitTest
 				var lastDate = new DateTime (2016, 12, 08);
 				var expectedValue = 41;
 
-				var returnDate = DateTimeUtilsCalendarWeekTests.GetYearDifferenceTest (firstDate, lastDate);
+				var returnDate = DateTimeUtilsDateDiffTests.GetYearDifferenceTest (firstDate, lastDate);
 
 				var yearDifference = Convert.ToInt32 (returnDate);
 

@@ -62,6 +62,9 @@
     <Compile Include="Test\CryptUtilsRijndaelTests.cs" />
     <Compile Include="DateTimeUtilsTest.cs" />
     <Compile Include="Test\DateTimeUtilsCalendarWeekTests.cs" />
+    <Compile Include="Test\DateTimeUtilsDateDiffTests.cs" />
+    <Compile Include="Test\DateTimeUtilsGetAgeTests.cs" />
+    <Compile Include="Test\DateTimeUtilsGetterTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
