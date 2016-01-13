@@ -1,8 +1,14 @@
+January 13. 2016
+
+- New Helper-Class "ObjectHelper"
+
+- Moved "ObjectHelper" to InMemoryLoader
+
+
 January 12. 2016
 
 - New Helper-Class "ObjectHelper"
--- GetFieldValue returns the Field Value from the submited Parameter-Object via Reflection
 
 - Several UnitTest for CheckUtils, ConvertUtils, CryptUtils, DateTimeUtils
 
-- DateTimeUtilsHelper in InMemoryLoaderCommon
+- New Helper-Class "DateTimeUtilsHelper"
