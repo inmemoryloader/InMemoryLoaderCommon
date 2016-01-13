@@ -70,11 +70,21 @@
     <Compile Include="Test\EmailUtilsTests.cs" />
     <Compile Include="FileSystemUtilsTest.cs" />
     <Compile Include="Test\FileSystemUtilsTests.cs" />
+    <Compile Include="GetUtilsTest.cs" />
+    <Compile Include="Test\GetUtilsTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="app.config" />
+    <None Include="CompareFolder1\CompareFile1.txt" />
+    <None Include="CompareFolder1\CompareFile2.txt" />
+    <None Include="CompareFolder2\CompareFile2.txt" />
+    <None Include="CompareFolder3\CompareFile1.txt" />
+    <None Include="CompareFolder3\CompareFile2.txt" />
+    <None Include="CompareFile1.txt" />
+    <None Include="CompareFile2.txt" />
+    <None Include="CompareFile3.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code\" />

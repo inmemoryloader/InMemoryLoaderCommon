@@ -40,7 +40,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GetUtils.cs" />
     <Compile Include="GetUtils.GetDateTime.cs" />
-    <Compile Include="GetUtils.GetGuid.cs" />
     <Compile Include="GetUtils.GetRandomNumbers.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
