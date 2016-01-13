@@ -72,6 +72,8 @@
     <Compile Include="Test\FileSystemUtilsTests.cs" />
     <Compile Include="GetUtilsTest.cs" />
     <Compile Include="Test\GetUtilsTests.cs" />
+    <Compile Include="StringUtilsTest.cs" />
+    <Compile Include="Test\StringUtilsTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

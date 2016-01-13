@@ -13,7 +13,7 @@ namespace InMemoryLoaderCommonUnitTest
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger (typeof(EmailUtilsTest));
+		private static readonly ILog log = LogManager.GetLogger (typeof(GetUtilsTest));
 
 		/// <summary>
 		/// Emails the utils test case1.
