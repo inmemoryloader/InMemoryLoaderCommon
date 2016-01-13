@@ -26,7 +26,7 @@ namespace InMemoryLoaderCommonUnitTest
 
 				var getString = (string)StringUtilsTests.StringUtilsTest1 ();
 
-				Assert.IsNotNullOrEmpty(getString);
+				Assert.IsNotNullOrEmpty (getString);
 
 				log.InfoFormat ("StringUtilsTest1 was {0}", getString);
 			} catch (Exception ex) {
@@ -34,6 +34,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Strings the utils test case2.
+		/// </summary>
 		[Test ()]
 		public void StringUtilsTestCase2 ()
 		{
@@ -43,7 +46,7 @@ namespace InMemoryLoaderCommonUnitTest
 				var getString = (long)StringUtilsTests.StringUtilsTest2 ();
 				var expected = 4;
 
-				Assert.AreEqual(expected, getString);
+				Assert.AreEqual (expected, getString);
 
 				log.InfoFormat ("StringUtilsTest2 was {0}", getString);
 			} catch (Exception ex) {

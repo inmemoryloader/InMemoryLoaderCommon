@@ -22,7 +22,10 @@ namespace InMemoryLoaderCommonUnitTest
 		/// </summary>
 		private static IDynamicClassSetup stringUtils = appBase.CommonComponentLoader.StringComponent;
 
-
+		/// <summary>
+		/// Strings the utils test1.
+		/// </summary>
+		/// <returns>The utils test1.</returns>
 		public static object StringUtilsTest1 ()
 		{
 			try {
@@ -37,7 +40,10 @@ namespace InMemoryLoaderCommonUnitTest
 			}		
 		}
 
-
+		/// <summary>
+		/// Strings the utils test2.
+		/// </summary>
+		/// <returns>The utils test2.</returns>
 		public static object StringUtilsTest2 ()
 		{
 			try {

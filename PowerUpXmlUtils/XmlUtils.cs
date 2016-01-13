@@ -28,12 +28,18 @@ namespace PowerUpXmlUtils
 		/// </summary>
 		/// <param name="xmldoc">Xmldoc.</param>
 		/// <param name="file">File.</param>
-		public void WriteXmlFile (XmlDocument xmldoc, string file)
+		public bool WriteXmlFile (XmlDocument xmldoc, string file)
 		{
-			XmlTextWriter writer = new XmlTextWriter (file, null);
-			writer.Formatting = Formatting.Indented;
-			xmldoc.Save (writer);
-			writer.Close ();
+			try {
+				XmlTextWriter writer = new XmlTextWriter (file, null);
+				writer.Formatting = Formatting.Indented;
+				xmldoc.Save (writer);
+				writer.Close ();
+
+				return true;
+			} catch (Exception ex) {
+				throw ex;
+			}
 		}
 
 		/// <summary>

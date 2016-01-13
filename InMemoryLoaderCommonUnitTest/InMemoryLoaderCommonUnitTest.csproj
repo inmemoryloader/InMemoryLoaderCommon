@@ -42,6 +42,8 @@
     <Reference Include="InMemoryLoaderBase">
       <HintPath>..\packages\InMemoryLoaderBase.0.0.4\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\AppBase.cs" />
@@ -74,6 +76,8 @@
     <Compile Include="Test\GetUtilsTests.cs" />
     <Compile Include="StringUtilsTest.cs" />
     <Compile Include="Test\StringUtilsTests.cs" />
+    <Compile Include="Test\XmlUtilsTests.cs" />
+    <Compile Include="XmlUtilsTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -91,6 +95,7 @@
   <ItemGroup>
     <Folder Include="Code\" />
     <Folder Include="Test\" />
+    <Folder Include="XmlTestFolder\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">
