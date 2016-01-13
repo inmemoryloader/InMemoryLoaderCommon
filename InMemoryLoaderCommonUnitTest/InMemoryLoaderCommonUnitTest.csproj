@@ -44,6 +44,7 @@
     <Reference Include="InMemoryLoader">
       <HintPath>..\packages\InMemoryLoader.0.0.3\lib\InMemoryLoader.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\AppBase.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="XmlUtilsTest.cs" />
     <Compile Include="HelperAndObjectTest.cs" />
     <Compile Include="Test\HelperAndObjectTests.cs" />
+    <Compile Include="Test\ConvertUtilsCollectionTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

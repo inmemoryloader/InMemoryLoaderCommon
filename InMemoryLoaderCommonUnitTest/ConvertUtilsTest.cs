@@ -17,6 +17,26 @@ namespace InMemoryLoaderCommonUnitTest
 
 
 		[Test ()]
+		public void ConvertUtilsCollectionTestCase ()
+		{
+			try {
+				log.InfoFormat ("{0}", "ConvertUtilsCollectionTestCase");
+
+				// Is true
+				var isTrue1 = ConvertUtilsCollectionTests.ConvertCollectionTest1 ();
+				Assert.IsTrue (isTrue1);
+				log.InfoFormat ("ConvertCollectionTest1 = true is {0}", isTrue1);
+
+
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
+		/// Converts the utils byte array test case.
+		/// </summary>
+		[Test ()]
 		public void ConvertUtilsByteArrayTestCase ()
 		{
 			try {
@@ -43,7 +63,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
-
+		/// <summary>
+		/// Converts the utils bool test case.
+		/// </summary>
 		[Test ()]
 		public void ConvertUtilsBoolTestCase ()
 		{

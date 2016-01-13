@@ -20,6 +20,9 @@ namespace InMemoryLoaderCommonUnitTest
 
 		// IDynamicClassInfo classInfo = compLoader.ComponentRegistry.Where (str => str.Key.Class.Contains("CheckUtils")).SingleOrDefault().Value;
 
+		/// <summary>
+		/// Checks the utils URL test case.
+		/// </summary>
 		[Test ()]
 		public void CheckUtilsUrlTestCase ()
 		{
@@ -41,6 +44,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Checks the utils long test case.
+		/// </summary>
 		[Test ()]
 		public void CheckUtilsLongTestCase ()
 		{
@@ -67,6 +73,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Checks the utils int test case.
+		/// </summary>
 		[Test ()]
 		public void CheckUtilsIntTestCase ()
 		{
@@ -98,6 +107,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Checks the utils float test case.
+		/// </summary>
 		[Test ()]
 		public void CheckUtilsFloatTestCase ()
 		{
@@ -124,6 +136,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Checks the utils double test case.
+		/// </summary>
 		[Test ()]
 		public void CheckUtilsDoubleTestCase ()
 		{
@@ -145,6 +160,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Checks the utils decimal test case.
+		/// </summary>
 		[Test ()]
 		public void CheckUtilsDecimalTestCase ()
 		{
@@ -171,6 +189,9 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		/// <summary>
+		/// Checks the utils date test case.
+		/// </summary>
 		[Test ()]
 		public void CheckUtilsDateTestCase ()
 		{
