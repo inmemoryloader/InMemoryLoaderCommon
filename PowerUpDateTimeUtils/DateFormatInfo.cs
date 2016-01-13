@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Globalization;
 using System.Threading;
+using InMemoryLoaderBase;
 
 namespace PowerUpDateTimeUtils
 {
@@ -87,7 +88,7 @@ namespace PowerUpDateTimeUtils
 		/// <param name="dateTimeSeparatorPattern">Das Regex-Muster, das auf die Trennzeichen zwischen Zeit und Datum passt (normalerweise ist das einfach ein Leerzeichen)</param>
 		/// <param name="cultureInfo">Das CultureInfo-Objekt der Kultur, für die die DateFormatInfo erzeugt wird</param>
 		/// <param name="timeInputIn24HourFormatEnabled">Gibt an, ob eine Zeitangabe im 24-Stunden-Format möglich ist</param>
-		internal DateFormatInfo(DateFormat dateFormat, AmPmType amPmType, string aMString, string pMString, string amPmSeparator, string dateSuffixPattern, string dateTimeSeparatorPattern, CultureInfo cultureInfo, bool timeInputIn24HourFormatEnabled)
+		public DateFormatInfo(DateFormat dateFormat, AmPmType amPmType, string aMString, string pMString, string amPmSeparator, string dateSuffixPattern, string dateTimeSeparatorPattern, CultureInfo cultureInfo, bool timeInputIn24HourFormatEnabled)
 		{
 			this.DateFormat = dateFormat;
 			this.AmPmType = amPmType;
@@ -100,7 +101,7 @@ namespace PowerUpDateTimeUtils
 			this.TimeInputIn24HourFormatEnabled = timeInputIn24HourFormatEnabled;
 		}
 
-		internal DateFormatInfo()
+		public DateFormatInfo()
 		{
 		}
 
