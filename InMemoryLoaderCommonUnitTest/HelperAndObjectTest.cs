@@ -16,13 +16,43 @@ namespace InMemoryLoaderCommonUnitTest
 		private static readonly ILog log = LogManager.GetLogger (typeof(HelperAndObjectTest));
 
 		/// <summary>
+		/// Calendars the info test case.
+		/// </summary>
+		[Test ()]
+		public void CalendarInfoTestCase ()
+		{
+			try {
+				log.InfoFormat ("{0}", "CalendarInfoTestCase");
+
+				var dateFormatInfo = HelperAndObjectTests.CalendarInfoTest ();
+
+				var Calendar = ObjectHelper.GetFieldValue ("Calendar", dateFormatInfo);
+				var DaysInMonthMax = ObjectHelper.GetFieldValue ("DaysInMonthMax", dateFormatInfo);
+				var DaysInMonthMin = ObjectHelper.GetFieldValue ("DaysInMonthMin", dateFormatInfo);
+				var MonthInYearMax = ObjectHelper.GetFieldValue ("MonthInYearMax", dateFormatInfo);
+				var SampleCulture = ObjectHelper.GetFieldValue ("SampleCulture", dateFormatInfo);
+				var CalendarName = ObjectHelper.GetFieldValue ("CalendarName", dateFormatInfo);
+				var AlgorithmTypeName = ObjectHelper.GetFieldValue ("AlgorithmTypeName", dateFormatInfo);
+				var MonthInYearMin = ObjectHelper.GetFieldValue ("MonthInYearMin", dateFormatInfo);
+
+				log.InfoFormat ("Calendar:{0}, DaysInMonthMax:{1}, DaysInMonthMin:{2}, MonthInYearMax:{3}", 
+					Calendar, DaysInMonthMax, DaysInMonthMin, MonthInYearMax);
+
+				log.InfoFormat ("SampleCulture:{0}, CalendarName:{1}, AlgorithmTypeName:{2}, MonthInYearMin:{3}", 
+					SampleCulture, CalendarName, AlgorithmTypeName, MonthInYearMin);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		/// <summary>
 		/// Helpers the and object test case.
 		/// </summary>
 		[Test ()]
-		public void HelperAndObjectTestCase ()
+		public void GetDateFormatInfoTestCase ()
 		{
 			try {
-				log.InfoFormat ("{0}", "HelperAndObjectTestCase");
+				log.InfoFormat ("{0}", "GetDateFormatInfoTestCase");
 
 				var dateFormatInfo = HelperAndObjectTests.DateFormatInfoTest ();
 

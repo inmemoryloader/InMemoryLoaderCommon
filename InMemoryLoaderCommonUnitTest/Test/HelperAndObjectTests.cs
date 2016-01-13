@@ -25,6 +25,24 @@ namespace InMemoryLoaderCommonUnitTest
 		private static DateTimeUtilsHelper dateTimeUtilsHelper;
 
 		/// <summary>
+		/// Calendars the info test.
+		/// </summary>
+		/// <returns>The info test.</returns>
+		public static object CalendarInfoTest ()
+		{
+			try {
+				if (dateTimeUtilsHelper == null) {
+					dateTimeUtilsHelper = new DateTimeUtilsHelper ();
+				}
+				Calendar calendar = CultureInfo.CurrentCulture.Calendar;
+
+				return dateTimeUtilsHelper.GetCalendarInfo (calendar);
+			} catch (Exception ex) {
+				throw ex;
+			}		
+		}
+
+		/// <summary>
 		/// Dates the format info test.
 		/// </summary>
 		/// <returns>The format info test.</returns>

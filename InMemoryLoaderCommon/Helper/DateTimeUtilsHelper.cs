@@ -21,6 +21,7 @@ namespace InMemoryLoaderCommon
 		/// </summary>
 		public DateTimeUtilsHelper ()
 		{
+			log.DebugFormat ("Create a new instance of Type: {0}", this.GetType ().ToString ());
 		}
 
 		/// <summary>
@@ -49,6 +50,50 @@ namespace InMemoryLoaderCommon
 			return dateFormatInfo.GetDateFormatInfo (cultureInfo) as object;
 		}
 
+		/// <summary>
+		/// The calendar info.
+		/// </summary>
+		private static CalendarInfo calendarInfo;
+
+		/// <summary>
+		/// Gets the calendar info.
+		/// </summary>
+		/// <returns>The calendar info.</returns>
+		/// <param name="calendar">Calendar.</param>
+		public object GetCalendarInfo (Calendar calendar)
+		{
+			calendarInfo = new CalendarInfo (calendar);
+			return calendarInfo as object;
+		}
+
+		/// <summary>
+		/// Gets the system calendars.
+		/// </summary>
+		/// <returns>The system calendars.</returns>
+		public List<object> GetSystemCalendars ()
+		{
+			var list = CalendarInfo.GetSystemCalendars ();
+			List<object> systemCalendars = new List<object> (); 
+
+			foreach (var item in list) {
+				systemCalendars.Add (item as object);
+			}
+
+			return systemCalendars;
+		}
+
+		/// <summary>
+		/// Gets the calendar date string.
+		/// </summary>
+		/// <returns>The calendar date string.</returns>
+		/// <param name="date">Date.</param>
+		public string GetCalendarDateString (DateTime date)
+		{
+			if (calendarInfo == null) {
+				return string.Empty;
+			}
+			return calendarInfo.GetCalendarDateString (date);
+		}
 	}
 }
 
