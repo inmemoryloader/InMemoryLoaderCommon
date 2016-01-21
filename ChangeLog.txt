@@ -11,3 +11,6 @@ January 21. 2016
 
 - New DataTableHelper in InMemoryLoaderCommon
 - New CollectionHelper in InMemoryLoaderCommon
+
+- New Helpers in CryptUtils
+-- GetStringEncoding, SetStringEncoding, GetMaxKeyLength, SetMaxKeyLength, GetSupportsKey, GetAlgoKey, GetSupportedAlgorithmKind, SetAlgorithmKind

@@ -23,8 +23,8 @@ namespace InMemoryLoaderCommonUnitTest
 		/// <summary>
 		/// The common component path.
 		/// </summary>
-		public const string commonComponentPath = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommon/bin/Debug/";
-		// public const string commonComponentPath = "C:\\Users\\kayst\\OneDrive\\Development\\github\\InMemoryLoaderCommon\\InMemoryLoaderCommon\\bin\\Debug";
+		// public const string commonComponentPath = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommon/bin/Debug/";
+		public const string commonComponentPath = "C:\\Users\\kayst\\OneDrive\\Development\\github\\InMemoryLoaderCommon\\InMemoryLoaderCommon\\bin\\Debug";
 
 		/// <summary>
 		/// Gets or sets the component loader.

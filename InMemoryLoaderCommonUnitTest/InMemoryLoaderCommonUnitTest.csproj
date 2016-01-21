@@ -82,6 +82,7 @@
     <Compile Include="HelperAndObjectTest.cs" />
     <Compile Include="Test\HelperAndObjectTests.cs" />
     <Compile Include="Test\ConvertUtilsCollectionTests.cs" />
+    <Compile Include="Test\CryptUtilsHashUtilsTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
