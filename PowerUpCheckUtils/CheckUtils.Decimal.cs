@@ -23,10 +23,10 @@ namespace PowerUpCheckUtils
 		/// <returns><c>true</c> if this instance is string decimal the specified paramValue provider; otherwise, <c>false</c>.</returns>
 		/// <param name="paramValue">Parameter value.</param>
 		/// <param name="provider">Provider.</param>
-		public bool IsStringDecimal(object paramValue, IFormatProvider provider)
+		public bool IsStringDecimal(object paramValue, IFormatProvider paramProvider)
 		{
 			decimal result;
-			return decimal.TryParse(paramValue.ToString(), NumberStyles.AllowDecimalPoint, provider, out result);
+			return decimal.TryParse(paramValue.ToString(), NumberStyles.AllowDecimalPoint, paramProvider, out result);
 		}
 	}
 }

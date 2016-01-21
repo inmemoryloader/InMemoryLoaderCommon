@@ -38,11 +38,15 @@
     <Reference Include="InMemoryLoader">
       <HintPath>..\packages\InMemoryLoader.0.0.3\lib\InMemoryLoader.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonComponentLoader.cs" />
     <Compile Include="Helper\DateTimeUtilsHelper.cs" />
+    <Compile Include="Helper\DataTableHelper.cs" />
+    <Compile Include="Helper\CollectionHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

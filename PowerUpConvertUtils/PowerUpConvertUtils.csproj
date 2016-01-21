@@ -43,7 +43,6 @@
     <Compile Include="ConvertUtils.cs" />
     <Compile Include="ConvertUtils.Bool.cs" />
     <Compile Include="ConvertUtils.ByteArray.cs" />
-    <Compile Include="ConvertUtils.Collection.cs" />
     <Compile Include="ConvertUtils.NormalizeDate.cs" />
     <Compile Include="ConvertUtils.Hashtable.cs" />
     <Compile Include="ConvertUtils.String.cs" />

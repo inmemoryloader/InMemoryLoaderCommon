@@ -1,14 +1,13 @@
-January 13. 2016
-
-- New Helper-Class "ObjectHelper"
-
-- Moved "ObjectHelper" to InMemoryLoader
 
 
-January 12. 2016
+January 21. 2016
+------------------------------------------------
 
-- New Helper-Class "ObjectHelper"
+- Plastic surgery in PowerUpCheckUtils
+- Plastic surgery in PowerUpConvertUtils
 
-- Several UnitTest for CheckUtils, ConvertUtils, CryptUtils, DateTimeUtils
+- New Reference System.Data in InMemoryLoaderCommon
+- New Reference System.Xml in InMemoryLoaderCommon
 
-- New Helper-Class "DateTimeUtilsHelper"
+- New DataTableHelper in InMemoryLoaderCommon
+- New CollectionHelper in InMemoryLoaderCommon

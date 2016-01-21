@@ -25,9 +25,9 @@ namespace PowerUpConvertUtils
 		/// </summary>
 		/// <returns>The array to string.</returns>
 		/// <param name="bytearray">Bytearray.</param>
-		public string ByteArrayToString(byte[] bytearray)
+		public string ByteArrayToString(byte[] paramByteArray)
 		{
-			MemoryStream stream = new MemoryStream(bytearray);
+			MemoryStream stream = new MemoryStream(paramByteArray);
 			StreamReader reader = new StreamReader(stream, true);
 			StringBuilder sb = new StringBuilder(reader.ReadToEnd(), reader.ReadToEnd().Length);
 			return sb.ToString();
@@ -38,10 +38,10 @@ namespace PowerUpConvertUtils
 		/// <returns>The array to string.</returns>
 		/// <param name="bytearray">Bytearray.</param>
 		/// <param name="encoding">Encoding.</param>
-		public string ByteArrayToString(byte[] bytearray, Encoding encoding)
+		public string ByteArrayToString(byte[] paramByteArray, Encoding paramEncoding)
 		{
-			MemoryStream stream = new MemoryStream(bytearray);
-			StreamReader reader = new StreamReader(stream, encoding);
+			MemoryStream stream = new MemoryStream(paramByteArray);
+			StreamReader reader = new StreamReader(stream, paramEncoding);
 			StringBuilder sb = new StringBuilder(reader.ReadToEnd(), reader.ReadToEnd().Length);
 			return sb.ToString();
 		}

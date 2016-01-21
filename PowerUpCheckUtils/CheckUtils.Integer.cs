@@ -23,10 +23,10 @@ namespace PowerUpCheckUtils
 		/// <returns><c>true</c> if this instance is string int the specified paramValue provider; otherwise, <c>false</c>.</returns>
 		/// <param name="paramValue">Parameter value.</param>
 		/// <param name="provider">Provider.</param>
-		public bool IsStringInt(object paramValue, IFormatProvider provider)
+		public bool IsStringInt(object paramValue, IFormatProvider paramProvider)
 		{
 			int result;
-			return int.TryParse(paramValue.ToString(), NumberStyles.Integer, provider, out result);
+			return int.TryParse(paramValue.ToString(), NumberStyles.Integer, paramProvider, out result);
 		}
 	}
 }

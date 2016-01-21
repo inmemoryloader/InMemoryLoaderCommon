@@ -14,11 +14,11 @@ namespace PowerUpConvertUtils
 		/// <returns>The to hashtable.</returns>
 		/// <param name="str">String.</param>
 		/// <param name="delimit">Delimit.</param>
-		public Hashtable StringToHashtable(string str, char[] delimit)
+		public Hashtable StringToHashtable(string paramString, char[] paramDelimit)
 		{
 			Hashtable ht = new Hashtable();
 			int count = 0;
-			foreach (string substr in str.Split(delimit))
+			foreach (string substr in paramString.Split(paramDelimit))
 			{
 				ht.Add(count++, substr);
 			}
