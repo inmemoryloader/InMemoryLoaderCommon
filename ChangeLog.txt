@@ -1,0 +1,4 @@
+January 22. 2016
+-------------------------------------------------------------------------
+
+- Changed Exception-Log to Debug only in CheckUtils.IsUrlValid

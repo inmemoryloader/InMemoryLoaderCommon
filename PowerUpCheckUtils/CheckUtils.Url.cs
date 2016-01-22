@@ -28,7 +28,9 @@ namespace PowerUpCheckUtils
 					return false;
 				}
 			} catch (Exception ex) {
-				log.FatalFormat ("{0}", ex.ToString());
+				if (log.IsDebugEnabled) {
+					log.FatalFormat ("{0}", ex.ToString());
+				}
 				return false;
 			}
 		}
