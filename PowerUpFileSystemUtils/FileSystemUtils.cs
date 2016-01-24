@@ -19,16 +19,5 @@ namespace PowerUpFileSystemUtils
 		{
 			log.DebugFormat ("Create a new instance of Type: {0}", this.GetType ().ToString ());
 		}
-
-		/// <summary>
-		/// Aufzählung für die möglichen Vergleichstypen
-		/// </summary>
-		public enum FileCompareMethod
-		{
-			Date,
-			Content,
-			DateAndContent
-		}
 	}
 }
-

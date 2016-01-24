@@ -19,14 +19,7 @@ namespace PowerUpStringUtils
 			log.DebugFormat ("Create a new instance of Type: {0}", this.GetType ().ToString ());
 		}
 
-		/// <summary>
-		/// Direction.
-		/// </summary>
-		public enum Direction
-		{
-			Right = 0,
-			Left = 1
-		}
+
 	}
 }
 

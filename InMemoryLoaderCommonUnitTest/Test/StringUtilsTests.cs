@@ -57,6 +57,48 @@ namespace InMemoryLoaderCommonUnitTest
 				throw ex;
 			}		
 		}
+
+		public static object StringUtilsTest3 ()
+		{
+			try {
+				var strToAbbr = "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet";
+				object[] paramObject = { strToAbbr, 15, StringDirection.Left };
+
+				var getString = appBase.ComponentLoader.InvokeMethod (stringUtils.Assembly, stringUtils.Class, "Cut", paramObject);
+
+				return getString;
+			} catch (Exception ex) {
+				throw ex;
+			}		
+		}
+
+		public static object StringUtilsTest4 ()
+		{
+			try {
+				var strToAbbr = "ExtractNumbers 14, 2, 4, ExtractNumbers 98, 2";
+				object[] paramObject = { strToAbbr, true };
+
+				var getString = appBase.ComponentLoader.InvokeMethod (stringUtils.Assembly, stringUtils.Class, "ExtractNumbers", paramObject);
+
+				return getString;
+			} catch (Exception ex) {
+				throw ex;
+			}		
+		}
+
+		public static object StringUtilsTest5 ()
+		{
+			try {
+				var strToAbbr = "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet";
+				object[] paramObject = { strToAbbr, 4 };
+
+				var getString = appBase.ComponentLoader.InvokeMethod (stringUtils.Assembly, stringUtils.Class, "GetWords", paramObject);
+
+				return getString;
+			} catch (Exception ex) {
+				throw ex;
+			}		
+		}
 	}
 }
 

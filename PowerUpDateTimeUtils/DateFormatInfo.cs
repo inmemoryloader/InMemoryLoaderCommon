@@ -29,7 +29,7 @@ namespace PowerUpDateTimeUtils
 		/// <summary>
 		/// Der Typ der AM/PM-Angabe
 		/// </summary>
-		public readonly AmPmType AmPmType;
+		public readonly DateTimeAmPmType AmPmType;
 
 		/// <summary>
 		/// Der String, der für eine Zeitangabe bis 12:59 
@@ -88,7 +88,7 @@ namespace PowerUpDateTimeUtils
 		/// <param name="dateTimeSeparatorPattern">Das Regex-Muster, das auf die Trennzeichen zwischen Zeit und Datum passt (normalerweise ist das einfach ein Leerzeichen)</param>
 		/// <param name="cultureInfo">Das CultureInfo-Objekt der Kultur, für die die DateFormatInfo erzeugt wird</param>
 		/// <param name="timeInputIn24HourFormatEnabled">Gibt an, ob eine Zeitangabe im 24-Stunden-Format möglich ist</param>
-		public DateFormatInfo(DateFormat dateFormat, AmPmType amPmType, string aMString, string pMString, string amPmSeparator, string dateSuffixPattern, string dateTimeSeparatorPattern, CultureInfo cultureInfo, bool timeInputIn24HourFormatEnabled)
+		public DateFormatInfo(DateFormat dateFormat, DateTimeAmPmType amPmType, string aMString, string pMString, string amPmSeparator, string dateSuffixPattern, string dateTimeSeparatorPattern, CultureInfo cultureInfo, bool timeInputIn24HourFormatEnabled)
 		{
 			this.DateFormat = dateFormat;
 			this.AmPmType = amPmType;
@@ -116,7 +116,7 @@ namespace PowerUpDateTimeUtils
 		{
 			get
 			{
-				return this.AmPmType != AmPmType.None;
+				return this.AmPmType != DateTimeAmPmType.None;
 			}
 		}
 
@@ -493,7 +493,7 @@ namespace PowerUpDateTimeUtils
 			string amString = null;
 			string pmString = null;
 			string amPmSeparator = " ";
-			AmPmType amPmType = AmPmType.None;
+			DateTimeAmPmType amPmType = DateTimeAmPmType.None;
 			if (dateFormat != DateFormat.UnSupportedFormat)
 			{
 				switch (cultureInfo.Name)
@@ -501,13 +501,13 @@ namespace PowerUpDateTimeUtils
 				case "af-ZA":
 					amString = null;
 					pmString = "nm";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "am-ET":
 					amString = "ጡዋት";
 					pmString = "ከሰዓት";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "ar-AE":
@@ -525,19 +525,19 @@ namespace PowerUpDateTimeUtils
 				case "ar-YE":
 					amString = "ص";
 					pmString = "م";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "as-IN":
 					amString = "ৰাতিপু";
 					pmString = "আবেলি";
-					amPmType = AmPmType.Left;
+					amPmType = DateTimeAmPmType.Left;
 					break;
 
 				case "el-GR":
 					amString = "πμ";
 					pmString = "μμ";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "en-029":
@@ -565,7 +565,7 @@ namespace PowerUpDateTimeUtils
 				case "zu-ZA":
 					amString = "AM";
 					pmString = "PM";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "en-NZ":
@@ -591,105 +591,105 @@ namespace PowerUpDateTimeUtils
 				case "quz-PE":
 					amString = "a.m.";
 					pmString = "p.m.";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "fa-IR":
 					amString = "ق.ظ";
 					pmString = "ب.ظ";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "ha-Latn-NG":
 					amString = "Safe";
 					pmString = "Yamma";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "ig-NG":
 					amString = "Ututu";
 					pmString = "Efifie";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "ko-KR":
 					amString = "오전";
 					pmString = "오후";
-					amPmType = AmPmType.Left;
+					amPmType = DateTimeAmPmType.Left;
 					break;
 
 				case "mn-Mong-CN":
 					amString = "ᠡᠮᠦᠨᠡᠬᠢ";
 					pmString = "ᠬᠤᠢᠢᠨᠠᠬᠢ";
-					amPmType = AmPmType.Left;
+					amPmType = DateTimeAmPmType.Left;
 					break;
 
 				case "ne-NP":
 					amString = "विहानी";
 					pmString = "बेलुकी";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "pa-IN":
 					amString = "ਸਵੇਰੇ";
 					pmString = "ਸ਼ਾਮ";
-					amPmType = AmPmType.Left;
+					amPmType = DateTimeAmPmType.Left;
 					break;
 
 				case "prs-AF":
 				case "ps-AF":
 					amString = "غ.م";
 					pmString = "غ.و";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "rw-RW":
 					amString = "saa moya z.m.";
 					pmString = "saa moya z.n.";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "si-LK":
 					amString = "පෙ.ව.";
 					pmString = "ප.ව.";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "sq-AL":
 					amString = "PD";
 					pmString = "MD";
 					amPmSeparator = ".";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "syr-SY":
 					amString = "ܩ.ܛ";
 					pmString = "ܒ.ܛ";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "vi-VN":
 					amString = "SA";
 					pmString = "CH";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "yo-NG":
 					amString = "Owuro";
 					pmString = "Ale";
-					amPmType = AmPmType.Right;
+					amPmType = DateTimeAmPmType.Right;
 					break;
 
 				case "zh-SG":
 					amString = "AM";
 					pmString = "PM";
-					amPmType = AmPmType.Left;
+					amPmType = DateTimeAmPmType.Left;
 					break;
 
 				case "zh-TW":
 					amString = "上午";
 					pmString = "下午";
-					amPmType = AmPmType.Left;
+					amPmType = DateTimeAmPmType.Left;
 					break;
 				}
 			}

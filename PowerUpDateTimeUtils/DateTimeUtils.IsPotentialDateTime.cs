@@ -248,19 +248,19 @@ namespace PowerUpDateTimeUtils
 
 				switch (dateFormatInfo.AmPmType)
 				{
-				case AmPmType.None:
+				case DateTimeAmPmType.None:
 					leftAmPmPattern1 = null;
 					leftAmPmPattern2 = null;
 					rightAmPmPattern = null;
 					break;
 
-				case AmPmType.Left:
+				case DateTimeAmPmType.Left:
 					leftAmPmPattern1 = amPmPattern;
 					leftAmPmPattern2 = "(?:" + dateFormatInfo.AMString + "|" + dateFormatInfo.PMString + ")";
 					rightAmPmPattern = null;
 					break;
 
-				case AmPmType.Right:
+				case DateTimeAmPmType.Right:
 					leftAmPmPattern1 = null;
 					leftAmPmPattern2 = null;
 					rightAmPmPattern = amPmPattern;
@@ -690,19 +690,19 @@ namespace PowerUpDateTimeUtils
 
 				switch (dateFormatInfo.AmPmType)
 				{
-				case AmPmType.None:
+				case DateTimeAmPmType.None:
 					leftAmPmPattern1 = null;
 					leftAmPmPattern2 = null;
 					rightAmPmPattern = null;
 					break;
 
-				case AmPmType.Left:
+				case DateTimeAmPmType.Left:
 					leftAmPmPattern1 = amPmPattern;
 					leftAmPmPattern2 = nonRecordingGroupStart + dateFormatInfo.AMString + slash + dateFormatInfo.PMString + closingBracket;
 					rightAmPmPattern = null;
 					break;
 
-				case AmPmType.Right:
+				case DateTimeAmPmType.Right:
 					leftAmPmPattern1 = null;
 					leftAmPmPattern2 = null;
 					rightAmPmPattern = amPmPattern;

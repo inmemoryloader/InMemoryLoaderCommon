@@ -26,7 +26,7 @@ namespace InMemoryLoaderCommonUnitTest
 
 				var getString = (string)StringUtilsTests.StringUtilsTest1 ();
 
-				Assert.IsNotNullOrEmpty (getString);
+				Assert.IsNotEmpty (getString);
 
 				log.InfoFormat ("StringUtilsTest1 was {0}", getString);
 			} catch (Exception ex) {
@@ -54,6 +54,60 @@ namespace InMemoryLoaderCommonUnitTest
 			}
 		}
 
+		[Test ()]
+		public void StringUtilsTestCase3 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "StringUtilsTestCase3");
+
+				var getString = (string)StringUtilsTests.StringUtilsTest3 ();
+				var expected = 15;
+
+				Assert.AreEqual (expected, getString.Length);
+
+				log.InfoFormat ("StringUtilsTest3 was {0}", getString);
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		[Test ()]
+		public void StringUtilsTestCase4 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "StringUtilsTestCase4");
+
+				var getString = (double[])StringUtilsTests.StringUtilsTest4 ();
+
+				Assert.IsNotNull(getString);
+
+				foreach (var item in getString) {
+					log.InfoFormat ("StringUtilsTest4 was {0}", item);
+				}
+					
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
+
+		[Test ()]
+		public void StringUtilsTestCase5 ()
+		{
+			try {
+				log.InfoFormat ("{0}", "StringUtilsTestCase5");
+
+				var getString = (string[])StringUtilsTests.StringUtilsTest5 ();
+
+				Assert.IsNotNull(getString);
+
+				foreach (var item in getString) {
+					log.InfoFormat ("StringUtilsTest5 was {0}", item);
+				}
+
+			} catch (Exception ex) {
+				log.FatalFormat (ex.ToString ());
+			}
+		}
 	}
 }
 
