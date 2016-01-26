@@ -34,6 +34,7 @@ namespace InMemoryLoaderCommenTestSuite
 		/// The sync root.
 		/// </summary>
 		private static object syncRoot = new Object ();
+
 		/// <summary>
 		/// The common component path.
 		/// </summary>
@@ -43,6 +44,7 @@ namespace InMemoryLoaderCommenTestSuite
 		/// </summary>
 		/// <value>The console culture.</value>
 		internal string consoleCulture { get { return ConfigurationManager.AppSettings ["ConsoleCulture"].ToString (); } }
+
 		/// <summary>
 		/// Gets or sets the component loader.
 		/// </summary>

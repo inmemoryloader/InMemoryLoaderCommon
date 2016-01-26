@@ -62,6 +62,21 @@
     <Compile Include="CryptUtilsTest\Test.cs" />
     <Compile Include="CryptUtilsTest\Test.Hash.cs" />
     <Compile Include="CryptUtilsTest\Test.Rijndael.cs" />
+    <Compile Include="DateTimeUtilsTest\Test.cs" />
+    <Compile Include="DateTimeUtilsTest\Test.CalendarWeek.cs" />
+    <Compile Include="DateTimeUtilsTest\Test.DateDiff.cs" />
+    <Compile Include="DateTimeUtilsTest\Test.GetAge.cs" />
+    <Compile Include="DateTimeUtilsTest\Test.Getter.cs" />
+    <Compile Include="DateTimeUtilsTest\Test.IsPotentialDateTime.cs" />
+    <Compile Include="EmailUtilsTest\Test.cs" />
+    <Compile Include="EmailUtilsTest\Test.SendSimple.cs" />
+    <Compile Include="FileSystemUtilsTest\Test.cs" />
+    <Compile Include="FileSystemUtilsTest\Test.Compare.cs" />
+    <Compile Include="GetUtilsTest\Test.cs" />
+    <Compile Include="GetUtilsTest\Test.Getter.cs" />
+    <Compile Include="StringUtilsTest\Test.cs" />
+    <Compile Include="StringUtilsTest\Test.StringUtils.cs" />
+    <Compile Include="XmlUtilsTest\Test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -73,11 +88,29 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="FileSystemUtilsTest\CompareFile1.txt" />
+    <None Include="FileSystemUtilsTest\CompareFile2.txt" />
+    <None Include="FileSystemUtilsTest\CompareFile3.txt" />
+    <None Include="FileSystemUtilsTest\CompareFolder1\CompareFile1.txt" />
+    <None Include="FileSystemUtilsTest\CompareFolder1\CompareFile2.txt" />
+    <None Include="FileSystemUtilsTest\CompareFolder2\CompareFile2.txt" />
+    <None Include="FileSystemUtilsTest\CompareFolder3\CompareFile1.txt" />
+    <None Include="FileSystemUtilsTest\CompareFolder3\CompareFile2.txt" />
+    <None Include="XmlUtilsTest\TestXmlFileToWrite.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code\" />
     <Folder Include="CheckUtilsTest\" />
     <Folder Include="ConvertUtilsTest\" />
     <Folder Include="CryptUtilsTest\" />
+    <Folder Include="DateTimeUtilsTest\" />
+    <Folder Include="EmailUtilsTest\" />
+    <Folder Include="FileSystemUtilsTest\" />
+    <Folder Include="FileSystemUtilsTest\CompareFolder1\" />
+    <Folder Include="FileSystemUtilsTest\CompareFolder2\" />
+    <Folder Include="FileSystemUtilsTest\CompareFolder3\" />
+    <Folder Include="GetUtilsTest\" />
+    <Folder Include="StringUtilsTest\" />
+    <Folder Include="XmlUtilsTest\" />
   </ItemGroup>
 </Project>

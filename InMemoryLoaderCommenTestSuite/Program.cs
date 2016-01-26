@@ -55,9 +55,40 @@ namespace InMemoryLoaderCommenTestSuite
 				var cryptRijndaelTest = InMemoryLoaderCommenTestSuite.CryptUtilsTest.Test.CryptRijndaelTest ();
 				log.InfoFormat ("CryptRijndaelTest = {0}", cryptRijndaelTest);
 
+				// DateTimeUtilsTest
+				var dateTimeCalendarWeekTest = InMemoryLoaderCommenTestSuite.DateTimeUtilsTest.Test.DateTimeCalendarWeekTest ();
+				log.InfoFormat ("DateTimeCalendarWeekTest = {0}", dateTimeCalendarWeekTest);
+				var dateTimeDiffTest = InMemoryLoaderCommenTestSuite.DateTimeUtilsTest.Test.DateTimeDiffTest ();
+				log.InfoFormat ("DateTimeDiffTest = {0}", dateTimeDiffTest);
+				var getAgeTest = InMemoryLoaderCommenTestSuite.DateTimeUtilsTest.Test.GetAgeTest ();
+				log.InfoFormat ("GetAgeTest = {0}", getAgeTest);
+				var getterTest = InMemoryLoaderCommenTestSuite.DateTimeUtilsTest.Test.GetterTest ();
+				log.InfoFormat ("GetterTest = {0}", getterTest);
+				var isPotentialTest = InMemoryLoaderCommenTestSuite.DateTimeUtilsTest.Test.IsPotentialDateTimeTest ();
+				log.InfoFormat ("IsPotentialDateTimeTest = {0}", isPotentialTest);
+
+				// EmailUtilsTest
+				var sendSimpleTest = InMemoryLoaderCommenTestSuite.EmailUtilsTest.Test.SendSimpleTest ();
+				log.InfoFormat ("SendSimpleTest = {0}", sendSimpleTest);
+
+				// FileSystemUtilsTest
+				var fileSystemUtilsCompareTest = InMemoryLoaderCommenTestSuite.FileSystemUtilsTest.Test.FileSystemUtilsCompareTest ();
+				log.InfoFormat ("FileSystemUtilsCompareTest = {0}", fileSystemUtilsCompareTest);
+
+				// GetUtilsTest
+				var getUtilsTest = InMemoryLoaderCommenTestSuite.GetUtilsTest.Test.GetUtilsTest ();
+				log.InfoFormat ("GetUtilsTest = {0}", getUtilsTest);
+
+				// StringUtilsTest
+				var stringUtilsTest = InMemoryLoaderCommenTestSuite.StringUtilsTest.Test.StringUtilsTest ();
+				log.InfoFormat ("StringUtilsTest = {0}", stringUtilsTest);
+
+				// XmlUtilsTest
+				var xmlUtilsTest = InMemoryLoaderCommenTestSuite.XmlUtilsTest.Test.XmlUtilsTest ();
+				log.InfoFormat ("XmlUtilsTest = {0}", xmlUtilsTest);
 
 
-				Console.Read ();
+				// Console.Read ();
 			} catch (Exception ex) {
 				log.FatalFormat ("{0}", ex);
 			}

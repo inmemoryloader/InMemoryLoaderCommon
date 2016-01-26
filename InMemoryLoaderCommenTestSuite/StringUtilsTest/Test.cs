@@ -6,24 +6,23 @@ using log4net;
 using System.Globalization;
 using System.Linq;
 
-namespace InMemoryLoaderCommenTestSuite.CryptUtilsTest
+namespace InMemoryLoaderCommenTestSuite.StringUtilsTest
 {
 	public partial class Test
 	{
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger (typeof(InMemoryLoaderCommenTestSuite.CryptUtilsTest.Test));
+		private static readonly ILog log = LogManager.GetLogger (typeof(InMemoryLoaderCommenTestSuite.StringUtilsTest.Test));
 		/// <summary>
 		/// The app base.
 		/// </summary>
 		private static AppBase appBase = AppBase.Instance;
 		/// <summary>
-		/// The crypt utils.
+		/// The date time utils.
 		/// </summary>
-		private static IDynamicClassInfo cryptUtils = 
-			appBase.ComponentLoader.ComponentRegistry.Where (utl => utl.Key.Class.Contains ("CryptUtils")).SingleOrDefault ().Value;
+		private static IDynamicClassInfo stringUtils = 
+			appBase.ComponentLoader.ComponentRegistry.Where (utl => utl.Key.Class.Contains ("StringUtils")).SingleOrDefault ().Value;
 
 	}
 }
-

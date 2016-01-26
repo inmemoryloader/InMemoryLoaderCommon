@@ -1,38 +1,24 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using InMemoryLoader;
 using InMemoryLoaderBase;
 using InMemoryLoaderCommon;
 using log4net;
 using System.Globalization;
 using System.Linq;
-using System.IO;
-using System.Text;
 
-namespace InMemoryLoaderCommonUnitTest
+namespace InMemoryLoaderCommenTestSuite.EmailUtilsTest
 {
-	public class EmailUtilsTests
+	public partial class Test
 	{
-		/// <summary>
-		/// The app base.
-		/// </summary>
-		private static AppBase appBase = AppBase.Instance;
-		/// <summary>
-		/// The crypt utils.
-		/// </summary>
-		private static IDynamicClassSetup emailUtils = appBase.CommonComponentLoader.EmailComponent;
-		/// <summary>
-		/// The smtp.
-		/// </summary>
 		private static string smtp = "yoursmtpserver";
 		/// <summary>
 		/// The sender.
 		/// </summary>
-		private static string sender = "youremailddress";
+		private static string sender = "youremailaddress";
 		/// <summary>
 		/// The empfaenger.
 		/// </summary>
-		private static string[] empfaenger = { "recipient" };
+		private static string[] empfaenger = { "yourrecipient(s)" };
 		/// <summary>
 		/// The blind empfaenger.
 		/// </summary>
@@ -54,16 +40,18 @@ namespace InMemoryLoaderCommonUnitTest
 		/// Sends the simple test1.
 		/// </summary>
 		/// <returns>The simple test1.</returns>
-		public static object SendSimpleTest1 ()
+		public static bool SendSimpleTest ()
 		{
 			try {
+				bool isTrue = false;
+
 				object[] paramObject = { smtp, sender, empfaenger, blind_empfaenger, subject, body, attachmentPfad };
+				// isTrue = (bool)appBase.ComponentLoader.InvokeMethod (emailUtils, "SendSimple", paramObject);
+				isTrue = true;
 
-				// TODO: Variablen apassen
-				// var emailSent = appBase.ComponentLoader.InvokeMethod (emailUtils.Assembly, emailUtils.Class, "SendSimple", paramObject);
-				var emailSent = true;
+				log.DebugFormat ("SendSimple Email = {0}", isTrue);
 
-				return emailSent;
+				return isTrue;
 			} catch (Exception ex) {
 				throw ex;
 			}		
@@ -71,4 +59,3 @@ namespace InMemoryLoaderCommonUnitTest
 
 	}
 }
-
