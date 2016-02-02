@@ -121,7 +121,7 @@ namespace InMemoryLoaderCommenTestSuite
 				}
 				log.InfoFormat ("Is Instanze CommonComponentLoader = {0}", baseTestOk);
 
-				var components = appBase.CommonComponentLoader.Components.Count;
+				var components = appBase.CommonComponentLoader.Components.Value.Count;
 				log.InfoFormat ("CommonComponentLoader contains {0} components", components);
 
 				if (components > 0) {
@@ -129,7 +129,7 @@ namespace InMemoryLoaderCommenTestSuite
 				}
 
 				if (log.IsDebugEnabled) {
-					foreach (var item in appBase.CommonComponentLoader.Components) {
+					foreach (var item in appBase.CommonComponentLoader.Components.Value) {
 						log.Debug (item.Class.ToString ());
 					}
 				}

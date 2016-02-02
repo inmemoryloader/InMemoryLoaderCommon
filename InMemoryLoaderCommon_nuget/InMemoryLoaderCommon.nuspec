@@ -3,7 +3,7 @@
     <metadata>
         <id>InMemoryLoaderCommon</id>
 
-        <version>0.0.10</version>
+        <version>0.0.11</version>
 
         <title>InMemoryLoaderCommon</title>
         <authors>responsive kaysta</authors>
@@ -17,7 +17,7 @@
         einmalig geladen und geprüft, in eine Collection geschrieben und zur Laufzeit einmalig instanziiert.</description>
         <summary>InMemoryLoader ist eine in C# geschriebene Funktionsbibliothek welche das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</summary>
 
-        <releaseNotes>Splastic surgery</releaseNotes>
+        <releaseNotes>Lazy IDynamicClassSetup Components List</releaseNotes>
 
         <copyright>responsive kaysta</copyright>
         <frameworkAssemblies>

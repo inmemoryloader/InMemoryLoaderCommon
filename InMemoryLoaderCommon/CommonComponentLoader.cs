@@ -21,7 +21,7 @@ namespace InMemoryLoaderCommon
 		/// <summary>
 		/// The components.
 		/// </summary>
-		public IList<IDynamicClassSetup> Components;
+		public Lazy<IList<IDynamicClassSetup>> Components;
 		/// <summary>
 		/// The string component.
 		/// </summary>
@@ -74,7 +74,7 @@ namespace InMemoryLoaderCommon
 		public CommonComponentLoader ()
 		{
 			if (this.Components == null) {
-				this.Components = new List<IDynamicClassSetup> ();
+				this.Components = new Lazy<IList<IDynamicClassSetup>> ();
 			}
 		}
 
@@ -95,7 +95,7 @@ namespace InMemoryLoaderCommon
 
 			var compLoader = ComponentLoader.Instance;
 
-			foreach (var component in this.Components) {
+			foreach (var component in this.Components.Value) {
 				object[] paramArgument = { AbstractPowerUpComponent.Key };
 				var init = compLoader.InvokeMethod (component.Assembly, component.Class, component.InitMethod, paramArgument);
 				log.DebugFormat ("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
@@ -113,6 +113,10 @@ namespace InMemoryLoaderCommon
 		/// <param name="paramPath">Parameter path.</param>
 		private bool SetupCommonComponents (string paramPath)
 		{
+			if (!this.Components.IsValueCreated) {
+				this.Components = new Lazy<IList<IDynamicClassSetup>> (() => new List<IDynamicClassSetup>());
+			}
+
 			if (string.IsNullOrEmpty (this.assemblyPath)) {
 				this.assemblyPath = paramPath;
 			}
@@ -122,8 +126,8 @@ namespace InMemoryLoaderCommon
 				this.StringComponent.Assembly = Path.Combine (this.assemblyPath, "PowerUpStringUtils.dll");
 				this.StringComponent.Class = "StringUtils";
 			}
-			if (!this.Components.Contains (this.StringComponent)) {
-				this.Components.Add (this.StringComponent);
+			if (!this.Components.Value.Contains (this.StringComponent)) {
+				this.Components.Value.Add (this.StringComponent);
 			}
 
 			if (this.CheckComponent == null) {
@@ -131,8 +135,8 @@ namespace InMemoryLoaderCommon
 				this.CheckComponent.Assembly = Path.Combine (this.assemblyPath, "PowerUpCheckUtils.dll");
 				this.CheckComponent.Class = "CheckUtils";
 			}
-			if (!this.Components.Contains (this.CheckComponent)) {
-				this.Components.Add (this.CheckComponent);
+			if (!this.Components.Value.Contains (this.CheckComponent)) {
+				this.Components.Value.Add (this.CheckComponent);
 			}
 
 			if (this.ConvertComponent == null) {
@@ -140,8 +144,8 @@ namespace InMemoryLoaderCommon
 				this.ConvertComponent.Assembly = Path.Combine (this.assemblyPath, "PowerUpConvertUtils.dll");
 				this.ConvertComponent.Class = "ConvertUtils";
 			}
-			if (!this.Components.Contains (this.ConvertComponent)) {
-				this.Components.Add (this.ConvertComponent);
+			if (!this.Components.Value.Contains (this.ConvertComponent)) {
+				this.Components.Value.Add (this.ConvertComponent);
 			}
 
 			if (this.CryptComponent == null) {
@@ -149,8 +153,8 @@ namespace InMemoryLoaderCommon
 				this.CryptComponent.Assembly = Path.Combine (this.assemblyPath, "PowerUpCryptUtils.dll");
 				this.CryptComponent.Class = "CryptUtils";
 			}
-			if (!this.Components.Contains (this.CryptComponent)) {
-				this.Components.Add (this.CryptComponent);
+			if (!this.Components.Value.Contains (this.CryptComponent)) {
+				this.Components.Value.Add (this.CryptComponent);
 			}
 
 			if (this.XmlComponent == null) {
@@ -158,8 +162,8 @@ namespace InMemoryLoaderCommon
 				this.XmlComponent.Assembly = Path.Combine (this.assemblyPath, "PowerUpXmlUtils.dll");
 				this.XmlComponent.Class = "XmlUtils";
 			}
-			if (!this.Components.Contains (this.XmlComponent)) {
-				this.Components.Add (this.XmlComponent);
+			if (!this.Components.Value.Contains (this.XmlComponent)) {
+				this.Components.Value.Add (this.XmlComponent);
 			}
 
 			if (this.DateTimeComponent == null) {
@@ -167,8 +171,8 @@ namespace InMemoryLoaderCommon
 				this.DateTimeComponent.Assembly = Path.Combine (this.assemblyPath, "PowerUpDateTimeUtils.dll");
 				this.DateTimeComponent.Class = "DateTimeUtils";
 			}
-			if (!this.Components.Contains (this.DateTimeComponent)) {
-				this.Components.Add (this.DateTimeComponent);
+			if (!this.Components.Value.Contains (this.DateTimeComponent)) {
+				this.Components.Value.Add (this.DateTimeComponent);
 			}
 
 			if (this.EmailComponent == null) {
@@ -176,8 +180,8 @@ namespace InMemoryLoaderCommon
 				this.EmailComponent.Assembly = Path.Combine (this.assemblyPath, "PowerUpEmailUtils.dll");
 				this.EmailComponent.Class = "EmailUtils";
 			}
-			if (!this.Components.Contains (this.EmailComponent)) {
-				this.Components.Add (this.EmailComponent);
+			if (!this.Components.Value.Contains (this.EmailComponent)) {
+				this.Components.Value.Add (this.EmailComponent);
 			}
 
 			if (this.FileSystemComponent == null) {
@@ -185,8 +189,8 @@ namespace InMemoryLoaderCommon
 				this.FileSystemComponent.Assembly = Path.Combine (this.assemblyPath, "PowerUpFileSystemUtils.dll");
 				this.FileSystemComponent.Class = "FileSystemUtils";
 			}
-			if (!this.Components.Contains (this.FileSystemComponent)) {
-				this.Components.Add (this.FileSystemComponent);
+			if (!this.Components.Value.Contains (this.FileSystemComponent)) {
+				this.Components.Value.Add (this.FileSystemComponent);
 			}
 
 			if (this.GetComponent == null) {
@@ -194,8 +198,8 @@ namespace InMemoryLoaderCommon
 				this.GetComponent.Assembly = Path.Combine (this.assemblyPath, "PowerUpGetUtils.dll");
 				this.GetComponent.Class = "GetUtils";
 			}
-			if (!this.Components.Contains (this.GetComponent)) {
-				this.Components.Add (this.GetComponent);
+			if (!this.Components.Value.Contains (this.GetComponent)) {
+				this.Components.Value.Add (this.GetComponent);
 			}
 			return true;
 		}
