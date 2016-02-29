@@ -78,6 +78,7 @@
     <Compile Include="StringUtilsTest\Test.StringUtils.cs" />
     <Compile Include="XmlUtilsTest\Test.cs" />
     <Compile Include="XmlUtilsTest\Test.XmlUtils.cs" />
+    <Compile Include="Code\General.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

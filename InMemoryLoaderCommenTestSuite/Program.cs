@@ -27,6 +27,9 @@ namespace InMemoryLoaderCommenTestSuite
 				var baseTestOk = RunBaseTest ();
 				log.InfoFormat ("RunBaseTest = {0}", baseTestOk);
 
+				var isGeneralInitTest = IsGeneralInitTest ();
+				log.InfoFormat ("IsGeneralInitTest = {0}", isGeneralInitTest);
+
 				// CheckUtils Test Cases
 				var stringByteTest = InMemoryLoaderCommenTestSuite.CheckUtilsTest.Test.IsStringByteTest ();
 				log.InfoFormat ("IsStringByteTest = {0}", stringByteTest);
@@ -92,6 +95,19 @@ namespace InMemoryLoaderCommenTestSuite
 			} catch (Exception ex) {
 				log.FatalFormat ("{0}", ex);
 			}
+		}
+
+		public static bool IsGeneralInitTest ()
+		{
+			var general = new General ();
+
+			bool isOkay = false;
+
+			isOkay = general.IsSimpleInit ();
+			isOkay = general.IsLinqInit ();
+			// isOkay = general.IsMethodInit ();
+
+			return isOkay == false;
 		}
 
 		/// <summary>
