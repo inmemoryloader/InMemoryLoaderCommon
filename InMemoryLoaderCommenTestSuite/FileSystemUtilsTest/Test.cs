@@ -5,6 +5,9 @@ using InMemoryLoaderCommon;
 using log4net;
 using System.Globalization;
 using System.Linq;
+using System.IO;
+using System.Configuration;
+using System.Configuration.Assemblies;
 
 namespace InMemoryLoaderCommenTestSuite.FileSystemUtilsTest
 {
@@ -25,30 +28,35 @@ namespace InMemoryLoaderCommenTestSuite.FileSystemUtilsTest
 			appBase.ComponentLoader.ComponentRegistry.Where (utl => utl.Key.Class.Contains ("FileSystemUtils")).SingleOrDefault ().Value;
 
 		/// <summary>
+		/// The filepath.
+		/// </summary>
+		private static string filepath = Path.Combine (appBase.commonComponentPath, ConfigurationManager.AppSettings ["FileSystemUtilsTestPath"].ToString ());
+
+		/// <summary>
 		/// The file1.
 		/// </summary>
-		private static string file1 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommenTestSuite/FileSystemUtilsTest/CompareFile1.txt";
+		private static string file1 = Path.Combine (filepath, "CompareFile1.txt");
 		/// <summary>
 		/// The file2.
 		/// </summary>
-		private static string file2 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommenTestSuite/FileSystemUtilsTest/CompareFile2.txt";
+		private static string file2 = Path.Combine (filepath, "CompareFile2.txt");
 		/// <summary>
 		/// The file3.
 		/// </summary>
-		private static string file3 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommenTestSuite/FileSystemUtilsTest/CompareFile3.txt";
+		private static string file3 = Path.Combine (filepath, "CompareFile3.txt");
 
 		/// <summary>
 		/// The folder1.
 		/// </summary>
-		private static string folder1 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommenTestSuite/FileSystemUtilsTest/CompareFolder1/";
+		private static string folder1 = Path.Combine (filepath, "CompareFolder1");
 		/// <summary>
 		/// The folder2.
 		/// </summary>
-		private static string folder2 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommenTestSuite/FileSystemUtilsTest/CompareFolder2/";
+		private static string folder2 = Path.Combine (filepath, "CompareFolder2");
 		/// <summary>
 		/// The folder3.
 		/// </summary>
-		private static string folder3 = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommenTestSuite/FileSystemUtilsTest/CompareFolder3/";
+		private static string folder3 = Path.Combine (filepath, "CompareFolder3");
 
 	}
 }

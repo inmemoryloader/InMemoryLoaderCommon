@@ -43,6 +43,36 @@
     <Reference Include="InMemoryLoader">
       <HintPath>..\packages\InMemoryLoader.0.0.4\lib\InMemoryLoader.dll</HintPath>
     </Reference>
+    <Reference Include="InMemoryLoaderCommon">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\InMemoryLoaderCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpCheckUtils">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpCheckUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpConvertUtils">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpConvertUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpCryptUtils">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpCryptUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpDateTimeUtils">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpDateTimeUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpEmailUtils">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpEmailUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpFileSystemUtils">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpFileSystemUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpGetUtils">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpGetUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpStringUtils">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpStringUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpXmlUtils">
+      <HintPath>..\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpXmlUtils.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -82,23 +112,35 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">
-      <Project>{14803A71-3990-4D53-8BEC-085B76B200B2}</Project>
-      <Name>InMemoryLoaderCommon</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="FileSystemUtilsTest\CompareFile1.txt" />
-    <None Include="FileSystemUtilsTest\CompareFile2.txt" />
-    <None Include="FileSystemUtilsTest\CompareFile3.txt" />
-    <None Include="FileSystemUtilsTest\CompareFolder1\CompareFile1.txt" />
-    <None Include="FileSystemUtilsTest\CompareFolder1\CompareFile2.txt" />
-    <None Include="FileSystemUtilsTest\CompareFolder2\CompareFile2.txt" />
-    <None Include="FileSystemUtilsTest\CompareFolder3\CompareFile1.txt" />
-    <None Include="FileSystemUtilsTest\CompareFolder3\CompareFile2.txt" />
-    <None Include="XmlUtilsTest\TestXmlFileToWrite.xml" />
+    <None Include="FileSystemUtilsTest\CompareFile1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="FileSystemUtilsTest\CompareFile2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="FileSystemUtilsTest\CompareFile3.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="FileSystemUtilsTest\CompareFolder1\CompareFile1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="FileSystemUtilsTest\CompareFolder1\CompareFile2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="FileSystemUtilsTest\CompareFolder2\CompareFile2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="FileSystemUtilsTest\CompareFolder3\CompareFile1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="FileSystemUtilsTest\CompareFolder3\CompareFile2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="XmlUtilsTest\TestXmlFileToWrite.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code\" />

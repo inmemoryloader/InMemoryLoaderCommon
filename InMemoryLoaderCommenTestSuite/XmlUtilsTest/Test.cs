@@ -9,6 +9,8 @@ using System.Xml;
 using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.Configuration;
+using System.Configuration.Assemblies;
 
 namespace InMemoryLoaderCommenTestSuite.XmlUtilsTest
 {
@@ -31,7 +33,7 @@ namespace InMemoryLoaderCommenTestSuite.XmlUtilsTest
 		/// <summary>
 		/// The xml folder path.
 		/// </summary>
-		private static string xmlFolderPath = "/home/kaysta/github.com/InMemoryLoaderCommon/InMemoryLoaderCommenTestSuite/XmlUtilsTest/";
+		private static string xmlFolderPath = Path.Combine (appBase.commonComponentPath, ConfigurationManager.AppSettings ["XmlUtilsTestPath"].ToString ());
 		/// <summary>
 		/// The xml file to write.
 		/// </summary>

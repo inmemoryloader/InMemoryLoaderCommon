@@ -91,7 +91,7 @@ namespace InMemoryLoaderCommenTestSuite
 				log.InfoFormat ("XmlUtilsTest = {0}", xmlUtilsTest);
 
 
-				// Console.Read ();
+				Console.Read ();
 			} catch (Exception ex) {
 				log.FatalFormat ("{0}", ex);
 			}
