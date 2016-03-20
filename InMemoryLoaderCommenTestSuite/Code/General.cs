@@ -69,6 +69,18 @@ namespace InMemoryLoaderCommenTestSuite
 			return result;
 		}
 
+		public bool SimpleObjectHelper ()
+		{
+			var checkUtils = appBase.ComponentLoader.ComponentRegistry.Where (utl => utl.Key.Class.Contains ("CheckUtils")).SingleOrDefault ().Value;
+
+			object[] paramArg = { "No byte value" };
+			var result = (bool)appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringByte", paramArg);
+
+
+
+			return result;
+		}
+
 		/// <summary>
 		/// Determines whether this instance is method init.
 		/// </summary>
