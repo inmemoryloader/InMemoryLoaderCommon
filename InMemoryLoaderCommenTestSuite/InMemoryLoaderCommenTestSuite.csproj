@@ -35,43 +35,45 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="log4net">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.0.4\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.0.9\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoaderCommon">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\InMemoryLoaderCommon.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\InMemoryLoaderCommon.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpCheckUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpCheckUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpCheckUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpConvertUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpConvertUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpConvertUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpCryptUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpCryptUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpCryptUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpDateTimeUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpDateTimeUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpDateTimeUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpEmailUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpEmailUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpEmailUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpFileSystemUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpFileSystemUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpFileSystemUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpGetUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpGetUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpGetUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpStringUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpStringUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpStringUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpXmlUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.0.11\lib\PowerUpXmlUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpXmlUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.1.0\lib\InMemoryLoaderBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.1.0\lib\InMemoryLoader.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -113,7 +115,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="FileSystemUtilsTest\CompareFile1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -141,6 +142,7 @@
     <None Include="XmlUtilsTest\TestXmlFileToWrite.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code\" />

@@ -33,7 +33,7 @@
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.0.9\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.1.0\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

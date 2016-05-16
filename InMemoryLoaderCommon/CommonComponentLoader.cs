@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using log4net;
 using InMemoryLoader;
 using InMemoryLoaderBase;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommon
 {
