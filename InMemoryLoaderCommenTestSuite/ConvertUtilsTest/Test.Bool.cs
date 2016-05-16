@@ -5,6 +5,7 @@ using InMemoryLoaderCommon;
 using log4net;
 using System.Globalization;
 using System.Linq;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.ConvertUtilsTest
 {

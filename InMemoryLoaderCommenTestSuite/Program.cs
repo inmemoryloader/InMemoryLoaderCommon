@@ -1,6 +1,7 @@
 ﻿using System;
 
 using log4net;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite
 {

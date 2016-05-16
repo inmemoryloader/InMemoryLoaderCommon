@@ -17,6 +17,7 @@ using InMemoryLoaderBase;
 using InMemoryLoaderCommon;
 
 using log4net;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite
 {

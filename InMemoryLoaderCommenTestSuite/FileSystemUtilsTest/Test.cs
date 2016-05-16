@@ -8,6 +8,7 @@ using System.Linq;
 using System.IO;
 using System.Configuration;
 using System.Configuration.Assemblies;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.FileSystemUtilsTest
 {

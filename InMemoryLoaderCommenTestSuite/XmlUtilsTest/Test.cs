@@ -11,6 +11,7 @@ using System.Xml.Serialization;
 using System.Text;
 using System.Configuration;
 using System.Configuration.Assemblies;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.XmlUtilsTest
 {

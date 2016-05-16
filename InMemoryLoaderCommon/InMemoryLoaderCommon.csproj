@@ -34,13 +34,13 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.1.0\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.1.1\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoader">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.1.0\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.1.1\lib\InMemoryLoader.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -8,6 +8,8 @@
     <RootNamespace>InMemoryLoaderCommenTestSuite</RootNamespace>
     <AssemblyName>InMemoryLoaderCommenTestSuite</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,43 +39,42 @@
     <Reference Include="log4net">
       <HintPath>packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="InMemoryLoaderCommon">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\InMemoryLoaderCommon.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpCheckUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpCheckUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpConvertUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpConvertUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpCryptUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpCryptUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpDateTimeUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpDateTimeUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpEmailUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpEmailUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpFileSystemUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpFileSystemUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpGetUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpGetUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpStringUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpStringUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpXmlUtils">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.0\lib\PowerUpXmlUtils.dll</HintPath>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="InMemoryLoader">
+      <HintPath>packages\InMemoryLoader.0.1.1\lib\InMemoryLoader.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.1.0\lib\InMemoryLoaderBase.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>packages\InMemoryLoaderBase.0.1.2\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.1.0\lib\InMemoryLoader.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="InMemoryLoaderCommon">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\InMemoryLoaderCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpCheckUtils">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpCheckUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpConvertUtils">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpConvertUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpCryptUtils">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpCryptUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpDateTimeUtils">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpDateTimeUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpEmailUtils">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpEmailUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpFileSystemUtils">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpFileSystemUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpGetUtils">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpGetUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpStringUtils">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpStringUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerUpXmlUtils">
+      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpXmlUtils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

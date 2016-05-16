@@ -9,6 +9,7 @@ using System.Xml;
 using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.XmlUtilsTest
 {

@@ -9,6 +9,7 @@ using System.IO;
 using System.Text;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.FileSystemUtilsTest
 {

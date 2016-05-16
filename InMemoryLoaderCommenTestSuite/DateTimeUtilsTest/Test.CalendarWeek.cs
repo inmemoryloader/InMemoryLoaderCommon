@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.IO;
 using System.Text;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.DateTimeUtilsTest
 {
