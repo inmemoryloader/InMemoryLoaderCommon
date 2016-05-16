@@ -50,6 +50,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helper\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
       <Project>{CE40C941-6632-42B1-8250-01567C495FC5}</Project>
       <Name>PowerUpCheckUtils</Name>
@@ -61,6 +67,10 @@
     <ProjectReference Include="..\PowerUpCryptUtils\PowerUpCryptUtils.csproj">
       <Project>{037A6543-CA5B-4DD3-97E6-1A526525C7F6}</Project>
       <Name>PowerUpCryptUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
+      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
+      <Name>PowerUpDateTimeUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpEmailUtils\PowerUpEmailUtils.csproj">
       <Project>{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}</Project>
@@ -82,15 +92,5 @@
       <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
       <Name>PowerUpXmlUtils</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
-      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
-      <Name>PowerUpDateTimeUtils</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helper\" />
   </ItemGroup>
 </Project>
