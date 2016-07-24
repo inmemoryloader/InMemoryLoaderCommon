@@ -1,28 +1,12 @@
-﻿using System;
-using System.Xml;
-using System.IO;
-using System.Xml.Serialization;
-using System.Text;
-using System.Linq;
-using System.Globalization;
-using System.Threading;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Configuration;
-using System.Configuration.Assemblies;
-using System.Reflection;
-
-using InMemoryLoader;
-using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
-
+﻿using InMemoryLoaderBase;
 using log4net;
-using Microsoft.CSharp.RuntimeBinder;
+using System;
+using System.Linq;
+using System.Reflection;
 
 namespace InMemoryLoaderCommenTestSuite
 {
-	public class General
+    public class General
 	{
 		/// <summary>
 		/// The log.

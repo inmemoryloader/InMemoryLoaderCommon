@@ -1,11 +1,9 @@
-﻿using System;
-
-using log4net;
-using Microsoft.CSharp.RuntimeBinder;
+﻿using log4net;
+using System;
 
 namespace InMemoryLoaderCommenTestSuite
 {
-	class MainClass
+    class MainClass
 	{
 		/// <summary>
 		/// The log.
