@@ -29,17 +29,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.1.1\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="InMemoryLoader">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.1.1\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\..\responsive-kaysta-master\packages\InMemoryLoader.0.1.2\lib\InMemoryLoader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\..\responsive-kaysta-master\packages\InMemoryLoaderBase.0.1.2\lib\InMemoryLoaderBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\responsive-kaysta-master\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
