@@ -47,10 +47,7 @@
     <Compile Include="Application\ApplicationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Lucene.Extension\" />
-    <Folder Include="Umbraco.Extension\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
