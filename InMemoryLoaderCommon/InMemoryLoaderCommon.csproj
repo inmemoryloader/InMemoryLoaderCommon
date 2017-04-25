@@ -28,6 +28,9 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\MasterArchive\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -39,9 +42,6 @@
     <Reference Include="InMemoryLoaderBase">
       <HintPath>..\..\responsive-kaysta-master\packages\InMemoryLoaderBase.0.1.2\lib\InMemoryLoaderBase.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\responsive-kaysta-master\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -86,10 +86,6 @@
     <ProjectReference Include="..\PowerUpStringUtils\PowerUpStringUtils.csproj">
       <Project>{9DF645D5-01BF-4C27-9998-D3B487A34828}</Project>
       <Name>PowerUpStringUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpXmlUtils\PowerUpXmlUtils.csproj">
-      <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
-      <Name>PowerUpXmlUtils</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

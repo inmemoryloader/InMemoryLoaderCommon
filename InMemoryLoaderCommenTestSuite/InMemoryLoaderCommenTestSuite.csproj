@@ -36,9 +36,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="log4net">
-      <HintPath>packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="InMemoryLoader">
       <HintPath>packages\InMemoryLoader.0.1.1\lib\InMemoryLoader.dll</HintPath>
@@ -75,6 +72,9 @@
     </Reference>
     <Reference Include="PowerUpXmlUtils">
       <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpXmlUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
