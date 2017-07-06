@@ -1,11 +1,5 @@
 ﻿using System;
-using InMemoryLoader;
-using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
-using log4net;
 using System.Globalization;
-using System.Linq;
-using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 {
@@ -20,13 +14,13 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string decimal test.
 		/// </summary>
 		/// <returns><c>true</c> if is string decimal test; otherwise, <c>false</c>.</returns>
-		public static bool IsStringDecimalTest ()
+		public static bool IsStringDecimalTest()
 		{
 			bool isStringDecimalTest = false;
 
-			isStringDecimalTest = IsStringDecimalTest1 ();
-			isStringDecimalTest = IsStringDecimalTest2 ();
-			isStringDecimalTest = IsStringDecimalTest3 ();
+			isStringDecimalTest = IsStringDecimalTest1();
+			isStringDecimalTest = IsStringDecimalTest2();
+			isStringDecimalTest = IsStringDecimalTest3();
 
 			return isStringDecimalTest;
 		}
@@ -35,18 +29,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is decimal = true
 		/// </summary>
 		/// <returns><c>true</c> if is decimal test1; otherwise, <c>false</c>.</returns>
-		private static bool IsStringDecimalTest1 ()
+		private static bool IsStringDecimalTest1()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isDecimal };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringDecimal", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringDecimal", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringDecimalTest1 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringDecimalTest1 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -55,18 +52,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is decimal = true
 		/// </summary>
 		/// <returns><c>true</c> if is decimal test2; otherwise, <c>false</c>.</returns>
-		private static bool IsStringDecimalTest2 ()
+		private static bool IsStringDecimalTest2()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isDecimal, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringDecimal", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringDecimal", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringDecimalTest2 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringDecimalTest2 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -75,22 +75,26 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is decimal = false
 		/// </summary>
 		/// <returns><c>true</c> if is decimal test3; otherwise, <c>false</c>.</returns>
-		private static bool IsStringDecimalTest3 ()
+		private static bool IsStringDecimalTest3()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isString, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringDecimal", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringDecimal", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringDecimalTest3 (false) = {0}", isTrue);
+				log.DebugFormat("IsStringDecimalTest3 (false) = {0}", isTrue);
 
-				if (isTrue == false) {
+				if (isTrue == false)
+				{
 					isTrue = true;
 				}
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}

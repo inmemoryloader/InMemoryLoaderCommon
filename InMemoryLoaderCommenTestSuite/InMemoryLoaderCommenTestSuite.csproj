@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,6 +10,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
+    <ReleaseVersion>0.2</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,49 +33,49 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="InMemoryLoader">
-      <HintPath>packages\InMemoryLoader.0.1.1\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>packages\InMemoryLoaderBase.0.1.2\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.1.2\lib\InMemoryLoader.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoaderCommon">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\InMemoryLoaderCommon.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\InMemoryLoaderCommon.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpCheckUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpCheckUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpCheckUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpConvertUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpConvertUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpConvertUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpCryptUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpCryptUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpCryptUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpDateTimeUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpDateTimeUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpDateTimeUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpEmailUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpEmailUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpEmailUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpFileSystemUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpFileSystemUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpFileSystemUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpGetUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpGetUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpGetUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpStringUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpStringUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpStringUtils.dll</HintPath>
     </Reference>
     <Reference Include="PowerUpXmlUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpXmlUtils.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpXmlUtils.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.1.2\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -145,19 +146,5 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Code\" />
-    <Folder Include="CheckUtilsTest\" />
-    <Folder Include="ConvertUtilsTest\" />
-    <Folder Include="CryptUtilsTest\" />
-    <Folder Include="DateTimeUtilsTest\" />
-    <Folder Include="EmailUtilsTest\" />
-    <Folder Include="FileSystemUtilsTest\" />
-    <Folder Include="FileSystemUtilsTest\CompareFolder1\" />
-    <Folder Include="FileSystemUtilsTest\CompareFolder2\" />
-    <Folder Include="FileSystemUtilsTest\CompareFolder3\" />
-    <Folder Include="GetUtilsTest\" />
-    <Folder Include="StringUtilsTest\" />
-    <Folder Include="XmlUtilsTest\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

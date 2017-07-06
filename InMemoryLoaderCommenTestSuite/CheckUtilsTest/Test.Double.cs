@@ -1,11 +1,4 @@
 ﻿using System;
-using InMemoryLoader;
-using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
-using log4net;
-using System.Globalization;
-using System.Linq;
-using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 {
@@ -20,12 +13,12 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string double test.
 		/// </summary>
 		/// <returns><c>true</c> if is string double test; otherwise, <c>false</c>.</returns>
-		public static bool IsStringDoubleTest ()
+		public static bool IsStringDoubleTest()
 		{
 			bool isStringDouble = false;
 
-			isStringDouble = IsStringDoubleTest1 ();
-			isStringDouble = IsStringDoubleTest2 ();
+			isStringDouble = IsStringDoubleTest1();
+			isStringDouble = IsStringDoubleTest2();
 
 			return isStringDouble;
 		}
@@ -34,18 +27,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is double = true
 		/// </summary>
 		/// <returns><c>true</c> if is double test1; otherwise, <c>false</c>.</returns>
-		private static bool IsStringDoubleTest1 ()
+		private static bool IsStringDoubleTest1()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isDouble };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringDouble", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringDouble", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringDoubleTest1 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringDoubleTest1 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -54,22 +50,26 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is double = false
 		/// </summary>
 		/// <returns><c>true</c> if is double test2; otherwise, <c>false</c>.</returns>
-		private static bool IsStringDoubleTest2 ()
+		private static bool IsStringDoubleTest2()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isString };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringDouble", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringDouble", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringDoubleTest2 (false) = {0}", isTrue);
+				log.DebugFormat("IsStringDoubleTest2 (false) = {0}", isTrue);
 
-				if (isTrue == false) {
+				if (isTrue == false)
+				{
 					isTrue = true;
 				}
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}

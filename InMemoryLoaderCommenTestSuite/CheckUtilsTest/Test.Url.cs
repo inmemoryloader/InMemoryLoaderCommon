@@ -1,11 +1,4 @@
 ﻿using System;
-using InMemoryLoader;
-using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
-using log4net;
-using System.Globalization;
-using System.Linq;
-using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 {
@@ -24,12 +17,12 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is URL valid test.
 		/// </summary>
 		/// <returns><c>true</c> if is URL valid test; otherwise, <c>false</c>.</returns>
-		public static bool IsUrlValidTest ()
+		public static bool IsUrlValidTest()
 		{
 			bool isUrlValidTest = false;
 
-			isUrlValidTest = IsUrlValidTest1 ();
-			isUrlValidTest = IsUrlValidTest2 ();
+			isUrlValidTest = IsUrlValidTest1();
+			isUrlValidTest = IsUrlValidTest2();
 
 			return isUrlValidTest;
 		}
@@ -38,18 +31,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is URL = true
 		/// </summary>
 		/// <returns><c>true</c> if is URL test1; otherwise, <c>false</c>.</returns>
-		private static bool IsUrlValidTest1 ()
+		private static bool IsUrlValidTest1()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isStringUrl };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsUrlValid", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsUrlValid", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsUrlValidTest1 (true) = {0}", isTrue);
+				log.DebugFormat("IsUrlValidTest1 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -58,22 +54,26 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is URL = false
 		/// </summary>
 		/// <returns><c>true</c> if is URL test2; otherwise, <c>false</c>.</returns>
-		private static bool IsUrlValidTest2 ()
+		private static bool IsUrlValidTest2()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isStringNoUrl };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsUrlValid", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsUrlValid", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsUrlValidTest2 (false) = {0}", isTrue);
+				log.DebugFormat("IsUrlValidTest2 (false) = {0}", isTrue);
 
-				if (isTrue == false) {
+				if (isTrue == false)
+				{
 					isTrue = true;
 				}
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}

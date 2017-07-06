@@ -1,11 +1,5 @@
 ﻿using System;
-using InMemoryLoader;
-using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
-using log4net;
 using System.Globalization;
-using System.Linq;
-using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 {
@@ -20,15 +14,15 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string byte test.
 		/// </summary>
 		/// <returns><c>true</c> if is string byte test; otherwise, <c>false</c>.</returns>
-		public static bool IsStringByteTest ()
+		public static bool IsStringByteTest()
 		{
 			bool isStringByteTest = false;
 
-			isStringByteTest = IsStringByteTest1 ();
-			isStringByteTest = IsStringByteTest2 ();
-			isStringByteTest = IsStringByteTest3 ();
-			isStringByteTest = IsStringByteTest4 ();
-			isStringByteTest = IsStringByteTest5 ();
+			isStringByteTest = IsStringByteTest1();
+			isStringByteTest = IsStringByteTest2();
+			isStringByteTest = IsStringByteTest3();
+			isStringByteTest = IsStringByteTest4();
+			isStringByteTest = IsStringByteTest5();
 
 			return isStringByteTest;
 		}
@@ -37,18 +31,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string byte = true
 		/// </summary>
 		/// <returns><c>true</c> if is string byte test1; otherwise, <c>false</c>.</returns>
-		private static bool IsStringByteTest1 ()
+		private static bool IsStringByteTest1()
 		{
-			try {
-				object[] paramArg = { isByte [2] };
+			try
+			{
+				object[] paramArg = { isByte[2] };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringByte", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringByteTest1 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringByteTest1 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -57,22 +54,26 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string byte = false
 		/// </summary>
 		/// <returns><c>true</c> if is string byte test2; otherwise, <c>false</c>.</returns>
-		private static bool IsStringByteTest2 ()
+		private static bool IsStringByteTest2()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { "SomeString" };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringByte", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringByteTest2 (false) = {0}", isTrue);
+				log.DebugFormat("IsStringByteTest2 (false) = {0}", isTrue);
 
-				if (isTrue == false) {
+				if (isTrue == false)
+				{
 					isTrue = true;
 				}
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -81,18 +82,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string byte = true
 		/// </summary>
 		/// <returns><c>true</c> if is string byte test3; otherwise, <c>false</c>.</returns>
-		private static bool IsStringByteTest3 ()
+		private static bool IsStringByteTest3()
 		{
-			try {
-				object[] paramArg = { isByte [2], NumberStyles.None };
+			try
+			{
+				object[] paramArg = { isByte[2], NumberStyles.None };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringByte", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringByteTest3 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringByteTest3 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -101,18 +105,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string byte = true
 		/// </summary>
 		/// <returns><c>true</c> if is string byte test4; otherwise, <c>false</c>.</returns>
-		private static bool IsStringByteTest4 ()
+		private static bool IsStringByteTest4()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { "SomeString", NumberStyles.None, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringByte", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringByteTest4 (false) = {0}", isTrue);
+				log.DebugFormat("IsStringByteTest4 (false) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -121,18 +128,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string byte = true
 		/// </summary>
 		/// <returns><c>true</c> if is string byte test5; otherwise, <c>false</c>.</returns>
-		private static bool IsStringByteTest5 ()
+		private static bool IsStringByteTest5()
 		{
-			try {
-				object[] paramArg = { isByte [2], NumberStyles.None, CultureInfo.CurrentCulture };
+			try
+			{
+				object[] paramArg = { isByte[2], NumberStyles.None, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringByte", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringByte", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringByteTest5 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringByteTest5 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
