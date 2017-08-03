@@ -1,11 +1,4 @@
 ﻿using System;
-using InMemoryLoader;
-using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
-using log4net;
-using System.Globalization;
-using System.Linq;
-using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 {
@@ -24,13 +17,13 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string long test.
 		/// </summary>
 		/// <returns><c>true</c> if is string long test; otherwise, <c>false</c>.</returns>
-		public static bool IsStringLongTest ()
+		public static bool IsStringLongTest()
 		{
 			bool isStringLong = false;
 
-			isStringLong = IsStringLongTest1 ();
-			isStringLong = IsStringLongTest2 ();
-			isStringLong = IsStringLongTest3 ();
+			isStringLong = IsStringLongTest1();
+			isStringLong = IsStringLongTest2();
+			isStringLong = IsStringLongTest3();
 
 			return isStringLong;
 		}
@@ -39,18 +32,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is long = true
 		/// </summary>
 		/// <returns><c>true</c> if is long test1; otherwise, <c>false</c>.</returns>
-		private static bool IsStringLongTest1 ()
+		private static bool IsStringLongTest1()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isLong };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringLong", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringLong", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringLongTest1 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringLongTest1 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -59,18 +55,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is long = true
 		/// </summary>
 		/// <returns><c>true</c> if is long test2; otherwise, <c>false</c>.</returns>
-		private static bool IsStringLongTest2 ()
+		private static bool IsStringLongTest2()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isStringLong };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringLong", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringLong", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringLongTest2 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringLongTest2 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -79,22 +78,26 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is long = false
 		/// </summary>
 		/// <returns><c>true</c> if is long test3; otherwise, <c>false</c>.</returns>
-		private static bool IsStringLongTest3 ()
+		private static bool IsStringLongTest3()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isString };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringLong", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringLong", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringLongTest3 (false) = {0}", isTrue);
+				log.DebugFormat("IsStringLongTest3 (false) = {0}", isTrue);
 
-				if (isTrue == false) {
+				if (isTrue == false)
+				{
 					isTrue = true;
 				}
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}

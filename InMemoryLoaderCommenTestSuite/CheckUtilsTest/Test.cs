@@ -1,11 +1,6 @@
-﻿using System;
-using InMemoryLoader;
+﻿using System.Linq;
 using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
 using log4net;
-using System.Globalization;
-using System.Linq;
-using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 {
@@ -14,7 +9,7 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger (typeof(InMemoryLoaderCommenTestSuite.CheckUtilsTest.Test));
+		private static readonly ILog log = LogManager.GetLogger(typeof(InMemoryLoaderCommenTestSuite.CheckUtilsTest.Test));
 		/// <summary>
 		/// The app base.
 		/// </summary>
@@ -22,8 +17,8 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// <summary>
 		/// The check utils.
 		/// </summary>
-		private static IDynamicClassInfo checkUtils = 
-			appBase.ComponentLoader.ComponentRegistry.Where (utl => utl.Key.Class.Contains ("CheckUtils")).SingleOrDefault ().Value;
+		private static IDynamicClassInfo checkUtils =
+			appBase.ComponentLoader.ComponentRegistry.Where(utl => utl.Key.Class.Contains("CheckUtils")).SingleOrDefault().Value;
 
 	}
 }

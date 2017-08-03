@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,6 +10,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
+    <ReleaseVersion>0.2.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,51 +32,34 @@
     <Externalconsole>true</Externalconsole>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="log4net">
-      <HintPath>packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="InMemoryLoader">
-      <HintPath>packages\InMemoryLoader.0.1.1\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>packages\InMemoryLoaderBase.0.1.2\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderCommon">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\InMemoryLoaderCommon.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpCheckUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpCheckUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpConvertUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpConvertUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpCryptUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpCryptUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpDateTimeUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpDateTimeUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpEmailUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpEmailUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpFileSystemUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpFileSystemUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpGetUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpGetUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpStringUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpStringUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerUpXmlUtils">
-      <HintPath>packages\InMemoryLoaderCommon.0.1.2\lib\PowerUpXmlUtils.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -145,19 +129,55 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Code\" />
-    <Folder Include="CheckUtilsTest\" />
-    <Folder Include="ConvertUtilsTest\" />
-    <Folder Include="CryptUtilsTest\" />
-    <Folder Include="DateTimeUtilsTest\" />
-    <Folder Include="EmailUtilsTest\" />
-    <Folder Include="FileSystemUtilsTest\" />
-    <Folder Include="FileSystemUtilsTest\CompareFolder1\" />
-    <Folder Include="FileSystemUtilsTest\CompareFolder2\" />
-    <Folder Include="FileSystemUtilsTest\CompareFolder3\" />
-    <Folder Include="GetUtilsTest\" />
-    <Folder Include="StringUtilsTest\" />
-    <Folder Include="XmlUtilsTest\" />
+    <ProjectReference Include="..\..\InMemoryLoader\InMemoryLoader\InMemoryLoader.csproj">
+      <Project>{03EBE292-5758-4919-A3A9-AAA31313FC1F}</Project>
+      <Name>InMemoryLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
+      <Project>{55EC3AB9-DA4B-4888-8AA3-513F393FBFB1}</Project>
+      <Name>InMemoryLoaderBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">
+      <Project>{14803A71-3990-4D53-8BEC-085B76B200B2}</Project>
+      <Name>InMemoryLoaderCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
+      <Project>{CE40C941-6632-42B1-8250-01567C495FC5}</Project>
+      <Name>PowerUpCheckUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpConvertUtils\PowerUpConvertUtils.csproj">
+      <Project>{0BE495D6-63E1-4E7F-BA0A-62D96E684706}</Project>
+      <Name>PowerUpConvertUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpCryptUtils\PowerUpCryptUtils.csproj">
+      <Project>{037A6543-CA5B-4DD3-97E6-1A526525C7F6}</Project>
+      <Name>PowerUpCryptUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
+      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
+      <Name>PowerUpDateTimeUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpEmailUtils\PowerUpEmailUtils.csproj">
+      <Project>{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}</Project>
+      <Name>PowerUpEmailUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpFileSystemUtils\PowerUpFileSystemUtils.csproj">
+      <Project>{9824DE8B-6084-4421-BCC5-C68D19249C1C}</Project>
+      <Name>PowerUpFileSystemUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpGetUtils\PowerUpGetUtils.csproj">
+      <Project>{2C89A2FF-02A6-4573-9905-705ADC442A8F}</Project>
+      <Name>PowerUpGetUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpStringUtils\PowerUpStringUtils.csproj">
+      <Project>{9DF645D5-01BF-4C27-9998-D3B487A34828}</Project>
+      <Name>PowerUpStringUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpXmlUtils\PowerUpXmlUtils.csproj">
+      <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
+      <Name>PowerUpXmlUtils</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

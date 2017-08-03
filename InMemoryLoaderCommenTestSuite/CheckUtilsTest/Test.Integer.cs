@@ -1,11 +1,5 @@
 ﻿using System;
-using InMemoryLoader;
-using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
-using log4net;
 using System.Globalization;
-using System.Linq;
-using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 {
@@ -24,14 +18,14 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string int test.
 		/// </summary>
 		/// <returns><c>true</c> if is string int test; otherwise, <c>false</c>.</returns>
-		public static bool IsStringIntTest ()
+		public static bool IsStringIntTest()
 		{
 			bool isStringIntTest = false;
 
-			isStringIntTest = IsStringIntTest1 ();
-			isStringIntTest = IsStringIntTest2 ();
-			isStringIntTest = IsStringIntTest3 ();
-			isStringIntTest = IsStringIntTest4 ();
+			isStringIntTest = IsStringIntTest1();
+			isStringIntTest = IsStringIntTest2();
+			isStringIntTest = IsStringIntTest3();
+			isStringIntTest = IsStringIntTest4();
 
 			return isStringIntTest;
 		}
@@ -40,18 +34,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is int = true
 		/// </summary>
 		/// <returns><c>true</c> if is int test1; otherwise, <c>false</c>.</returns>
-		private static bool IsStringIntTest1 ()
+		private static bool IsStringIntTest1()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isInt };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringInt", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringInt", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringIntTest1 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringIntTest1 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -60,18 +57,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is int = true
 		/// </summary>
 		/// <returns><c>true</c> if is int test2; otherwise, <c>false</c>.</returns>
-		private static bool IsStringIntTest2 ()
+		private static bool IsStringIntTest2()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isStringInt };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringInt", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringInt", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringIntTest2 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringIntTest2 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -80,18 +80,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is int = true
 		/// </summary>
 		/// <returns><c>true</c> if is int test3; otherwise, <c>false</c>.</returns>
-		private static bool IsStringIntTest3 ()
+		private static bool IsStringIntTest3()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isStringInt, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringInt", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringInt", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringIntTest3 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringIntTest3 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -100,22 +103,26 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is int = false
 		/// </summary>
 		/// <returns><c>true</c> if is int test4; otherwise, <c>false</c>.</returns>
-		private static bool IsStringIntTest4 ()
+		private static bool IsStringIntTest4()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isString, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringInt", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringInt", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringIntTest4 (false) = {0}", isTrue);
+				log.DebugFormat("IsStringIntTest4 (false) = {0}", isTrue);
 
-				if (isTrue == false) {
+				if (isTrue == false)
+				{
 					isTrue = true;
 				}
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}

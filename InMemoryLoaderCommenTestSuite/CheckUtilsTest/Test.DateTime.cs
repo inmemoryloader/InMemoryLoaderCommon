@@ -1,11 +1,5 @@
 ﻿using System;
-using InMemoryLoader;
-using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
-using log4net;
 using System.Globalization;
-using System.Linq;
-using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 {
@@ -24,13 +18,13 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string date test.
 		/// </summary>
 		/// <returns><c>true</c> if is string date test; otherwise, <c>false</c>.</returns>
-		public static bool IsStringDateTest ()
+		public static bool IsStringDateTest()
 		{
 			bool isStringDateTest = false;
 
-			isStringDateTest = IsStringDateTest1 ();
-			isStringDateTest = IsStringDateTest2 ();
-			isStringDateTest = IsStringDateTest3 ();
+			isStringDateTest = IsStringDateTest1();
+			isStringDateTest = IsStringDateTest2();
+			isStringDateTest = IsStringDateTest3();
 
 			return isStringDateTest;
 		}
@@ -39,18 +33,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is date = true
 		/// </summary>
 		/// <returns><c>true</c> if is date test1; otherwise, <c>false</c>.</returns>
-		private static bool IsStringDateTest1 ()
+		private static bool IsStringDateTest1()
 		{
-			try {
-				object[] paramArg = { isDate.ToString () };
+			try
+			{
+				object[] paramArg = { isDate.ToString() };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringDate", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringDate", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringDateTest1 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringDateTest1 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -59,18 +56,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is date = true
 		/// </summary>
 		/// <returns><c>true</c> if is date test2; otherwise, <c>false</c>.</returns>
-		private static bool IsStringDateTest2 ()
+		private static bool IsStringDateTest2()
 		{
-			try {
-				object[] paramArg = { isDate.ToString (), CultureInfo.CurrentCulture };
+			try
+			{
+				object[] paramArg = { isDate.ToString(), CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringDate", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringDate", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringDateTest2 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringDateTest2 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -79,22 +79,26 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		// / Determines if is date = false
 		/// </summary>
 		/// <returns><c>true</c> if is date test2; otherwise, <c>false</c>.</returns>
-		private static bool IsStringDateTest3 ()
+		private static bool IsStringDateTest3()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isString, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringDate", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringDate", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringDateTest3 (false) = {0}", isTrue);
+				log.DebugFormat("IsStringDateTest3 (false) = {0}", isTrue);
 
-				if (isTrue == false) {
+				if (isTrue == false)
+				{
 					isTrue = true;
 				}
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}

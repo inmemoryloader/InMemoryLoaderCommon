@@ -1,11 +1,5 @@
 ﻿using System;
-using InMemoryLoader;
-using InMemoryLoaderBase;
-using InMemoryLoaderCommon;
-using log4net;
 using System.Globalization;
-using System.Linq;
-using Microsoft.CSharp.RuntimeBinder;
 
 namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 {
@@ -24,13 +18,13 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is string float test.
 		/// </summary>
 		/// <returns><c>true</c> if is string float test; otherwise, <c>false</c>.</returns>
-		public static bool IsStringFloatTest ()
+		public static bool IsStringFloatTest()
 		{
 			bool isStringFloat = false;
 
-			isStringFloat = IsStringFloatTest1 ();
-			isStringFloat = IsStringFloatTest2 ();
-			isStringFloat = IsStringFloatTest3 ();
+			isStringFloat = IsStringFloatTest1();
+			isStringFloat = IsStringFloatTest2();
+			isStringFloat = IsStringFloatTest3();
 
 			return isStringFloat;
 		}
@@ -39,18 +33,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is float = true
 		/// </summary>
 		/// <returns><c>true</c> if is float test1; otherwise, <c>false</c>.</returns>
-		private static bool IsStringFloatTest1 ()
+		private static bool IsStringFloatTest1()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isFloat };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringFloat", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringFloat", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringFloatTest1 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringFloatTest1 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -59,22 +56,26 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is float = false
 		/// </summary>
 		/// <returns><c>true</c> if is float test2; otherwise, <c>false</c>.</returns>
-		private static bool IsStringFloatTest2 ()
+		private static bool IsStringFloatTest2()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isString };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringFloat", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringFloat", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringFloatTest2 (false) = {0}", isTrue);
+				log.DebugFormat("IsStringFloatTest2 (false) = {0}", isTrue);
 
-				if (isTrue == false) {
+				if (isTrue == false)
+				{
 					isTrue = true;
 				}
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
@@ -83,18 +84,21 @@ namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
 		/// Determines if is float = true
 		/// </summary>
 		/// <returns><c>true</c> if is float test3; otherwise, <c>false</c>.</returns>
-		private static bool IsStringFloatTest3 ()
+		private static bool IsStringFloatTest3()
 		{
-			try {
+			try
+			{
 				object[] paramArg = { isStringFloat, CultureInfo.CurrentCulture };
 
-				var result = appBase.ComponentLoader.InvokeMethod (checkUtils, "IsStringFloat", paramArg);
-				var isTrue = Convert.ToBoolean (result);
+				var result = appBase.ComponentLoader.InvokeMethod(checkUtils, "IsStringFloat", paramArg);
+				var isTrue = Convert.ToBoolean(result);
 
-				log.DebugFormat ("IsStringFloatTest3 (true) = {0}", isTrue);
+				log.DebugFormat("IsStringFloatTest3 (true) = {0}", isTrue);
 
 				return isTrue;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				throw ex;
 			}
 		}
