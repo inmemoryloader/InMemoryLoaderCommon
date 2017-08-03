@@ -36,30 +36,62 @@ namespace InMemoryLoaderCommon
 	/// </summary>
 	public sealed partial class CommonComponentLoader
 	{
+		/// <summary>
+		/// The log.
+		/// </summary>
 		private static ILog log = LogManager.GetLogger(typeof(CommonComponentLoader));
 
+		/// <summary>
+		/// The components.
+		/// </summary>
 		public Lazy<IList<IDynamicClassSetup>> Components;
 
+		/// <summary>
+		/// The string component.
+		/// </summary>
 		public IDynamicClassSetup StringComponent;
-
+		/// <summary>
+		/// The check component.
+		/// </summary>
 		public IDynamicClassSetup CheckComponent;
-
+		/// <summary>
+		/// The convert component.
+		/// </summary>
 		public IDynamicClassSetup ConvertComponent;
-
+		/// <summary>
+		/// The crypt component.
+		/// </summary>
 		public IDynamicClassSetup CryptComponent;
-
+		/// <summary>
+		/// The xml component.
+		/// </summary>
 		public IDynamicClassSetup XmlComponent;
-
+		/// <summary>
+		/// The date time component.
+		/// </summary>
 		public IDynamicClassSetup DateTimeComponent;
-
+		/// <summary>
+		/// The email component.
+		/// </summary>
 		public IDynamicClassSetup EmailComponent;
-
+		/// <summary>
+		/// The file system component.
+		/// </summary>
 		public IDynamicClassSetup FileSystemComponent;
-
+		/// <summary>
+		/// The get component.
+		/// </summary>
 		public IDynamicClassSetup GetComponent;
 
+		/// <summary>
+		/// The assembly path.
+		/// </summary>
 		private string assemblyPath;
 
+		/// <summary>
+		/// Gets or sets the assembly path.
+		/// </summary>
+		/// <value>The assembly path.</value>
 		public string AssemblyPath
 		{
 			get
@@ -73,6 +105,9 @@ namespace InMemoryLoaderCommon
 			}
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:InMemoryLoaderCommon.CommonComponentLoader"/> class.
+		/// </summary>
 		public CommonComponentLoader()
 		{
 			if (this.Components == null)
@@ -81,6 +116,11 @@ namespace InMemoryLoaderCommon
 			}
 		}
 
+		/// <summary>
+		/// Inits the common components.
+		/// </summary>
+		/// <returns><c>true</c>, if common components was inited, <c>false</c> otherwise.</returns>
+		/// <param name="paramPath">Parameter path.</param>
 		public bool InitCommonComponents(string paramPath)
 		{
 			if (string.IsNullOrEmpty(this.AssemblyPath))
@@ -113,6 +153,11 @@ namespace InMemoryLoaderCommon
 			return true;
 		}
 
+		/// <summary>
+		/// Setups the common components.
+		/// </summary>
+		/// <returns><c>true</c>, if common components was setuped, <c>false</c> otherwise.</returns>
+		/// <param name="paramPath">Parameter path.</param>
 		private bool SetupCommonComponents(string paramPath)
 		{
 			if (!this.Components.IsValueCreated)
