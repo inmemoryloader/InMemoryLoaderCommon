@@ -6,7 +6,7 @@ using System.Configuration;
 using System.Globalization;
 using System.Threading;
 
-namespace InMemoryLoaderCommenTestSuite
+namespace InMemoryLoaderCommonTestSuite
 {
     internal class AppBase
 	{

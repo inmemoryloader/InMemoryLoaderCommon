@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Linq;
 using Microsoft.CSharp.RuntimeBinder;
 
-namespace InMemoryLoaderCommenTestSuite.ConvertUtilsTest
+namespace InMemoryLoaderCommonTestSuite.ConvertUtilsTest
 {
 	public partial class Test
 	{

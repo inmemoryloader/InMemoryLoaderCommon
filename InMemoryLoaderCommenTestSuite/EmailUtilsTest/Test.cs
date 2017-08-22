@@ -7,14 +7,14 @@ using System.Globalization;
 using System.Linq;
 using Microsoft.CSharp.RuntimeBinder;
 
-namespace InMemoryLoaderCommenTestSuite.EmailUtilsTest
+namespace InMemoryLoaderCommonTestSuite.EmailUtilsTest
 {
 	public partial class Test
 	{
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger (typeof(InMemoryLoaderCommenTestSuite.EmailUtilsTest.Test));
+		private static readonly ILog log = LogManager.GetLogger (typeof(InMemoryLoaderCommonTestSuite.EmailUtilsTest.Test));
 		/// <summary>
 		/// The app base.
 		/// </summary>

@@ -9,7 +9,7 @@ using System.IO;
 using System.Text;
 using Microsoft.CSharp.RuntimeBinder;
 
-namespace InMemoryLoaderCommenTestSuite.DateTimeUtilsTest
+namespace InMemoryLoaderCommonTestSuite.DateTimeUtilsTest
 {
 	public partial class Test
 	{

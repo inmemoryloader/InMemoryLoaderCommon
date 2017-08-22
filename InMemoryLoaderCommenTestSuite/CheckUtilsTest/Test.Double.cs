@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
+namespace InMemoryLoaderCommonTestSuite.CheckUtilsTest
 {
 	public partial class Test
 	{

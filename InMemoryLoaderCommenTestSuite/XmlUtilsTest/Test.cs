@@ -13,14 +13,14 @@ using System.Configuration;
 using System.Configuration.Assemblies;
 using Microsoft.CSharp.RuntimeBinder;
 
-namespace InMemoryLoaderCommenTestSuite.XmlUtilsTest
+namespace InMemoryLoaderCommonTestSuite.XmlUtilsTest
 {
 	public partial class Test
 	{
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger (typeof(InMemoryLoaderCommenTestSuite.StringUtilsTest.Test));
+		private static readonly ILog log = LogManager.GetLogger (typeof(InMemoryLoaderCommonTestSuite.StringUtilsTest.Test));
 		/// <summary>
 		/// The app base.
 		/// </summary>

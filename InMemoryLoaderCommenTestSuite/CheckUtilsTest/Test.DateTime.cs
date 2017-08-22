@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
+namespace InMemoryLoaderCommonTestSuite.CheckUtilsTest
 {
 	public partial class Test
 	{

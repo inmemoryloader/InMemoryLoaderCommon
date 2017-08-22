@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using Microsoft.CSharp.RuntimeBinder;
 
-namespace InMemoryLoaderCommenTestSuite.FileSystemUtilsTest
+namespace InMemoryLoaderCommonTestSuite.FileSystemUtilsTest
 {
 	public partial class Test
 	{

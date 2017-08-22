@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace InMemoryLoaderCommenTestSuite
+namespace InMemoryLoaderCommonTestSuite
 {
     public class General
 	{
@@ -18,7 +18,7 @@ namespace InMemoryLoaderCommenTestSuite
 		private static AppBase appBase;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="InMemoryLoaderCommenTestSuite.General"/> class.
+		/// Initializes a new instance of the <see cref="InMemoryLoaderCommonTestSuite.General"/> class.
 		/// </summary>
 		public General ()
 		{

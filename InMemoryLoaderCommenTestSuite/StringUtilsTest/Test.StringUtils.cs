@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Linq;
 using Microsoft.CSharp.RuntimeBinder;
 
-namespace InMemoryLoaderCommenTestSuite.StringUtilsTest
+namespace InMemoryLoaderCommonTestSuite.StringUtilsTest
 {
 	public partial class Test
 	{

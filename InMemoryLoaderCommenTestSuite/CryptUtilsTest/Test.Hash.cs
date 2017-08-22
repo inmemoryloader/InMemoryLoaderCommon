@@ -8,7 +8,7 @@ using System.Globalization;
 using System.Linq;
 using Microsoft.CSharp.RuntimeBinder;
 
-namespace InMemoryLoaderCommenTestSuite.CryptUtilsTest
+namespace InMemoryLoaderCommonTestSuite.CryptUtilsTest
 {
 	public partial class Test
 	{

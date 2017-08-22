@@ -2,14 +2,14 @@
 using InMemoryLoaderBase;
 using log4net;
 
-namespace InMemoryLoaderCommenTestSuite.CheckUtilsTest
+namespace InMemoryLoaderCommonTestSuite.CheckUtilsTest
 {
 	public partial class Test
 	{
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger(typeof(InMemoryLoaderCommenTestSuite.CheckUtilsTest.Test));
+		private static readonly ILog log = LogManager.GetLogger(typeof(InMemoryLoaderCommonTestSuite.CheckUtilsTest.Test));
 		/// <summary>
 		/// The app base.
 		/// </summary>
