@@ -194,6 +194,10 @@
       <Project>{03EBE292-5758-4919-A3A9-AAA31313FC1F}</Project>
       <Name>InMemoryLoader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
+      <Project>{55EC3AB9-DA4B-4888-8AA3-513F393FBFB1}</Project>
+      <Name>InMemoryLoaderBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">
       <Project>{14803A71-3990-4D53-8BEC-085B76B200B2}</Project>
       <Name>InMemoryLoaderCommon</Name>
@@ -201,10 +205,6 @@
     <ProjectReference Include="..\..\InMemoryLoaderMaster\InMemoryLoaderCommonLib\InMemoryLoaderCommonLib.csproj">
       <Project>{221BC71B-96A5-4DF3-8AEA-699B24219415}</Project>
       <Name>InMemoryLoaderCommonLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
-      <Project>{55EC3AB9-DA4B-4888-8AA3-513F393FBFB1}</Project>
-      <Name>InMemoryLoaderBase</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

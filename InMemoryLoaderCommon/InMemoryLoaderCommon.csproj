@@ -46,7 +46,7 @@
       <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.0\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoader">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.2.9.3\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.2.9.4\lib\InMemoryLoader.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +55,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <None Include="Documentation\ClassDiagram.cd" />
     <None Include="InMemoryLoaderCommon.snk" />
     <None Include="packages.config" />
   </ItemGroup>
