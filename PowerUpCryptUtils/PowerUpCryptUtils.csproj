@@ -51,6 +51,7 @@
     <Compile Include="Crypttils.HashUtils.ComputeHash.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CryptUtils.cd" />
     <None Include="packages.config" />
     <None Include="PowerUpCryptUtils.snk" />
   </ItemGroup>
