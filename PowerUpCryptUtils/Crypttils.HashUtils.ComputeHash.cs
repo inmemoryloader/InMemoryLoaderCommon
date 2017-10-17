@@ -1,8 +1,32 @@
-﻿using System;
+﻿//
+// Crypttils.HashUtils.ComputeHash.cs
+//
+// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+//
+// Copyright (c) 2017 responsive kaysta
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using log4net;
 using InMemoryLoaderBase;
 
 namespace PowerUpCryptUtils
@@ -206,15 +230,13 @@ namespace PowerUpCryptUtils
 			}
 		}
 
-		/// <summary>
-		/// Erzeugt einen Hash aus einem Byte-Array
-		/// </summary>
-		/// <param name="data">Das Array mit den Daten</param>
-		/// <returns>Gibt einen String zurück, der den Hash repräsentiert</returns>
+		/*
 		public string ComputeHashAsString(byte[] data)
 		{
-			return StringEncoding.GetString(hashAlgorithm.ComputeHash(data));
+			var str = StringEncoding.GetString(data);
+			return str;
 		}
+		*/
 
 		/// <summary>
 		/// Erzeugt einen Hash aus einem Byte-Array
@@ -225,7 +247,9 @@ namespace PowerUpCryptUtils
 		/// <returns>Gibt einen String zurück, der den Hash repräsentiert</returns>
 		public string ComputeHashAsString(byte[] data, int offset, int count)
 		{
-			return StringEncoding.GetString(hashAlgorithm.ComputeHash(data, offset, count));
+			var hash = hashAlgorithm.ComputeHash(data, offset, count);
+			var str = stringEncoding.GetString(hash);
+			return str;
 		}
 
 		/// <summary>
@@ -235,7 +259,9 @@ namespace PowerUpCryptUtils
 		/// <returns>Gibt einen String zurück, der den Hash repräsentiert</returns>
 		public string ComputeHashAsString(Stream inputStream)
 		{
-			return StringEncoding.GetString(hashAlgorithm.ComputeHash(inputStream));
+			var hash = hashAlgorithm.ComputeHash(inputStream);
+			var str = stringEncoding.GetString(hash);
+			return str;
 		}
 
 		/// <summary>
@@ -245,17 +271,17 @@ namespace PowerUpCryptUtils
 		/// <returns>Gibt einen String zurück, der den Hash repräsentiert</returns>
 		public string ComputeHashAsString(string inputString)
 		{
-			// Byte-Array aus dem String erzeugen und damit den Hashcode erzeugen
-			byte[] buffer = Encoding.Default.GetBytes(inputString);
-
-			return StringEncoding.GetString(hashAlgorithm.ComputeHash(buffer));
+			var buffer = stringEncoding.GetBytes(inputString);
+			var hash = hashAlgorithm.ComputeHash(buffer);
+			var str = stringEncoding.GetString(hash);
+			return str;
 		}
 
 		public void Dispose()
 		{
 			try
 			{
-				this.Dispose();
+
 			}
 			catch (Exception)
 			{

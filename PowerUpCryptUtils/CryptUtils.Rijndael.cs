@@ -1,9 +1,33 @@
-﻿using System;
-using log4net;
-using InMemoryLoaderBase;
+﻿//
+// CryptUtils.Rijndael.cs
+//
+// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+//
+// Copyright (c) 2017 responsive kaysta
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using InMemoryLoaderBase;
 
 namespace PowerUpCryptUtils
 {
@@ -18,11 +42,14 @@ namespace PowerUpCryptUtils
 		/// </summary>
 		/// <returns>The pass phrase.</returns>
 		/// <param name="paramPhrase">Parameter phrase.</param>
-		public string CryptPassPhrase (string paramPhrase)
+		public string CryptPassPhrase(string paramPhrase)
 		{
-			if (string.IsNullOrEmpty (paramPhrase)) {
+			if (string.IsNullOrEmpty(paramPhrase))
+			{
 				return cryptPassPhrase;
-			} else {
+			}
+			else
+			{
 				cryptPassPhrase = paramPhrase;
 				return cryptPassPhrase;
 			}
@@ -37,11 +64,14 @@ namespace PowerUpCryptUtils
 		/// </summary>
 		/// <returns>The salt value.</returns>
 		/// <param name="paramSalt">Parameter salt.</param>
-		public string CryptSaltValue (string paramSalt)
+		public string CryptSaltValue(string paramSalt)
 		{
-			if (string.IsNullOrEmpty (paramSalt)) {
+			if (string.IsNullOrEmpty(paramSalt))
+			{
 				return cryptSaltValue;
-			} else {
+			}
+			else
+			{
 				cryptSaltValue = paramSalt;
 				return cryptSaltValue;
 			}
@@ -56,11 +86,14 @@ namespace PowerUpCryptUtils
 		/// </summary>
 		/// <returns>The hash algorithm.</returns>
 		/// <param name="paramHash">Parameter hash.</param>
-		public string CryptHashAlgorithm (string paramHash)
+		public string CryptHashAlgorithm(string paramHash)
 		{
-			if (string.IsNullOrEmpty (paramHash)) {
+			if (string.IsNullOrEmpty(paramHash))
+			{
 				return cryptHashAlgorithm;
-			} else {
+			}
+			else
+			{
 				cryptHashAlgorithm = paramHash;
 				return cryptHashAlgorithm;
 			}
@@ -75,11 +108,14 @@ namespace PowerUpCryptUtils
 		/// </summary>
 		/// <returns>The password iterations.</returns>
 		/// <param name="paramIteration">Parameter iteration.</param>
-		public int CryptPasswordIterations (int paramIteration)
+		public int CryptPasswordIterations(int paramIteration)
 		{
-			if (paramIteration == 0) {
+			if (paramIteration == 0)
+			{
 				return cryptPasswordIterations;
-			} else {
+			}
+			else
+			{
 				cryptPasswordIterations = paramIteration;
 				return cryptPasswordIterations;
 			}
@@ -94,11 +130,14 @@ namespace PowerUpCryptUtils
 		/// </summary>
 		/// <returns>The init vector.</returns>
 		/// <param name="paramVector">Parameter vector.</param>
-		public string CryptInitVector (string paramVector)
+		public string CryptInitVector(string paramVector)
 		{
-			if (string.IsNullOrEmpty (paramVector)) {
+			if (string.IsNullOrEmpty(paramVector))
+			{
 				return cryptInitVector;
-			} else {
+			}
+			else
+			{
 				cryptInitVector = paramVector;
 				return cryptInitVector;
 			}
@@ -113,10 +152,14 @@ namespace PowerUpCryptUtils
 		/// </summary>
 		/// <returns>The key size.</returns>
 		/// <param name="paramKeySize">Parameter key size.</param>
-		public int CryptKeySize(int paramKeySize) {
-			if (paramKeySize == 0) {
+		public int CryptKeySize(int paramKeySize)
+		{
+			if (paramKeySize == 0)
+			{
 				return cryptKeySize;
-			} else {
+			}
+			else
+			{
 				cryptKeySize = paramKeySize;
 				return cryptKeySize;
 			}
@@ -132,31 +175,31 @@ namespace PowerUpCryptUtils
 		/// <returns>
 		/// Encrypted value formatted as a base64-encoded string.
 		/// </returns>
-		public string Encrypt (string paramValue)
+		public string Encrypt(string paramValue)
 		{
 			// Convert strings into byte arrays.
 			// Let us assume that strings only contain ASCII codes.
 			// If strings include Unicode characters, use Unicode, UTF7, or UTF8 
 			// encoding.
-			byte[] initVectorBytes = Encoding.ASCII.GetBytes (cryptInitVector);
-			byte[] saltValueBytes = Encoding.ASCII.GetBytes (cryptSaltValue);
+			byte[] initVectorBytes = Encoding.ASCII.GetBytes(cryptInitVector);
+			byte[] saltValueBytes = Encoding.ASCII.GetBytes(cryptSaltValue);
 
 			// Convert our plaintext into a byte array.
 			// Let us assume that plaintext contains UTF8-encoded characters.
-			byte[] plainTextBytes = Encoding.UTF8.GetBytes (paramValue);
+			byte[] plainTextBytes = Encoding.UTF8.GetBytes(paramValue);
 
 			// First, we must create a password, from which the key will be derived.
 			// This password will be generated from the specified passphrase and 
 			// salt value. The password will be created using the specified hash 
 			// algorithm. Password creation can be done in several iterations.
-			PasswordDeriveBytes password = new PasswordDeriveBytes (cryptPassPhrase, saltValueBytes, cryptHashAlgorithm, cryptPasswordIterations);
+			PasswordDeriveBytes password = new PasswordDeriveBytes(cryptPassPhrase, saltValueBytes, cryptHashAlgorithm, cryptPasswordIterations);
 
 			// Use the password to generate pseudo-random bytes for the encryption
 			// key. Specify the size of the key in bytes (instead of bits).
-			byte[] keyBytes = password.GetBytes (cryptKeySize / 8);
+			byte[] keyBytes = password.GetBytes(cryptKeySize / 8);
 
 			// Create uninitialized Rijndael encryption object.
-			RijndaelManaged symmetricKey = new RijndaelManaged ();
+			RijndaelManaged symmetricKey = new RijndaelManaged();
 
 			// It is reasonable to set encryption mode to Cipher Block Chaining
 			// (CBC). Use default options for other symmetric key parameters.
@@ -165,28 +208,28 @@ namespace PowerUpCryptUtils
 			// Generate encryptor from the existing key bytes and initialization 
 			// vector. Key size will be defined based on the number of the key 
 			// bytes.
-			ICryptoTransform encryptor = symmetricKey.CreateEncryptor (keyBytes, initVectorBytes);
+			ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes, initVectorBytes);
 
 			// Define memory stream which will be used to hold encrypted data.
-			MemoryStream memoryStream = new MemoryStream ();
+			MemoryStream memoryStream = new MemoryStream();
 
 			// Define cryptographic stream (always use Write mode for encryption).
-			CryptoStream cryptoStream = new CryptoStream (memoryStream, encryptor, CryptoStreamMode.Write);
+			CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
 			// Start encrypting.
-			cryptoStream.Write (plainTextBytes, 0, plainTextBytes.Length);
+			cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
 
 			// Finish encrypting.
-			cryptoStream.FlushFinalBlock ();
+			cryptoStream.FlushFinalBlock();
 
 			// Convert our encrypted data from a memory stream into a byte array.
-			byte[] cipherTextBytes = memoryStream.ToArray ();
+			byte[] cipherTextBytes = memoryStream.ToArray();
 
 			// Close both streams.
-			memoryStream.Close ();
-			cryptoStream.Close ();
+			memoryStream.Close();
+			cryptoStream.Close();
 
 			// Convert encrypted data into a base64-encoded string.
-			string cipherText = Convert.ToBase64String (cipherTextBytes);
+			string cipherText = Convert.ToBase64String(cipherTextBytes);
 
 			// Return encrypted string.
 			return cipherText;
@@ -208,31 +251,31 @@ namespace PowerUpCryptUtils
 		/// the Encrypt function which was called to generate the
 		/// ciphertext.
 		/// </remarks>
-		public string Decrypt (string paramValue)
+		public string Decrypt(string paramValue)
 		{
 			// Convert strings defining encryption key characteristics into byte
 			// arrays. Let us assume that strings only contain ASCII codes.
 			// If strings include Unicode characters, use Unicode, UTF7, or UTF8
 			// encoding.
-			byte[] initVectorBytes = Encoding.ASCII.GetBytes (cryptInitVector);
-			byte[] saltValueBytes = Encoding.ASCII.GetBytes (cryptSaltValue);
+			byte[] initVectorBytes = Encoding.ASCII.GetBytes(cryptInitVector);
+			byte[] saltValueBytes = Encoding.ASCII.GetBytes(cryptSaltValue);
 
 			// Convert our ciphertext into a byte array.
-			byte[] cipherTextBytes = Convert.FromBase64String (paramValue);
+			byte[] cipherTextBytes = Convert.FromBase64String(paramValue);
 
 			// First, we must create a password, from which the key will be 
 			// derived. This password will be generated from the specified 
 			// passphrase and salt value. The password will be created using
 			// the specified hash algorithm. Password creation can be done in
 			// several iterations.
-			PasswordDeriveBytes password = new PasswordDeriveBytes (cryptPassPhrase, saltValueBytes, cryptHashAlgorithm, cryptPasswordIterations);
+			PasswordDeriveBytes password = new PasswordDeriveBytes(cryptPassPhrase, saltValueBytes, cryptHashAlgorithm, cryptPasswordIterations);
 
 			// Use the password to generate pseudo-random bytes for the encryption
 			// key. Specify the size of the key in bytes (instead of bits).
-			byte[] keyBytes = password.GetBytes (cryptKeySize / 8);
+			byte[] keyBytes = password.GetBytes(cryptKeySize / 8);
 
 			// Create uninitialized Rijndael encryption object.
-			RijndaelManaged symmetricKey = new RijndaelManaged ();
+			RijndaelManaged symmetricKey = new RijndaelManaged();
 
 			// It is reasonable to set encryption mode to Cipher Block Chaining
 			// (CBC). Use default options for other symmetric key parameters.
@@ -241,13 +284,13 @@ namespace PowerUpCryptUtils
 			// Generate decryptor from the existing key bytes and initialization 
 			// vector. Key size will be defined based on the number of the key 
 			// bytes.
-			ICryptoTransform decryptor = symmetricKey.CreateDecryptor (keyBytes, initVectorBytes);
+			ICryptoTransform decryptor = symmetricKey.CreateDecryptor(keyBytes, initVectorBytes);
 
 			// Define memory stream which will be used to hold encrypted data.
-			MemoryStream memoryStream = new MemoryStream (cipherTextBytes);
+			MemoryStream memoryStream = new MemoryStream(cipherTextBytes);
 
 			// Define cryptographic stream (always use Read mode for encryption).
-			CryptoStream cryptoStream = new CryptoStream (memoryStream, decryptor, CryptoStreamMode.Read);
+			CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
 
 			// Since at this point we don't know what the size of decrypted data
 			// will be, allocate the buffer long enough to hold ciphertext;
@@ -255,15 +298,15 @@ namespace PowerUpCryptUtils
 			byte[] plainTextBytes = new byte[cipherTextBytes.Length];
 
 			// Start decrypting.
-			int decryptedByteCount = cryptoStream.Read (plainTextBytes, 0, plainTextBytes.Length);
+			int decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
 
 			// Close both streams.
-			memoryStream.Close ();
-			cryptoStream.Close ();
+			memoryStream.Close();
+			cryptoStream.Close();
 
 			// Convert decrypted data into a string. 
 			// Let us assume that the original plaintext string was UTF8-encoded.
-			string plainText = Encoding.UTF8.GetString (plainTextBytes, 0, decryptedByteCount);
+			string plainText = Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount);
 
 			// Return decrypted string.   
 			return plainText;
