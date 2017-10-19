@@ -23,24 +23,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System.Globalization;
 using System.Linq;
-using System.Threading;
 using InMemoryLoader;
 using InMemoryLoaderBase;
 using log4net;
 
 namespace InMemoryLoaderCommon
 {
-	public abstract class AbstractCommonBase
+	public abstract class AbstractCommonBase : AbstractLoaderBase
 	{
 
 		private static readonly ILog log = LogManager.GetLogger(typeof(AbstractCommonBase));
-
-		private static string assemblyPath;
-		public string AssemblyPath { get { return assemblyPath; } set { assemblyPath = value; } }
-
-		public ComponentLoader ComponentLoader { get; set; }
 
 		public CommonComponentLoader CommonComponentLoader { get; set; }
 
@@ -51,64 +44,22 @@ namespace InMemoryLoaderCommon
 			{
 				if (checkUtils.ClassObject == null)
 				{
-					checkUtils = this.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Equals("PowerUpCheckUtils.CheckUtils")).SingleOrDefault().Value;
+					checkUtils = base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Equals("PowerUpCheckUtils.CheckUtils")).SingleOrDefault().Value;
 				}
 				return checkUtils;
 			}
 		}
 
+		public AbstractCommonBase() { }
 
-		public AbstractCommonBase()
+		public virtual bool SetInMemoryLoaderCommon()
 		{
-			log4net.Config.XmlConfigurator.Configure();
-
-			this.SetCulture();
-
-			this.GetComponentPath();
-
-			this.ComponentLoader = ComponentLoader.Instance;
 			this.CommonComponentLoader = new CommonComponentLoader();
-			this.CommonComponentLoader.InitCommonComponents(null);
-		}
-
-		public AbstractCommonBase(string assemblyPath)
-		{
-			log4net.Config.XmlConfigurator.Configure();
-
-			this.SetCulture();
-
-			this.GetComponentPath(assemblyPath);
-
-			this.ComponentLoader = ComponentLoader.Instance;
-			this.CommonComponentLoader = new CommonComponentLoader();
-			this.CommonComponentLoader.InitCommonComponents(null);
-		}
-
-		public bool SetCulture()
-		{
-			var specificCulture = CultureInfo.CreateSpecificCulture(null);
-			var uiCulture = new CultureInfo(null);
-
-			Thread.CurrentThread.CurrentCulture = specificCulture;
-			Thread.CurrentThread.CurrentUICulture = uiCulture;
-
+			var isSet = this.CommonComponentLoader.InitCommonComponents(base.AssemblyPath);
+			log.DebugFormat("CommonComponentLoader set: {0}", isSet);
 			return true;
 		}
 
-		protected string GetComponentPath()
-		{
-			var compPath = string.Empty;
-
-
-			return compPath;
-		}
-
-		protected string GetComponentPath(string assemblyPath)
-		{
-			var compPath = string.Empty;
-
-
-			return compPath;
-		}
 	}
+
 }

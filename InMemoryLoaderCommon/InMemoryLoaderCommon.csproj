@@ -44,9 +44,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.2.9.5\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
     <Reference Include="InMemoryLoaderBase">
       <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.1\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
@@ -101,6 +98,10 @@
     <ProjectReference Include="..\PowerUpXmlUtils\PowerUpXmlUtils.csproj">
       <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
       <Name>PowerUpXmlUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\InMemoryLoader\InMemoryLoader\InMemoryLoader.csproj">
+      <Project>{03EBE292-5758-4919-A3A9-AAA31313FC1F}</Project>
+      <Name>InMemoryLoader</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
