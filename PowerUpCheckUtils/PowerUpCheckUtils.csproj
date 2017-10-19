@@ -17,9 +17,10 @@
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
     <Optimize>true</Optimize>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -57,7 +58,7 @@
     <Compile Include="CheckUtils.Url.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PowerUpCheckUtils.cd" />
+    <None Include="Documentation\PowerUpCheckUtils.cd" />
     <None Include="packages.config" />
     <None Include="PowerUpCheckUtils.snk" />
   </ItemGroup>

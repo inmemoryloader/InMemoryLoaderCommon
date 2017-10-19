@@ -128,7 +128,7 @@ namespace InMemoryLoaderCommon
 				this.AssemblyPath = paramPath;
 			}
 
-			SetupCommonComponents(this.AssemblyPath);
+			this.SetupCommonComponents(this.AssemblyPath);
 
 			log.Debug("Init Common Components");
 
