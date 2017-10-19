@@ -50,17 +50,19 @@
     <Reference Include="InMemoryLoaderBase">
       <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.1\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonComponentLoader.cs" />
-    <Compile Include="AbstractApplicationBase.cs" />
+    <Compile Include="AbstractCommonBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="Documentation\InMemoryLoaderCommon.cd" />
     <None Include="InMemoryLoaderCommon.snk" />
     <None Include="packages.config" />
+    <None Include="ChangeLog.txt" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
