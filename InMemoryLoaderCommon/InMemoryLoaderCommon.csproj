@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.2.9.7\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
     <Reference Include="InMemoryLoaderBase">
       <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.2\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.2.9.8\lib\InMemoryLoader.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
