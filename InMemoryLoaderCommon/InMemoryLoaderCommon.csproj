@@ -59,6 +59,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="app.config" />
     <None Include="Documentation\InMemoryLoaderCommon.cd" />
     <None Include="InMemoryLoaderCommon.snk" />
@@ -66,6 +67,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+=======
+>>>>>>> hotfix/Hotfix_0.2.9.7_-_CryptUtils
     <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
       <Project>{CE40C941-6632-42B1-8250-01567C495FC5}</Project>
       <Name>PowerUpCheckUtils</Name>
@@ -102,5 +105,8 @@
       <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
       <Name>PowerUpXmlUtils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
