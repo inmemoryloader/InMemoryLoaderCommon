@@ -83,11 +83,13 @@ namespace InMemoryLoaderCommonTestSuite
 				var convertBooleanTest = InMemoryLoaderCommonTestSuite.ConvertUtilsTest.Test.ConvertBooleanTest();
 				log.InfoFormat("ConvertBooleanTest = {0}", convertBooleanTest);
 
+				/*
 				// CryptUtilsTest
 				var cryptHashTest = InMemoryLoaderCommonTestSuite.CryptUtilsTest.Test.CryptHashTest();
 				log.InfoFormat("CryptHashTest = {0}", cryptHashTest);
 				var cryptRijndaelTest = InMemoryLoaderCommonTestSuite.CryptUtilsTest.Test.CryptRijndaelTest();
 				log.InfoFormat("CryptRijndaelTest = {0}", cryptRijndaelTest);
+                */
 
 				// DateTimeUtilsTest
 				var dateTimeCalendarWeekTest = InMemoryLoaderCommonTestSuite.DateTimeUtilsTest.Test.DateTimeCalendarWeekTest();
@@ -125,7 +127,7 @@ namespace InMemoryLoaderCommonTestSuite
 
 				*/
 
-				Console.Read();
+				// Console.Read();
 			}
 			catch (Exception ex)
 			{

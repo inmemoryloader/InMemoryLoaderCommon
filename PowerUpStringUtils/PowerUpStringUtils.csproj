@@ -34,13 +34,13 @@
     <AssemblyOriginatorKeyFile>PowerUpStringUtils.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="log4net">
+    <Reference Include="InMemoryLoaderBase, Version=0.2.9.2, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=x86">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.2\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.1\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

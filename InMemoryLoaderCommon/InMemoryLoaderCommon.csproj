@@ -37,16 +37,19 @@
     <AssemblyOriginatorKeyFile>InMemoryLoaderCommon.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoader, Version=0.2.9.7, Culture=neutral, PublicKeyToken=edaaf05874e4e21a, processorArchitecture=x86">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.2.9.7\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase, Version=0.2.9.2, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=x86">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.2\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\MasterArchive\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.1\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
@@ -56,10 +59,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Documentation\InMemoryLoaderCommon.cd" />
     <None Include="InMemoryLoaderCommon.snk" />
     <None Include="packages.config" />
-    <None Include="ChangeLog.txt" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -98,10 +101,6 @@
     <ProjectReference Include="..\PowerUpXmlUtils\PowerUpXmlUtils.csproj">
       <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
       <Name>PowerUpXmlUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InMemoryLoader\InMemoryLoader\InMemoryLoader.csproj">
-      <Project>{03EBE292-5758-4919-A3A9-AAA31313FC1F}</Project>
-      <Name>InMemoryLoader</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -75,7 +75,6 @@ namespace InMemoryLoaderCommonTestSuite
 			base.SetInMemoryLoader();
 			base.SetClassRegistry();
 			base.SetInMemoryLoaderCommon();
-
 		}
 
 		/// <summary>

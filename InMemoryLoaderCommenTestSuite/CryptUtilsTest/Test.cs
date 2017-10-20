@@ -14,7 +14,7 @@ namespace InMemoryLoaderCommonTestSuite.CryptUtilsTest
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger (typeof(InMemoryLoaderCommonTestSuite.CryptUtilsTest.Test));
+		private static readonly ILog log = LogManager.GetLogger(typeof(InMemoryLoaderCommonTestSuite.CryptUtilsTest.Test));
 		/// <summary>
 		/// The app base.
 		/// </summary>
@@ -22,8 +22,7 @@ namespace InMemoryLoaderCommonTestSuite.CryptUtilsTest
 		/// <summary>
 		/// The crypt utils.
 		/// </summary>
-		private static IDynamicClassInfo cryptUtils = 
-			appBase.ComponentLoader.ComponentRegistry.Where (utl => utl.Key.Class.Contains ("CryptUtils")).SingleOrDefault ().Value;
+		private static IDynamicClassInfo cryptUtils = appBase.ComponentLoader.ComponentRegistry.Where(utl => utl.Key.Class.Contains("CryptUtils")).SingleOrDefault().Value;
 
 	}
 }

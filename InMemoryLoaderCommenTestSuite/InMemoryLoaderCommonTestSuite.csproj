@@ -140,11 +140,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="InMemoryLoaderCommenTestSuite.snk" />
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="XmlUtilsTest\TestXmlFileToWrite.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -154,6 +154,22 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\InMemoryLoader\InMemoryLoader\InMemoryLoader.csproj">
+      <Project>{03EBE292-5758-4919-A3A9-AAA31313FC1F}</Project>
+      <Name>InMemoryLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
+      <Project>{55EC3AB9-DA4B-4888-8AA3-513F393FBFB1}</Project>
+      <Name>InMemoryLoaderBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">
+      <Project>{14803A71-3990-4D53-8BEC-085B76B200B2}</Project>
+      <Name>InMemoryLoaderCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\InMemoryLoaderMaster\InMemoryLoaderCommonLib\InMemoryLoaderCommonLib.csproj">
+      <Project>{221BC71B-96A5-4DF3-8AEA-699B24219415}</Project>
+      <Name>InMemoryLoaderCommonLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
       <Project>{CE40C941-6632-42B1-8250-01567C495FC5}</Project>
       <Name>PowerUpCheckUtils</Name>
@@ -189,22 +205,6 @@
     <ProjectReference Include="..\PowerUpXmlUtils\PowerUpXmlUtils.csproj">
       <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
       <Name>PowerUpXmlUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InMemoryLoader\InMemoryLoader\InMemoryLoader.csproj">
-      <Project>{03EBE292-5758-4919-A3A9-AAA31313FC1F}</Project>
-      <Name>InMemoryLoader</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
-      <Project>{55EC3AB9-DA4B-4888-8AA3-513F393FBFB1}</Project>
-      <Name>InMemoryLoaderBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">
-      <Project>{14803A71-3990-4D53-8BEC-085B76B200B2}</Project>
-      <Name>InMemoryLoaderCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InMemoryLoaderMaster\InMemoryLoaderCommonLib\InMemoryLoaderCommonLib.csproj">
-      <Project>{221BC71B-96A5-4DF3-8AEA-699B24219415}</Project>
-      <Name>InMemoryLoaderCommonLib</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

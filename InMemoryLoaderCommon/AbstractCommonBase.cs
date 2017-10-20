@@ -32,12 +32,25 @@ namespace InMemoryLoaderCommon
 {
 	public abstract class AbstractCommonBase : AbstractLoaderBase
 	{
-
+		/// <summary>
+		/// The log.
+		/// </summary>
 		private static readonly ILog log = LogManager.GetLogger(typeof(AbstractCommonBase));
 
+		/// <summary>
+		/// Gets or sets the common component loader.
+		/// </summary>
+		/// <value>The common component loader.</value>
 		public CommonComponentLoader CommonComponentLoader { get; set; }
 
+		/// <summary>
+		/// The check utils.
+		/// </summary>
 		private static IDynamicClassInfo checkUtils = new DynamicClassInfo();
+		/// <summary>
+		/// Gets the check utils.
+		/// </summary>
+		/// <value>The check utils.</value>
 		public IDynamicClassInfo CheckUtils
 		{
 			get
@@ -50,8 +63,15 @@ namespace InMemoryLoaderCommon
 			}
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:InMemoryLoaderCommon.AbstractCommonBase"/> class.
+		/// </summary>
 		public AbstractCommonBase() { }
 
+		/// <summary>
+		/// Sets the in memory loader common.
+		/// </summary>
+		/// <returns><c>true</c>, if in memory loader common was set, <c>false</c> otherwise.</returns>
 		public virtual bool SetInMemoryLoaderCommon()
 		{
 			this.CommonComponentLoader = new CommonComponentLoader();
