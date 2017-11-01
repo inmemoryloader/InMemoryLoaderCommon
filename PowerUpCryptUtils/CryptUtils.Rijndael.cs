@@ -165,17 +165,17 @@ namespace PowerUpCryptUtils
 			}
 		}
 
-		/// <summary>
-		/// Encrypts specified plaintext using Rijndael symmetric key algorithm
-		/// and returns a base64-encoded result. Source: http://www.obviex.com/samples/Encryption.aspx
-		/// </summary>
-		/// <param name="plainText">
-		/// Plaintext value to be encrypted.
-		/// </param>
-		/// <returns>
-		/// Encrypted value formatted as a base64-encoded string.
-		/// </returns>
-		public string Encrypt(string paramValue)
+        /// <summary>
+        /// Encrypts specified plaintext using Rijndael symmetric key algorithm
+        /// and returns a base64-encoded result. Source: http://www.obviex.com/samples/Encryption.aspx
+        /// </summary>
+        /// <param name="paramValue">
+        /// Plaintext value to be encrypted.
+        /// </param>
+        /// <returns>
+        /// Encrypted value formatted as a base64-encoded string.
+        /// </returns>
+        public string Encrypt(string paramValue)
 		{
 			// Convert strings into byte arrays.
 			// Let us assume that strings only contain ASCII codes.

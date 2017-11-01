@@ -38,8 +38,10 @@ namespace PowerUpCryptUtils
 		/// </summary>
 		internal static HashAlgorithm hashAlgorithm;
 
-		internal static Encoding stringEncoding;
-
+		/// <summary>
+		/// The string encoding.
+		/// </summary>
+		internal static Encoding stringEncoding = Encoding.Default;
 		/// <summary>
 		/// Die Codierung für das Konvertieren von Strings in Byte-Arrays 
 		/// und umgekehrt.
@@ -52,10 +54,6 @@ namespace PowerUpCryptUtils
 		{
 			get
 			{
-				if (stringEncoding == null)
-				{
-					stringEncoding = Encoding.Default;
-				}
 				return stringEncoding;
 			}
 			set
@@ -73,11 +71,11 @@ namespace PowerUpCryptUtils
 			get;
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="algorithm"></param>
-		private void SetAlgorithm(HashAlgorithmKind paramAlgorithm)
+        /// <summary>
+        /// SetAlgorithm
+        /// </summary>
+        /// <param name="paramAlgorithm"></param>
+        private void SetAlgorithm(HashAlgorithmKind paramAlgorithm)
 		{
 			// Algorithmus definieren
 			switch (paramAlgorithm)

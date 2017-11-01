@@ -16,11 +16,14 @@
     <OutputPath>bin\x86\Debug\</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\..\Deployment\InMemoryLoader\XmlDocumentation\InMemoryLoaderCommon.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -37,12 +40,6 @@
     <AssemblyOriginatorKeyFile>InMemoryLoaderCommon.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InMemoryLoader, Version=0.2.9.7, Culture=neutral, PublicKeyToken=edaaf05874e4e21a, processorArchitecture=x86">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.2.9.7\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase, Version=0.2.9.2, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=x86">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.2\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -51,6 +48,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.2\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.2.9.8\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,8 +70,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+<<<<<<< HEAD
 =======
 >>>>>>> hotfix/Hotfix_0.2.9.7_-_CryptUtils
+=======
+    <ProjectReference Include="..\..\InMemoryLoaderMaster\InMemoryLoaderCommonLib\InMemoryLoaderCommonLib.csproj">
+      <Project>{221BC71B-96A5-4DF3-8AEA-699B24219415}</Project>
+      <Name>InMemoryLoaderCommonLib</Name>
+    </ProjectReference>
+>>>>>>> feature/0.3.0
     <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
       <Project>{CE40C941-6632-42B1-8250-01567C495FC5}</Project>
       <Name>PowerUpCheckUtils</Name>

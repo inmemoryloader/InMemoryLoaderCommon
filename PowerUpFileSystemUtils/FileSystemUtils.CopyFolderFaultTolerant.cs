@@ -22,14 +22,14 @@ namespace PowerUpFileSystemUtils
 		/// </summary>
 		private static bool alreadyAskedForOverwriteAllFiles;
 
-		/// <summary>
-		/// Kopiert (rekursiv) alle Unterordner und Dateien eines Ordners in einen anderen Ordner
-		/// </summary>
-		/// <param name="sourceFolderPath">Der Pfad zum Quellordner</param>
-		/// <param name="destFolderPath">Der Pfad des Zielordners</param>
-		/// <returns>Gibt eine <see cref="CopyFaults"/>-Auflistung zurück 
-		/// mit Informationen über fehlgeschlagene Kopier-Vorgänge</returns>
-		public ReadOnlyCollection<CopyFault> CopyFolderFaultTolerant(string sourceFolderPath, string destFolderPath)
+        /// <summary>
+        /// Kopiert (rekursiv) alle Unterordner und Dateien eines Ordners in einen anderen Ordner
+        /// </summary>
+        /// <param name="sourceFolderPath">Der Pfad zum Quellordner</param>
+        /// <param name="destFolderPath">Der Pfad des Zielordners</param>
+        /// <returns>Gibt eine <see cref="CopyFault"/>-Auflistung zurück 
+        /// mit Informationen über fehlgeschlagene Kopier-Vorgänge</returns>
+        public ReadOnlyCollection<CopyFault> CopyFolderFaultTolerant(string sourceFolderPath, string destFolderPath)
 		{
 			// Liste von CopyFault-Objekten erzeugen
 			List<CopyFault> copyFaults = new List<CopyFault>();

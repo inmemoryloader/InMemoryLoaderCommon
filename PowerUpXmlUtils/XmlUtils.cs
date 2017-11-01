@@ -8,6 +8,9 @@ using System.Text;
 
 namespace PowerUpXmlUtils
 {
+    /// <summary>
+    /// XmlUtils
+    /// </summary>
 	public partial class XmlUtils : AbstractPowerUpComponent
 	{
 		/// <summary>

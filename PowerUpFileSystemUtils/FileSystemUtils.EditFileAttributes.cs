@@ -18,12 +18,12 @@ namespace PowerUpFileSystemUtils
 			fileInfo.Attributes = fileInfo.Attributes & ~attributesToRemove;
 		}
 
-		/// <summary>
-		/// Setzt Dateiattribute für eine Datei
-		/// </summary>
-		/// <param name="filename">Der Dateiname</param>
-		/// <param name="attributesToRemove">Die zu setzenden Attribute</param>
-		public void SetFileAttributes(string filename, FileAttributes attributesToSet)
+        /// <summary>
+        /// Setzt Dateiattribute für eine Datei
+        /// </summary>
+        /// <param name="filename">Der Dateiname</param>
+        /// <param name="attributesToSet">Die zu setzenden Attribute</param>
+        public void SetFileAttributes(string filename, FileAttributes attributesToSet)
 		{
 			FileInfo fileInfo = new FileInfo(filename);
 			fileInfo.Attributes = fileInfo.Attributes | attributesToSet;

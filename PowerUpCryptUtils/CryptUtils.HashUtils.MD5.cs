@@ -33,13 +33,13 @@ namespace PowerUpCryptUtils
 {
 	public partial class CryptUtils : AbstractPowerUpComponent
 	{
-		/// <summary>
-		/// Encrypts the string to a byte array using the MD5 Encryption Algorithm.
-		/// <see cref="System.Security.Cryptography.MD5CryptoServiceProvider"/>
-		/// </summary>
-		/// <param name="ToEncrypt">System.String.  Usually a password.</param>
-		/// <returns>System.Byte[]</returns>
-		public byte[] MD5Encryption(string paramValue)
+        /// <summary>
+        /// Encrypts the string to a byte array using the MD5 Encryption Algorithm.
+        /// <see cref="System.Security.Cryptography.MD5CryptoServiceProvider"/>
+        /// </summary>
+        /// <param name="paramValue">System.String. Usually a password.</param>
+        /// <returns>System.Byte[]</returns>
+        public byte[] MD5Encryption(string paramValue)
 		{
 			// Create instance of the crypto provider.
 			MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
@@ -59,14 +59,14 @@ namespace PowerUpCryptUtils
 			return hashedbytes;
 		}
 
-		/// <summary>
-		/// Encrypts the string to a byte array using the MD5 Encryption 
-		/// Algorithm with an additional Salted Hash.
-		/// <see cref="System.Security.Cryptography.MD5CryptoServiceProvider"/>
-		/// </summary>
-		/// <param name="ToEncrypt">System.String.  Usually a password.</param>
-		/// <returns>System.Byte[]</returns>
-		public byte[] MD5SaltedHashEncryption(string paramValue)
+        /// <summary>
+        /// Encrypts the string to a byte array using the MD5 Encryption 
+        /// Algorithm with an additional Salted Hash.
+        /// <see cref="System.Security.Cryptography.MD5CryptoServiceProvider"/>
+        /// </summary>
+        /// <param name="paramValue">System.String. Usually a password.</param>
+        /// <returns>System.Byte[]</returns>
+        public byte[] MD5SaltedHashEncryption(string paramValue)
 		{
 			// Create instance of the crypto provider.
 			MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();

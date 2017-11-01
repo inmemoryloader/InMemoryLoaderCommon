@@ -4,6 +4,9 @@ using InMemoryLoaderBase;
 
 namespace PowerUpDateTimeUtils
 {
+    /// <summary>
+    /// DateTimeUtils
+    /// </summary>
 	public partial class DateTimeUtils : AbstractPowerUpComponent
 	{
 		/// <summary>

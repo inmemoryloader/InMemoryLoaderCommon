@@ -28,6 +28,9 @@ using log4net;
 
 namespace PowerUpConvertUtils
 {
+    /// <summary>
+    /// ConvertUtils
+    /// </summary>
     public partial class ConvertUtils : AbstractPowerUpComponent
 	{
 		/// <summary>

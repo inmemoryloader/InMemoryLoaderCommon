@@ -55,7 +55,8 @@
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\..\Deployment\InMemoryLoader\XmlDocumentation\PowerUpCheckUtils.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Optimize>true</Optimize>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <RunCodeAnalysis>true</RunCodeAnalysis>

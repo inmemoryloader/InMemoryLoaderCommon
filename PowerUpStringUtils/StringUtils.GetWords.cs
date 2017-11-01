@@ -26,6 +26,12 @@ namespace PowerUpStringUtils
 			return words;
 		}
 
+        /// <summary>
+        /// GetWords
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="minLength"></param>
+        /// <returns>GetWords</returns>
 		public string[] GetWords(string source, int minLength)
 		{
 			// Alle Wörter abfragen

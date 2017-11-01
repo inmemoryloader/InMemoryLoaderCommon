@@ -30,6 +30,9 @@ using log4net;
 
 namespace InMemoryLoaderCommon
 {
+    /// <summary>
+    /// AbstractCommonBase
+    /// </summary>
 	public abstract class AbstractCommonBase : AbstractLoaderBase
 	{
 		/// <summary>
@@ -44,10 +47,6 @@ namespace InMemoryLoaderCommon
 		public CommonComponentLoader CommonComponentLoader { get; set; }
 
 		/// <summary>
-		/// The check utils.
-		/// </summary>
-		private static IDynamicClassInfo checkUtils = new DynamicClassInfo();
-		/// <summary>
 		/// Gets the check utils.
 		/// </summary>
 		/// <value>The check utils.</value>
@@ -55,11 +54,103 @@ namespace InMemoryLoaderCommon
 		{
 			get
 			{
-				if (checkUtils.ClassObject == null)
-				{
-					checkUtils = base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Equals("PowerUpCheckUtils.CheckUtils")).SingleOrDefault().Value;
-				}
-				return checkUtils;
+				return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("CheckUtils")).SingleOrDefault().Value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the convert utils.
+		/// </summary>
+		/// <value>The convert utils.</value>
+		public IDynamicClassInfo ConvertUtils
+		{
+			get
+			{
+				return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("ConvertUtils")).SingleOrDefault().Value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the crypt utils.
+		/// </summary>
+		/// <value>The crypt utils.</value>
+		public IDynamicClassInfo CryptUtils
+		{
+			get
+			{
+				return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("CryptUtils")).SingleOrDefault().Value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the date time utils.
+		/// </summary>
+		/// <value>The date time utils.</value>
+		public IDynamicClassInfo DateTimeUtils
+		{
+			get
+			{
+				return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("DateTimeUtils")).SingleOrDefault().Value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the email utils.
+		/// </summary>
+		/// <value>The email utils.</value>
+		public IDynamicClassInfo EmailUtils
+		{
+			get
+			{
+				return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("EmailUtils")).SingleOrDefault().Value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the file system utils.
+		/// </summary>
+		/// <value>The file system utils.</value>
+		public IDynamicClassInfo FileSystemUtils
+		{
+			get
+			{
+				return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("FileSystemUtils")).SingleOrDefault().Value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the get utils.
+		/// </summary>
+		/// <value>The get utils.</value>
+		public IDynamicClassInfo GetUtils
+		{
+			get
+			{
+				return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("GetUtils")).SingleOrDefault().Value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the string utils.
+		/// </summary>
+		/// <value>The string utils.</value>
+		public IDynamicClassInfo StringUtils
+		{
+			get
+			{
+				return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("StringUtils")).SingleOrDefault().Value;
+			}
+		}
+
+		/// <summary>
+		/// Gets the xml utils.
+		/// </summary>
+		/// <value>The xml utils.</value>
+		public IDynamicClassInfo XmlUtils
+		{
+			get
+			{
+				return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("XmlUtils")).SingleOrDefault().Value;
 			}
 		}
 
