@@ -78,7 +78,7 @@ namespace PowerUpDateTimeUtils
 		/// <summary>
 		/// Konstruktor
 		/// </summary>
-		/// <param name="dateFormat"><Das Basis-Format/param>
+		/// <param name="dateFormat"><Das Basis-Format</param>
 		/// <param name="aMString">Der String, der für eine Zeitangabe bis 12:59 verwendet wird wenn die Zeit mit AM/PM angegeben wird</param>
 		/// <param name="pMString"> Der String, der für eine Zeitangabe ab 13:00 verwendet wird wenn die Zeit mit AM/PM angegeben wird</param>
 		/// <param name="amPmType">Der Typ der AM/PM-Angabe</param>

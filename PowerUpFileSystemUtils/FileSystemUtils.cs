@@ -5,6 +5,9 @@ using System.IO;
 
 namespace PowerUpFileSystemUtils
 {
+    /// <summary>
+    /// FileSystemUtils
+    /// </summary>
 	public partial class FileSystemUtils : AbstractPowerUpComponent
 	{
 		/// <summary>

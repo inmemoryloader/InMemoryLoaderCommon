@@ -97,6 +97,9 @@ namespace PowerUpFileSystemUtils
 			}
 		}
 
+        /// <summary>
+        /// GetSystemTempFolder
+        /// </summary>
 		public string GetSystemTempFolder
 		{
 			get

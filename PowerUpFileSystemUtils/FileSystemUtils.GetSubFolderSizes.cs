@@ -45,10 +45,10 @@ namespace PowerUpFileSystemUtils
 			return new ReadOnlyCollection<FolderSize>(folderSizes);
 		}
 
-		/// <summary>
-		/// Delegate für das <see cref="FolderProgress"/>-Ereignis
-		/// </summary>
-		public delegate void FolderProgressHandler(string currentFolderPath);
+        /// <summary>
+        /// Delegate für das <see cref="FolderProgressHandler"/>-Ereignis
+        /// </summary>
+        public delegate void FolderProgressHandler(string currentFolderPath);
 	}
 }
 

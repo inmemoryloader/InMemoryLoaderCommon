@@ -30,13 +30,13 @@ namespace PowerUpConvertUtils
 {
     public partial class ConvertUtils : AbstractPowerUpComponent
 	{
-		/// <summary>
-		/// Strings to hashtable.
-		/// </summary>
-		/// <returns>The to hashtable.</returns>
-		/// <param name="str">String.</param>
-		/// <param name="delimit">Delimit.</param>
-		public Hashtable StringToHashtable(string paramString, char[] paramDelimit)
+        /// <summary>
+        /// Strings to hashtable.
+        /// </summary>
+        /// <returns>The to hashtable.</returns>
+        /// <param name="paramString">String.</param>
+        /// <param name="paramDelimit">Delimit.</param>
+        public Hashtable StringToHashtable(string paramString, char[] paramDelimit)
 		{
 			Hashtable ht = new Hashtable();
 			int count = 0;

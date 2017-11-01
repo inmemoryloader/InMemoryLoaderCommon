@@ -31,6 +31,9 @@ using log4net;
 
 namespace PowerUpCryptUtils
 {
+    /// <summary>
+    /// CryptUtils
+    /// </summary>
 	public partial class CryptUtils : AbstractPowerUpComponent
 	{
 		/// <summary>

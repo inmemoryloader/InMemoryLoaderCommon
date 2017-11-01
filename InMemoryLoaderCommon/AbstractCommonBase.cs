@@ -30,6 +30,9 @@ using log4net;
 
 namespace InMemoryLoaderCommon
 {
+    /// <summary>
+    /// AbstractCommonBase
+    /// </summary>
 	public abstract class AbstractCommonBase : AbstractLoaderBase
 	{
 		/// <summary>

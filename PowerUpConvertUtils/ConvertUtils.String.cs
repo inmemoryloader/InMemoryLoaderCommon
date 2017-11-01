@@ -42,25 +42,25 @@ namespace PowerUpConvertUtils
 			string text = reader.ReadToEnd();
 			return text;
 		}
-		/// <summary>
-		/// Bytes the array to string.
-		/// </summary>
-		/// <returns>The array to string.</returns>
-		/// <param name="bytearray">Bytearray.</param>
-		public string ByteArrayToString(byte[] paramByteArray)
+        /// <summary>
+        /// Bytes the array to string.
+        /// </summary>
+        /// <returns>The array to string.</returns>
+        /// <param name="paramByteArray">Bytearray.</param>
+        public string ByteArrayToString(byte[] paramByteArray)
 		{
 			MemoryStream stream = new MemoryStream(paramByteArray);
 			StreamReader reader = new StreamReader(stream, true);
 			StringBuilder sb = new StringBuilder(reader.ReadToEnd(), reader.ReadToEnd().Length);
 			return sb.ToString();
 		}
-		/// <summary>
-		/// Bytes the array to string.
-		/// </summary>
-		/// <returns>The array to string.</returns>
-		/// <param name="bytearray">Bytearray.</param>
-		/// <param name="encoding">Encoding.</param>
-		public string ByteArrayToString(byte[] paramByteArray, Encoding paramEncoding)
+        /// <summary>
+        /// Bytes the array to string.
+        /// </summary>
+        /// <returns>The array to string.</returns>
+        /// <param name="paramByteArray">Bytearray.</param>
+        /// <param name="paramEncoding">Encoding.</param>
+        public string ByteArrayToString(byte[] paramByteArray, Encoding paramEncoding)
 		{
 			MemoryStream stream = new MemoryStream(paramByteArray);
 			StreamReader reader = new StreamReader(stream, paramEncoding);

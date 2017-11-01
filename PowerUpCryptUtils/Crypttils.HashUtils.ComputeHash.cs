@@ -71,11 +71,11 @@ namespace PowerUpCryptUtils
 			get;
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="algorithm"></param>
-		private void SetAlgorithm(HashAlgorithmKind paramAlgorithm)
+        /// <summary>
+        /// SetAlgorithm
+        /// </summary>
+        /// <param name="paramAlgorithm"></param>
+        private void SetAlgorithm(HashAlgorithmKind paramAlgorithm)
 		{
 			// Algorithmus definieren
 			switch (paramAlgorithm)
