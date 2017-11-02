@@ -40,6 +40,12 @@
     <AssemblyOriginatorKeyFile>InMemoryLoaderCommon.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoader, Version=0.3.0.0, Culture=neutral, PublicKeyToken=edaaf05874e4e21a, processorArchitecture=x86">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.3.0.0\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase, Version=0.3.0.0, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=x86">
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.3.0.0\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -65,14 +71,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
-      <Project>{55ec3ab9-da4b-4888-8aa3-513f393fbfb1}</Project>
-      <Name>InMemoryLoaderBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InMemoryLoader\InMemoryLoader\InMemoryLoader.csproj">
-      <Project>{03ebe292-5758-4919-a3a9-aaa31313fc1f}</Project>
-      <Name>InMemoryLoader</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
       <Project>{ce40c941-6632-42b1-8250-01567c495fc5}</Project>
       <Name>PowerUpCheckUtils</Name>
