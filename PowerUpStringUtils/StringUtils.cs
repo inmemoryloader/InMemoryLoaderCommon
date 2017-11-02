@@ -4,6 +4,9 @@ using log4net;
 
 namespace PowerUpStringUtils
 {
+    /// <summary>
+    /// StringUtils
+    /// </summary>
 	public partial class StringUtils : AbstractPowerUpComponent
 	{
 		/// <summary>

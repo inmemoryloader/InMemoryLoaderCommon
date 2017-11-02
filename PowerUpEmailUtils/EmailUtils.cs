@@ -4,6 +4,9 @@ using InMemoryLoaderBase;
 
 namespace PowerUpEmailUtils
 {
+    /// <summary>
+    /// EmailUtils
+    /// </summary>
 	public partial class EmailUtils : AbstractPowerUpComponent
 	{
 		/// <summary>
