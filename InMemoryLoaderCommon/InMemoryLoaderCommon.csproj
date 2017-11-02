@@ -70,42 +70,4 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
-      <Project>{ce40c941-6632-42b1-8250-01567c495fc5}</Project>
-      <Name>PowerUpCheckUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpConvertUtils\PowerUpConvertUtils.csproj">
-      <Project>{0be495d6-63e1-4e7f-ba0a-62d96e684706}</Project>
-      <Name>PowerUpConvertUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpCryptUtils\PowerUpCryptUtils.csproj">
-      <Project>{037a6543-ca5b-4dd3-97e6-1a526525c7f6}</Project>
-      <Name>PowerUpCryptUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
-      <Project>{b3d1c345-989c-487b-a3ed-c65338e52421}</Project>
-      <Name>PowerUpDateTimeUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpEmailUtils\PowerUpEmailUtils.csproj">
-      <Project>{31bd76e2-85a4-4d9d-9e82-3a1bca689c42}</Project>
-      <Name>PowerUpEmailUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpFileSystemUtils\PowerUpFileSystemUtils.csproj">
-      <Project>{9824de8b-6084-4421-bcc5-c68d19249c1c}</Project>
-      <Name>PowerUpFileSystemUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpGetUtils\PowerUpGetUtils.csproj">
-      <Project>{2c89a2ff-02a6-4573-9905-705adc442a8f}</Project>
-      <Name>PowerUpGetUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpStringUtils\PowerUpStringUtils.csproj">
-      <Project>{9df645d5-01bf-4c27-9998-d3b487a34828}</Project>
-      <Name>PowerUpStringUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpXmlUtils\PowerUpXmlUtils.csproj">
-      <Project>{d265f256-cd6d-48bf-9f68-fd01879ea958}</Project>
-      <Name>PowerUpXmlUtils</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
