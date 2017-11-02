@@ -41,13 +41,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="InMemoryLoader, Version=0.3.0.0, Culture=neutral, PublicKeyToken=edaaf05874e4e21a, processorArchitecture=x86">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoader.0.3.0.0\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\..\packages\InMemoryLoader.0.3.0.0\lib\InMemoryLoader.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoaderBase, Version=0.3.0.0, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=x86">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.3.0.0\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\..\packages\InMemoryLoaderBase.0.3.0.0\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -65,9 +65,6 @@
     <None Include="app.config" />
     <None Include="Documentation\InMemoryLoaderCommon.cd" />
     <None Include="InMemoryLoaderCommon.snk" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>
