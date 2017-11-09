@@ -16,8 +16,8 @@ namespace PowerUpCheckUtils
 		public bool IsUrlValid(object parmURL)
 		{
 			try {
-				HttpWebRequest reqFP = (HttpWebRequest)HttpWebRequest.Create(parmURL.ToString());
-				HttpWebResponse rspFP = (HttpWebResponse)reqFP.GetResponse();
+				var reqFP = (HttpWebRequest)HttpWebRequest.Create(parmURL.ToString());
+				var rspFP = (HttpWebResponse)reqFP.GetResponse();
 				if (HttpStatusCode.OK == rspFP.StatusCode)
 				{
 					rspFP.Close();
