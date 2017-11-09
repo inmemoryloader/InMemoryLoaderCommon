@@ -56,14 +56,20 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoader, Version=0.3.0.0, Culture=neutral, PublicKeyToken=edaaf05874e4e21a, processorArchitecture=AMD64">
+      <HintPath>..\packages\InMemoryLoader.0.3.0.1\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase, Version=0.3.0.0, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=AMD64">
+      <HintPath>..\packages\InMemoryLoaderBase.0.3.0.1\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
-    <Reference Include="log4net">
-      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,48 +84,40 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
-      <Project>{55EC3AB9-DA4B-4888-8AA3-513F393FBFB1}</Project>
-      <Name>InMemoryLoaderBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InMemoryLoader\InMemoryLoader\InMemoryLoader.csproj">
-      <Project>{03EBE292-5758-4919-A3A9-AAA31313FC1F}</Project>
-      <Name>InMemoryLoader</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
-      <Project>{CE40C941-6632-42B1-8250-01567C495FC5}</Project>
+      <Project>{ce40c941-6632-42b1-8250-01567c495fc5}</Project>
       <Name>PowerUpCheckUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpConvertUtils\PowerUpConvertUtils.csproj">
-      <Project>{0BE495D6-63E1-4E7F-BA0A-62D96E684706}</Project>
+      <Project>{0be495d6-63e1-4e7f-ba0a-62d96e684706}</Project>
       <Name>PowerUpConvertUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpCryptUtils\PowerUpCryptUtils.csproj">
-      <Project>{037A6543-CA5B-4DD3-97E6-1A526525C7F6}</Project>
+      <Project>{037a6543-ca5b-4dd3-97e6-1a526525c7f6}</Project>
       <Name>PowerUpCryptUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
-      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
+      <Project>{b3d1c345-989c-487b-a3ed-c65338e52421}</Project>
       <Name>PowerUpDateTimeUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpEmailUtils\PowerUpEmailUtils.csproj">
-      <Project>{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}</Project>
+      <Project>{31bd76e2-85a4-4d9d-9e82-3a1bca689c42}</Project>
       <Name>PowerUpEmailUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpFileSystemUtils\PowerUpFileSystemUtils.csproj">
-      <Project>{9824DE8B-6084-4421-BCC5-C68D19249C1C}</Project>
+      <Project>{9824de8b-6084-4421-bcc5-c68d19249c1c}</Project>
       <Name>PowerUpFileSystemUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpGetUtils\PowerUpGetUtils.csproj">
-      <Project>{2C89A2FF-02A6-4573-9905-705ADC442A8F}</Project>
+      <Project>{2c89a2ff-02a6-4573-9905-705adc442a8f}</Project>
       <Name>PowerUpGetUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpStringUtils\PowerUpStringUtils.csproj">
-      <Project>{9DF645D5-01BF-4C27-9998-D3B487A34828}</Project>
+      <Project>{9df645d5-01bf-4c27-9998-d3b487a34828}</Project>
       <Name>PowerUpStringUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpXmlUtils\PowerUpXmlUtils.csproj">
-      <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
+      <Project>{d265f256-cd6d-48bf-9f68-fd01879ea958}</Project>
       <Name>PowerUpXmlUtils</Name>
     </ProjectReference>
   </ItemGroup>

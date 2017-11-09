@@ -52,12 +52,15 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoaderBase, Version=0.3.0.0, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=AMD64">
+      <HintPath>..\packages\InMemoryLoaderBase.0.3.0.1\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Serialization" />
-    <Reference Include="log4net">
-      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalSuppressions.cs" />
@@ -65,14 +68,8 @@
     <Compile Include="XmlUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PowerUpXmlUtils.snk" />
     <None Include="packages.config" />
+    <None Include="PowerUpXmlUtils.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
-      <Project>{55EC3AB9-DA4B-4888-8AA3-513F393FBFB1}</Project>
-      <Name>InMemoryLoaderBase</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
