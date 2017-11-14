@@ -9,16 +9,20 @@
     <AssemblyName>PowerUpCheckUtils</AssemblyName>
     <ReleaseVersion>0.3.0.2</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PowerUpCheckUtils.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -47,7 +51,7 @@
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System" />
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.3.1.1\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoaderBase.0.3.1.2\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
