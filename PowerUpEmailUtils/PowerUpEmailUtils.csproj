@@ -22,11 +22,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\packages\InMemoryLoaderBase.0.3.1.4\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.3.1.1\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
