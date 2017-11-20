@@ -61,6 +61,8 @@ namespace InMemoryLoaderCommonNunit
 			Assert.IsTrue(testHelper.IsCultureSet());
 			Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
 			Assert.IsTrue(testHelper.IsRegistrySet());
+			Assert.IsTrue(testHelper.IsInMemoryLoaderCommonSet());
+			Assert.IsTrue(testHelper.CommonUtilsSet());
 
 		}
 

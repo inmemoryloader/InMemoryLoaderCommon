@@ -24,11 +24,11 @@
 // THE SOFTWARE.
 
 using System;
-using InMemoryLoader;
+using InMemoryLoaderCommon;
 
 namespace InMemoryLoaderCommonNunit
 {
-	internal class TestHelper: AbstractLoaderBase
+	internal class TestHelper: AbstractCommonBase
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="InMemoryLoaderCommonNunit.TestHelper"/> class.
@@ -78,6 +78,34 @@ namespace InMemoryLoaderCommonNunit
 		{
 			return base.SetClassRegistry();
 		}
-	}
-}
 
+		/// <summary>
+		/// Determines whether this instance is in memory loader common set.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is in memory loader common set; otherwise, <c>false</c>.</returns>
+		internal bool IsInMemoryLoaderCommonSet()
+		{
+			return base.SetInMemoryLoaderCommon();
+		}
+
+		/// <summary>
+		/// Commons the utils set.
+		/// </summary>
+		/// <returns><c>true</c>, if utils set was commoned, <c>false</c> otherwise.</returns>
+		internal bool CommonUtilsSet()
+		{
+			bool isSet = false;
+			isSet = base.ConvertUtils != null;
+			isSet = base.CryptUtils != null;
+			isSet = base.DateTimeUtils != null;
+			isSet = base.EmailUtils != null;
+			isSet = base.FileSystemUtils != null;
+			isSet = base.GetUtils != null;
+			isSet = base.StringUtils != null;
+			isSet = base.XmlUtils != null;
+			return isSet;
+		}
+
+	}
+
+}
