@@ -40,6 +40,7 @@
       <HintPath>..\packages\InMemoryLoader.0.3.2.3\lib\InMemoryLoader.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -47,8 +48,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestHelper.cs" />
     <Compile Include="InMemoryLoaderCommonNunit.cs" />
+    <Compile Include="TestHelper.AbstractCommonBase.cs" />
+    <Compile Include="TestHelper.PowerUpCheckUtils.cs" />
+    <Compile Include="TestHelper.Base.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">

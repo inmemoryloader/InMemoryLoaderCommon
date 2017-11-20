@@ -7,7 +7,10 @@
     <OutputType>Library</OutputType>
     <RootNamespace>InMemoryLoaderCommon</RootNamespace>
     <AssemblyName>InMemoryLoaderCommon</AssemblyName>
-    <Description>Pre Release Build</Description>
+    <Description>InMemoryLoader ermöglicht das Laden von .Dll's zur Laufzeit ohne fixe 
+Referenzen in der Solution zu benötigen. Hierbei werden die .Dll’s 
+einmalig geladen und geprüft, in eine Collection geschrieben und zur 
+Laufzeit einmalig instanziiert.</Description>
     <ReleaseVersion>0.3.2</ReleaseVersion>
     <SignAssembly>true</SignAssembly>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>

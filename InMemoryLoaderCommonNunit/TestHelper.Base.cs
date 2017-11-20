@@ -1,5 +1,5 @@
 ﻿//
-// PowerUpCheckUtils.Integer.cs
+// TestHelper.Base.cs
 //
 // Author: responsive kaysta <me@responsive-kaysta.ch>
 //
@@ -23,37 +23,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using InMemoryLoaderBase;
 using System;
-using System.Globalization;
+using InMemoryLoaderCommon;
 
-namespace PowerUpCheckUtils
+namespace InMemoryLoaderCommonNunit
 {
-	/// <summary>
-	/// Check utils.
-	/// </summary>
-    public partial class CheckUtils : AbstractPowerUpComponent
+    internal partial class TestHelper: AbstractCommonBase
     {
+		
         /// <summary>
-        /// Determines whether this instance is string int the specified paramValue.
+        /// Initializes a new instance of the <see cref="InMemoryLoaderCommonNunit.TestHelper"/> class.
         /// </summary>
-        /// <returns><c>true</c> if this instance is string int the specified paramValue; otherwise, <c>false</c>.</returns>
-        /// <param name="paramValue">Parameter value.</param>
-        public bool IsStringInt(object paramValue)
+        /// <param name="culture">Culture.</param>
+        /// <param name="path">Path.</param>
+        internal TestHelper(string culture, string path, bool initComponent)
         {
-            int result;
-            return int.TryParse(paramValue.ToString(), NumberStyles.Integer, null, out result);
+            base.ConsoleCulture = culture;
+            base.AssemblyPath = path;
+            if (initComponent)
+            {
+                this.InitCommonComponent();
+            }
         }
+
         /// <summary>
-        /// Determines whether this instance is string int the specified paramValue provider.
+        /// Inits the common component.
         /// </summary>
-        /// <returns><c>true</c> if this instance is string int the specified paramValue provider; otherwise, <c>false</c>.</returns>
-        /// <param name="paramValue">Parameter value.</param>
-        /// <param name="paramProvider">Provider.</param>
-        public bool IsStringInt(object paramValue, IFormatProvider paramProvider)
+        private void InitCommonComponent()
         {
-            int result;
-            return int.TryParse(paramValue.ToString(), NumberStyles.Integer, paramProvider, out result);
+            base.GetAssemblyPath();
+            base.SetCulture();
+            base.SetInMemoryLoader();
+            base.SetInMemoryLoaderCommon();
+            base.SetClassRegistry();
         }
+
     }
+
 }

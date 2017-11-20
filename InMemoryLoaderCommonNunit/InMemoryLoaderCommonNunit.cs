@@ -29,43 +29,59 @@ using System.Configuration;
 
 namespace InMemoryLoaderCommonNunit
 {
-	/// <summary>
-	/// In memory loader common nunit.
-	/// </summary>
-	[TestFixture ()]
-	public class InMemoryLoaderCommonNunit
-	{
-		/// <summary>
-		/// Gets the console culture.
-		/// </summary>
-		/// <value>The console culture.</value>
-		internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"].ToString(); } }
+    /// <summary>
+    /// In memory loader common nunit.
+    /// </summary>
+    [TestFixture()]
+    internal partial class InMemoryLoaderCommonNunit
+    {
+        /// <summary>
+        /// Gets the console culture.
+        /// </summary>
+        /// <value>The console culture.</value>
+        internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"].ToString(); } }
 
-		/// <summary>
-		/// Gets the application key.
-		/// </summary>
-		/// <value>The application key.</value>
-		internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"].ToString(); } }
+        /// <summary>
+        /// Gets the application key.
+        /// </summary>
+        /// <value>The application key.</value>
+        internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"].ToString(); } }
 
-		/// <summary>
-		/// Tests the abstract loader base.
-		/// </summary>
-		[Test()]
-		public void TestCase_AbstractLoaderBase()
-		{
-			var path = AppDomain.CurrentDomain.BaseDirectory;
+        /// <summary>
+        /// The path.
+        /// </summary>
+        private static string path = AppDomain.CurrentDomain.BaseDirectory;
 
-			var testHelper = new TestHelper(this.ConsoleCulture, path);
+        /// <summary>
+        /// Tests the abstract loader base.
+        /// </summary>
+        [Test()]
+        public void TestCase_AbstractCommonBase()
+        {
+            var testHelper = new TestHelper(this.ConsoleCulture, path, false);
 
-			Assert.IsTrue(testHelper.IsAssemblyPathSet());
-			Assert.IsTrue(testHelper.IsCultureSet());
-			Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
-			Assert.IsTrue(testHelper.IsRegistrySet());
-			Assert.IsTrue(testHelper.IsInMemoryLoaderCommonSet());
-			Assert.IsTrue(testHelper.CommonUtilsSet());
+            Assert.IsTrue(testHelper.IsAssemblyPathSet());
+            Assert.IsTrue(testHelper.IsCultureSet());
+            Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
+            Assert.IsTrue(testHelper.IsRegistrySet());
+            Assert.IsTrue(testHelper.IsInMemoryLoaderCommonSet());
+            Assert.IsTrue(testHelper.CommonUtilsSet());
+        }
 
-		}
+        /// <summary>
+        /// Tests the case power up check utils.
+        /// </summary>
+        [Test()]
+        public void TestCase_PowerUpCheckUtils()
+        {
+            var testHelper = new TestHelper(this.ConsoleCulture, path, true);
 
-	}
+            Assert.IsTrue(testHelper.IsStringIntTest1());
+            Assert.IsTrue(testHelper.IsStringIntTest2());
+            Assert.IsTrue(testHelper.IsStringIntTest3());
+            Assert.IsTrue(testHelper.IsStringIntTest4());
+        }
+
+    }
 
 }
