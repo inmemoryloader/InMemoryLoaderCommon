@@ -23,15 +23,47 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using NUnit.Framework;
 using System;
+using System.Configuration;
 
 namespace InMemoryLoaderCommonNunit
 {
+	/// <summary>
+	/// In memory loader common nunit.
+	/// </summary>
+	[TestFixture ()]
 	public class InMemoryLoaderCommonNunit
 	{
-		public InMemoryLoaderCommonNunit ()
-		{
-		}
-	}
-}
+		/// <summary>
+		/// Gets the console culture.
+		/// </summary>
+		/// <value>The console culture.</value>
+		internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"].ToString(); } }
 
+		/// <summary>
+		/// Gets the application key.
+		/// </summary>
+		/// <value>The application key.</value>
+		internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"].ToString(); } }
+
+		/// <summary>
+		/// Tests the abstract loader base.
+		/// </summary>
+		[Test()]
+		public void TestCase_AbstractLoaderBase()
+		{
+			var path = AppDomain.CurrentDomain.BaseDirectory;
+
+			var testHelper = new TestHelper(this.ConsoleCulture, path);
+
+			Assert.IsTrue(testHelper.IsAssemblyPathSet());
+			Assert.IsTrue(testHelper.IsCultureSet());
+			Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
+			Assert.IsTrue(testHelper.IsRegistrySet());
+
+		}
+
+	}
+
+}
