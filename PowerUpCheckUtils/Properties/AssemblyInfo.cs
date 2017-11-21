@@ -2,12 +2,12 @@
 using System.Reflection;
 
 [assembly: AssemblyTitle("PowerUpCheckUtils")]
-[assembly: AssemblyDescription("InMemoryLoader ist eine in C# geschriebene Funktionsbibliothek welche das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.")]
+[assembly: AssemblyDescription("Check several data-types like Byte, Date, Decimal, Double, Float, \nInteger, Long, Url for their validity.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("responsive kaysta")]
 [assembly: AssemblyProduct("InMemoryLoader")]
 [assembly: AssemblyCopyright("responsive kaysta")]
 [assembly: AssemblyTrademark("responsive kaysta")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("0.2.9.2")]
+[assembly: AssemblyVersion("1.0.0.1")]
 [assembly: ComVisible(false)]

@@ -11,6 +11,8 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>PowerUpCheckUtils.snk</AssemblyOriginatorKeyFile>
+    <Description>Check several data-types like Byte, Date, Decimal, Double, Float, 
+Integer, Long, Url for their validity.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>false</Optimize>

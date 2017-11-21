@@ -31,10 +31,7 @@ namespace InMemoryLoaderCommonNunit
 {
     internal partial class TestHelper: AbstractCommonBase
     {
-        /// <summary>
-        /// The is byte.
-        /// </summary>
-        private static byte[] isByte = new byte[isInt];
+        
 
         /// <summary>
         /// The is decimal.
@@ -227,6 +224,26 @@ namespace InMemoryLoaderCommonNunit
         }
 
         #endregion 
+
+        #region IsStringByte
+
+        /// <summary>
+        /// The is byte.
+        /// </summary>
+        private static byte[] isByte = new byte[1];
+
+        /// <summary>
+        /// Determines whether this instance is string byte1.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string byte1; otherwise, <c>false</c>.</returns>
+        internal bool IsStringByte1()
+        {
+            object[] paramArg = { isByte };
+            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringByte", paramArg);
+            return result;
+        }
+
+        #endregion
 
     }
 

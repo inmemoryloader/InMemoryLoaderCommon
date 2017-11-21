@@ -110,7 +110,16 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.IsStringDateTest4());
         }
 
+        /// <summary>
+        /// Tests the case power up check utils byte.
+        /// </summary>
+        [Test()]
+        public void TestCase_PowerUpCheckUtilsByte()
+        {
+            var testHelper = new TestHelper(this.ConsoleCulture, path, true);
 
+            Assert.IsTrue(testHelper.IsStringByte1());
+        }
 
 
 
