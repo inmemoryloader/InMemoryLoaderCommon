@@ -228,9 +228,9 @@ namespace InMemoryLoaderCommonNunit
         #region IsStringByte
 
         /// <summary>
-        /// The is byte.
+        /// The single byte value.
         /// </summary>
-        private static byte[] isByte = new byte[1];
+        private static byte singleByteVal = 49;
 
         /// <summary>
         /// Determines whether this instance is string byte1.
@@ -238,7 +238,7 @@ namespace InMemoryLoaderCommonNunit
         /// <returns><c>true</c> if this instance is string byte1; otherwise, <c>false</c>.</returns>
         internal bool IsStringByte1()
         {
-            object[] paramArg = { isByte };
+            object[] paramArg = { singleByteVal };
             var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringByte", paramArg);
             return result;
         }
