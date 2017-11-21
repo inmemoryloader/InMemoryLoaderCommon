@@ -230,7 +230,7 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The single byte value.
         /// </summary>
-        private static byte singleByteVal = 49;
+        private const byte singleByteVal = 49;
 
         /// <summary>
         /// Determines whether this instance is string byte1.
