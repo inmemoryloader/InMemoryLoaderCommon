@@ -96,6 +96,23 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.IsStringLongTest4());
         }
 
+        /// <summary>
+        /// Tests the case power up check utils date.
+        /// </summary>
+        [Test()]
+        public void TestCase_PowerUpCheckUtilsDate()
+        {
+            var testHelper = new TestHelper(this.ConsoleCulture, path, true);
+
+            Assert.IsTrue(testHelper.IsStringDateTest1());
+            Assert.IsTrue(testHelper.IsStringDateTest2());
+            Assert.IsTrue(testHelper.IsStringDateTest3());
+            Assert.IsTrue(testHelper.IsStringDateTest4());
+        }
+
+
+
+
 
     }
 

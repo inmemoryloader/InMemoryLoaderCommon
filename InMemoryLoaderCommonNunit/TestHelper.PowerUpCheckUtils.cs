@@ -35,10 +35,7 @@ namespace InMemoryLoaderCommonNunit
         /// The is byte.
         /// </summary>
         private static byte[] isByte = new byte[isInt];
-        /// <summary>
-        /// The is date.
-        /// </summary>
-        private static DateTime isDate = DateTime.Now;
+
         /// <summary>
         /// The is decimal.
         /// </summary>
@@ -177,7 +174,59 @@ namespace InMemoryLoaderCommonNunit
 
         #endregion
 
+        #region IsStringDateTest
 
+        /// <summary>
+        /// The is date.
+        /// </summary>
+        private static DateTime isDate = DateTime.Now;
+        /// <summary>
+        /// The is string date.
+        /// </summary>
+        private static string isStringDate = DateTime.Now.ToString();
+
+        /// <summary>
+        /// Determines whether this instance is string date test1.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string date test1; otherwise, <c>false</c>.</returns>
+        internal bool IsStringDateTest1()
+        {
+            object[] paramArg = { isDate };
+            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringDate", paramArg);
+            return result;
+        }
+        /// <summary>
+        /// Determines whether this instance is string date test2.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string date test2; otherwise, <c>false</c>.</returns>
+        internal bool IsStringDateTest2()
+        {
+            object[] paramArg = { isStringDate };
+            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringDate", paramArg);
+            return result;
+        }
+        /// <summary>
+        /// Determines whether this instance is string date test3.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string date test3; otherwise, <c>false</c>.</returns>
+        internal bool IsStringDateTest3()
+        {
+            object[] paramArg = { isStringDate, CultureInfo.CurrentCulture };
+            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringDate", paramArg);
+            return result;
+        }
+        /// <summary>
+        /// Determines whether this instance is string date test4.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string date test4; otherwise, <c>false</c>.</returns>
+        internal bool IsStringDateTest4()
+        {
+            object[] paramArg = { isString, CultureInfo.CurrentCulture };
+            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringDate", paramArg);
+            return result == false;
+        }
+
+        #endregion 
 
     }
 
