@@ -56,10 +56,6 @@ namespace InMemoryLoaderCommonNunit
         /// </summary>
         private const string isStringFloat = "5.687";
         /// <summary>
-        /// The is int.
-        /// </summary>
-        private const long isLong = 12345678;
-        /// <summary>
         /// The is string int.
         /// </summary>
         private const string isStringLong = "521345678";
@@ -98,7 +94,6 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringInt", paramArg);
             return result;
         }
-
         /// <summary>
         /// Determines if is string int test2.
         /// </summary>
@@ -109,7 +104,6 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringInt", paramArg);
             return result;
         }
-
         /// <summary>
         /// Determines if is string int test3.
         /// </summary>
@@ -120,7 +114,6 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringInt", paramArg);
             return result;
         }
-
         /// <summary>
         /// Determines if is string int test4.
         /// </summary>
@@ -134,8 +127,55 @@ namespace InMemoryLoaderCommonNunit
 
         #endregion
 
+        #region IsStringLongTest
 
+        /// <summary>
+        /// The is int.
+        /// </summary>
+        private const long isLong = 12345678;
 
+        /// <summary>
+        /// Determines whether this instance is string long test1.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string long test1; otherwise, <c>false</c>.</returns>
+        internal bool IsStringLongTest1()
+        {
+            object[] paramArg = { isLong };
+            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringLong", paramArg);
+            return result;
+        }
+        /// <summary>
+        /// Determines whether this instance is string long test2.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string long test2; otherwise, <c>false</c>.</returns>
+        internal bool IsStringLongTest2()
+        {
+            object[] paramArg = { isStringInt };
+            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringLong", paramArg);
+            return result;
+        }
+        /// <summary>
+        /// Determines whether this instance is string long test3.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string long test3; otherwise, <c>false</c>.</returns>
+        internal bool IsStringLongTest3()
+        {
+            object[] paramArg = { isStringInt, CultureInfo.CurrentCulture };
+            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringLong", paramArg);
+            return result;
+        }
+        /// <summary>
+        /// Determines whether this instance is string long test4.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string long test4; otherwise, <c>false</c>.</returns>
+        internal bool IsStringLongTest4()
+        {
+            object[] paramArg = { isString, CultureInfo.CurrentCulture };
+            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringLong", paramArg);
+            return result == false;
+        }
+
+        #endregion
 
 
 

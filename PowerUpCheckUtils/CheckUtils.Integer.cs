@@ -23,9 +23,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using InMemoryLoaderBase;
 using System;
 using System.Globalization;
+using InMemoryLoaderBase;
 
 namespace PowerUpCheckUtils
 {

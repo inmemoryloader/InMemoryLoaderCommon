@@ -72,7 +72,7 @@ namespace InMemoryLoaderCommonNunit
         /// Tests the case power up check utils.
         /// </summary>
         [Test()]
-        public void TestCase_PowerUpCheckUtils()
+        public void TestCase_PowerUpCheckUtilsInt()
         {
             var testHelper = new TestHelper(this.ConsoleCulture, path, true);
 
@@ -81,6 +81,21 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.IsStringIntTest3());
             Assert.IsTrue(testHelper.IsStringIntTest4());
         }
+
+        /// <summary>
+        /// Tests the case power up check utils long.
+        /// </summary>
+        [Test()]
+        public void TestCase_PowerUpCheckUtilsLong()
+        {
+            var testHelper = new TestHelper(this.ConsoleCulture, path, true);
+
+            Assert.IsTrue(testHelper.IsStringLongTest1());
+            Assert.IsTrue(testHelper.IsStringLongTest2());
+            Assert.IsTrue(testHelper.IsStringLongTest3());
+            Assert.IsTrue(testHelper.IsStringLongTest4());
+        }
+
 
     }
 
