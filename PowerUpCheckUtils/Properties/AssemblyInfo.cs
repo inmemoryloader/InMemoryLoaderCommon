@@ -9,5 +9,5 @@ using System.Reflection;
 [assembly: AssemblyCopyright("responsive kaysta")]
 [assembly: AssemblyTrademark("responsive kaysta")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("1.0.0.1")]
+[assembly: AssemblyVersion("0.3.3.0")]
 [assembly: ComVisible(false)]
