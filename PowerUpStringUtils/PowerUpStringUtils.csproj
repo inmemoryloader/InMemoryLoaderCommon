@@ -7,7 +7,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>PowerUpStringUtils</RootNamespace>
     <AssemblyName>PowerUpStringUtils</AssemblyName>
-    <ReleaseVersion>0.3.0.2</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>PowerUpStringUtils.snk</AssemblyOriginatorKeyFile>
