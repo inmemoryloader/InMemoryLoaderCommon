@@ -1,64 +1,62 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{14803A71-3990-4D53-8BEC-085B76B200B2}</ProjectGuid>
+    <ProjectGuid>{C6D2476C-66C5-408F-B142-4298A3CD54F9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>InMemoryLoaderCommon</RootNamespace>
-    <AssemblyName>InMemoryLoaderCommon</AssemblyName>
-    <Description>InMemoryLoader ermöglicht das Laden von .Dll's zur Laufzeit ohne fixe 
-Referenzen in der Solution zu benötigen. Hierbei werden die .Dll’s 
-einmalig geladen und geprüft, in eine Collection geschrieben und zur 
-Laufzeit einmalig instanziiert.</Description>
+    <RootNamespace>InMemoryLoaderCommonNunit</RootNamespace>
+    <AssemblyName>InMemoryLoaderCommonNunit</AssemblyName>
     <ReleaseVersion>0.3.2</ReleaseVersion>
-    <SignAssembly>true</SignAssembly>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <AssemblyOriginatorKeyFile>InMemoryLoaderCommon.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DocumentationFile>..\..\XmlDocumentation\InMemoryLoaderCommon.xml</DocumentationFile>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\packages\InMemoryLoaderBase.0.3.2.2\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\packages\InMemoryLoader.0.3.2.3\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CommonComponentLoader.cs" />
-    <Compile Include="AbstractCommonBase.cs" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Documentation\InMemoryLoaderCommon.cd" />
-    <None Include="InMemoryLoaderCommon.snk" />
     <None Include="packages.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
-      <Project>{55ec3ab9-da4b-4888-8aa3-513f393fbfb1}</Project>
-      <Name>InMemoryLoaderBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InMemoryLoader\InMemoryLoader\InMemoryLoader.csproj">
-      <Project>{03ebe292-5758-4919-a3a9-aaa31313fc1f}</Project>
-      <Name>InMemoryLoader</Name>
+    <Compile Include="InMemoryLoaderCommonNunit.cs" />
+    <Compile Include="TestHelper.AbstractCommonBase.cs" />
+    <Compile Include="TestHelper.PowerUpCheckUtils.cs" />
+    <Compile Include="TestHelper.Base.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">
+      <Project>{14803A71-3990-4D53-8BEC-085B76B200B2}</Project>
+      <Name>InMemoryLoaderCommon</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
       <Project>{CE40C941-6632-42B1-8250-01567C495FC5}</Project>

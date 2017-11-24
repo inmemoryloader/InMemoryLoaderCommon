@@ -7,6 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>PowerUpXmlUtils</RootNamespace>
     <AssemblyName>PowerUpXmlUtils</AssemblyName>
+    <ReleaseVersion>0.3.2</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>PowerUpXmlUtils.snk</AssemblyOriginatorKeyFile>
@@ -15,6 +16,8 @@
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>..\..\XmlDocumentation\PowerUpXmlUtils.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
@@ -23,15 +26,12 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Serialization" />
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.3.1.4\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalSuppressions.cs" />
@@ -39,8 +39,14 @@
     <Compile Include="XmlUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PowerUpXmlUtils.snk" />
     <None Include="packages.config" />
+    <None Include="PowerUpXmlUtils.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
+      <Project>{55ec3ab9-da4b-4888-8aa3-513f393fbfb1}</Project>
+      <Name>InMemoryLoaderBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

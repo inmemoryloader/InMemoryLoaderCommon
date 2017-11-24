@@ -42,7 +42,7 @@ namespace PowerUpCheckUtils
 		public bool IsStringByte(object paramValue)
 		{
 			byte result;
-			return byte.TryParse(paramValue.ToString(), out result);
+            return byte.TryParse(paramValue.ToString(), out result);
 		}
 		/// <summary>
 		/// Determines whether this instance is string byte the specified paramValue paramNumberStyles.

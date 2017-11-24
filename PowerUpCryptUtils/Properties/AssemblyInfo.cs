@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("responsive kaysta")]
 [assembly: AssemblyTrademark("responsive kaysta")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("0.2.9.2")]
+[assembly: AssemblyVersion("0.3.3.0")]
 [assembly: ComVisible(false)]

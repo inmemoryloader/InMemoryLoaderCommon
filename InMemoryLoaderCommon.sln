@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerUpXmlUtils", "PowerUpX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommon", "InMemoryLoaderCommon\InMemoryLoaderCommon.csproj", "{14803A71-3990-4D53-8BEC-085B76B200B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommonNunit", "InMemoryLoaderCommonNunit\InMemoryLoaderCommonNunit.csproj", "{C6D2476C-66C5-408F-B142-4298A3CD54F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{B3D1C345-989C-487B-A3ED-C65338E52421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3D1C345-989C-487B-A3ED-C65338E52421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3D1C345-989C-487B-A3ED-C65338E52421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D2476C-66C5-408F-B142-4298A3CD54F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D2476C-66C5-408F-B142-4298A3CD54F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D2476C-66C5-408F-B142-4298A3CD54F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D2476C-66C5-408F-B142-4298A3CD54F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CE40C941-6632-42B1-8250-01567C495FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE40C941-6632-42B1-8250-01567C495FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE40C941-6632-42B1-8250-01567C495FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -88,7 +94,43 @@ Global
 		$0.StandardHeader = $1
 		$1.Text = @\n${FileName}\n \nAuthor: ${AuthorName} <${AuthorEmail}>\n\nCopyright (c) ${Year} ${CopyrightHolder}\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.
 		$1.IncludeInNewFiles = True
-		version = 0.3.0.2
+		$0.DotNetNamingPolicy = $2
+		$2.DirectoryNamespaceAssociation = None
+		$2.ResourceNamePolicy = FileFormatDefault
+		$0.TextStylePolicy = $3
+		$3.inheritsSet = VisualStudio
+		$3.inheritsScope = text/plain
+		$3.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $4
+		$4.IndentSwitchBody = True
+		$4.IndentBlocksInsideExpressions = True
+		$4.AnonymousMethodBraceStyle = NextLine
+		$4.PropertyBraceStyle = NextLine
+		$4.PropertyGetBraceStyle = NextLine
+		$4.PropertySetBraceStyle = NextLine
+		$4.EventBraceStyle = NextLine
+		$4.EventAddBraceStyle = NextLine
+		$4.EventRemoveBraceStyle = NextLine
+		$4.StatementBraceStyle = NextLine
+		$4.ElseNewLinePlacement = NewLine
+		$4.CatchNewLinePlacement = NewLine
+		$4.FinallyNewLinePlacement = NewLine
+		$4.WhileNewLinePlacement = DoNotCare
+		$4.ArrayInitializerWrapping = DoNotChange
+		$4.ArrayInitializerBraceStyle = NextLine
+		$4.BeforeMethodDeclarationParentheses = False
+		$4.BeforeMethodCallParentheses = False
+		$4.BeforeConstructorDeclarationParentheses = False
+		$4.NewLineBeforeConstructorInitializerColon = NewLine
+		$4.NewLineAfterConstructorInitializerColon = SameLine
+		$4.BeforeDelegateDeclarationParentheses = False
+		$4.NewParentheses = False
+		$4.SpacesBeforeBrackets = False
+		$4.inheritsSet = Mono
+		$4.inheritsScope = text/x-csharp
+		$4.scope = text/x-csharp
+		description = @InMemoryLoader ermöglicht das Laden von .Dll's zur Laufzeit ohne fixe Referenzen \nin der Solution zu benötigen. Hierbei werden die .Dll’s einmalig geladen und geprüft, \nin eine Collection geschrieben und zur Laufzeit einmalig instanziiert.
+		version = 0.3.2
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B449D49F-56DD-4125-9DE1-FC351213BEED}

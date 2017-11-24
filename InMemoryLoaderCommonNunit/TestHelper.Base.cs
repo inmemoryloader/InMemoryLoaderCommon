@@ -1,5 +1,5 @@
 ﻿//
-// PowerUpCheckUtils.Long.cs
+// TestHelper.Base.cs
 //
 // Author: responsive kaysta <me@responsive-kaysta.ch>
 //
@@ -24,38 +24,40 @@
 // THE SOFTWARE.
 
 using System;
-using System.Globalization;
-using InMemoryLoaderBase;
+using InMemoryLoaderCommon;
 
-namespace PowerUpCheckUtils
+namespace InMemoryLoaderCommonNunit
 {
-    /// <summary>
-    /// Check utils.
-    /// </summary>
-	public partial class CheckUtils : AbstractPowerUpComponent
-	{
-		/// <summary>
-		/// Determines whether this instance is string long the specified paramValue.
-		/// </summary>
-		/// <returns><c>true</c> if this instance is string long the specified paramValue; otherwise, <c>false</c>.</returns>
-		/// <param name="paramValue">Parameter value.</param>
-		public bool IsStringLong(object paramValue)
-		{
-			long result;
-			return long.TryParse(paramValue.ToString(), out result);
-		}
+    internal partial class TestHelper: AbstractCommonBase
+    {
+		
         /// <summary>
-        /// Determines whether this instance is string long the specified paramValue paramProvider.
+        /// Initializes a new instance of the <see cref="InMemoryLoaderCommonNunit.TestHelper"/> class.
         /// </summary>
-        /// <returns><c>true</c> if this instance is string long the specified paramValue paramProvider; otherwise, <c>false</c>.</returns>
-        /// <param name="paramValue">Parameter value.</param>
-        /// <param name="paramProvider">Parameter provider.</param>
-        public bool IsStringLong(object paramValue, IFormatProvider paramProvider)
+        /// <param name="culture">Culture.</param>
+        /// <param name="path">Path.</param>
+        internal TestHelper(string culture, string path, bool initComponent)
         {
-            long result;
-            return long.TryParse(paramValue.ToString(), NumberStyles.Integer, paramProvider, out result);
+            base.ConsoleCulture = culture;
+            base.AssemblyPath = path;
+            if (initComponent)
+            {
+                this.InitCommonComponent();
+            }
         }
 
-	}
+        /// <summary>
+        /// Inits the common component.
+        /// </summary>
+        private void InitCommonComponent()
+        {
+            base.GetAssemblyPath();
+            base.SetCulture();
+            base.SetInMemoryLoader();
+            base.SetInMemoryLoaderCommon();
+            base.SetClassRegistry();
+        }
+
+    }
 
 }
