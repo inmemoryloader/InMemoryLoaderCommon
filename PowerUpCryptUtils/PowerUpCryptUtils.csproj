@@ -40,14 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
-      <Project>{55ec3ab9-da4b-4888-8aa3-513f393fbfb1}</Project>
-      <Name>InMemoryLoaderBase</Name>
-    </ProjectReference>
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\packages\InMemoryLoader.0.3.2.5\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\packages\InMemoryLoaderBase.0.3.2.3\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
