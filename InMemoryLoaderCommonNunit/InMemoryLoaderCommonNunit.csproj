@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -29,18 +29,21 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.3.2.2\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.3\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\packages\InMemoryLoader.0.3.2.5\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\packages\InMemoryLoaderBase.0.3.2.3\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

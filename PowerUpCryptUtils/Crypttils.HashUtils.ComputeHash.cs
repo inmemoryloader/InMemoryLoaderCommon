@@ -28,6 +28,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using InMemoryLoaderBase;
+using InMemoryLoaderBase.HelperEnum;
 
 namespace PowerUpCryptUtils
 {
@@ -80,75 +81,75 @@ namespace PowerUpCryptUtils
 			// Algorithmus definieren
 			switch (paramAlgorithm)
 			{
-				case HashAlgorithmKind.MD5:
+				case HashAlgorithmKind.Md5:
 					hashAlgorithm = new MD5CryptoServiceProvider();
 					break;
 
-				case HashAlgorithmKind.MD5Cng:
+				case HashAlgorithmKind.Md5Cng:
 					hashAlgorithm = new MD5Cng();
 					break;
 
-				case HashAlgorithmKind.RIPEMD160:
+				case HashAlgorithmKind.RipeMd160:
 					hashAlgorithm = new RIPEMD160Managed();
 					break;
 
-				case HashAlgorithmKind.SHA1:
+				case HashAlgorithmKind.Sha1:
 					hashAlgorithm = new SHA1Managed();
 					break;
 
-				case HashAlgorithmKind.SHA1Cng:
+				case HashAlgorithmKind.Sha1Cng:
 					hashAlgorithm = new SHA1Cng();
 					break;
 
-				case HashAlgorithmKind.SHA256:
+				case HashAlgorithmKind.Sha256:
 					hashAlgorithm = new SHA256Managed();
 					break;
 
-				case HashAlgorithmKind.SHA256Cng:
+				case HashAlgorithmKind.Sha256Cng:
 					hashAlgorithm = new SHA256Cng();
 					break;
 
-				case HashAlgorithmKind.SHA384:
+				case HashAlgorithmKind.Sha384:
 					hashAlgorithm = new SHA384Managed();
 					break;
 
-				case HashAlgorithmKind.SHA384Cng:
+				case HashAlgorithmKind.Sha384Cng:
 					hashAlgorithm = new SHA384Cng();
 					break;
 
-				case HashAlgorithmKind.SHA512:
+				case HashAlgorithmKind.Sha512:
 					hashAlgorithm = new SHA512Managed();
 					break;
 
-				case HashAlgorithmKind.SHA512Cng:
+				case HashAlgorithmKind.Sha512Cng:
 					hashAlgorithm = new SHA512Cng();
 					break;
 
-				case HashAlgorithmKind.HMACMD5:
+				case HashAlgorithmKind.HmacMd5:
 					hashAlgorithm = new HMACMD5();
 					break;
 
-				case HashAlgorithmKind.HMACRIPEMD160:
+				case HashAlgorithmKind.HmacRipeMd160:
 					hashAlgorithm = new HMACRIPEMD160();
 					break;
 
-				case HashAlgorithmKind.HMACSHA1:
+				case HashAlgorithmKind.HmacSha1:
 					hashAlgorithm = new HMACSHA1();
 					break;
 
-				case HashAlgorithmKind.HMACSHA256:
+				case HashAlgorithmKind.HmacSha256:
 					hashAlgorithm = new HMACSHA256();
 					break;
 
-				case HashAlgorithmKind.HMACSHA384:
+				case HashAlgorithmKind.HmacSha384:
 					hashAlgorithm = new HMACSHA384();
 					break;
 
-				case HashAlgorithmKind.HMACSHA512:
+				case HashAlgorithmKind.HmacSha512:
 					hashAlgorithm = new HMACSHA512();
 					break;
 
-				case HashAlgorithmKind.MACTripleDES:
+				case HashAlgorithmKind.MacTripleDes:
 					hashAlgorithm = new MACTripleDES();
 					break;
 			}

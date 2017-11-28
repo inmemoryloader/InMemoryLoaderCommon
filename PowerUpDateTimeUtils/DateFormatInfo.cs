@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Globalization;
 using System.Threading;
-using InMemoryLoaderBase;
+using InMemoryLoaderBase.HelperEnum;
 
 namespace PowerUpDateTimeUtils
 {

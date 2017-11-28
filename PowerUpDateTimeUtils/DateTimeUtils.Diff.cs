@@ -1,6 +1,7 @@
 ﻿using System;
 using log4net;
 using InMemoryLoaderBase;
+using InMemoryLoaderBase.HelperEnum;
 
 namespace PowerUpDateTimeUtils
 {
