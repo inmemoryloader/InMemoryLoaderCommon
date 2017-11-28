@@ -208,7 +208,6 @@ InMemoryLoaderCommon/bin/Debug/PowerUpConvertUtils.xml
 InMemoryLoaderCommon/bin/Debug/PowerUpConvertUtils.dll
 InMemoryLoaderCommon/bin/Debug/PowerUpCheckUtils.xml
 InMemoryLoaderCommon/bin/Debug/PowerUpCheckUtils.dll
->>>>>>> feature/Feature-0.3.2
 InMemoryLoaderCommonNunit/bin/Debug/nunit.framework.xml
 InMemoryLoaderCommonNunit/bin/Debug/nunit.framework.dll
 InMemoryLoaderCommonNunit/bin/Debug/log4net.xml
@@ -246,3 +245,4 @@ PowerUpCheckUtils/bin/Debug/InMemoryLoader.dll
 PowerUpXmlUtils/bin/Debug/InMemoryLoader.dll
 PowerUpStringUtils/bin/Debug/InMemoryLoader.dll
 PowerUpGetUtils/bin/Debug/InMemoryLoader.dll
+InMemoryLoaderCommonNunit/bin/Debug/InMemoryLoaderCommonNunit.xml
