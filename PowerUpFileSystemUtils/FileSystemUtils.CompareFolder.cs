@@ -1,7 +1,8 @@
 ﻿using System;
 using log4net;
-using InMemoryLoaderBase;
+using InMemoryLoaderBase.HelperEnum;
 using System.IO;
+using InMemoryLoaderBase;
 
 namespace PowerUpFileSystemUtils
 {

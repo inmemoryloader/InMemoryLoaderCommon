@@ -17,7 +17,7 @@
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DocumentationFile>..\..\XmlDocumentation\PowerUpStringUtils.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\XmlDocumentation\PowerUpStringUtils.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
