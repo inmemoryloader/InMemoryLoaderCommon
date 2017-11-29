@@ -21,7 +21,7 @@ Laufzeit einmalig instanziiert.</Description>
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DocumentationFile>..\..\..\XmlDocumentation\InMemoryLoaderCommon.xml</DocumentationFile>
+    <DocumentationFile>..\..\XmlDocumentation\InMemoryLoaderCommon.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
