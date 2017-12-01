@@ -1,8 +1,3 @@
-# *.nupkg
-# packages/
-# bin/
-obj/
-.vs/
 
 # User-specific files
 *.suo
@@ -64,14 +59,6 @@ publish/
 *.pubxml
 *.publishproj
 
-# The packages folder can be ignored because of Package Restore
-# **/packages/*
-# except build/, which is used as an MSBuild target.
-# !**/packages/build/
-# Uncomment if necessary however generally it will be regenerated when needed
-<<<<<<< HEAD
-#!**/packages/repositories.config
-
 # Windows Azure Build Output
 csx/
 *.build.csdef
@@ -124,125 +111,5 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 *.nupkg
-=======
-# !**/packages/repositories.config
-
-InMemoryLoaderCommon/bin/Debug/InMemoryLoaderCommon.xml
-InMemoryLoaderCommon/bin/Debug/InMemoryLoaderCommon.dll.config
-InMemoryLoaderCommon/bin/Debug/InMemoryLoaderCommon.dll
-InMemoryLoaderCommon/bin/Debug/InMemoryLoaderBase.xml
-InMemoryLoaderCommon/bin/Debug/InMemoryLoaderBase.dll
-InMemoryLoaderCommon/bin/Debug/InMemoryLoader.xml
-InMemoryLoaderCommon/bin/Debug/InMemoryLoader.dll
-PowerUpXmlUtils/bin/Debug/log4net.xml
-PowerUpXmlUtils/bin/Debug/log4net.dll
-PowerUpXmlUtils/bin/Debug/PowerUpXmlUtils.xml
-PowerUpXmlUtils/bin/Debug/PowerUpXmlUtils.dll
-PowerUpXmlUtils/bin/Debug/InMemoryLoaderBase.xml
-PowerUpXmlUtils/bin/Debug/InMemoryLoaderBase.dll
-PowerUpStringUtils/bin/Debug/log4net.xml
-PowerUpStringUtils/bin/Debug/log4net.dll
-PowerUpStringUtils/bin/Debug/PowerUpStringUtils.xml
-PowerUpStringUtils/bin/Debug/PowerUpStringUtils.dll
-PowerUpStringUtils/bin/Debug/InMemoryLoaderBase.xml
-PowerUpStringUtils/bin/Debug/InMemoryLoaderBase.dll
-PowerUpGetUtils/bin/Debug/log4net.xml
-PowerUpGetUtils/bin/Debug/log4net.dll
-PowerUpGetUtils/bin/Debug/PowerUpGetUtils.xml
-PowerUpGetUtils/bin/Debug/PowerUpGetUtils.dll
-PowerUpGetUtils/bin/Debug/InMemoryLoaderBase.xml
-PowerUpGetUtils/bin/Debug/InMemoryLoaderBase.dll
-PowerUpFileSystemUtils/bin/Debug/log4net.xml
-PowerUpFileSystemUtils/bin/Debug/log4net.dll
-PowerUpFileSystemUtils/bin/Debug/PowerUpFileSystemUtils.xml
-PowerUpFileSystemUtils/bin/Debug/PowerUpFileSystemUtils.dll
-PowerUpFileSystemUtils/bin/Debug/InMemoryLoaderBase.xml
-PowerUpFileSystemUtils/bin/Debug/InMemoryLoaderBase.dll
-PowerUpEmailUtils/bin/Debug/log4net.xml
-PowerUpEmailUtils/bin/Debug/log4net.dll
-PowerUpEmailUtils/bin/Debug/PowerUpEmailUtils.xml
-PowerUpEmailUtils/bin/Debug/PowerUpEmailUtils.dll
-PowerUpEmailUtils/bin/Debug/InMemoryLoaderBase.xml
-PowerUpEmailUtils/bin/Debug/InMemoryLoaderBase.dll
-PowerUpDateTimeUtils/bin/Debug/log4net.xml
-PowerUpDateTimeUtils/bin/Debug/log4net.dll
-PowerUpDateTimeUtils/bin/Debug/PowerUpDateTimeUtils.xml
-PowerUpDateTimeUtils/bin/Debug/PowerUpDateTimeUtils.dll
-PowerUpDateTimeUtils/bin/Debug/InMemoryLoaderBase.xml
-PowerUpDateTimeUtils/bin/Debug/InMemoryLoaderBase.dll
-PowerUpCryptUtils/bin/Debug/log4net.xml
-PowerUpCryptUtils/bin/Debug/log4net.dll
-PowerUpCryptUtils/bin/Debug/PowerUpCryptUtils.xml
-PowerUpCryptUtils/bin/Debug/PowerUpCryptUtils.dll
-PowerUpCryptUtils/bin/Debug/InMemoryLoaderBase.xml
-PowerUpCryptUtils/bin/Debug/InMemoryLoaderBase.dll
-PowerUpConvertUtils/bin/Debug/log4net.xml
-PowerUpConvertUtils/bin/Debug/log4net.dll
-PowerUpConvertUtils/bin/Debug/PowerUpConvertUtils.xml
-PowerUpConvertUtils/bin/Debug/PowerUpConvertUtils.dll
-PowerUpConvertUtils/bin/Debug/InMemoryLoaderBase.xml
-PowerUpConvertUtils/bin/Debug/InMemoryLoaderBase.dll
-PowerUpCheckUtils/bin/Debug/log4net.xml
-PowerUpCheckUtils/bin/Debug/log4net.dll
-PowerUpCheckUtils/bin/Debug/PowerUpCheckUtils.xml
-PowerUpCheckUtils/bin/Debug/PowerUpCheckUtils.dll
-PowerUpCheckUtils/bin/Debug/InMemoryLoaderBase.xml
-PowerUpCheckUtils/bin/Debug/InMemoryLoaderBase.dll
-InMemoryLoaderCommon/bin/Debug/log4net.xml
-InMemoryLoaderCommon/bin/Debug/log4net.dll
-InMemoryLoaderCommon/bin/Debug/PowerUpXmlUtils.xml
-InMemoryLoaderCommon/bin/Debug/PowerUpXmlUtils.dll
-InMemoryLoaderCommon/bin/Debug/PowerUpStringUtils.xml
-InMemoryLoaderCommon/bin/Debug/PowerUpStringUtils.dll
-InMemoryLoaderCommon/bin/Debug/PowerUpGetUtils.xml
-InMemoryLoaderCommon/bin/Debug/PowerUpGetUtils.dll
-InMemoryLoaderCommon/bin/Debug/PowerUpFileSystemUtils.xml
-InMemoryLoaderCommon/bin/Debug/PowerUpFileSystemUtils.dll
-InMemoryLoaderCommon/bin/Debug/PowerUpEmailUtils.xml
-InMemoryLoaderCommon/bin/Debug/PowerUpEmailUtils.dll
-InMemoryLoaderCommon/bin/Debug/PowerUpDateTimeUtils.xml
-InMemoryLoaderCommon/bin/Debug/PowerUpDateTimeUtils.dll
-InMemoryLoaderCommon/bin/Debug/PowerUpCryptUtils.xml
-InMemoryLoaderCommon/bin/Debug/PowerUpCryptUtils.dll
-InMemoryLoaderCommon/bin/Debug/PowerUpConvertUtils.xml
-InMemoryLoaderCommon/bin/Debug/PowerUpConvertUtils.dll
-InMemoryLoaderCommon/bin/Debug/PowerUpCheckUtils.xml
-InMemoryLoaderCommon/bin/Debug/PowerUpCheckUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/nunit.framework.xml
-InMemoryLoaderCommonNunit/bin/Debug/nunit.framework.dll
-InMemoryLoaderCommonNunit/bin/Debug/log4net.xml
-InMemoryLoaderCommonNunit/bin/Debug/log4net.dll
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpXmlUtils.xml
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpXmlUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpStringUtils.xml
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpStringUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpGetUtils.xml
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpGetUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpFileSystemUtils.xml
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpFileSystemUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpEmailUtils.xml
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpEmailUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpDateTimeUtils.xml
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpDateTimeUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpCryptUtils.xml
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpCryptUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpConvertUtils.xml
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpConvertUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpCheckUtils.xml
-InMemoryLoaderCommonNunit/bin/Debug/PowerUpCheckUtils.dll
-InMemoryLoaderCommonNunit/bin/Debug/InMemoryLoaderCommonNunit.dll.config
-InMemoryLoaderCommonNunit/bin/Debug/InMemoryLoaderCommonNunit.dll
-InMemoryLoaderCommonNunit/bin/Debug/InMemoryLoaderCommon.xml
-InMemoryLoaderCommonNunit/bin/Debug/InMemoryLoaderCommon.dll
-InMemoryLoaderCommonNunit/bin/Debug/InMemoryLoaderBase.dll
-InMemoryLoaderCommonNunit/bin/Debug/InMemoryLoader.dll
-PowerUpFileSystemUtils/bin/Debug/InMemoryLoader.dll
-PowerUpEmailUtils/bin/Debug/InMemoryLoader.dll
-PowerUpDateTimeUtils/bin/Debug/InMemoryLoader.dll
-PowerUpCryptUtils/bin/Debug/InMemoryLoader.dll
-PowerUpConvertUtils/bin/Debug/InMemoryLoader.dll
-PowerUpCheckUtils/bin/Debug/InMemoryLoader.dll
-PowerUpXmlUtils/bin/Debug/InMemoryLoader.dll
-PowerUpStringUtils/bin/Debug/InMemoryLoader.dll
-PowerUpGetUtils/bin/Debug/InMemoryLoader.dll
-InMemoryLoaderCommonNunit/bin/Debug/InMemoryLoaderCommonNunit.xml
+obj/
+bin/
