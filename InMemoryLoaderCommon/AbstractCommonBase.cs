@@ -54,7 +54,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("CheckUtils")).SingleOrDefault().Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("CheckUtils")).Value;
             }
         }
 
@@ -66,7 +66,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("ConvertUtils")).SingleOrDefault().Value;
+				return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("ConvertUtils")).Value;
             }
         }
 
@@ -78,7 +78,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("CryptUtils")).SingleOrDefault().Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("CryptUtils")).Value;
             }
         }
 
@@ -90,7 +90,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("DateTimeUtils")).SingleOrDefault().Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("DateTimeUtils")).Value;
             }
         }
 
@@ -102,7 +102,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("EmailUtils")).SingleOrDefault().Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("EmailUtils")).Value;
             }
         }
 
@@ -114,7 +114,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("FileSystemUtils")).SingleOrDefault().Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("FileSystemUtils")).Value;
             }
         }
 
@@ -126,7 +126,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("GetUtils")).SingleOrDefault().Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("GetUtils")).Value;
             }
         }
 
@@ -138,7 +138,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("StringUtils")).SingleOrDefault().Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("StringUtils")).Value;
             }
         }
 
@@ -150,7 +150,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.Where(str => str.Key.Class.Contains("XmlUtils")).SingleOrDefault().Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("XmlUtils")).Value;
             }
         }
 

@@ -7,8 +7,11 @@
     <OutputType>Library</OutputType>
     <RootNamespace>InMemoryLoaderCommon</RootNamespace>
     <AssemblyName>InMemoryLoaderCommon</AssemblyName>
-    <Description>Pre Release Build</Description>
-    <ReleaseVersion>0.3.0.2</ReleaseVersion>
+    <Description>InMemoryLoader ermöglicht das Laden von .Dll's zur Laufzeit ohne fixe 
+Referenzen in der Solution zu benötigen. Hierbei werden die .Dll’s 
+einmalig geladen und geprüft, in eine Collection geschrieben und zur 
+Laufzeit einmalig instanziiert.</Description>
+    <ReleaseVersion>0.3.2</ReleaseVersion>
     <SignAssembly>true</SignAssembly>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AssemblyOriginatorKeyFile>InMemoryLoaderCommon.snk</AssemblyOriginatorKeyFile>
@@ -17,6 +20,8 @@
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>..\..\XmlDocumentation\InMemoryLoaderCommon.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
@@ -29,15 +34,15 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Configuration" />    
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.0.3.1.6\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.0.3.2.9\lib\InMemoryLoader.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.3.1.4\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.0.3.2.9\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

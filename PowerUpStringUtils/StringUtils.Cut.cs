@@ -2,6 +2,7 @@
 using InMemoryLoaderBase;
 using log4net;
 using System.Text.RegularExpressions;
+using InMemoryLoaderBase.HelperEnum;
 
 namespace PowerUpStringUtils
 {

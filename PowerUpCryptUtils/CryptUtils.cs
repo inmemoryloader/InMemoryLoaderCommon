@@ -27,6 +27,7 @@ using System;
 using System.Collections;
 using System.Text;
 using InMemoryLoaderBase;
+using InMemoryLoaderBase.HelperEnum;
 using log4net;
 
 namespace PowerUpCryptUtils
@@ -138,79 +139,79 @@ namespace PowerUpCryptUtils
 			{
 
 				case "MD5":
-					algorithm = HashAlgorithmKind.MD5;
+					algorithm = HashAlgorithmKind.Md5;
 					break;
 
 				case "MD5CNG":
-					algorithm = HashAlgorithmKind.MD5Cng;
+					algorithm = HashAlgorithmKind.Md5Cng;
 					break;
 
 				case "RIPEMD160":
-					algorithm = HashAlgorithmKind.RIPEMD160;
+					algorithm = HashAlgorithmKind.HmacRipeMd160;
 					break;
 
 				case "SHA1":
-					algorithm = HashAlgorithmKind.SHA1;
+					algorithm = HashAlgorithmKind.Sha1;
 					break;
 
 				case "SHA1CNG":
-					algorithm = HashAlgorithmKind.SHA1Cng;
+					algorithm = HashAlgorithmKind.Sha1Cng;
 					break;
 
 				case "SHA256":
-					algorithm = HashAlgorithmKind.SHA256;
+					algorithm = HashAlgorithmKind.Sha256;
 					break;
 
 				case "SHA256CNG":
-					algorithm = HashAlgorithmKind.SHA256Cng;
+					algorithm = HashAlgorithmKind.Sha256Cng;
 					break;
 
 				case "SHA384":
-					algorithm = HashAlgorithmKind.SHA384;
+					algorithm = HashAlgorithmKind.Sha384;
 					break;
 
 				case "SHA384CNG":
-					algorithm = HashAlgorithmKind.SHA384Cng;
+					algorithm = HashAlgorithmKind.Sha384Cng;
 					break;
 
 				case "SHA512":
-					algorithm = HashAlgorithmKind.SHA512;
+					algorithm = HashAlgorithmKind.Sha512;
 					break;
 
 				case "SHA512CNG":
-					algorithm = HashAlgorithmKind.SHA512Cng;
+					algorithm = HashAlgorithmKind.Sha512Cng;
 					break;
 
 				case "HMACMD5":
-					algorithm = HashAlgorithmKind.HMACMD5;
+					algorithm = HashAlgorithmKind.HmacMd5;
 					break;
 
 				case "HMACRIPEMD160":
-					algorithm = HashAlgorithmKind.HMACRIPEMD160;
+					algorithm = HashAlgorithmKind.HmacRipeMd160;
 					break;
 
 				case "HMACSHA1":
-					algorithm = HashAlgorithmKind.HMACSHA1;
+					algorithm = HashAlgorithmKind.HmacSha1;
 					break;
 
 				case "HMACSHA256":
-					algorithm = HashAlgorithmKind.HMACSHA256;
+					algorithm = HashAlgorithmKind.HmacSha256;
 					break;
 
 				case "HMACSHA384":
-					algorithm = HashAlgorithmKind.HMACSHA384;
+					algorithm = HashAlgorithmKind.HmacSha384;
 					break;
 
 				case "HMACSHA512":
-					algorithm = HashAlgorithmKind.HMACSHA512;
+					algorithm = HashAlgorithmKind.HmacSha512;
 					break;
 
 				case "MACTRIPLEDES":
-					algorithm = HashAlgorithmKind.MACTripleDES;
+					algorithm = HashAlgorithmKind.MacTripleDes;
 					break;
 
 				default:
-					algorithm = HashAlgorithmKind.MD5;
+					algorithm = HashAlgorithmKind.Md5;
 					break;
 			}
 

@@ -6,6 +6,9 @@ using System.Net;
 
 namespace PowerUpCheckUtils
 {
+    /// <summary>
+    /// Check utils.
+    /// </summary>
 	public partial class CheckUtils : AbstractPowerUpComponent
 	{
 		/// <summary>
