@@ -30,7 +30,6 @@ namespace InMemoryLoaderCommonNunit
 {
     internal partial class TestHelper: AbstractCommonBase
     {
-		
         /// <summary>
         /// Initializes a new instance of the <see cref="InMemoryLoaderCommonNunit.TestHelper"/> class.
         /// </summary>

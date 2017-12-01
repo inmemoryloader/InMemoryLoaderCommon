@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6D2476C-66C5-408F-B142-4298A3CD54F9}</ProjectGuid>
+    <ProjectGuid>{8F5BE28A-3F1D-4AA7-9735-9F797F563B0F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>InMemoryLoaderCommonNunit</RootNamespace>
     <AssemblyName>InMemoryLoaderCommonNunit</AssemblyName>
-    <ReleaseVersion>0.3.2</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ReleaseVersion>0.3.2</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,21 +29,21 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.5\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.0.3.2.9\lib\InMemoryLoader.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.3.2.3\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.0.3.2.9\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
-    </Reference>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InMemoryLoaderCommonNunit.cs" />
+    <Compile Include="TestHelper.Base.cs" />
     <Compile Include="TestHelper.AbstractCommonBase.cs" />
     <Compile Include="TestHelper.PowerUpCheckUtils.cs" />
-    <Compile Include="TestHelper.Base.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">
@@ -73,13 +73,13 @@
       <Project>{037A6543-CA5B-4DD3-97E6-1A526525C7F6}</Project>
       <Name>PowerUpCryptUtils</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
-      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
-      <Name>PowerUpDateTimeUtils</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PowerUpEmailUtils\PowerUpEmailUtils.csproj">
       <Project>{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}</Project>
       <Name>PowerUpEmailUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
+      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
+      <Name>PowerUpDateTimeUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PowerUpFileSystemUtils\PowerUpFileSystemUtils.csproj">
       <Project>{9824DE8B-6084-4421-BCC5-C68D19249C1C}</Project>
