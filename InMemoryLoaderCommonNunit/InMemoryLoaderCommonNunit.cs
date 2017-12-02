@@ -121,8 +121,6 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.IsStringByte1());
         }
 
-
-
     }
 
 }
