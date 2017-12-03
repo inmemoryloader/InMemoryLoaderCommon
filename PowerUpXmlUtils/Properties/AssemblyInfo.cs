@@ -1,6 +1,5 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
+using System.Reflection;
 
 [assembly: AssemblyTitle("PowerUpXmlUtils")]
 [assembly: AssemblyDescription("InMemoryLoader ist eine in C# geschriebene Funktionsbibliothek welche das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.")]
