@@ -73,105 +73,105 @@ namespace PowerUpDateTimeUtils
 		public CalendarInfo(Calendar calendar)
 		{
 			// Kalender übergeben
-			this.Calendar = calendar;
+			Calendar = calendar;
 
 			// Den Kalendernamen und die Beispielkultur ermitteln
 			if (calendar is ChineseLunisolarCalendar)
 			{
-				this.CalendarName = "Chinese Lunisolar";
-				this.SampleCulture = CultureInfo.GetCultureInfo("zh-CN");
+				CalendarName = "Chinese Lunisolar";
+				SampleCulture = CultureInfo.GetCultureInfo("zh-CN");
 			}
 			else if (calendar is GregorianCalendar)
 			{
-				this.CalendarName = "Gregorian";
-				this.SampleCulture = CultureInfo.GetCultureInfo("en-US");
+				CalendarName = "Gregorian";
+				SampleCulture = CultureInfo.GetCultureInfo("en-US");
 			}
 			else if (calendar is HebrewCalendar)
 			{
-				this.CalendarName = "Hebrew";
-				this.SampleCulture = CultureInfo.GetCultureInfo("he-IL");
+				CalendarName = "Hebrew";
+				SampleCulture = CultureInfo.GetCultureInfo("he-IL");
 			}
 			else if (calendar is HijriCalendar)
 			{
-				this.CalendarName = "Hijri";
-				this.SampleCulture = CultureInfo.GetCultureInfo("ar-SA");
+				CalendarName = "Hijri";
+				SampleCulture = CultureInfo.GetCultureInfo("ar-SA");
 			}
 			else if (calendar is JapaneseCalendar)
 			{
-				this.CalendarName = "Japanese";
-				this.SampleCulture = CultureInfo.GetCultureInfo("ja-JP");
+				CalendarName = "Japanese";
+				SampleCulture = CultureInfo.GetCultureInfo("ja-JP");
 			}
 			else if (calendar is JapaneseLunisolarCalendar)
 			{
-				this.CalendarName = "Japanese Lunisolar";
-				this.SampleCulture = CultureInfo.GetCultureInfo("ja-JP");
+				CalendarName = "Japanese Lunisolar";
+				SampleCulture = CultureInfo.GetCultureInfo("ja-JP");
 			}
 			else if (calendar is JulianCalendar)
 			{
-				this.CalendarName = "Julian";
-				this.SampleCulture = CultureInfo.GetCultureInfo("en-US");
+				CalendarName = "Julian";
+				SampleCulture = CultureInfo.GetCultureInfo("en-US");
 			}
 			else if (calendar is KoreanCalendar)
 			{
-				this.CalendarName = "Korean";
-				this.SampleCulture = CultureInfo.GetCultureInfo("ko-KR");
+				CalendarName = "Korean";
+				SampleCulture = CultureInfo.GetCultureInfo("ko-KR");
 			}
 			else if (calendar is KoreanLunisolarCalendar)
 			{
-				this.CalendarName = "Korean Lunisolar";
-				this.SampleCulture = CultureInfo.GetCultureInfo("ko-KR");
+				CalendarName = "Korean Lunisolar";
+				SampleCulture = CultureInfo.GetCultureInfo("ko-KR");
 			}
 			else if (calendar is PersianCalendar)
 			{
-				this.CalendarName = "Persian";
-				this.SampleCulture = CultureInfo.GetCultureInfo("fa-IR");
+				CalendarName = "Persian";
+				SampleCulture = CultureInfo.GetCultureInfo("fa-IR");
 			}
 			else if (calendar is TaiwanCalendar)
 			{
-				this.CalendarName = "Taiwan";
-				this.SampleCulture = CultureInfo.GetCultureInfo("zh-TW");
+				CalendarName = "Taiwan";
+				SampleCulture = CultureInfo.GetCultureInfo("zh-TW");
 			}
 			else if (calendar is TaiwanLunisolarCalendar)
 			{
-				this.CalendarName = "Taiwan Lunisolar";
-				this.SampleCulture = CultureInfo.GetCultureInfo("zh-TW");
+				CalendarName = "Taiwan Lunisolar";
+				SampleCulture = CultureInfo.GetCultureInfo("zh-TW");
 			}
 			else if (calendar is ThaiBuddhistCalendar)
 			{
-				this.CalendarName = "Thai Buddhist";
-				this.SampleCulture = CultureInfo.GetCultureInfo("th-TH");
+				CalendarName = "Thai Buddhist";
+				SampleCulture = CultureInfo.GetCultureInfo("th-TH");
 			}
 			else if (calendar is UmAlQuraCalendar)
 			{
-				this.CalendarName = "Um Al Qura";
-				this.SampleCulture = CultureInfo.GetCultureInfo("ar-SA");
+				CalendarName = "Um Al Qura";
+				SampleCulture = CultureInfo.GetCultureInfo("ar-SA");
 			}
 			else
 			{
-				this.SampleCulture = CultureInfo.InvariantCulture;
-				this.CalendarName = "Unknown";
+				SampleCulture = CultureInfo.InvariantCulture;
+				CalendarName = "Unknown";
 			}
 
 			// Den Algorithmustyp-Namen ermitteln
 			switch (calendar.AlgorithmType)
 			{
 			case CalendarAlgorithmType.LunarCalendar:
-				this.AlgorithmTypeName = "Lunar";
+				AlgorithmTypeName = "Lunar";
 				break;
 			case CalendarAlgorithmType.LunisolarCalendar:
-				this.AlgorithmTypeName = "Lunisolar";
+				AlgorithmTypeName = "Lunisolar";
 				break;
 			case CalendarAlgorithmType.SolarCalendar:
-				this.AlgorithmTypeName = "Solar";
+				AlgorithmTypeName = "Solar";
 				break;
 			case CalendarAlgorithmType.Unknown:
-				this.AlgorithmTypeName = "Unknown";
+				AlgorithmTypeName = "Unknown";
 				break;
 			}
 
 			// Ermitteln der minimalen und maximalen Anzahl der Monate im Jahr
-			this.MonthInYearMin = int.MaxValue;
-			this.MonthInYearMax = 0;
+			MonthInYearMin = int.MaxValue;
+			MonthInYearMax = 0;
 			DateTime date = calendar.MinSupportedDateTime;
 			while (date < calendar.MaxSupportedDateTime)
 			{
@@ -184,8 +184,8 @@ namespace PowerUpDateTimeUtils
 					{
 						Debugger.Break();
 					}
-					this.MonthInYearMin = Math.Min(this.MonthInYearMin, monthsInYear);
-					this.MonthInYearMax = Math.Max(this.MonthInYearMax, monthsInYear);
+					MonthInYearMin = Math.Min(MonthInYearMin, monthsInYear);
+					MonthInYearMax = Math.Max(MonthInYearMax, monthsInYear);
 				}
 				catch (ArgumentOutOfRangeException)
 				{
@@ -210,8 +210,8 @@ namespace PowerUpDateTimeUtils
 			// Die minimale und maximale Anzahl der Tage 
 			// für die Monate des Kalenders ermitteln
 			date = calendar.MinSupportedDateTime;
-			this.DaysInMonthMin = int.MaxValue;
-			this.DaysInMonthMax = 0;
+			DaysInMonthMin = int.MaxValue;
+			DaysInMonthMax = 0;
 			while (date < calendar.MaxSupportedDateTime)
 			{
 				// Die Anzahl der Tage im Monat
@@ -220,8 +220,8 @@ namespace PowerUpDateTimeUtils
 				try
 				{
 					int daysInMonth = calendar.GetDaysInMonth(calendarYear, calendarMonth);
-					this.DaysInMonthMin = Math.Min(this.DaysInMonthMin, daysInMonth);
-					this.DaysInMonthMax = Math.Max(this.DaysInMonthMax, daysInMonth);
+					DaysInMonthMin = Math.Min(DaysInMonthMin, daysInMonth);
+					DaysInMonthMax = Math.Max(DaysInMonthMax, daysInMonth);
 				}
 				catch (ArgumentOutOfRangeException)
 				{
@@ -286,7 +286,7 @@ namespace PowerUpDateTimeUtils
 				}
 			}
 
-			this.LeapMonths = new ReadOnlyCollection<LeapMonthInfo>(leapMonths);
+			LeapMonths = new ReadOnlyCollection<LeapMonthInfo>(leapMonths);
 		}
 
 		#endregion
@@ -299,9 +299,9 @@ namespace PowerUpDateTimeUtils
 		/// <param name="date">Das Datum</param>
 		public string GetCalendarDateString(DateTime date)
 		{
-			return this.Calendar.GetDayOfMonth(DateTime.Now) + "." +
-				this.Calendar.GetMonth(DateTime.Now) + "." +
-				this.Calendar.GetYear(DateTime.Now);
+			return Calendar.GetDayOfMonth(DateTime.Now) + "." +
+				Calendar.GetMonth(DateTime.Now) + "." +
+				Calendar.GetYear(DateTime.Now);
 		}
 
 		#endregion
@@ -340,7 +340,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public override string ToString()
 		{
-			return this.CalendarName;
+			return CalendarName;
 		}
 
 		#endregion

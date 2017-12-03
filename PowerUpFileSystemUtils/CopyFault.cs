@@ -36,10 +36,10 @@ namespace PowerUpFileSystemUtils
 		/// <param name="error">Der aufgetretene Fehler</param>
 		internal CopyFault(bool isFile, string source, string destination, string error)
 		{
-			this.IsFile = isFile;
-			this.Source = source;
-			this.Destination = destination;
-			this.Error = error;
+			IsFile = isFile;
+			Source = source;
+			Destination = destination;
+			Error = error;
 		}
 	}
 }

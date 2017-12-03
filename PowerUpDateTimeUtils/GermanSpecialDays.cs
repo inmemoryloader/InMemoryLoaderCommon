@@ -16,7 +16,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public int Year
 		{
-			get { return this.year; }
+			get { return year; }
 		}
 
 		/// <summary>
@@ -25,7 +25,7 @@ namespace PowerUpDateTimeUtils
 		/// <param name="year">Das Jahr</param>
 		internal GermanSpecialDays(int year)
 		{
-			this.year = year;
+			year = year;
 		}
 
 		/// <summary>

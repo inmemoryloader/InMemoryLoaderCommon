@@ -43,7 +43,7 @@ namespace PowerUpCheckUtils
 		/// </summary>
 		public CheckUtils()
 		{
-			log.DebugFormat("Create a new instance of Type: {0}", this.GetType().ToString());
+			log.DebugFormat("Create a new instance of Type: {0}", GetType().ToString());
 		}
 
 	}

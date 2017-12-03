@@ -31,8 +31,6 @@ namespace InMemoryLoaderCommonNunit
 {
     internal partial class TestHelper: AbstractCommonBase
     {
-
-
         /// <summary>
         /// The is decimal.
         /// </summary>

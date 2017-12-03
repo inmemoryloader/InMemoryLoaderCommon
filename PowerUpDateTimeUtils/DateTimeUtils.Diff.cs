@@ -22,13 +22,13 @@ namespace PowerUpDateTimeUtils
 			switch (interval)
 			{
 			case DateInterval.Years:
-				return this.GetYearDifference(firstDate, lastDate);
+				return GetYearDifference(firstDate, lastDate);
 
 			case DateInterval.Months:
-				return this.GetMonthDifference(firstDate, lastDate);
+				return GetMonthDifference(firstDate, lastDate);
 
 			case DateInterval.Weeks:
-				return this.GetWeekDifference(firstDate, lastDate);
+				return GetWeekDifference(firstDate, lastDate);
 
 			case DateInterval.Days:
 				return (lastDate - firstDate).TotalDays;

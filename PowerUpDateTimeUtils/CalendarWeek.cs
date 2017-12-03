@@ -24,8 +24,8 @@ namespace PowerUpDateTimeUtils
 		/// <param name="week">Die Kalenderwoche</param>
 		public CalendarWeek(int year, int week)
 		{
-			this.Year = year;
-			this.Week = week;
+			Year = year;
+			Week = week;
 		}
 	}
 }

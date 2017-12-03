@@ -16,7 +16,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public int Month
 		{
-			get { return this.month; }
+			get { return month; }
 		}
 
 		private int year;
@@ -25,7 +25,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public int Year
 		{
-			get { return this.year; }
+			get { return year; }
 		}
 
 		private DateTime startDate;
@@ -34,7 +34,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public DateTime StartDate
 		{
-			get { return this.startDate; }
+			get { return startDate; }
 		}
 
 		private DateTime endDate;
@@ -43,7 +43,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public DateTime EndDate
 		{
-			get { return this.endDate; }
+			get { return endDate; }
 		}
 
 		/// <summary>
@@ -61,11 +61,11 @@ namespace PowerUpDateTimeUtils
 			}
 
 			// Argumente übergeben
-			this.month = month;
-			this.year = year;
+			month = month;
+			year = year;
 
 			// Den ersten Tag des Monats ermitteln
-			this.startDate = new DateTime(year, month, 1);
+			startDate = new DateTime(year, month, 1);
 
 			// Den letzten Tag des Monats ermitteln
 			if (month == 12)
@@ -77,7 +77,7 @@ namespace PowerUpDateTimeUtils
 			{
 				month++;
 			}
-			this.endDate = new DateTime(year, month, 1).AddDays(-1);
+			endDate = new DateTime(year, month, 1).AddDays(-1);
 		}
 	}
 }

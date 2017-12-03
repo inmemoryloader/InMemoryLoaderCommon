@@ -41,7 +41,7 @@ namespace InMemoryLoaderCommonNunit
             base.AssemblyPath = path;
             if (initComponent)
             {
-                this.InitCommonComponent();
+                InitCommonComponent();
             }
         }
 
