@@ -49,44 +49,44 @@ namespace InMemoryLoaderCommon
         /// <summary>
         /// The string component.
         /// </summary>
-        public IDynamicClassSetup StringComponent;
+        IDynamicClassSetup StringComponent;
         /// <summary>
         /// The check component.
         /// </summary>
-        public IDynamicClassSetup CheckComponent;
+        IDynamicClassSetup CheckComponent;
         /// <summary>
         /// The convert component.
         /// </summary>
-        public IDynamicClassSetup ConvertComponent;
+        IDynamicClassSetup ConvertComponent;
         /// <summary>
         /// The crypt component.
         /// </summary>
-        public IDynamicClassSetup CryptComponent;
+        IDynamicClassSetup CryptComponent;
         /// <summary>
         /// The xml component.
         /// </summary>
-        public IDynamicClassSetup XmlComponent;
+        IDynamicClassSetup XmlComponent;
         /// <summary>
         /// The date time component.
         /// </summary>
-        public IDynamicClassSetup DateTimeComponent;
+        IDynamicClassSetup DateTimeComponent;
         /// <summary>
         /// The email component.
         /// </summary>
-        public IDynamicClassSetup EmailComponent;
+        IDynamicClassSetup EmailComponent;
         /// <summary>
         /// The file system component.
         /// </summary>
-        public IDynamicClassSetup FileSystemComponent;
+        IDynamicClassSetup FileSystemComponent;
         /// <summary>
         /// The get component.
         /// </summary>
-        public IDynamicClassSetup GetComponent;
+        IDynamicClassSetup GetComponent;
 
         /// <summary>
         /// The assembly path.
         /// </summary>
-        private string assemblyPath;
+        string assemblyPath;
 
         /// <summary>
         /// Gets or sets the assembly path.
