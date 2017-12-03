@@ -165,7 +165,7 @@ namespace InMemoryLoaderCommon
         /// <returns><c>true</c>, if in memory loader common was set, <c>false</c> otherwise.</returns>
         public virtual bool SetInMemoryLoaderCommon()
         {
-            this.CommonComponentLoader = new CommonComponentLoader();
+            CommonComponentLoader = new CommonComponentLoader();
             var isSet = this.CommonComponentLoader.InitCommonComponents(base.AssemblyPath);
             log.DebugFormat("CommonComponentLoader set: {0}", isSet);
             return true;
