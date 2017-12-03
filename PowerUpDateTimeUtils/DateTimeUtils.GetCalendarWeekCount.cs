@@ -15,14 +15,14 @@ namespace PowerUpDateTimeUtils
 		{
 			// Kalenderwoche des 31.12. des Jahres ermitteln
 			DateTime baseDate = new DateTime(year, 12, 31);
-			CalendarWeek calendarWeek = this.GetCalendarWeek(baseDate);
+			CalendarWeek calendarWeek = GetCalendarWeek(baseDate);
 
 			// Wenn dieser Tag in die Woche 1 des neuen Jahres fällt, die Kalenderwoche 
 			// des um eine Woche reduzierten Datums ermitteln
 			if (calendarWeek.Week == 1)
 			{
 				var retDate = baseDate.AddDays (-7);
-				return this.GetCalendarWeek(retDate).Week;
+				return GetCalendarWeek(retDate).Week;
 			}
 			// Ergebnis zurückgeben
 			return calendarWeek.Week;

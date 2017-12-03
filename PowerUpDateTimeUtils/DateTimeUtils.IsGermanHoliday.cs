@@ -25,7 +25,7 @@ namespace PowerUpDateTimeUtils
 			// Auflistung der besonderen Tage des angegebenen Jahres erzeugen, 
 			// durchgehen und das Datum der Feiertage mit dem angegebenen Datum
 			// vergleichen
-			foreach (GermanSpecialDay gsd in this.GetGermanSpecialDays(date.Year).Values)
+			foreach (GermanSpecialDay gsd in GetGermanSpecialDays(date.Year).Values)
 			{
 				if (date.Day == gsd.Date.Day &&
 					date.Month == gsd.Date.Month)

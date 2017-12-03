@@ -16,7 +16,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public int Quarter
 		{
-			get { return this.quarter; }
+			get { return quarter; }
 		}
 
 		private int year;
@@ -25,7 +25,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public int Year
 		{
-			get { return this.year; }
+			get { return year; }
 		}
 
 		private DateTime startDate;
@@ -34,7 +34,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public DateTime StartDate
 		{
-			get { return this.startDate; }
+			get { return startDate; }
 		}
 
 		private DateTime endDate;
@@ -43,7 +43,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public DateTime EndDate
 		{
-			get { return this.endDate; }
+			get { return endDate; }
 		}
 
 		/// <summary>
@@ -59,14 +59,14 @@ namespace PowerUpDateTimeUtils
 				year >= 0 && year <= 9999)
 			{
 				// Quartal und Jahr übergeben
-				this.quarter = quarter;
-				this.year = year;
+				quarter = quarter;
+				year = year;
 
 				// Ersten Tag im Quartal berechnen
-				this.startDate = new DateTime(year, (quarter * 3) - 2, 1);
+				startDate = new DateTime(year, (quarter * 3) - 2, 1);
 
 				// Letzten Tag im Quartal berechnen
-				this.endDate = this.startDate.AddMonths(3).AddDays(-1);
+				endDate = startDate.AddMonths(3).AddDays(-1);
 			}
 			else
 			{

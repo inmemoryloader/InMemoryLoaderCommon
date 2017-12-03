@@ -28,8 +28,8 @@ namespace PowerUpDateTimeUtils
 		/// <param name="displayName">Der Anzeigename der Kultur</param>
 		public Culture(string name, string displayName)
 		{
-			this.Name = name;
-			this.DisplayName = displayName;
+			Name = name;
+			DisplayName = displayName;
 		}
 
 		/// <summary>
@@ -37,7 +37,7 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		public override string ToString()
 		{
-			return this.DisplayName + " (" + this.Name + ")";
+			return DisplayName + " (" + Name + ")";
 		}
 
 		/// <summary>
