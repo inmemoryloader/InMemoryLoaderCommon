@@ -130,6 +130,15 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue (testHelper.GetEasterSundayDateTest ());
         }
 
+        /// <summary>
+        /// Tests the case get german special days test.
+        /// </summary>
+        [Test ()]
+        public void TestCase_GetGermanSpecialDaysTest ()
+        {
+            var testHelper = new TestHelper (ConsoleCulture, path, true);
+            Assert.IsTrue (testHelper.GetGermanSpecialDaysTest ());
+        }
 
     }
 
