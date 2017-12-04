@@ -709,11 +709,10 @@ namespace PowerUpDateTimeUtils
             #region Muster für ein eventuell vorhandenes Datums-Suffix und das Muster für die Trennumg von Datum und Zeit ermitteln
 
             string dateSuffixPattern = null;
-            string dateTimeSeparatorPattern = " ";
+            const string dateTimeSeparatorPattern = " ";
             switch (cultureInfo.Name) {
             case "bg-BG":
                 dateSuffixPattern = @"(?: | г| г\.)";
-                ;
                 break;
 
             case "hu-HU":

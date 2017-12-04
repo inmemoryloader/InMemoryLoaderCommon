@@ -36,12 +36,12 @@ namespace PowerUpDateTimeUtils
         /// <summary>
         /// Der Name der Kultur
         /// </summary>
-        public string Name;
+        public string Name { get; private set; }
 
         /// <summary>
         /// Der Anzeigename der Kultur
         /// </summary>
-        public string DisplayName;
+        public string DisplayName { get; private set; }
 
         /// <summary>
         /// Konstruktor

@@ -25,31 +25,31 @@
 
 namespace PowerUpDateTimeUtils
 {
-	/// <summary>
-	/// Verwaltet die Daten einer Kalenderwoche
-	/// </summary>
-	public class CalendarWeek
-	{
-		/// <summary>
-		/// Das Jahr
-		/// </summary>
-		public int Year;
+    /// <summary>
+    /// Verwaltet die Daten einer Kalenderwoche
+    /// </summary>
+    public class CalendarWeek
+    {
+        /// <summary>
+        /// Das Jahr
+        /// </summary>
+        public int Year { get; private set; }
 
-		/// <summary>
-		/// Die Kalenderwoche
-		/// </summary>
-		public int Week;
+        /// <summary>
+        /// Die Kalenderwoche
+        /// </summary>
+        public int Week { get; private set; }
 
-		/// <summary>
-		/// Konstruktor
-		/// </summary>
-		/// <param name="paramYear">Das Jahr</param>
-		/// <param name="paramWeek">Die Kalenderwoche</param>
-		public CalendarWeek(int paramYear, int paramWeek)
-		{
-			Year = paramYear;
-			Week = paramWeek;
-		}
-	}
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// <param name="paramYear">Das Jahr</param>
+        /// <param name="paramWeek">Die Kalenderwoche</param>
+        public CalendarWeek (int paramYear, int paramWeek)
+        {
+            Year = paramYear;
+            Week = paramWeek;
+        }
+    }
 }
 

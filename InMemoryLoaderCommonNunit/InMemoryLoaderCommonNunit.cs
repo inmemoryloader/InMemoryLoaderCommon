@@ -39,12 +39,12 @@ namespace InMemoryLoaderCommonNunit
         /// Gets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
-        static string consoleCulture = ConfigurationManager.AppSettings["System.ConsoleCulture"];
+        static readonly string consoleCulture = ConfigurationManager.AppSettings["System.ConsoleCulture"];
 
         /// <summary>
         /// The path.
         /// </summary>
-        static string path = AppDomain.CurrentDomain.BaseDirectory;
+        static readonly string path = AppDomain.CurrentDomain.BaseDirectory;
 
         /// <summary>
         /// Tests the abstract loader base.
