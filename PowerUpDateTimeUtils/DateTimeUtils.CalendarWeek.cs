@@ -32,6 +32,11 @@ namespace PowerUpDateTimeUtils
     public partial class DateTimeUtils : AbstractPowerUpComponent
     {
         /// <summary>
+        /// The year.
+        /// </summary>
+        int year;
+
+        /// <summary>
         /// Berechnet die Kalenderwoche eines internationalen Datums
         /// </summary>
         /// <param name="date">Das Datum</param>
@@ -44,10 +49,10 @@ namespace PowerUpDateTimeUtils
         public CalendarWeek GetCalendarWeek (DateTime date)
         {
             // Aktuelle Kultur ermitteln
-            CultureInfo currentCulture = CultureInfo.CurrentCulture;
+            var currentCulture = CultureInfo.CurrentCulture;
 
             // Aktuellen Kalender ermitteln
-            Calendar calendar = currentCulture.Calendar;
+            var calendar = currentCulture.Calendar;
 
             // Kalenderwoche über das Calendar-Objekt ermitteln
             int calendarWeek = calendar.GetWeekOfYear (date, currentCulture.DateTimeFormat.CalendarWeekRule, currentCulture.DateTimeFormat.FirstDayOfWeek);
@@ -68,7 +73,8 @@ namespace PowerUpDateTimeUtils
             }
 
             // Das Jahr der Kalenderwoche ermitteln
-            int year = date.Year;
+            year = date.Year;
+
             if (calendarWeek == 1 && date.Month == 12) {
                 year++;
             }
@@ -114,7 +120,8 @@ namespace PowerUpDateTimeUtils
             int calendarWeek = (int)Math.Floor (d1 / 7) + 1;
 
             // Das Jahr der Kalenderwoche ermitteln
-            int year = date.Year;
+            year = date.Year;
+
             if (calendarWeek == 1 && date.Month == 12) {
                 year++;
             }

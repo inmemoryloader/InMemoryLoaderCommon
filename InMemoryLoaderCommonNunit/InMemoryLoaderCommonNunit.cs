@@ -151,7 +151,7 @@ namespace InMemoryLoaderCommonNunit
         }
 
         [Test()]
-        public void TestCase_GetSpecificCulturesTest()
+        public void TestCase_CalendarWeekTest()
         {
             var testHelper = new TestHelper(ConsoleCulture, path, true);
             Assert.IsTrue(testHelper.GetCalendarWeekTest());
