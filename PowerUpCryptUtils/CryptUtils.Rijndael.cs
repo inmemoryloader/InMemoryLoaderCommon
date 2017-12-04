@@ -37,139 +37,26 @@ namespace PowerUpCryptUtils
         /// The crypt pass phrase.
         /// </summary>
         static string cryptPassPhrase = "Pas5pr@se";
-
-        /// <summary>
-        /// Crypts the pass phrase.
-        /// </summary>
-        /// <returns>The pass phrase.</returns>
-        /// <param name="paramPhrase">Parameter phrase.</param>
-        public string CryptPassPhrase(string paramPhrase)
-        {
-            if (string.IsNullOrEmpty(paramPhrase))
-            {
-                return cryptPassPhrase;
-            }
-            else
-            {
-                cryptPassPhrase = paramPhrase;
-                return cryptPassPhrase;
-            }
-        }
-
         /// <summary>
         /// The crypt salt value.
         /// </summary>
         static string cryptSaltValue = "s@1tValue";
-
-        /// <summary>
-        /// Crypts the salt value.
-        /// </summary>
-        /// <returns>The salt value.</returns>
-        /// <param name="paramSalt">Parameter salt.</param>
-        public string CryptSaltValue(string paramSalt)
-        {
-            if (string.IsNullOrEmpty(paramSalt))
-            {
-                return cryptSaltValue;
-            }
-            else
-            {
-                cryptSaltValue = paramSalt;
-                return cryptSaltValue;
-            }
-        }
-
         /// <summary>
         /// The crypt hash algorithm.
         /// </summary>
         static string cryptHashAlgorithm = "SHA1";
-
-        /// <summary>
-        /// Crypts the hash algorithm.
-        /// </summary>
-        /// <returns>The hash algorithm.</returns>
-        /// <param name="paramHash">Parameter hash.</param>
-        public string CryptHashAlgorithm(string paramHash)
-        {
-            if (string.IsNullOrEmpty(paramHash))
-            {
-                return cryptHashAlgorithm;
-            }
-            else
-            {
-                cryptHashAlgorithm = paramHash;
-                return cryptHashAlgorithm;
-            }
-        }
-
         /// <summary>
         /// The crypt password iterations.
         /// </summary>
         static int cryptPasswordIterations = 2;
-
-        /// <summary>
-        /// Crypts the password iterations.
-        /// </summary>
-        /// <returns>The password iterations.</returns>
-        /// <param name="paramIteration">Parameter iteration.</param>
-        public int CryptPasswordIterations(int paramIteration)
-        {
-            if (paramIteration == 0)
-            {
-                return cryptPasswordIterations;
-            }
-            else
-            {
-                cryptPasswordIterations = paramIteration;
-                return cryptPasswordIterations;
-            }
-        }
-
         /// <summary>
         /// The crypt init vector.
         /// </summary>
         static string cryptInitVector = "@1B2c3D4e5F6g7H8";
-
-        /// <summary>
-        /// Crypts the init vector.
-        /// </summary>
-        /// <returns>The init vector.</returns>
-        /// <param name="paramVector">Parameter vector.</param>
-        public string CryptInitVector(string paramVector)
-        {
-            if (string.IsNullOrEmpty(paramVector))
-            {
-                return cryptInitVector;
-            }
-            else
-            {
-                cryptInitVector = paramVector;
-                return cryptInitVector;
-            }
-        }
-
         /// <summary>
         /// The size of the crypt key.
         /// </summary>
         static int cryptKeySize = 256;
-
-        /// <summary>
-        /// Crypts the size of the key.
-        /// </summary>
-        /// <returns>The key size.</returns>
-        /// <param name="paramKeySize">Parameter key size.</param>
-        public int CryptKeySize(int paramKeySize)
-        {
-            if (paramKeySize == 0)
-            {
-                return cryptKeySize;
-            }
-            else
-            {
-                cryptKeySize = paramKeySize;
-                return cryptKeySize;
-            }
-        }
 
         /// <summary>
         /// Sets the crypto parameter.
@@ -183,12 +70,12 @@ namespace PowerUpCryptUtils
         /// <param name="paramKeySize">Parameter key size.</param>
         public bool SetCryptoParameter(string paramPhrase, string paramSalt, string paramHash, int paramIteration, string paramVector, int paramKeySize)
         {
-            CryptPassPhrase(paramPhrase);
-            CryptSaltValue(paramSalt);
-            CryptHashAlgorithm(paramHash);
-            CryptPasswordIterations(paramIteration);
-            CryptInitVector(paramVector);
-            CryptKeySize(paramKeySize);
+            cryptPassPhrase = paramPhrase;
+            cryptSaltValue = paramSalt;
+            cryptHashAlgorithm = paramHash;
+            cryptPasswordIterations = paramIteration;
+            cryptInitVector = paramVector;
+            cryptKeySize = paramKeySize;
             return true;
         }
 
