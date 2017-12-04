@@ -163,6 +163,18 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.GetCalendarWeekStartDateTest());
         }
 
+        /// <summary>
+        /// Tests the case rijndael test.
+        /// </summary>
+        [Test()]
+        public void TestCase_RijndaelTest()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            Assert.IsTrue(testHelper.RijndaelTest());
+        }
+
+
+
     }
 
 }
