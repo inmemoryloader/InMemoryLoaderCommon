@@ -94,12 +94,33 @@ namespace InMemoryLoaderCommonNunit
 
         #endregion
 
-        #region Several generic tests
+        #region DateTimeUtils.CalendarWeek
 
-        internal bool CalendarWeekTest()
+        /// <summary>
+        /// The calendarweek date time.
+        /// </summary>
+        static DateTime calendarweekDateTime = new DateTime(2018, 12, 8);
+
+        /// <summary>
+        /// Gets the calendar week test.
+        /// </summary>
+        /// <returns><c>true</c>, if calendar week test was gotten, <c>false</c> otherwise.</returns>
+        internal bool GetCalendarWeekTest()
         {
-            return true;
+            object[] paramArg = { calendarweekDateTime };
+            var result = (CalendarWeek)ComponentLoader.InvokeMethod(base.DateTimeUtils, "GetCalendarWeek", paramArg);
+            return result.Week.Equals(49);
+        }
 
+        /// <summary>
+        /// Gets the german calendar week test.
+        /// </summary>
+        /// <returns><c>true</c>, if german calendar week test was gotten, <c>false</c> otherwise.</returns>
+        internal bool GetGermanCalendarWeekTest()
+        {
+            object[] paramArg = { calendarweekDateTime };
+            var result = (CalendarWeek)ComponentLoader.InvokeMethod(base.DateTimeUtils, "GetGermanCalendarWeek", paramArg);
+            return result.Week.Equals(49);
         }
 
         #endregion

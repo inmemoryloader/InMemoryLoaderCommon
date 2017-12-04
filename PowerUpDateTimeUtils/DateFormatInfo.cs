@@ -122,6 +122,9 @@ namespace PowerUpDateTimeUtils
             TimeInputIn24HourFormatEnabled = timeInputIn24HourFormatEnabled;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PowerUpDateTimeUtils.DateFormatInfo"/> class.
+        /// </summary>
         public DateFormatInfo ()
         {
         }
