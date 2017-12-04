@@ -23,13 +23,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using InMemoryLoaderCommon;
 
 namespace InMemoryLoaderCommonNunit
 {
     internal partial class TestHelper : AbstractCommonBase
     {
-        // SpecialDays
+        #region SpecialDays
+
+        const int yearToCheck = 2018;
+        static DateTime easterSonday = new DateTime (2018, 4, 1);
+
+        internal bool GetEasterSundayDateTest ()
+        {
+            object [] paramArg = { yearToCheck };
+            var result = (DateTime)ComponentLoader.InvokeMethod (base.DateTimeUtils, "GetEasterSundayDate", paramArg);
+
+            if (result.Equals (easterSonday)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        #endregion
 
         // IsGermanHoliday
     }
