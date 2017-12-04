@@ -43,7 +43,7 @@ namespace PowerUpCheckUtils
         {
             try
             {
-                var reqFP = (HttpWebRequest)WebRequest.Create(parmURL.ToString());
+                var reqFP = (HttpWebRequest)WebRequest.Create(parmURL);
                 var rspFP = (HttpWebResponse)reqFP.GetResponse();
                 if (HttpStatusCode.OK != rspFP.StatusCode)
                     return false;
@@ -53,7 +53,7 @@ namespace PowerUpCheckUtils
             catch (Exception ex)
             {
                 if (Log.IsDebugEnabled)
-                    Log.FatalFormat("{0}", ex.ToString());
+                    Log.FatalFormat("{0}", ex);
                 return false;
             }
         }

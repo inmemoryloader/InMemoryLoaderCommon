@@ -183,8 +183,6 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.RijndaelTest());
         }
 
-
-
     }
 
 }
