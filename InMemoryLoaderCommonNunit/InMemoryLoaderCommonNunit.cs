@@ -150,12 +150,17 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.IsGermanHolidayTest());
         }
 
+        /// <summary>
+        /// Tests the case calendar week test.
+        /// </summary>
         [Test()]
         public void TestCase_CalendarWeekTest()
         {
             var testHelper = new TestHelper(ConsoleCulture, path, true);
             Assert.IsTrue(testHelper.GetCalendarWeekTest());
             Assert.IsTrue(testHelper.GetGermanCalendarWeekTest());
+            Assert.IsTrue(testHelper.GetGermanCalendarWeekStartDateTest());
+            Assert.IsTrue(testHelper.GetCalendarWeekStartDateTest());
         }
 
     }

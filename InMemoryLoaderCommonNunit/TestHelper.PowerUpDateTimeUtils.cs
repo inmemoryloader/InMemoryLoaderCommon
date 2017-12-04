@@ -123,6 +123,30 @@ namespace InMemoryLoaderCommonNunit
             return result.Week.Equals(49);
         }
 
+        /// <summary>
+        /// Gets the german calendar week start date test.
+        /// </summary>
+        /// <returns><c>true</c>, if german calendar week start date test was gotten, <c>false</c> otherwise.</returns>
+        internal bool GetGermanCalendarWeekStartDateTest()
+        {
+            var weekStartDateTime = new DateTime(2018, 1, 15);
+            object[] paramArg = { 3, 2018 };
+            var result = ComponentLoader.InvokeMethod(base.DateTimeUtils, "GetGermanCalendarWeekStartDate", paramArg);
+            return result.Equals(weekStartDateTime);
+        }
+
+        /// <summary>
+        /// Gets the calendar week start date test.
+        /// </summary>
+        /// <returns><c>true</c>, if calendar week start date test was gotten, <c>false</c> otherwise.</returns>
+        internal bool GetCalendarWeekStartDateTest()
+        {
+            var weekStartDateTime = new DateTime(2018, 2, 12);
+            object[] paramArg = { 7, 2018 };
+            var result = ComponentLoader.InvokeMethod(base.DateTimeUtils, "GetCalendarWeekStartDate", paramArg);
+            return result.Equals(weekStartDateTime);
+        }
+
         #endregion
 
     }
