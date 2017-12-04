@@ -1,5 +1,5 @@
 ﻿//
-// IsGermanHoliday.cs
+// DateTimeUtils.IsGermanHoliday.cs
 //
 // Author: responsive kaysta
 //
@@ -34,13 +34,10 @@ namespace PowerUpDateTimeUtils
         /// Ermittelt, ob ein bestimmter Tag ein Feiertag ist
         /// </summary>
         /// <param name="paramDate">Das Datum des Tages</param>
-        /// <param name="paramName">In diesem Argument gibt die Methode
-        /// den Namen des Feiertags zurück, falls es sich um einen solchen handelt</param>
-        /// <param name="paramIsNationWide">In diesem Argument gibt die Methode zurück,
-        /// ob es sich um einen bundesweiten Feiertag handelt</param>
-        /// <returns>Gibt true zurück wenn es sich bei dem übergebenen Datum
-        /// um einen Feiertag handelt</returns>
-        public bool IsGermanHoliday (DateTime paramDate, out string paramName, out bool paramIsNationWide)
+        /// <param name="paramName">In diesem Argument gibt die Methode den Namen des Feiertags zurück, falls es sich um einen solchen handelt</param>
+        /// <param name="paramIsNationWide">In diesem Argument gibt die Methode zurück, ob es sich um einen bundesweiten Feiertag handelt</param>
+        /// <returns>Gibt true zurück wenn es sich bei dem übergebenen Datum um einen Feiertag handelt</returns>
+        public bool IsGermanHoliday(DateTime paramDate, out string paramName, out bool paramIsNationWide)
         {
             // out-Argumente initialisieren
             paramName = null;
@@ -49,21 +46,25 @@ namespace PowerUpDateTimeUtils
             // Auflistung der besonderen Tage des angegebenen Jahres erzeugen, 
             // durchgehen und das Datum der Feiertage mit dem angegebenen Datum
             // vergleichen
-            foreach (GermanSpecialDay gsd in GetGermanSpecialDays (paramDate.Year).Values) {
-                if (paramDate.Day == gsd.Date.Day && paramDate.Month == gsd.Date.Month) {
+            foreach (GermanSpecialDay gsd in GetGermanSpecialDays(paramDate.Year).Values)
+            {
+                if (paramDate.Day == gsd.Date.Day && paramDate.Month == gsd.Date.Month)
+                {
                     // Datum gefunden
-                    if (gsd.IsHoliday) {
+                    if (gsd.IsHoliday)
+                    {
                         // Es ist ein Feiertag: Infos definieren und true zurückgeben 
                         paramName = gsd.Name;
                         paramIsNationWide = gsd.IsNationwide;
                         return true;
-                    } else {
+                    }
+                    else
+                    {
                         // Kein Feiertag
                         return false;
                     }
                 }
             }
-
             // Tag wurde nicht gefunden
             return false;
         }

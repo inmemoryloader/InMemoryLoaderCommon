@@ -32,10 +32,20 @@ namespace InMemoryLoaderCommonNunit
 {
     internal partial class TestHelper : AbstractCommonBase
     {
-        #region SpecialDays
-
+        /// <summary>
+        /// The year to check.
+        /// </summary>
         const int yearToCheck = 2018;
+
+        #region DateTimeUtils.SpecialDays
+
+        /// <summary>
+        /// The ostersonntag.
+        /// </summary>
         static DateTime ostersonntag = new DateTime (2018, 4, 1);
+        /// <summary>
+        /// The pfingstsonntag.
+        /// </summary>
         static DateTime pfingstsonntag = new DateTime (2018, 5, 20);
 
         /// <summary>
@@ -63,7 +73,7 @@ namespace InMemoryLoaderCommonNunit
             object [] paramArg = { yearToCheck };
             var result = (GermanSpecialDays)ComponentLoader.InvokeMethod (base.DateTimeUtils, "GetGermanSpecialDays", paramArg);
 
-            var gsdPfingstsonntag = result.Where (dt => dt.Key.Equals(GermanSpecialDayKey.Pfingstsonntag)).SingleOrDefault().Value;
+            var gsdPfingstsonntag = result.SingleOrDefault (dt => dt.Key.Equals (GermanSpecialDayKey.Pfingstsonntag)).Value;
 
             if (gsdPfingstsonntag.Date.Equals (pfingstsonntag)) {
                 return true;
@@ -74,6 +84,24 @@ namespace InMemoryLoaderCommonNunit
 
         #endregion
 
-        // IsGermanHoliday
+        #region DateTimeUtils.IsGermanHoliday
+
+        internal bool IsGermanHolidayTest ()
+        {
+            return true;
+        }
+      #endregion
+
+        #region Several generic tests
+
+        internal bool CalendarWeekTest ()
+        {
+            return true;
+
+        }
+
+        #endregion
+
     }
+
 }
