@@ -28,21 +28,21 @@ using System.Globalization;
 
 namespace PowerUpDateTimeUtils
 {
-	/// <summary>
-	/// Vergleichsklasse für Kulturen
-	/// </summary>
-	internal class CultureComparer : IComparer
-	{
-		/// <summary>
-		/// Vergleicht die Namen zweier Kulturen
-		/// </summary>
-		public int Compare(object x, object y)
-		{
-			CultureInfo ci1 = (CultureInfo)x;
-			CultureInfo ci2 = (CultureInfo)y;
-			return string.Compare(ci1.Name, ci2.Name, System.StringComparison.CurrentCulture);
-		}
+    /// <summary>
+    /// Vergleichsklasse für Kulturen
+    /// </summary>
+    internal class CultureComparer : IComparer
+    {
+        /// <summary>
+        /// Vergleicht die Namen zweier Kulturen
+        /// </summary>
+        public int Compare (object paramX, object paramY)
+        {
+            var ci1 = (CultureInfo)paramX;
+            var ci2 = (CultureInfo)paramY;
+            return string.Compare (ci1.Name, ci2.Name, System.StringComparison.CurrentCulture);
+        }
 
-	}
+    }
 
 }
