@@ -65,6 +65,10 @@ namespace InMemoryLoaderCommonNunit
         /// </summary>
         const string encrypted = "5ifOfTikmyeQN3Cb3mczYA==";
 
+        /// <summary>
+        /// Rijndaels the test.
+        /// </summary>
+        /// <returns><c>true</c>, if test was rijndaeled, <c>false</c> otherwise.</returns>
         internal bool RijndaelTest()
         {
             bool isCorrectEncrypt = false;
