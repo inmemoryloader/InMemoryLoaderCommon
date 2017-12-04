@@ -1,7 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿//
+// GermanSpecialDay.cs
+//
+// Author: responsive kaysta
+//
+// Copyright (c) 2017 responsive kaysta
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+using System;
 
 namespace PowerUpDateTimeUtils
 {
@@ -39,18 +61,18 @@ namespace PowerUpDateTimeUtils
 		/// <summary>
 		/// Konstruktor
 		/// </summary>
-		/// <param name="key">Der Schlüssel des speziellen Tags</param>
-		/// <param name="name">Der Name des speziellen Tags</param>
-		/// <param name="date">Das Datum des speziellen Tags</param>
-		/// <param name="isNationwide">Gibt an, ob der spezielle Tag bundesweit gilt</param>
-		/// <param name="isHoliday">Gibt an, ob es sich bei dem speziellen Tag um einen Feiertag handelt</param>
-		public GermanSpecialDay(GermanSpecialDayKey key, string name, DateTime date, bool isNationwide, bool isHoliday)
+		/// <param name="paramKey">Der Schlüssel des speziellen Tags</param>
+		/// <param name="paramName">Der Name des speziellen Tags</param>
+		/// <param name="paramDate">Das Datum des speziellen Tags</param>
+		/// <param name="paramIsNationwide">Gibt an, ob der spezielle Tag bundesweit gilt</param>
+		/// <param name="paramIsHoliday">Gibt an, ob es sich bei dem speziellen Tag um einen Feiertag handelt</param>
+		public GermanSpecialDay(GermanSpecialDayKey paramKey, string paramName, DateTime paramDate, bool paramIsNationwide, bool paramIsHoliday)
 		{
-			Key = key;
-			Name = name;
-			Date = date;
-			IsNationwide = isNationwide;
-			IsHoliday = isHoliday;
+			Key = paramKey;
+			Name = paramName;
+			Date = paramDate;
+			IsNationwide = paramIsNationwide;
+			IsHoliday = paramIsHoliday;
 		}
 
 		/// <summary>
@@ -61,6 +83,7 @@ namespace PowerUpDateTimeUtils
 		{
 			return Date.CompareTo(otherSpecialDay.Date);
 		}
-	}
-}
 
+	}
+
+}

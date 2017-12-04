@@ -1,16 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿//
+// QuarterInfo.cs
+//
+// Author: responsive kaysta
+//
+// Copyright (c) 2017 responsive kaysta
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+using System;
 
 namespace PowerUpDateTimeUtils
 {
-	/// <summary>
-	/// Verwaltet Informationen zu einem Quartal
-	/// </summary>
-	public class QuarterInfo
+    /// <summary>
+    /// Verwaltet Informationen zu einem Quartal
+    /// </summary>
+    public class QuarterInfo
 	{
-		private int quarter;
+		int quarter;
 		/// <summary>
 		/// Das Quartal
 		/// </summary>
@@ -19,7 +41,7 @@ namespace PowerUpDateTimeUtils
 			get { return quarter; }
 		}
 
-		private int year;
+		int year;
 		/// <summary>
 		/// Das Jahr
 		/// </summary>
@@ -28,7 +50,7 @@ namespace PowerUpDateTimeUtils
 			get { return year; }
 		}
 
-		private DateTime startDate;
+		DateTime startDate;
 		/// <summary>
 		/// Das Startdatum des Quartals
 		/// </summary>
@@ -37,7 +59,7 @@ namespace PowerUpDateTimeUtils
 			get { return startDate; }
 		}
 
-		private DateTime endDate;
+		DateTime endDate;
 		/// <summary>
 		/// Das Enddatum des Quartals
 		/// </summary>
@@ -52,15 +74,14 @@ namespace PowerUpDateTimeUtils
 		/// </summary>
 		/// <param name="quarter">Das Quartal</param>
 		/// <param name="year">Das Jahr</param>
-		public QuarterInfo(int quarter, int year)
+		public QuarterInfo(int paramQuarter, int paramYear)
 		{
 			// Das übergebene Quartal und das Jahr überprüfen
-			if (quarter >= 1 && quarter <= 4 &&
-				year >= 0 && year <= 9999)
+			if (quarter >= 1 && quarter <= 4 && year >= 0 && year <= 9999)
 			{
 				// Quartal und Jahr übergeben
-				quarter = quarter;
-				year = year;
+				quarter = paramQuarter;
+				year = paramYear;
 
 				// Ersten Tag im Quartal berechnen
 				startDate = new DateTime(year, (quarter * 3) - 2, 1);
@@ -70,11 +91,10 @@ namespace PowerUpDateTimeUtils
 			}
 			else
 			{
-				throw new ArgumentException("Das Quartal muss eine Zahl " +
-					"zwischen 1 und 4 und das Jahr eine Zahl zwischen 0 " +
-					"und 9999 sein");
+				throw new ArgumentException("Das Quartal muss eine Zahl zwischen 1 und 4 und das Jahr eine Zahl zwischen 0 und 9999 sein");
 			}
 		}
-	}
-}
 
+	}
+
+}

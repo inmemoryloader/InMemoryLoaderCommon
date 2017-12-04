@@ -38,7 +38,7 @@ namespace InMemoryLoaderCommon
         /// <summary>
         /// The log.
         /// </summary>
-        private static readonly ILog log = LogManager.GetLogger(typeof(AbstractCommonBase));
+        static readonly ILog Log = LogManager.GetLogger(typeof(AbstractCommonBase));
 
         /// <summary>
         /// Gets or sets the common component loader.
@@ -54,7 +54,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("CheckUtils")).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("CheckUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -66,7 +66,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-				return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("ConvertUtils")).Value;
+				return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("ConvertUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -78,7 +78,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("CryptUtils")).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("CryptUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -90,7 +90,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("DateTimeUtils")).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("DateTimeUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -102,7 +102,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("EmailUtils")).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("EmailUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -114,7 +114,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("FileSystemUtils")).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("FileSystemUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -126,7 +126,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("GetUtils")).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("GetUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -138,7 +138,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("StringUtils")).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("StringUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -150,14 +150,9 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.Contains ("XmlUtils")).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("XmlUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:InMemoryLoaderCommon.AbstractCommonBase"/> class.
-        /// </summary>
-        public AbstractCommonBase() { }
 
         /// <summary>
         /// Sets the in memory loader common.
@@ -167,7 +162,7 @@ namespace InMemoryLoaderCommon
         {
             CommonComponentLoader = new CommonComponentLoader();
             var isSet = CommonComponentLoader.InitCommonComponents(base.AssemblyPath);
-            log.DebugFormat("CommonComponentLoader set: {0}", isSet);
+            Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
             return true;
         }
 

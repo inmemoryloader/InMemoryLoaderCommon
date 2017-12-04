@@ -34,47 +34,46 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The is decimal.
         /// </summary>
-        private const Decimal isDecimal = 3.12m;
+        const Decimal isDecimal = 3.12m;
         /// <summary>
         /// The is double.
         /// </summary>
-        private const Double isDouble = 3.12;
+        const Double isDouble = 3.12;
         /// <summary>
         /// The is float.
         /// </summary>
-        private const float isFloat = 1.32f;
+        const float isFloat = 1.32f;
         /// <summary>
         /// The is string float.
         /// </summary>
-        private const string isStringFloat = "5.687";
+        const string isStringFloat = "5.687";
         /// <summary>
         /// The is string int.
         /// </summary>
-        private const string isStringLong = "521345678";
+        const string isStringLong = "521345678";
         /// <summary>
         /// The is string URL.
         /// </summary>
-        private const string isStringUrl = "http://www.google.ch/";
+        const string isStringUrl = "http://www.google.ch/";
         /// <summary>
         /// The is string no URL.
         /// </summary>
-        private const string isStringNoUrl = "Some String";
+        const string isStringNoUrl = "Some String";
         /// <summary>
         /// The is string int.
         /// </summary>
-        private const string isStringInt = "521";
+        const string isStringInt = "521";
         /// <summary>
         /// The is string.
         /// </summary>
-        private const string isString = "Some String";
-
+        const string isString = "Some String";
 
         #region IsStringIntTest
 
         /// <summary>
         /// The is int.
         /// </summary>
-        private const int isInt = 123;
+        const int isInt = 123;
 
         /// <summary>
         /// Determines if is string int test1.
@@ -83,7 +82,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringIntTest1()
         {
             object[] paramArg = { isInt };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringInt", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result;
         }
         /// <summary>
@@ -93,7 +92,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringIntTest2()
         {
             object[] paramArg = { isStringInt };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringInt", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result;
         }
         /// <summary>
@@ -103,7 +102,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringIntTest3()
         {
             object[] paramArg = { isStringInt, CultureInfo.CurrentCulture };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringInt", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result;
         }
         /// <summary>
@@ -113,7 +112,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringIntTest4()
         {
             object[] paramArg = { isString, CultureInfo.CurrentCulture };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringInt", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result == false;
         }
 
@@ -124,7 +123,7 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The is int.
         /// </summary>
-        private const long isLong = 12345678;
+        const long isLong = 12345678;
 
         /// <summary>
         /// Determines whether this instance is string long test1.
@@ -133,7 +132,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringLongTest1()
         {
             object[] paramArg = { isLong };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringLong", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result;
         }
         /// <summary>
@@ -143,7 +142,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringLongTest2()
         {
             object[] paramArg = { isStringInt };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringLong", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result;
         }
         /// <summary>
@@ -153,7 +152,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringLongTest3()
         {
             object[] paramArg = { isStringInt, CultureInfo.CurrentCulture };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringLong", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result;
         }
         /// <summary>
@@ -163,7 +162,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringLongTest4()
         {
             object[] paramArg = { isString, CultureInfo.CurrentCulture };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringLong", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result == false;
         }
 
@@ -174,11 +173,11 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The is date.
         /// </summary>
-        private static DateTime isDate = DateTime.Now;
+        static DateTime isDate = DateTime.Now;
         /// <summary>
         /// The is string date.
         /// </summary>
-        private static string isStringDate = DateTime.Now.ToString();
+        static string isStringDate = DateTime.Now.ToString();
 
         /// <summary>
         /// Determines whether this instance is string date test1.
@@ -187,7 +186,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringDateTest1()
         {
             object[] paramArg = { isDate };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringDate", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result;
         }
         /// <summary>
@@ -197,7 +196,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringDateTest2()
         {
             object[] paramArg = { isStringDate };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringDate", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result;
         }
         /// <summary>
@@ -207,7 +206,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringDateTest3()
         {
             object[] paramArg = { isStringDate, CultureInfo.CurrentCulture };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringDate", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result;
         }
         /// <summary>
@@ -217,7 +216,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringDateTest4()
         {
             object[] paramArg = { isString, CultureInfo.CurrentCulture };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringDate", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result == false;
         }
 
@@ -228,7 +227,7 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The single byte value.
         /// </summary>
-        private const byte singleByteVal = 49;
+        const byte singleByteVal = 49;
 
         /// <summary>
         /// Determines whether this instance is string byte1.
@@ -237,7 +236,7 @@ namespace InMemoryLoaderCommonNunit
         internal bool IsStringByte1()
         {
             object[] paramArg = { singleByteVal };
-            var result = ComponentLoader.InvokeMethod(CheckUtils, "IsStringByte", paramArg);
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringByte", paramArg);
             return result;
         }
 
