@@ -23,7 +23,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
 using InMemoryLoaderCommon;
 
 namespace InMemoryLoaderCommonNunit
@@ -31,10 +30,11 @@ namespace InMemoryLoaderCommonNunit
     internal partial class TestHelper: AbstractCommonBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InMemoryLoaderCommonNunit.TestHelper"/> class.
+        /// Initializes a new instance of the <see cref="TestHelper"/> class.
         /// </summary>
         /// <param name="culture">Culture.</param>
         /// <param name="path">Path.</param>
+        /// <param name="initComponent">If set to <c>true</c> init component.</param>
         internal TestHelper(string culture, string path, bool initComponent)
         {
             base.ConsoleCulture = culture;

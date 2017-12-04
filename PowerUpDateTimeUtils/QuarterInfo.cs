@@ -31,70 +31,67 @@ namespace PowerUpDateTimeUtils
     /// Verwaltet Informationen zu einem Quartal
     /// </summary>
     public class QuarterInfo
-	{
-		int quarter;
-		/// <summary>
-		/// Das Quartal
-		/// </summary>
-		public int Quarter
-		{
-			get { return quarter; }
-		}
+    {
+        int quarter;
 
-		int year;
-		/// <summary>
-		/// Das Jahr
-		/// </summary>
-		public int Year
-		{
-			get { return year; }
-		}
+        /// <summary>
+        /// Das Quartal
+        /// </summary>
+        public int Quarter {
+            get { return quarter; }
+        }
 
-		DateTime startDate;
-		/// <summary>
-		/// Das Startdatum des Quartals
-		/// </summary>
-		public DateTime StartDate
-		{
-			get { return startDate; }
-		}
+        int year;
 
-		DateTime endDate;
-		/// <summary>
-		/// Das Enddatum des Quartals
-		/// </summary>
-		public DateTime EndDate
-		{
-			get { return endDate; }
-		}
+        /// <summary>
+        /// Das Jahr
+        /// </summary>
+        public int Year {
+            get { return year; }
+        }
 
-		/// <summary>
-		/// Konstruktor. Berechnet das Start- und das
-		/// Enddatum des übergebenen Quartals.
-		/// </summary>
-		/// <param name="quarter">Das Quartal</param>
-		/// <param name="year">Das Jahr</param>
-		public QuarterInfo(int paramQuarter, int paramYear)
-		{
-			// Das übergebene Quartal und das Jahr überprüfen
-			if (quarter >= 1 && quarter <= 4 && year >= 0 && year <= 9999)
-			{
-				// Quartal und Jahr übergeben
-				quarter = paramQuarter;
-				year = paramYear;
+        DateTime startDate;
 
-				// Ersten Tag im Quartal berechnen
-				startDate = new DateTime(year, (quarter * 3) - 2, 1);
+        /// <summary>
+        /// Das Startdatum des Quartals
+        /// </summary>
+        public DateTime StartDate {
+            get { return startDate; }
+        }
 
-				// Letzten Tag im Quartal berechnen
-				endDate = startDate.AddMonths(3).AddDays(-1);
-			}
-			else
-			{
-				throw new ArgumentException("Das Quartal muss eine Zahl zwischen 1 und 4 und das Jahr eine Zahl zwischen 0 und 9999 sein");
-			}
-		}
+        DateTime endDate;
 
-	}
+        /// <summary>
+        /// Das Enddatum des Quartals
+        /// </summary>
+        public DateTime EndDate {
+            get { return endDate; }
+        }
+
+        /// <summary>
+        /// Konstruktor. Berechnet das Start- und das
+        /// Enddatum des übergebenen Quartals.
+        /// </summary>
+        /// <param name="paramQuarter">Das Quartal</param>
+        /// <param name="paramYear">Das Jahr</param>
+        public QuarterInfo (int paramQuarter, int paramYear)
+        {
+            // Das übergebene Quartal und das Jahr überprüfen
+            if (quarter >= 1 && quarter <= 4 && year >= 0 && year <= 9999) {
+                // Quartal und Jahr übergeben
+                quarter = paramQuarter;
+                year = paramYear;
+
+                // Ersten Tag im Quartal berechnen
+                startDate = new DateTime (year, (quarter * 3) - 2, 1);
+
+                // Letzten Tag im Quartal berechnen
+                endDate = startDate.AddMonths (3).AddDays (-1);
+            } else {
+                throw new ArgumentException ("Das Quartal muss eine Zahl zwischen 1 und 4 und das Jahr eine Zahl zwischen 0 und 9999 sein");
+            }
+        }
+
+    }
 
 }
