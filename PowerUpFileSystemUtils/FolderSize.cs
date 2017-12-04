@@ -24,8 +24,8 @@ namespace PowerUpFileSystemUtils
 		/// <param name="size">Die Gesamtgröße aller im Ordner und dessen Unterordnern enthaltenen Dateien</param>
 		internal FolderSize(string folderPath, long size)
 		{
-			this.FolderPath = folderPath;
-			this.Size = size;
+			FolderPath = folderPath;
+			Size = size;
 		}
 	}
 }

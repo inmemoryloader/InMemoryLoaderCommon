@@ -58,7 +58,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_AbstractCommonBase()
         {
-            var testHelper = new TestHelper(this.ConsoleCulture, path, false);
+            var testHelper = new TestHelper(ConsoleCulture, path, false);
 
             Assert.IsTrue(testHelper.IsAssemblyPathSet());
             Assert.IsTrue(testHelper.IsCultureSet());
@@ -74,7 +74,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsInt()
         {
-            var testHelper = new TestHelper(this.ConsoleCulture, path, true);
+            var testHelper = new TestHelper(ConsoleCulture, path, true);
 
             Assert.IsTrue(testHelper.IsStringIntTest1());
             Assert.IsTrue(testHelper.IsStringIntTest2());
@@ -88,7 +88,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsLong()
         {
-            var testHelper = new TestHelper(this.ConsoleCulture, path, true);
+            var testHelper = new TestHelper(ConsoleCulture, path, true);
 
             Assert.IsTrue(testHelper.IsStringLongTest1());
             Assert.IsTrue(testHelper.IsStringLongTest2());
@@ -102,7 +102,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsDate()
         {
-            var testHelper = new TestHelper(this.ConsoleCulture, path, true);
+            var testHelper = new TestHelper(ConsoleCulture, path, true);
 
             Assert.IsTrue(testHelper.IsStringDateTest1());
             Assert.IsTrue(testHelper.IsStringDateTest2());
@@ -116,12 +116,10 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsByte()
         {
-            var testHelper = new TestHelper(this.ConsoleCulture, path, true);
+            var testHelper = new TestHelper(ConsoleCulture, path, true);
 
             Assert.IsTrue(testHelper.IsStringByte1());
         }
-
-
 
     }
 

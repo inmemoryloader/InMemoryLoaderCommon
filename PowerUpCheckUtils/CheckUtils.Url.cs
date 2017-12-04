@@ -9,34 +9,38 @@ namespace PowerUpCheckUtils
     /// <summary>
     /// Check utils.
     /// </summary>
-	public partial class CheckUtils : AbstractPowerUpComponent
-	{
-		/// <summary>
-		/// Determines whether this instance is URL valid the specified parmURL.
-		/// </summary>
-		/// <returns><c>true</c> if this instance is URL valid the specified parmURL; otherwise, <c>false</c>.</returns>
-		/// <param name="parmURL">Parm UR.</param>
-		public bool IsUrlValid(object parmURL)
-		{
-			try {
-				var reqFP = (HttpWebRequest)HttpWebRequest.Create(parmURL.ToString());
-				var rspFP = (HttpWebResponse)reqFP.GetResponse();
-				if (HttpStatusCode.OK == rspFP.StatusCode)
-				{
-					rspFP.Close();
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			} catch (Exception ex) {
-				if (log.IsDebugEnabled) {
-					log.FatalFormat ("{0}", ex.ToString());
-				}
-				return false;
-			}
-		}
-	}
+    public partial class CheckUtils : AbstractPowerUpComponent
+    {
+        /// <summary>
+        /// Determines whether this instance is URL valid the specified parmURL.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is URL valid the specified parmURL; otherwise, <c>false</c>.</returns>
+        /// <param name="parmURL">Parm UR.</param>
+        public bool IsUrlValid(object parmURL)
+        {
+            try
+            {
+                var reqFP = (HttpWebRequest)HttpWebRequest.Create(parmURL.ToString());
+                var rspFP = (HttpWebResponse)reqFP.GetResponse();
+                if (HttpStatusCode.OK == rspFP.StatusCode)
+                {
+                    rspFP.Close();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (log.IsDebugEnabled)
+                {
+                    log.FatalFormat("{0}", ex.ToString());
+                }
+                return false;
+            }
+        }
+    }
 }
 

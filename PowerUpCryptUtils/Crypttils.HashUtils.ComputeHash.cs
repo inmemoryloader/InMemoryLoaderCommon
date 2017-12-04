@@ -157,11 +157,11 @@ namespace PowerUpCryptUtils
 			// Die Maximallänge des Schlüssels ermitteln
 			if (hashAlgorithm is KeyedHashAlgorithm)
 			{
-				this.MaxKeyLength = ((KeyedHashAlgorithm)hashAlgorithm).Key.Length;
+				MaxKeyLength = ((KeyedHashAlgorithm)hashAlgorithm).Key.Length;
 			}
 			else
 			{
-				this.MaxKeyLength = 0;
+				MaxKeyLength = 0;
 			}
 		}
 
@@ -172,7 +172,7 @@ namespace PowerUpCryptUtils
 		{
 			get
 			{
-				return (this.MaxKeyLength > 0);
+				return (MaxKeyLength > 0);
 			}
 		}
 
@@ -184,7 +184,7 @@ namespace PowerUpCryptUtils
 			get
 			{
 				// Überprüfen, ob der Algorithmus einen Schlüssel erlaubt
-				if (this.SupportsKey)
+				if (SupportsKey)
 				{
 					// Schlüssel in einen String umwandeln und zurückgeben
 					return StringEncoding.GetString(((KeyedHashAlgorithm)hashAlgorithm).Key);
@@ -206,20 +206,20 @@ namespace PowerUpCryptUtils
 				}
 
 				// Überprüfen, ob der Algorithmus einen Schlüssel erlaubt
-				if (this.SupportsKey)
+				if (SupportsKey)
 				{
 					// Schlüssel in ein Byte-Array überführen
 					byte[] key = StringEncoding.GetBytes(value);
 
 					// Überprüfen, ob die Schlüssellänge zum Algorithmus passt.
-					if (key.Length <= this.MaxKeyLength)
+					if (key.Length <= MaxKeyLength)
 					{
 						// Schlüssel setzen
 						((KeyedHashAlgorithm)hashAlgorithm).Key = key;
 					}
 					else
 					{
-						throw new NotSupportedException("Der übergebene Schlüssel " + "ist mit " + key.Length + " Byte zu groß für den " + "gesetzten Hash-Algorithmus. Dieser unterstützt nur " + "maximal " + this.MaxKeyLength + " Byte große Schlüssel");
+						throw new NotSupportedException("Der übergebene Schlüssel " + "ist mit " + key.Length + " Byte zu groß für den " + "gesetzten Hash-Algorithmus. Dieser unterstützt nur " + "maximal " + MaxKeyLength + " Byte große Schlüssel");
 					}
 				}
 				else

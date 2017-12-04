@@ -46,11 +46,11 @@ namespace PowerUpDateTimeUtils
 		/// <param name="isHoliday">Gibt an, ob es sich bei dem speziellen Tag um einen Feiertag handelt</param>
 		public GermanSpecialDay(GermanSpecialDayKey key, string name, DateTime date, bool isNationwide, bool isHoliday)
 		{
-			this.Key = key;
-			this.Name = name;
-			this.Date = date;
-			this.IsNationwide = isNationwide;
-			this.IsHoliday = isHoliday;
+			Key = key;
+			Name = name;
+			Date = date;
+			IsNationwide = isNationwide;
+			IsHoliday = isHoliday;
 		}
 
 		/// <summary>
@@ -59,7 +59,7 @@ namespace PowerUpDateTimeUtils
 		/// <param name="otherSpecialDay">Das andere GermanSpecialDay-Objekt</param>
 		public int CompareTo(GermanSpecialDay otherSpecialDay)
 		{
-			return this.Date.CompareTo(otherSpecialDay.Date);
+			return Date.CompareTo(otherSpecialDay.Date);
 		}
 	}
 }

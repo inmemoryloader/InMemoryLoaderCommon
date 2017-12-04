@@ -90,15 +90,15 @@ namespace PowerUpDateTimeUtils
 		/// <param name="timeInputIn24HourFormatEnabled">Gibt an, ob eine Zeitangabe im 24-Stunden-Format möglich ist</param>
 		public DateFormatInfo(DateFormat dateFormat, DateTimeAmPmType amPmType, string aMString, string pMString, string amPmSeparator, string dateSuffixPattern, string dateTimeSeparatorPattern, CultureInfo cultureInfo, bool timeInputIn24HourFormatEnabled)
 		{
-			this.DateFormat = dateFormat;
-			this.AmPmType = amPmType;
-			this.AMString = aMString;
-			this.PMString = pMString;
-			this.AmPmSeparator = amPmSeparator;
-			this.CultureInfo = cultureInfo;
-			this.DateSuffixPattern = dateSuffixPattern;
-			this.DateTimeSeparatorPattern = dateTimeSeparatorPattern;
-			this.TimeInputIn24HourFormatEnabled = timeInputIn24HourFormatEnabled;
+			DateFormat = dateFormat;
+			AmPmType = amPmType;
+			AMString = aMString;
+			PMString = pMString;
+			AmPmSeparator = amPmSeparator;
+			CultureInfo = cultureInfo;
+			DateSuffixPattern = dateSuffixPattern;
+			DateTimeSeparatorPattern = dateTimeSeparatorPattern;
+			TimeInputIn24HourFormatEnabled = timeInputIn24HourFormatEnabled;
 		}
 
 		public DateFormatInfo()
@@ -116,7 +116,7 @@ namespace PowerUpDateTimeUtils
 		{
 			get
 			{
-				return this.AmPmType != DateTimeAmPmType.None;
+				return AmPmType != DateTimeAmPmType.None;
 			}
 		}
 
@@ -131,7 +131,7 @@ namespace PowerUpDateTimeUtils
 		{
 			get
 			{
-				switch (this.DateFormat)
+				switch (DateFormat)
 				{
 				case DateFormat.German:
 				case DateFormat.English1:
@@ -150,7 +150,7 @@ namespace PowerUpDateTimeUtils
 					return 3;
 
 				default:
-					throw new Exception("Unsupported DateFormat '" + this.DateFormat.ToString() + "'");
+					throw new Exception("Unsupported DateFormat '" + DateFormat.ToString() + "'");
 				}
 			}
 		}
@@ -162,7 +162,7 @@ namespace PowerUpDateTimeUtils
 		{
 			get
 			{
-				switch (this.DateFormat)
+				switch (DateFormat)
 				{
 				case DateFormat.German:
 				case DateFormat.English1:
@@ -179,7 +179,7 @@ namespace PowerUpDateTimeUtils
 					return 1;
 
 				default:
-					throw new Exception("Unsupported DateFormat '" + this.DateFormat.ToString() + "'");
+					throw new Exception("Unsupported DateFormat '" + DateFormat.ToString() + "'");
 				}
 			}
 		}
@@ -191,7 +191,7 @@ namespace PowerUpDateTimeUtils
 		{
 			get
 			{
-				switch (this.DateFormat)
+				switch (DateFormat)
 				{
 				case DateFormat.German:
 				case DateFormat.English1:
@@ -208,7 +208,7 @@ namespace PowerUpDateTimeUtils
 					return 1;
 
 				default:
-					throw new Exception("Unsupported DateFormat '" + this.DateFormat.ToString() + "'");
+					throw new Exception("Unsupported DateFormat '" + DateFormat.ToString() + "'");
 				}
 			}
 		}
@@ -223,7 +223,7 @@ namespace PowerUpDateTimeUtils
 		/// <returns></returns>
 		public DateFormatInfo GetCurrentDateFormatInfo()
 		{
-			return this.GetDateFormatInfo(Thread.CurrentThread.CurrentCulture);
+			return GetDateFormatInfo(Thread.CurrentThread.CurrentCulture);
 		}
 
 		/// <summary>

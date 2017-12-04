@@ -1,6 +1,5 @@
 ﻿using System.Runtime.InteropServices;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
@@ -18,7 +17,7 @@ using System.Runtime.CompilerServices;
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
 // and "{Major}.{Minor}.{Build}.*" will update just the revision.
 
-[assembly: AssemblyVersion("0.3.0.14")]
+[assembly: AssemblyVersion("0.3.0.15")]
 [assembly: ComVisible(false)]
 
 // The following attributes are used to specify the signing key for the assembly,
