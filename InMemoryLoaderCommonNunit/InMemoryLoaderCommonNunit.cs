@@ -39,13 +39,7 @@ namespace InMemoryLoaderCommonNunit
         /// Gets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
-        internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"].ToString(); } }
-
-        /// <summary>
-        /// Gets the application key.
-        /// </summary>
-        /// <value>The application key.</value>
-        internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"].ToString(); } }
+        static string consoleCulture = ConfigurationManager.AppSettings["System.ConsoleCulture"];
 
         /// <summary>
         /// The path.
@@ -58,7 +52,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_AbstractCommonBase()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, false);
+            var testHelper = new TestHelper(consoleCulture, path, false);
 
             Assert.IsTrue(testHelper.IsAssemblyPathSet());
             Assert.IsTrue(testHelper.IsCultureSet());
@@ -74,7 +68,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsInt()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
 
             Assert.IsTrue(testHelper.IsStringIntTest1());
             Assert.IsTrue(testHelper.IsStringIntTest2());
@@ -88,7 +82,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsLong()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
 
             Assert.IsTrue(testHelper.IsStringLongTest1());
             Assert.IsTrue(testHelper.IsStringLongTest2());
@@ -102,7 +96,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsDate()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
 
             Assert.IsTrue(testHelper.IsStringDateTest1());
             Assert.IsTrue(testHelper.IsStringDateTest2());
@@ -116,7 +110,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsByte()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
             Assert.IsTrue(testHelper.IsStringByte1());
         }
 
@@ -126,7 +120,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_IsUrlValidTest()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
             Assert.IsTrue(testHelper.IsUrlValidTest());
         }
 
@@ -136,7 +130,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_GetEasterSundayDateTest()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
             Assert.IsTrue(testHelper.GetEasterSundayDateTest());
         }
 
@@ -146,7 +140,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_GetGermanSpecialDaysTest()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
             Assert.IsTrue(testHelper.GetGermanSpecialDaysTest());
         }
 
@@ -156,7 +150,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_IsGermanHolidayTest()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
             Assert.IsTrue(testHelper.IsGermanHolidayTest());
         }
 
@@ -166,7 +160,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_CalendarWeekTest()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
             Assert.IsTrue(testHelper.GetCalendarWeekTest());
             Assert.IsTrue(testHelper.GetGermanCalendarWeekTest());
             Assert.IsTrue(testHelper.GetGermanCalendarWeekStartDateTest());
@@ -179,7 +173,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_RijndaelTest()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(consoleCulture, path, true);
             Assert.IsTrue(testHelper.RijndaelTest());
         }
 

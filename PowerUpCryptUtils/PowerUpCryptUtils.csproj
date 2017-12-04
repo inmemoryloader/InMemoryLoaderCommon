@@ -26,12 +26,10 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CryptUtils.cs" />
     <Compile Include="CryptUtils.Rijndael.cs" />
     <Compile Include="CryptUtils.HashUtils.MD5.cs" />
-    <Compile Include="Crypttils.HashUtils.ComputeHash.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CryptUtils.cd" />
