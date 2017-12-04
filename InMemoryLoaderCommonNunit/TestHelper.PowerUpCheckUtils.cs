@@ -85,6 +85,7 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result;
         }
+
         /// <summary>
         /// Determines if is string int test2.
         /// </summary>
@@ -95,6 +96,7 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result;
         }
+
         /// <summary>
         /// Determines if is string int test3.
         /// </summary>
@@ -105,6 +107,7 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result;
         }
+
         /// <summary>
         /// Determines if is string int test4.
         /// </summary>
@@ -135,6 +138,7 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result;
         }
+
         /// <summary>
         /// Determines whether this instance is string long test2.
         /// </summary>
@@ -145,6 +149,7 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result;
         }
+
         /// <summary>
         /// Determines whether this instance is string long test3.
         /// </summary>
@@ -155,6 +160,7 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result;
         }
+
         /// <summary>
         /// Determines whether this instance is string long test4.
         /// </summary>
@@ -189,6 +195,7 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result;
         }
+
         /// <summary>
         /// Determines whether this instance is string date test2.
         /// </summary>
@@ -199,6 +206,7 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result;
         }
+
         /// <summary>
         /// Determines whether this instance is string date test3.
         /// </summary>
@@ -209,6 +217,7 @@ namespace InMemoryLoaderCommonNunit
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result;
         }
+
         /// <summary>
         /// Determines whether this instance is string date test4.
         /// </summary>
@@ -220,7 +229,7 @@ namespace InMemoryLoaderCommonNunit
             return result == false;
         }
 
-        #endregion 
+        #endregion
 
         #region IsStringByte
 
@@ -237,6 +246,17 @@ namespace InMemoryLoaderCommonNunit
         {
             object[] paramArg = { singleByteVal };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringByte", paramArg);
+            return result;
+        }
+
+        #endregion
+
+        #region CheckUtils.Url
+
+        internal bool IsUrlValidTest()
+        {
+            object[] paramArg = { isStringUrl };
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsUrlValid", paramArg);
             return result;
         }
 

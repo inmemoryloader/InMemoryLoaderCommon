@@ -121,6 +121,16 @@ namespace InMemoryLoaderCommonNunit
         }
 
         /// <summary>
+        /// Tests the case is URL valid test.
+        /// </summary>
+        [Test()]
+        public void TestCase_IsUrlValidTest()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            Assert.IsTrue(testHelper.IsUrlValidTest());
+        }
+
+        /// <summary>
         /// Tests the case get easter sunday date test.
         /// </summary>
         [Test()]
