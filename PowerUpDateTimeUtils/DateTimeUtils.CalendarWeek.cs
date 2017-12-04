@@ -71,16 +71,8 @@ namespace PowerUpDateTimeUtils
                     calendarWeek = 1;
                 }
             }
-
             // Das Jahr der Kalenderwoche ermitteln
-            year = date.Year;
-
-            if (calendarWeek == 1 && date.Month == 12) {
-                year++;
-            }
-            if (calendarWeek >= 52 && date.Month == 1) {
-                year--;
-            }
+            year = CalculateYear (calendarWeek, date);
             // Die ermittelte Kalenderwoche zurückgeben
             return new CalendarWeek (year, calendarWeek);
         }
@@ -118,19 +110,30 @@ namespace PowerUpDateTimeUtils
 
             // Kalenderwoche ermitteln
             int calendarWeek = (int)Math.Floor (d1 / 7) + 1;
-
             // Das Jahr der Kalenderwoche ermitteln
-            year = date.Year;
-
-            if (calendarWeek == 1 && date.Month == 12) {
-                year++;
-            }
-            if (calendarWeek >= 52 && date.Month == 1) {
-                year--;
-            }
+            year = CalculateYear (calendarWeek, date);
             // Die ermittelte Kalenderwoche zurückgeben
             return new CalendarWeek (year, calendarWeek);
         }
+
+        /// <summary>
+        /// Calculates the year.
+        /// </summary>
+        /// <returns>The year.</returns>
+        /// <param name="calendarWeek">Calendar week.</param>
+        /// <param name="paramDate">Parameter date.</param>
+        private int CalculateYear (int calendarWeek, DateTime paramDate)
+        {
+            year = paramDate.Year;
+            if (calendarWeek == 1 && paramDate.Month == 12) {
+                year++;
+            }
+            if (calendarWeek >= 52 && paramDate.Month == 1) {
+                year--;
+            }
+            return year;
+        }
+
     }
 }
 
