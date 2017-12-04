@@ -140,6 +140,16 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue (testHelper.GetGermanSpecialDaysTest ());
         }
 
+        /// <summary>
+        /// Tests the case is german holiday test.
+        /// </summary>
+        [Test ()]
+        public void TestCase_IsGermanHolidayTest ()
+        {
+            var testHelper = new TestHelper (ConsoleCulture, path, true);
+            Assert.IsTrue (testHelper.IsGermanHolidayTest ());
+        }
+
     }
 
 }

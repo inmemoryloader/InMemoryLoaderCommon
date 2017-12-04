@@ -86,11 +86,23 @@ namespace InMemoryLoaderCommonNunit
 
         #region DateTimeUtils.IsGermanHoliday
 
+        /// <summary>
+        /// Ises the german holiday test.
+        /// </summary>
+        /// <returns><c>true</c>, if german holiday test was ised, <c>false</c> otherwise.</returns>
         internal bool IsGermanHolidayTest ()
         {
-            return true;
+            object [] paramArg = { ostersonntag };
+            var result = (GermanSpecialDay)ComponentLoader.InvokeMethod (base.DateTimeUtils, "IsGermanHoliday", paramArg);
+
+            if (result.IsHoliday && result.IsNationwide) {
+                return true;
+            } else {
+                return false;
+            }
         }
-      #endregion
+
+        #endregion
 
         #region Several generic tests
 

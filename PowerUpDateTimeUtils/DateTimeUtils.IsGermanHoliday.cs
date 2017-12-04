@@ -37,11 +37,9 @@ namespace PowerUpDateTimeUtils
         /// <param name="paramName">In diesem Argument gibt die Methode den Namen des Feiertags zurück, falls es sich um einen solchen handelt</param>
         /// <param name="paramIsNationWide">In diesem Argument gibt die Methode zurück, ob es sich um einen bundesweiten Feiertag handelt</param>
         /// <returns>Gibt true zurück wenn es sich bei dem übergebenen Datum um einen Feiertag handelt</returns>
-        public bool IsGermanHoliday(DateTime paramDate, out string paramName, out bool paramIsNationWide)
+        public GermanSpecialDay IsGermanHoliday(DateTime paramDate)
         {
-            // out-Argumente initialisieren
-            paramName = null;
-            paramIsNationWide = false;
+            var specialDay = new GermanSpecialDay();
 
             // Auflistung der besonderen Tage des angegebenen Jahres erzeugen, 
             // durchgehen und das Datum der Feiertage mit dem angegebenen Datum
@@ -53,20 +51,24 @@ namespace PowerUpDateTimeUtils
                     // Datum gefunden
                     if (gsd.IsHoliday)
                     {
-                        // Es ist ein Feiertag: Infos definieren und true zurückgeben 
-                        paramName = gsd.Name;
-                        paramIsNationWide = gsd.IsNationwide;
-                        return true;
+                        specialDay.IsHoliday = true;
+                        specialDay.IsNationwide = gsd.IsNationwide;
+                        specialDay.Name = gsd.Name;
+                        specialDay.Key = gsd.Key;
+                        specialDay.Date = gsd.Date;
                     }
                     else
                     {
-                        // Kein Feiertag
-                        return false;
+                        specialDay.IsHoliday = false;
+                        specialDay.IsNationwide = gsd.IsNationwide;
+                        specialDay.Name = gsd.Name;
+                        specialDay.Key = gsd.Key;
+                        specialDay.Date = gsd.Date;
                     }
                 }
             }
             // Tag wurde nicht gefunden
-            return false;
+            return specialDay;
         }
 
     }

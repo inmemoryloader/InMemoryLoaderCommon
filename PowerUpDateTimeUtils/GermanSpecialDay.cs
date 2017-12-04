@@ -75,6 +75,11 @@ namespace PowerUpDateTimeUtils
 			IsHoliday = paramIsHoliday;
 		}
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:PowerUpDateTimeUtils.GermanSpecialDay"/> class.
+        /// </summary>
+        public GermanSpecialDay(){ }
+
 		/// <summary>
 		/// Vergleicht ein GermanSpecialDay-Objekt mit dem aktuellen
 		/// </summary>
