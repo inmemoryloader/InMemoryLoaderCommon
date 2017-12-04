@@ -34,8 +34,6 @@ namespace PowerUpDateTimeUtils
         /// Ermittelt, ob ein bestimmter Tag ein Feiertag ist
         /// </summary>
         /// <param name="paramDate">Das Datum des Tages</param>
-        /// <param name="paramName">In diesem Argument gibt die Methode den Namen des Feiertags zurück, falls es sich um einen solchen handelt</param>
-        /// <param name="paramIsNationWide">In diesem Argument gibt die Methode zurück, ob es sich um einen bundesweiten Feiertag handelt</param>
         /// <returns>Gibt true zurück wenn es sich bei dem übergebenen Datum um einen Feiertag handelt</returns>
         public GermanSpecialDay IsGermanHoliday(DateTime paramDate)
         {
