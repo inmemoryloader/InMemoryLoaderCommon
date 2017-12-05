@@ -26,12 +26,10 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CryptUtils.cs" />
     <Compile Include="CryptUtils.Rijndael.cs" />
     <Compile Include="CryptUtils.HashUtils.MD5.cs" />
-    <Compile Include="Crypttils.HashUtils.ComputeHash.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CryptUtils.cd" />
@@ -39,14 +37,14 @@
     <None Include="PowerUpCryptUtils.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.9\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.9\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\packages\InMemoryLoader.0.3.2.10\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\packages\InMemoryLoader.0.3.2.10\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -23,7 +23,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -31,33 +30,32 @@ using InMemoryLoaderBase;
 
 namespace PowerUpCryptUtils
 {
-	public partial class CryptUtils : AbstractPowerUpComponent
-	{
+    public partial class CryptUtils : AbstractPowerUpComponent
+    {
         /// <summary>
         /// Encrypts the string to a byte array using the MD5 Encryption Algorithm.
         /// <see cref="System.Security.Cryptography.MD5CryptoServiceProvider"/>
         /// </summary>
         /// <param name="paramValue">System.String. Usually a password.</param>
         /// <returns>System.Byte[]</returns>
-        public byte[] MD5Encryption(string paramValue)
-		{
-			// Create instance of the crypto provider.
-			MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-			// Create a Byte array to store the encryption to return.
-			byte[] hashedbytes;
-			// Required UTF8 Encoding used to encode the input value to a usable state.
-			UTF8Encoding textencoder = new UTF8Encoding();
+        public byte[] Md5Encryption(string paramValue)
+        {
+            // Create instance of the crypto provider.
+            var md5 = new MD5CryptoServiceProvider();
 
-			// let the show begin.
-			hashedbytes = md5.ComputeHash(textencoder.GetBytes(paramValue));
+            // Required UTF8 Encoding used to encode the input value to a usable state.
+            var textencoder = new UTF8Encoding();
 
-			// Destroy objects that aren't needed.
-			md5.Clear();
-			md5 = null;
+            // Create a Byte array to store the encryption to return.
+            var hashedbytes = md5.ComputeHash(textencoder.GetBytes(paramValue));
 
-			// return the hased bytes to the calling method.
-			return hashedbytes;
-		}
+            // Destroy objects that aren't needed.
+            md5.Clear();
+            md5 = null;
+
+            // return the hased bytes to the calling method.
+            return hashedbytes;
+        }
 
         /// <summary>
         /// Encrypts the string to a byte array using the MD5 Encryption 
@@ -66,46 +64,46 @@ namespace PowerUpCryptUtils
         /// </summary>
         /// <param name="paramValue">System.String. Usually a password.</param>
         /// <returns>System.Byte[]</returns>
-        public byte[] MD5SaltedHashEncryption(string paramValue)
-		{
-			// Create instance of the crypto provider.
-			MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-			// Create a Byte array to store the encryption to return.
-			byte[] hashedbytes;
-			// Create a Byte array to store the salted hash.
-			byte[] saltedhash;
+        public byte[] Md5SaltedHashEncryption(string paramValue)
+        {
+            // Create instance of the crypto provider.
+            var md5 = new MD5CryptoServiceProvider();
 
-			// Required UTF8 Encoding used to encode the input value to a usable state.
-			UTF8Encoding textencoder = new UTF8Encoding();
+            // Required UTF8 Encoding used to encode the input value to a usable state.
+            var textencoder = new UTF8Encoding();
 
-			// let the show begin.
-			hashedbytes = md5.ComputeHash(textencoder.GetBytes(paramValue));
+            // Create a Byte array to store the encryption to return.
+            var hashedbytes = md5.ComputeHash(textencoder.GetBytes(paramValue));
 
-			// Let's add the salt.
-			paramValue += textencoder.GetString(hashedbytes);
-			// Get the new byte array after adding the salt.
-			saltedhash = md5.ComputeHash(textencoder.GetBytes(paramValue));
+            // Let's add the salt.
+            paramValue += textencoder.GetString(hashedbytes);
 
-			// Destroy objects that aren't needed.
-			md5.Clear();
-			md5 = null;
+            // Create a Byte array to store the salted hash.
+            // Get the new byte array after adding the salt.
+            var saltedhash = md5.ComputeHash(textencoder.GetBytes(paramValue));
 
-			// return the hased bytes to the calling method.
-			return saltedhash;
-		}
-		/// <summary>
-		/// Gets the M d5 hash as string.
-		/// </summary>
-		/// <returns>The M d5 hash as string.</returns>
-		/// <param name="text">Text.</param>
-		public string GetMD5HashAsString(string text)
-		{
-			System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
-			byte[] bytes = System.Text.Encoding.UTF8.GetBytes(text);
-			byte[] hash = md5.ComputeHash(bytes);
-			string result = BitConverter.ToString(hash);
-			return result;
-		}
-	}
+            // Destroy objects that aren't needed.
+            md5.Clear();
+            md5 = null;
+
+            // return the hased bytes to the calling method.
+            return saltedhash;
+        }
+
+        /// <summary>
+        /// Gets the M d5 hash as string.
+        /// </summary>
+        /// <returns>The M d5 hash as string.</returns>
+        /// <param name="text">Text.</param>
+        public string GetMd5HashAsString(string text)
+        {
+            var md5 = System.Security.Cryptography.MD5.Create();
+            var bytes = System.Text.Encoding.UTF8.GetBytes(text);
+            var hash = md5.ComputeHash(bytes);
+            var result = BitConverter.ToString(hash);
+            return result;
+        }
+
+    }
+
 }
-

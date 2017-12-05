@@ -37,13 +37,13 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.9\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.0.3.2.10\lib\InMemoryLoader.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.9\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.0.3.2.10\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -55,6 +55,8 @@
     <Compile Include="TestHelper.Base.cs" />
     <Compile Include="TestHelper.AbstractCommonBase.cs" />
     <Compile Include="TestHelper.PowerUpCheckUtils.cs" />
+    <Compile Include="TestHelper.PowerUpDateTimeUtils.cs" />
+    <Compile Include="TestHelper.PowerUpCryptUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">

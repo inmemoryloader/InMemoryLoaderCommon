@@ -39,18 +39,12 @@ namespace InMemoryLoaderCommonNunit
         /// Gets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
-        internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"].ToString(); } }
+        static readonly string ConsoleCulture = ConfigurationManager.AppSettings["System.ConsoleCulture"];
 
         /// <summary>
-        /// Gets the application key.
+        /// The Path.
         /// </summary>
-        /// <value>The application key.</value>
-        internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"].ToString(); } }
-
-        /// <summary>
-        /// The path.
-        /// </summary>
-        private static string path = AppDomain.CurrentDomain.BaseDirectory;
+        static readonly string Path = AppDomain.CurrentDomain.BaseDirectory;
 
         /// <summary>
         /// Tests the abstract loader base.
@@ -58,7 +52,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_AbstractCommonBase()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, false);
+            var testHelper = new TestHelper(ConsoleCulture, Path, false);
 
             Assert.IsTrue(testHelper.IsAssemblyPathSet());
             Assert.IsTrue(testHelper.IsCultureSet());
@@ -74,7 +68,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsInt()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
 
             Assert.IsTrue(testHelper.IsStringIntTest1());
             Assert.IsTrue(testHelper.IsStringIntTest2());
@@ -88,7 +82,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsLong()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
 
             Assert.IsTrue(testHelper.IsStringLongTest1());
             Assert.IsTrue(testHelper.IsStringLongTest2());
@@ -102,7 +96,7 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsDate()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
 
             Assert.IsTrue(testHelper.IsStringDateTest1());
             Assert.IsTrue(testHelper.IsStringDateTest2());
@@ -116,9 +110,71 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_PowerUpCheckUtilsByte()
         {
-            var testHelper = new TestHelper(ConsoleCulture, path, true);
-
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
             Assert.IsTrue(testHelper.IsStringByte1());
+        }
+
+        /// <summary>
+        /// Tests the case is URL valid test.
+        /// </summary>
+        [Test()]
+        public void TestCase_IsUrlValidTest()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
+            Assert.IsTrue(testHelper.IsUrlValidTest());
+        }
+
+        /// <summary>
+        /// Tests the case get easter sunday date test.
+        /// </summary>
+        [Test()]
+        public void TestCase_GetEasterSundayDateTest()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
+            Assert.IsTrue(testHelper.GetEasterSundayDateTest());
+        }
+
+        /// <summary>
+        /// Tests the case get german special days test.
+        /// </summary>
+        [Test()]
+        public void TestCase_GetGermanSpecialDaysTest()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
+            Assert.IsTrue(testHelper.GetGermanSpecialDaysTest());
+        }
+
+        /// <summary>
+        /// Tests the case is german holiday test.
+        /// </summary>
+        [Test()]
+        public void TestCase_IsGermanHolidayTest()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
+            Assert.IsTrue(testHelper.IsGermanHolidayTest());
+        }
+
+        /// <summary>
+        /// Tests the case calendar week test.
+        /// </summary>
+        [Test()]
+        public void TestCase_CalendarWeekTest()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
+            Assert.IsTrue(testHelper.GetCalendarWeekTest());
+            Assert.IsTrue(testHelper.GetGermanCalendarWeekTest());
+            Assert.IsTrue(testHelper.GetGermanCalendarWeekStartDateTest());
+            Assert.IsTrue(testHelper.GetCalendarWeekStartDateTest());
+        }
+
+        /// <summary>
+        /// Tests the case rijndael test.
+        /// </summary>
+        [Test()]
+        public void TestCase_RijndaelTest()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
+            Assert.IsTrue(testHelper.RijndaelTest());
         }
 
     }
