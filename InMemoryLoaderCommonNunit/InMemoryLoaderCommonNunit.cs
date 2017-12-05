@@ -27,6 +27,7 @@ using NUnit.Framework;
 using System;
 using System.Configuration;
 using InMemoryLoaderCommonNunit.Application;
+using log4net;
 
 namespace InMemoryLoaderCommonNunit
 {
@@ -36,6 +37,10 @@ namespace InMemoryLoaderCommonNunit
     [TestFixture()]
     internal class InMemoryLoaderCommonNunit
     {
+        /// <summary>
+        /// The log.
+        /// </summary>
+        static readonly ILog Log = LogManager.GetLogger(typeof(InMemoryLoaderCommonNunit));
         /// <summary>
         /// Gets the console culture.
         /// </summary>
@@ -50,16 +55,22 @@ namespace InMemoryLoaderCommonNunit
         /// </summary>
         static readonly ApplicationBase AppBase = ApplicationBase.Instance;
 
+        [Test()]
+        public void TestCase_ApplicationBase()
+        {
+            var appBaseSet = AppBase.GetType().ToString();
+            Log.InfoFormat(AppBase.TestRunMessage, "TestCase_ApplicationBase");
+            Assert.IsNotNullOrEmpty(appBaseSet);
+        }
+
         /// <summary>
         /// TestCase_AbstractCommonBase
         /// </summary>
         [Test()]
         public void TestCase_AbstractCommonBase()
         {
-            Assert.IsNotNullOrEmpty(AppBase.GetType().ToString());
-
             var testHelper = new TestHelper(ConsoleCulture, Path, false);
-
+            Log.InfoFormat(AppBase.TestRunMessage, "TestCase_AbstractCommonBase");
             Assert.IsTrue(testHelper.GetAssemblyPath_Test());
             Assert.IsTrue(testHelper.SetCulture_Test());
             Assert.IsTrue(testHelper.SetInMemoryLoader_Test());
@@ -75,6 +86,7 @@ namespace InMemoryLoaderCommonNunit
         public void TestCase_PowerUpCheckUtilsByte()
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
+            Log.InfoFormat(AppBase.TestRunMessage, "TestCase_PowerUpCheckUtilsByte");
             Assert.IsTrue(testHelper.IsStringByte_Test1());
         }
 

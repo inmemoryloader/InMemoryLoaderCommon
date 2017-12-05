@@ -45,6 +45,10 @@ namespace InMemoryLoaderCommonNunit.Application
         /// The sync root.
         /// </summary>
         static readonly object SyncRoot = new Object();
+        /// <summary>
+        /// The test run message.
+        /// </summary>
+        internal string TestRunMessage = "Run Test: {0}";
 
         /// <summary>
         /// Gets the instance.
@@ -61,7 +65,7 @@ namespace InMemoryLoaderCommonNunit.Application
                         if (_instance == null)
                         {
                             _instance = new ApplicationBase();
-                            Log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType());
+                            Log.InfoFormat("Create a new instance of Type: {0}", _instance.GetType());
                         }
                     }
                 }
