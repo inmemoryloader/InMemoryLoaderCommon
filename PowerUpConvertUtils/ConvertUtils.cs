@@ -32,19 +32,19 @@ namespace PowerUpConvertUtils
     /// ConvertUtils
     /// </summary>
     public partial class ConvertUtils : AbstractPowerUpComponent
-	{
-		/// <summary>
-		/// The log.
-		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger (typeof(ConvertUtils));
+    {
+        /// <summary>
+        /// The log.
+        /// </summary>
+        static readonly ILog Log = LogManager.GetLogger(typeof(ConvertUtils));
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="PowerUpConvertUtils.ConvertUtils"/> class.
-		/// </summary>
-		public ConvertUtils ()
-		{
-			log.DebugFormat ("Create a new instance of Type: {0}", GetType ().ToString ());
-		}
-	}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PowerUpConvertUtils.ConvertUtils"/> class.
+        /// </summary>
+        public ConvertUtils()
+        {
+            Log.DebugFormat("Create a new instance of Type: {0}", GetType().ToString());
+        }
+    }
 }
 

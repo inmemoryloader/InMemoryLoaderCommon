@@ -39,7 +39,7 @@ namespace InMemoryLoaderCommon
         /// <summary>
         /// The log.
         /// </summary>
-        private static ILog log = LogManager.GetLogger(typeof(CommonComponentLoader));
+        static readonly ILog Log = LogManager.GetLogger(typeof(CommonComponentLoader));
 
         /// <summary>
         /// The components.
@@ -49,44 +49,39 @@ namespace InMemoryLoaderCommon
         /// <summary>
         /// The string component.
         /// </summary>
-        IDynamicClassSetup StringComponent;
+        IDynamicClassSetup _stringComponent;
         /// <summary>
         /// The check component.
         /// </summary>
-        IDynamicClassSetup CheckComponent;
+        IDynamicClassSetup _checkComponent;
         /// <summary>
         /// The convert component.
         /// </summary>
-        IDynamicClassSetup ConvertComponent;
+        IDynamicClassSetup _convertComponent;
         /// <summary>
         /// The crypt component.
         /// </summary>
-        IDynamicClassSetup CryptComponent;
+        IDynamicClassSetup _cryptComponent;
         /// <summary>
         /// The xml component.
         /// </summary>
-        IDynamicClassSetup XmlComponent;
+        IDynamicClassSetup _xmlComponent;
         /// <summary>
         /// The date time component.
         /// </summary>
-        IDynamicClassSetup DateTimeComponent;
+        IDynamicClassSetup _dateTimeComponent;
         /// <summary>
         /// The email component.
         /// </summary>
-        IDynamicClassSetup EmailComponent;
+        IDynamicClassSetup _emailComponent;
         /// <summary>
         /// The file system component.
         /// </summary>
-        IDynamicClassSetup FileSystemComponent;
+        IDynamicClassSetup _fileSystemComponent;
         /// <summary>
         /// The get component.
         /// </summary>
-        IDynamicClassSetup GetComponent;
-
-        /// <summary>
-        /// The assembly path.
-        /// </summary>
-        string assemblyPath;
+        IDynamicClassSetup _getComponent;
 
         /// <summary>
         /// Gets or sets the assembly path.
@@ -94,15 +89,8 @@ namespace InMemoryLoaderCommon
         /// <value>The assembly path.</value>
         public string AssemblyPath
         {
-            get
-            {
-                return assemblyPath;
-            }
-
-            set
-            {
-                assemblyPath = value;
-            }
+            get;
+            set;
         }
 
         /// <summary>
@@ -130,7 +118,7 @@ namespace InMemoryLoaderCommon
 
             SetupCommonComponents(AssemblyPath);
 
-            log.Debug("Init Common Components");
+            Log.Debug("Init Common Components");
 
             var compLoader = ComponentLoader.Instance;
 
@@ -140,12 +128,12 @@ namespace InMemoryLoaderCommon
                 {
                     object[] paramArgument = { AbstractPowerUpComponent.Key };
                     var init = compLoader.InvokeMethod(component.Assembly, component.Class, component.InitMethod, paramArgument);
-                    log.DebugFormat("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
+                    Log.DebugFormat("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
                 }
             }
             catch (Exception ex)
             {
-                log.FatalFormat(ex.ToString());
+                Log.FatalFormat(ex.ToString());
             }
 
             compLoader.InitClassRegistry();
@@ -158,7 +146,7 @@ namespace InMemoryLoaderCommon
         /// </summary>
         /// <returns><c>true</c>, if common components was setuped, <c>false</c> otherwise.</returns>
         /// <param name="paramPath">Parameter path.</param>
-        private bool SetupCommonComponents(string paramPath)
+        bool SetupCommonComponents(string paramPath)
         {
             if (!Components.IsValueCreated)
             {
@@ -170,103 +158,103 @@ namespace InMemoryLoaderCommon
                 AssemblyPath = paramPath;
             }
 
-            if (StringComponent == null)
+            if (_stringComponent == null)
             {
-                StringComponent = new DynamicClassSetup();
-                StringComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpStringUtils.dll");
-                StringComponent.Class = "StringUtils";
+                _stringComponent = new DynamicClassSetup();
+                _stringComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpStringUtils.dll");
+                _stringComponent.Class = "StringUtils";
             }
-            if (!Components.Value.Contains(StringComponent))
+            if (!Components.Value.Contains(_stringComponent))
             {
-                Components.Value.Add(StringComponent);
-            }
-
-            if (CheckComponent == null)
-            {
-                CheckComponent = new DynamicClassSetup();
-                CheckComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpCheckUtils.dll");
-                CheckComponent.Class = "CheckUtils";
-            }
-            if (!Components.Value.Contains(CheckComponent))
-            {
-                Components.Value.Add(CheckComponent);
+                Components.Value.Add(_stringComponent);
             }
 
-            if (ConvertComponent == null)
+            if (_checkComponent == null)
             {
-                ConvertComponent = new DynamicClassSetup();
-                ConvertComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpConvertUtils.dll");
-                ConvertComponent.Class = "ConvertUtils";
+                _checkComponent = new DynamicClassSetup();
+                _checkComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpCheckUtils.dll");
+                _checkComponent.Class = "CheckUtils";
             }
-            if (!Components.Value.Contains(ConvertComponent))
+            if (!Components.Value.Contains(_checkComponent))
             {
-                Components.Value.Add(ConvertComponent);
-            }
-
-            if (CryptComponent == null)
-            {
-                CryptComponent = new DynamicClassSetup();
-                CryptComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpCryptUtils.dll");
-                CryptComponent.Class = "CryptUtils";
-            }
-            if (!Components.Value.Contains(CryptComponent))
-            {
-                Components.Value.Add(CryptComponent);
+                Components.Value.Add(_checkComponent);
             }
 
-            if (XmlComponent == null)
+            if (_convertComponent == null)
             {
-                XmlComponent = new DynamicClassSetup();
-                XmlComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpXmlUtils.dll");
-                XmlComponent.Class = "XmlUtils";
+                _convertComponent = new DynamicClassSetup();
+                _convertComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpConvertUtils.dll");
+                _convertComponent.Class = "ConvertUtils";
             }
-            if (!Components.Value.Contains(XmlComponent))
+            if (!Components.Value.Contains(_convertComponent))
             {
-                Components.Value.Add(XmlComponent);
-            }
-
-            if (DateTimeComponent == null)
-            {
-                DateTimeComponent = new DynamicClassSetup();
-                DateTimeComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpDateTimeUtils.dll");
-                DateTimeComponent.Class = "DateTimeUtils";
-            }
-            if (!Components.Value.Contains(DateTimeComponent))
-            {
-                Components.Value.Add(DateTimeComponent);
+                Components.Value.Add(_convertComponent);
             }
 
-            if (EmailComponent == null)
+            if (_cryptComponent == null)
             {
-                EmailComponent = new DynamicClassSetup();
-                EmailComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpEmailUtils.dll");
-                EmailComponent.Class = "EmailUtils";
+                _cryptComponent = new DynamicClassSetup();
+                _cryptComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpCryptUtils.dll");
+                _cryptComponent.Class = "CryptUtils";
             }
-            if (!Components.Value.Contains(EmailComponent))
+            if (!Components.Value.Contains(_cryptComponent))
             {
-                Components.Value.Add(EmailComponent);
-            }
-
-            if (FileSystemComponent == null)
-            {
-                FileSystemComponent = new DynamicClassSetup();
-                FileSystemComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpFileSystemUtils.dll");
-                FileSystemComponent.Class = "FileSystemUtils";
-            }
-            if (!Components.Value.Contains(FileSystemComponent))
-            {
-                Components.Value.Add(FileSystemComponent);
+                Components.Value.Add(_cryptComponent);
             }
 
-            if (GetComponent == null)
+            if (_xmlComponent == null)
             {
-                GetComponent = new DynamicClassSetup();
-                GetComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpGetUtils.dll");
-                GetComponent.Class = "GetUtils";
+                _xmlComponent = new DynamicClassSetup();
+                _xmlComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpXmlUtils.dll");
+                _xmlComponent.Class = "XmlUtils";
             }
-            if (!Components.Value.Contains(GetComponent))
+            if (!Components.Value.Contains(_xmlComponent))
             {
-                Components.Value.Add(GetComponent);
+                Components.Value.Add(_xmlComponent);
+            }
+
+            if (_dateTimeComponent == null)
+            {
+                _dateTimeComponent = new DynamicClassSetup();
+                _dateTimeComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpDateTimeUtils.dll");
+                _dateTimeComponent.Class = "DateTimeUtils";
+            }
+            if (!Components.Value.Contains(_dateTimeComponent))
+            {
+                Components.Value.Add(_dateTimeComponent);
+            }
+
+            if (_emailComponent == null)
+            {
+                _emailComponent = new DynamicClassSetup();
+                _emailComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpEmailUtils.dll");
+                _emailComponent.Class = "EmailUtils";
+            }
+            if (!Components.Value.Contains(_emailComponent))
+            {
+                Components.Value.Add(_emailComponent);
+            }
+
+            if (_fileSystemComponent == null)
+            {
+                _fileSystemComponent = new DynamicClassSetup();
+                _fileSystemComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpFileSystemUtils.dll");
+                _fileSystemComponent.Class = "FileSystemUtils";
+            }
+            if (!Components.Value.Contains(_fileSystemComponent))
+            {
+                Components.Value.Add(_fileSystemComponent);
+            }
+
+            if (_getComponent == null)
+            {
+                _getComponent = new DynamicClassSetup();
+                _getComponent.Assembly = Path.Combine(AssemblyPath, "PowerUpGetUtils.dll");
+                _getComponent.Class = "GetUtils";
+            }
+            if (!Components.Value.Contains(_getComponent))
+            {
+                Components.Value.Add(_getComponent);
             }
             return true;
         }

@@ -1,32 +1,55 @@
-﻿using System;
+﻿//
+// CalendarWeek.cs
+//
+// Author: responsive kaysta
+//
+// Copyright (c) 2017 responsive kaysta
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 namespace PowerUpDateTimeUtils
 {
-	/// <summary>
-	/// Verwaltet die Daten einer Kalenderwoche
-	/// </summary>
-	public class CalendarWeek
-	{
-		/// <summary>
-		/// Das Jahr
-		/// </summary>
-		public int Year;
+    /// <summary>
+    /// Verwaltet die Daten einer Kalenderwoche
+    /// </summary>
+    public class CalendarWeek
+    {
+        /// <summary>
+        /// Das Jahr
+        /// </summary>
+        public readonly int Year;
 
-		/// <summary>
-		/// Die Kalenderwoche
-		/// </summary>
-		public int Week;
+        /// <summary>
+        /// Die Kalenderwoche
+        /// </summary>
+        public readonly int Week;
 
-		/// <summary>
-		/// Konstruktor
-		/// </summary>
-		/// <param name="year">Das Jahr</param>
-		/// <param name="week">Die Kalenderwoche</param>
-		public CalendarWeek(int year, int week)
-		{
-			Year = year;
-			Week = week;
-		}
-	}
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// <param name="paramYear">Das Jahr</param>
+        /// <param name="paramWeek">Die Kalenderwoche</param>
+        public CalendarWeek (int paramYear, int paramWeek)
+        {
+            Year = paramYear;
+            Week = paramWeek;
+        }
+    }
 }
 

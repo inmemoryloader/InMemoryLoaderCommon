@@ -51,10 +51,10 @@
     <Compile Include="DateTimeUtils.Iso.cs" />
     <Compile Include="DateTimeUtils.IsPotentialDateTime.cs" />
     <Compile Include="DateTimeUtils.MonthName.cs" />
-    <Compile Include="DateTimeUtils.NIST.cs" />
     <Compile Include="DateTimeUtils.NormalizeDate.cs" />
     <Compile Include="MonthInfo.cs" />
     <Compile Include="QuarterInfo.cs" />
+    <Compile Include="DateTimeUtils.Nist.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -74,4 +74,16 @@
       <HintPath>..\packages\InMemoryLoader.0.3.2.10\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
+          <CSharpFormattingPolicy inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
+          <TextStylePolicy inheritsSet="null" scope="application/config+xml" />
+          <XmlFormattingPolicy inheritsSet="null" scope="application/config+xml" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
 </Project>
