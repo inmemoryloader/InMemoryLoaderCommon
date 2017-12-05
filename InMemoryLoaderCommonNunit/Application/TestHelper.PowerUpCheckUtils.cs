@@ -27,7 +27,7 @@ using System;
 using InMemoryLoaderCommon;
 using System.Globalization;
 
-namespace InMemoryLoaderCommonNunit
+namespace InMemoryLoaderCommonNunit.Application
 {
     internal partial class TestHelper: AbstractCommonBase
     {
@@ -67,52 +67,79 @@ namespace InMemoryLoaderCommonNunit
         /// The is string.
         /// </summary>
         const string IsString = "Some String";
-
-        #region IsStringIntTest
-
         /// <summary>
         /// The is int.
         /// </summary>
         const int IsInt = 123;
+        /// <summary>
+        /// The is int.
+        /// </summary>
+        const long IsLong = 12345678;
+        /// <summary>
+        /// The is date.
+        /// </summary>
+        static readonly DateTime IsDate = DateTime.Now;
+        /// <summary>
+        /// The is string date.
+        /// </summary>
+        static readonly string IsStringDate = DateTime.Now.ToString(CultureInfo.CurrentCulture);
+
+        #region IsStringByte
 
         /// <summary>
-        /// Determines if is string int test1.
+        /// The single byte value.
         /// </summary>
-        /// <returns><c>true</c> if is string int test1; otherwise, <c>false</c>.</returns>
-        internal bool IsStringIntTest1()
+        const byte SingleByteVal = 49;
+
+        /// <summary>
+        /// IsStringByte_Test1
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string byte test1; otherwise, <c>false</c>.</returns>
+        internal bool IsStringByte_Test1()
+        {
+            object[] paramArg = { SingleByteVal };
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringByte", paramArg);
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether this instance is string byte test2.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string byte test2; otherwise, <c>false</c>.</returns>
+        internal bool IsStringByte_Test2()
+        {
+            object[] paramArg = { IsString };
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringByte", paramArg);
+            return result != true;
+        }
+
+        #endregion
+
+        #region IsStringIntTest
+
+
+        internal bool IsStringInt_Test1()
         {
             object[] paramArg = { IsInt };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result;
         }
 
-        /// <summary>
-        /// Determines if is string int test2.
-        /// </summary>
-        /// <returns><c>true</c> if is string int test2; otherwise, <c>false</c>.</returns>
-        internal bool IsStringIntTest2()
+        internal bool IsStringInt_Test2()
         {
             object[] paramArg = { IsStringInt };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result;
         }
 
-        /// <summary>
-        /// Determines if is string int test3.
-        /// </summary>
-        /// <returns><c>true</c> if is string int test3; otherwise, <c>false</c>.</returns>
-        internal bool IsStringIntTest3()
+        internal bool IsStringInt_Test3()
         {
             object[] paramArg = { IsStringInt, CultureInfo.CurrentCulture };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
             return result;
         }
 
-        /// <summary>
-        /// Determines if is string int test4.
-        /// </summary>
-        /// <returns><c>true</c> if is string int test4; otherwise, <c>false</c>.</returns>
-        internal bool IsStringIntTest4()
+        internal bool IsStringInt_Test4()
         {
             object[] paramArg = { IsString, CultureInfo.CurrentCulture };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringInt", paramArg);
@@ -123,49 +150,29 @@ namespace InMemoryLoaderCommonNunit
 
         #region IsStringLongTest
 
-        /// <summary>
-        /// The is int.
-        /// </summary>
-        const long IsLong = 12345678;
 
-        /// <summary>
-        /// Determines whether this instance is string long test1.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is string long test1; otherwise, <c>false</c>.</returns>
-        internal bool IsStringLongTest1()
+        internal bool IsStringLong_Test1()
         {
             object[] paramArg = { IsLong };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result;
         }
 
-        /// <summary>
-        /// Determines whether this instance is string long test2.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is string long test2; otherwise, <c>false</c>.</returns>
-        internal bool IsStringLongTest2()
+        internal bool IsStringLong_Test2()
         {
             object[] paramArg = { IsStringInt };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result;
         }
 
-        /// <summary>
-        /// Determines whether this instance is string long test3.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is string long test3; otherwise, <c>false</c>.</returns>
-        internal bool IsStringLongTest3()
+        internal bool IsStringLong_Test3()
         {
             object[] paramArg = { IsStringInt, CultureInfo.CurrentCulture };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
             return result;
         }
 
-        /// <summary>
-        /// Determines whether this instance is string long test4.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is string long test4; otherwise, <c>false</c>.</returns>
-        internal bool IsStringLongTest4()
+        internal bool IsStringLong_Test4()
         {
             object[] paramArg = { IsString, CultureInfo.CurrentCulture };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringLong", paramArg);
@@ -176,53 +183,29 @@ namespace InMemoryLoaderCommonNunit
 
         #region IsStringDateTest
 
-        /// <summary>
-        /// The is date.
-        /// </summary>
-        static readonly DateTime IsDate = DateTime.Now;
-        /// <summary>
-        /// The is string date.
-        /// </summary>
-        static readonly string IsStringDate = DateTime.Now.ToString(CultureInfo.CurrentCulture);
 
-        /// <summary>
-        /// Determines whether this instance is string date test1.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is string date test1; otherwise, <c>false</c>.</returns>
-        internal bool IsStringDateTest1()
+        internal bool IsStringDate_Test1()
         {
             object[] paramArg = { IsDate };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result;
         }
 
-        /// <summary>
-        /// Determines whether this instance is string date test2.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is string date test2; otherwise, <c>false</c>.</returns>
-        internal bool IsStringDateTest2()
+        internal bool IsStringDate_Test2()
         {
             object[] paramArg = { IsStringDate };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result;
         }
 
-        /// <summary>
-        /// Determines whether this instance is string date test3.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is string date test3; otherwise, <c>false</c>.</returns>
-        internal bool IsStringDateTest3()
+        internal bool IsStringDate_Test3()
         {
             object[] paramArg = { IsStringDate, CultureInfo.CurrentCulture };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
             return result;
         }
 
-        /// <summary>
-        /// Determines whether this instance is string date test4.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is string date test4; otherwise, <c>false</c>.</returns>
-        internal bool IsStringDateTest4()
+        internal bool IsStringDate_Test4()
         {
             object[] paramArg = { IsString, CultureInfo.CurrentCulture };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringDate", paramArg);
@@ -231,29 +214,10 @@ namespace InMemoryLoaderCommonNunit
 
         #endregion
 
-        #region IsStringByte
-
-        /// <summary>
-        /// The single byte value.
-        /// </summary>
-        const byte SingleByteVal = 49;
-
-        /// <summary>
-        /// Determines whether this instance is string byte1.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is string byte1; otherwise, <c>false</c>.</returns>
-        internal bool IsStringByte1()
-        {
-            object[] paramArg = { SingleByteVal };
-            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringByte", paramArg);
-            return result;
-        }
-
-        #endregion
-
         #region CheckUtils.Url
 
-        internal bool IsUrlValidTest()
+
+        internal bool IsUrlValid_Test1()
         {
             object[] paramArg = { IsStringUrl };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsUrlValid", paramArg);

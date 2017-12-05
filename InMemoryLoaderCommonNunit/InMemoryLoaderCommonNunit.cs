@@ -26,6 +26,8 @@
 using NUnit.Framework;
 using System;
 using System.Configuration;
+using InMemoryLoaderCommonNunit.Application;
+using log4net;
 
 namespace InMemoryLoaderCommonNunit
 {
@@ -33,33 +35,63 @@ namespace InMemoryLoaderCommonNunit
     /// In memory loader common nunit.
     /// </summary>
     [TestFixture()]
-    internal partial class InMemoryLoaderCommonNunit
+    internal class InMemoryLoaderCommonNunit
     {
+        /// <summary>
+        /// The log.
+        /// </summary>
+        static readonly ILog Log = LogManager.GetLogger(typeof(InMemoryLoaderCommonNunit));
         /// <summary>
         /// Gets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
         static readonly string ConsoleCulture = ConfigurationManager.AppSettings["System.ConsoleCulture"];
-
         /// <summary>
         /// The Path.
         /// </summary>
         static readonly string Path = AppDomain.CurrentDomain.BaseDirectory;
+        /// <summary>
+        /// The app base.
+        /// </summary>
+        static readonly ApplicationBase AppBase = ApplicationBase.Instance;
+
+        [Test()]
+        public void TestCase_ApplicationBase()
+        {
+            var appBaseSet = AppBase.GetType().ToString();
+            Log.DebugFormat(AppBase.TestRunMessage, "TestCase_ApplicationBase");
+
+            Assert.IsNotNullOrEmpty(appBaseSet);
+        }
 
         /// <summary>
-        /// Tests the abstract loader base.
+        /// TestCase_AbstractCommonBase
         /// </summary>
         [Test()]
         public void TestCase_AbstractCommonBase()
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, false);
+            Log.DebugFormat(AppBase.TestRunMessage, "TestCase_AbstractCommonBase");
 
-            Assert.IsTrue(testHelper.IsAssemblyPathSet());
-            Assert.IsTrue(testHelper.IsCultureSet());
-            Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
-            Assert.IsTrue(testHelper.IsRegistrySet());
-            Assert.IsTrue(testHelper.IsInMemoryLoaderCommonSet());
-            Assert.IsTrue(testHelper.CommonUtilsSet());
+            Assert.IsTrue(testHelper.GetAssemblyPath_Test());
+            Assert.IsTrue(testHelper.SetCulture_Test());
+            Assert.IsTrue(testHelper.SetInMemoryLoader_Test());
+            Assert.IsTrue(testHelper.SetClassRegistry_Test());
+            Assert.IsTrue(testHelper.SetInMemoryLoaderCommon_Test());
+            Assert.IsTrue(testHelper.CommonUtils_Test());
+        }
+
+        /// <summary>
+        /// TestCase_PowerUpCheckUtilsByte
+        /// </summary>
+        [Test()]
+        public void TestCase_PowerUpCheckUtilsByte()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
+            Log.DebugFormat(AppBase.TestRunMessage, "TestCase_PowerUpCheckUtilsByte");
+
+            Assert.IsTrue(testHelper.IsStringByte_Test1());
+            Assert.IsTrue(testHelper.IsStringByte_Test2());
         }
 
         /// <summary>
@@ -70,10 +102,10 @@ namespace InMemoryLoaderCommonNunit
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
 
-            Assert.IsTrue(testHelper.IsStringIntTest1());
-            Assert.IsTrue(testHelper.IsStringIntTest2());
-            Assert.IsTrue(testHelper.IsStringIntTest3());
-            Assert.IsTrue(testHelper.IsStringIntTest4());
+            Assert.IsTrue(testHelper.IsStringInt_Test1());
+            Assert.IsTrue(testHelper.IsStringInt_Test2());
+            Assert.IsTrue(testHelper.IsStringInt_Test3());
+            Assert.IsTrue(testHelper.IsStringInt_Test4());
         }
 
         /// <summary>
@@ -84,10 +116,10 @@ namespace InMemoryLoaderCommonNunit
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
 
-            Assert.IsTrue(testHelper.IsStringLongTest1());
-            Assert.IsTrue(testHelper.IsStringLongTest2());
-            Assert.IsTrue(testHelper.IsStringLongTest3());
-            Assert.IsTrue(testHelper.IsStringLongTest4());
+            Assert.IsTrue(testHelper.IsStringLong_Test1());
+            Assert.IsTrue(testHelper.IsStringLong_Test2());
+            Assert.IsTrue(testHelper.IsStringLong_Test3());
+            Assert.IsTrue(testHelper.IsStringLong_Test4());
         }
 
         /// <summary>
@@ -98,20 +130,10 @@ namespace InMemoryLoaderCommonNunit
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
 
-            Assert.IsTrue(testHelper.IsStringDateTest1());
-            Assert.IsTrue(testHelper.IsStringDateTest2());
-            Assert.IsTrue(testHelper.IsStringDateTest3());
-            Assert.IsTrue(testHelper.IsStringDateTest4());
-        }
-
-        /// <summary>
-        /// Tests the case power up check utils byte.
-        /// </summary>
-        [Test()]
-        public void TestCase_PowerUpCheckUtilsByte()
-        {
-            var testHelper = new TestHelper(ConsoleCulture, Path, true);
-            Assert.IsTrue(testHelper.IsStringByte1());
+            Assert.IsTrue(testHelper.IsStringDate_Test1());
+            Assert.IsTrue(testHelper.IsStringDate_Test2());
+            Assert.IsTrue(testHelper.IsStringDate_Test3());
+            Assert.IsTrue(testHelper.IsStringDate_Test4());
         }
 
         /// <summary>
@@ -121,7 +143,7 @@ namespace InMemoryLoaderCommonNunit
         public void TestCase_IsUrlValidTest()
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
-            Assert.IsTrue(testHelper.IsUrlValidTest());
+            Assert.IsTrue(testHelper.IsUrlValid_Test1());
         }
 
         /// <summary>

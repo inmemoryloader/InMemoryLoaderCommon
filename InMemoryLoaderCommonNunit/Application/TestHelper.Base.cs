@@ -25,8 +25,11 @@
 
 using InMemoryLoaderCommon;
 
-namespace InMemoryLoaderCommonNunit
+namespace InMemoryLoaderCommonNunit.Application
 {
+    /// <summary>
+    /// Test helper.
+    /// </summary>
     internal partial class TestHelper: AbstractCommonBase
     {
         /// <summary>
@@ -48,7 +51,7 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// Inits the common component.
         /// </summary>
-        private void InitCommonComponent()
+        void InitCommonComponent()
         {
             base.GetAssemblyPath();
             base.SetCulture();
