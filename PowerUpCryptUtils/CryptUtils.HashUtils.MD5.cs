@@ -42,13 +42,12 @@ namespace PowerUpCryptUtils
         {
             // Create instance of the crypto provider.
             var md5 = new MD5CryptoServiceProvider();
-            // Create a Byte array to store the encryption to return.
-            byte[] hashedbytes;
+
             // Required UTF8 Encoding used to encode the input value to a usable state.
             var textencoder = new UTF8Encoding();
 
-            // let the show begin.
-            hashedbytes = md5.ComputeHash(textencoder.GetBytes(paramValue));
+            // Create a Byte array to store the encryption to return.
+            var hashedbytes = md5.ComputeHash(textencoder.GetBytes(paramValue));
 
             // Destroy objects that aren't needed.
             md5.Clear();
@@ -69,21 +68,19 @@ namespace PowerUpCryptUtils
         {
             // Create instance of the crypto provider.
             var md5 = new MD5CryptoServiceProvider();
-            // Create a Byte array to store the encryption to return.
-            byte[] hashedbytes;
-            // Create a Byte array to store the salted hash.
-            byte[] saltedhash;
 
             // Required UTF8 Encoding used to encode the input value to a usable state.
             var textencoder = new UTF8Encoding();
 
-            // let the show begin.
-            hashedbytes = md5.ComputeHash(textencoder.GetBytes(paramValue));
+            // Create a Byte array to store the encryption to return.
+            var hashedbytes = md5.ComputeHash(textencoder.GetBytes(paramValue));
 
             // Let's add the salt.
             paramValue += textencoder.GetString(hashedbytes);
+
+            // Create a Byte array to store the salted hash.
             // Get the new byte array after adding the salt.
-            saltedhash = md5.ComputeHash(textencoder.GetBytes(paramValue));
+            var saltedhash = md5.ComputeHash(textencoder.GetBytes(paramValue));
 
             // Destroy objects that aren't needed.
             md5.Clear();

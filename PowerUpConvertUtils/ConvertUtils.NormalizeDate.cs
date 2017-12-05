@@ -53,7 +53,7 @@ namespace PowerUpConvertUtils
             // Das aktuelle Datumstrennzeichen ermitteln
             string dateSeparator = CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator;
 
-            if (dateString.IndexOf(dateSeparator) == -1)
+            if (dateString.IndexOf(dateSeparator, StringComparison.Ordinal) == -1)
             {
 
                 // Wenn kein Punkt vorkommt: Versuch ein Datum im Format

@@ -183,7 +183,7 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The is string date.
         /// </summary>
-        static readonly string IsStringDate = DateTime.Now.ToString();
+        static readonly string IsStringDate = DateTime.Now.ToString(CultureInfo.CurrentCulture);
 
         /// <summary>
         /// Determines whether this instance is string date test1.
