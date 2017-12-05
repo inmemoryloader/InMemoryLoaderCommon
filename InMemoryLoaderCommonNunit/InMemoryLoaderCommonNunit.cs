@@ -91,6 +91,7 @@ namespace InMemoryLoaderCommonNunit
             Log.DebugFormat(AppBase.TestRunMessage, "TestCase_PowerUpCheckUtilsByte");
 
             Assert.IsTrue(testHelper.IsStringByte_Test1());
+            Assert.IsTrue(testHelper.IsStringByte_Test2());
         }
 
 

@@ -103,6 +103,13 @@ namespace InMemoryLoaderCommonNunit.Application
             return result;
         }
 
+        internal bool IsStringByte_Test2()
+        {
+            object[] paramArg = { IsString };
+            var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringByte", paramArg);
+            return result;
+        }
+
         #endregion
 
 
