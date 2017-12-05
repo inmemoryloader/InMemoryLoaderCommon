@@ -84,7 +84,6 @@ namespace InMemoryLoaderCommonNunit.Application
         /// </summary>
         static readonly string IsStringDate = DateTime.Now.ToString(CultureInfo.CurrentCulture);
 
-
         #region IsStringByte
 
         /// <summary>
@@ -103,18 +102,18 @@ namespace InMemoryLoaderCommonNunit.Application
             return result;
         }
 
+        /// <summary>
+        /// Determines whether this instance is string byte test2.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string byte test2; otherwise, <c>false</c>.</returns>
         internal bool IsStringByte_Test2()
         {
             object[] paramArg = { IsString };
             var result = ComponentLoader.InvokeMethod(base.CheckUtils, "IsStringByte", paramArg);
-            return result;
+            return result != true;
         }
 
         #endregion
-
-
-
-
 
         #region IsStringIntTest
 
@@ -214,7 +213,6 @@ namespace InMemoryLoaderCommonNunit.Application
         }
 
         #endregion
-
 
         #region CheckUtils.Url
 

@@ -94,10 +94,6 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.IsStringByte_Test2());
         }
 
-
-
-
-
         /// <summary>
         /// Tests the case power up check utils.
         /// </summary>
