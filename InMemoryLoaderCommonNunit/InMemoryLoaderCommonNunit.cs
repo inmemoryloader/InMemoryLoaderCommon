@@ -33,7 +33,7 @@ namespace InMemoryLoaderCommonNunit
     /// In memory loader common nunit.
     /// </summary>
     [TestFixture()]
-    internal partial class InMemoryLoaderCommonNunit
+    internal class InMemoryLoaderCommonNunit
     {
         /// <summary>
         /// Gets the console culture.
