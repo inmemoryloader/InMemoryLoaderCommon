@@ -26,6 +26,7 @@
 using NUnit.Framework;
 using System;
 using System.Configuration;
+using Application;
 
 namespace InMemoryLoaderCommonNunit
 {
@@ -70,10 +71,10 @@ namespace InMemoryLoaderCommonNunit
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
 
-            Assert.IsTrue(testHelper.IsStringIntTest1());
-            Assert.IsTrue(testHelper.IsStringIntTest2());
-            Assert.IsTrue(testHelper.IsStringIntTest3());
-            Assert.IsTrue(testHelper.IsStringIntTest4());
+            Assert.IsTrue(testHelper.IsStringInt_Test1());
+            Assert.IsTrue(testHelper.IsStringInt_Test2());
+            Assert.IsTrue(testHelper.IsStringInt_Test3());
+            Assert.IsTrue(testHelper.IsStringInt_Test4());
         }
 
         /// <summary>
@@ -84,10 +85,10 @@ namespace InMemoryLoaderCommonNunit
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
 
-            Assert.IsTrue(testHelper.IsStringLongTest1());
-            Assert.IsTrue(testHelper.IsStringLongTest2());
-            Assert.IsTrue(testHelper.IsStringLongTest3());
-            Assert.IsTrue(testHelper.IsStringLongTest4());
+            Assert.IsTrue(testHelper.IsStringLong_Test1());
+            Assert.IsTrue(testHelper.IsStringLong_Test2());
+            Assert.IsTrue(testHelper.IsStringLong_Test3());
+            Assert.IsTrue(testHelper.IsStringLong_Test4());
         }
 
         /// <summary>
@@ -98,10 +99,10 @@ namespace InMemoryLoaderCommonNunit
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
 
-            Assert.IsTrue(testHelper.IsStringDateTest1());
-            Assert.IsTrue(testHelper.IsStringDateTest2());
-            Assert.IsTrue(testHelper.IsStringDateTest3());
-            Assert.IsTrue(testHelper.IsStringDateTest4());
+            Assert.IsTrue(testHelper.IsStringDate_Test1());
+            Assert.IsTrue(testHelper.IsStringDate_Test2());
+            Assert.IsTrue(testHelper.IsStringDate_Test3());
+            Assert.IsTrue(testHelper.IsStringDate_Test4());
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace InMemoryLoaderCommonNunit
         public void TestCase_PowerUpCheckUtilsByte()
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
-            Assert.IsTrue(testHelper.IsStringByte1());
+            Assert.IsTrue(testHelper.IsStringByte_Test1());
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace InMemoryLoaderCommonNunit
         public void TestCase_IsUrlValidTest()
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
-            Assert.IsTrue(testHelper.IsUrlValidTest());
+            Assert.IsTrue(testHelper.IsUrlValid_Test1());
         }
 
         /// <summary>
