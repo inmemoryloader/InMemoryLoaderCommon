@@ -34,7 +34,7 @@ namespace InMemoryLoaderCommon
     /// <summary>
     /// Common component loader.
     /// </summary>
-    public sealed partial class CommonComponentLoader
+    public sealed class CommonComponentLoader
     {
         /// <summary>
         /// The log.
@@ -146,7 +146,7 @@ namespace InMemoryLoaderCommon
         /// </summary>
         /// <returns><c>true</c>, if common components was setuped, <c>false</c> otherwise.</returns>
         /// <param name="paramPath">Parameter path.</param>
-        bool SetupCommonComponents(string paramPath)
+        void SetupCommonComponents(string paramPath)
         {
             if (!Components.IsValueCreated)
             {
@@ -256,7 +256,8 @@ namespace InMemoryLoaderCommon
             {
                 Components.Value.Add(_getComponent);
             }
-            return true;
         }
+
     }
+
 }
