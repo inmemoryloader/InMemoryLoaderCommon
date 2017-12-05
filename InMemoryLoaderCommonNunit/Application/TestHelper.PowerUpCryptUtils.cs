@@ -25,7 +25,7 @@
 
 using InMemoryLoaderCommon;
 
-namespace Application
+namespace InMemoryLoaderCommonNunit.Application
 {
     internal partial class TestHelper : AbstractCommonBase
     {

@@ -26,7 +26,7 @@
 using NUnit.Framework;
 using System;
 using System.Configuration;
-using Application;
+using InMemoryLoaderCommonNunit.Application;
 
 namespace InMemoryLoaderCommonNunit
 {
@@ -51,7 +51,7 @@ namespace InMemoryLoaderCommonNunit
         static readonly ApplicationBase AppBase = ApplicationBase.Instance;
 
         /// <summary>
-        /// Tests the abstract loader base.
+        /// TestCase_AbstractCommonBase
         /// </summary>
         [Test()]
         public void TestCase_AbstractCommonBase()
@@ -67,6 +67,20 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.SetInMemoryLoaderCommon_Test());
             Assert.IsTrue(testHelper.CommonUtils_Test());
         }
+
+        /// <summary>
+        /// TestCase_PowerUpCheckUtilsByte
+        /// </summary>
+        [Test()]
+        public void TestCase_PowerUpCheckUtilsByte()
+        {
+            var testHelper = new TestHelper(ConsoleCulture, Path, true);
+            Assert.IsTrue(testHelper.IsStringByte_Test1());
+        }
+
+
+
+
 
         /// <summary>
         /// Tests the case power up check utils.
@@ -108,16 +122,6 @@ namespace InMemoryLoaderCommonNunit
             Assert.IsTrue(testHelper.IsStringDate_Test2());
             Assert.IsTrue(testHelper.IsStringDate_Test3());
             Assert.IsTrue(testHelper.IsStringDate_Test4());
-        }
-
-        /// <summary>
-        /// Tests the case power up check utils byte.
-        /// </summary>
-        [Test()]
-        public void TestCase_PowerUpCheckUtilsByte()
-        {
-            var testHelper = new TestHelper(ConsoleCulture, Path, true);
-            Assert.IsTrue(testHelper.IsStringByte_Test1());
         }
 
         /// <summary>

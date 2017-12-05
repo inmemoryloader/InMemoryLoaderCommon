@@ -28,7 +28,7 @@ using System.Linq;
 using InMemoryLoaderCommon;
 using PowerUpDateTimeUtils;
 
-namespace Application
+namespace InMemoryLoaderCommonNunit.Application
 {
     internal partial class TestHelper : AbstractCommonBase
     {

@@ -26,7 +26,7 @@
 using System;
 using log4net;
 
-namespace Application
+namespace InMemoryLoaderCommonNunit.Application
 {
     /// <summary>
     /// Application base.
@@ -36,17 +36,15 @@ namespace Application
         /// <summary>
         /// The log.
         /// </summary>
-        static readonly ILog log = LogManager.GetLogger(typeof(ApplicationBase));
-
+        static readonly ILog Log = LogManager.GetLogger(typeof(ApplicationBase));
         /// <summary>
         /// The instance.
         /// </summary>
-        static volatile ApplicationBase instance;
-
+        static volatile ApplicationBase _instance;
         /// <summary>
         /// The sync root.
         /// </summary>
-        static readonly object syncRoot = new Object();
+        static readonly object SyncRoot = new Object();
 
         /// <summary>
         /// Gets the instance.
@@ -56,25 +54,25 @@ namespace Application
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    lock (syncRoot)
+                    lock (SyncRoot)
                     {
-                        if (instance == null)
+                        if (_instance == null)
                         {
-                            instance = new ApplicationBase();
-                            log.DebugFormat("Create a new instance of Type: {0}", instance.GetType().ToString());
+                            _instance = new ApplicationBase();
+                            Log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType());
                         }
                     }
                 }
-                return instance;
+                return _instance;
             }
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Application.ApplicationBase"/> class.
         /// </summary>
-        private ApplicationBase()
+        ApplicationBase()
         {
             log4net.Config.XmlConfigurator.Configure();
         }

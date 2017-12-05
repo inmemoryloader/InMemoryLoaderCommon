@@ -27,7 +27,7 @@ using System;
 using InMemoryLoaderCommon;
 using System.Globalization;
 
-namespace Application
+namespace InMemoryLoaderCommonNunit.Application
 {
     internal partial class TestHelper: AbstractCommonBase
     {
@@ -68,10 +68,6 @@ namespace Application
         /// </summary>
         const string IsString = "Some String";
         /// <summary>
-        /// The single byte value.
-        /// </summary>
-        const byte SingleByteVal = 49;
-        /// <summary>
         /// The is int.
         /// </summary>
         const int IsInt = 123;
@@ -88,9 +84,18 @@ namespace Application
         /// </summary>
         static readonly string IsStringDate = DateTime.Now.ToString(CultureInfo.CurrentCulture);
 
+
         #region IsStringByte
 
+        /// <summary>
+        /// The single byte value.
+        /// </summary>
+        const byte SingleByteVal = 49;
 
+        /// <summary>
+        /// IsStringByte_Test1
+        /// </summary>
+        /// <returns><c>true</c> if this instance is string byte test1; otherwise, <c>false</c>.</returns>
         internal bool IsStringByte_Test1()
         {
             object[] paramArg = { SingleByteVal };
@@ -99,6 +104,10 @@ namespace Application
         }
 
         #endregion
+
+
+
+
 
         #region IsStringIntTest
 
