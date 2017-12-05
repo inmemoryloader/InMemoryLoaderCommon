@@ -41,11 +41,14 @@ namespace InMemoryLoaderCommonNunit
         /// </summary>
         /// <value>The console culture.</value>
         static readonly string ConsoleCulture = ConfigurationManager.AppSettings["System.ConsoleCulture"];
-
         /// <summary>
         /// The Path.
         /// </summary>
         static readonly string Path = AppDomain.CurrentDomain.BaseDirectory;
+        /// <summary>
+        /// The app base.
+        /// </summary>
+        static readonly ApplicationBase AppBase = ApplicationBase.Instance;
 
         /// <summary>
         /// Tests the abstract loader base.
@@ -53,14 +56,16 @@ namespace InMemoryLoaderCommonNunit
         [Test()]
         public void TestCase_AbstractCommonBase()
         {
+            Assert.IsNotNullOrEmpty(AppBase.GetType().ToString());
+
             var testHelper = new TestHelper(ConsoleCulture, Path, false);
 
-            Assert.IsTrue(testHelper.IsAssemblyPathSet());
-            Assert.IsTrue(testHelper.IsCultureSet());
-            Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
-            Assert.IsTrue(testHelper.IsRegistrySet());
-            Assert.IsTrue(testHelper.IsInMemoryLoaderCommonSet());
-            Assert.IsTrue(testHelper.CommonUtilsSet());
+            Assert.IsTrue(testHelper.GetAssemblyPath_Test());
+            Assert.IsTrue(testHelper.SetCulture_Test());
+            Assert.IsTrue(testHelper.SetInMemoryLoader_Test());
+            Assert.IsTrue(testHelper.SetClassRegistry_Test());
+            Assert.IsTrue(testHelper.SetInMemoryLoaderCommon_Test());
+            Assert.IsTrue(testHelper.CommonUtils_Test());
         }
 
         /// <summary>

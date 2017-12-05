@@ -30,12 +30,11 @@ namespace Application
 {
     internal partial class TestHelper: AbstractCommonBase
     {
-
         /// <summary>
-        /// Determines whether this instance is assembly path set.
+        /// GetAssemblyPath_Test
         /// </summary>
-        /// <returns><c>true</c> if this instance is assembly path set; otherwise, <c>false</c>.</returns>
-        internal bool IsAssemblyPathSet()
+        /// <returns><c>true</c>, if assembly path test was gotten, <c>false</c> otherwise.</returns>
+        internal bool GetAssemblyPath_Test()
         {
             var path = base.GetAssemblyPath();
             bool isSet = false || !string.IsNullOrEmpty(path);
@@ -43,46 +42,46 @@ namespace Application
         }
 
         /// <summary>
-        /// Determines whether this instance is culture set.
+        /// SetCulture_Test
         /// </summary>
-        /// <returns><c>true</c> if this instance is culture set; otherwise, <c>false</c>.</returns>
-        internal bool IsCultureSet()
+        /// <returns><c>true</c>, if culture test was set, <c>false</c> otherwise.</returns>
+        internal bool SetCulture_Test()
         {
             return base.SetCulture();
         }
 
         /// <summary>
-        /// Determines whether this instance is in memory loader set.
+        /// SetInMemoryLoader_Test
         /// </summary>
-        /// <returns><c>true</c> if this instance is in memory loader set; otherwise, <c>false</c>.</returns>
-        internal bool IsInMemoryLoaderSet()
+        /// <returns><c>true</c>, if in memory loader test was set, <c>false</c> otherwise.</returns>
+        internal bool SetInMemoryLoader_Test()
         {
             return base.SetInMemoryLoader();
         }
 
         /// <summary>
-        /// Determines whether this instance is registry set.
+        /// SetClassRegistry_Test
         /// </summary>
-        /// <returns><c>true</c> if this instance is registry set; otherwise, <c>false</c>.</returns>
-        internal bool IsRegistrySet()
+        /// <returns><c>true</c>, if class registry test was set, <c>false</c> otherwise.</returns>
+        internal bool SetClassRegistry_Test()
         {
             return base.SetClassRegistry();
         }
 
         /// <summary>
-        /// Determines whether this instance is in memory loader common set.
+        /// SetInMemoryLoaderCommon_Test
         /// </summary>
-        /// <returns><c>true</c> if this instance is in memory loader common set; otherwise, <c>false</c>.</returns>
-        internal bool IsInMemoryLoaderCommonSet()
+        /// <returns><c>true</c>, if in memory loader common test was set, <c>false</c> otherwise.</returns>
+        internal bool SetInMemoryLoaderCommon_Test()
         {
             return base.SetInMemoryLoaderCommon();
         }
 
         /// <summary>
-        /// Commons the utils set.
+        /// CommonsUtils test.
         /// </summary>
-        /// <returns><c>true</c>, if utils set was commoned, <c>false</c> otherwise.</returns>
-        internal bool CommonUtilsSet()
+        /// <returns><c>true</c>, if utils test was commoned, <c>false</c> otherwise.</returns>
+        internal bool CommonUtils_Test()
         {
             bool isSet = false;
             isSet = base.ConvertUtils != null;

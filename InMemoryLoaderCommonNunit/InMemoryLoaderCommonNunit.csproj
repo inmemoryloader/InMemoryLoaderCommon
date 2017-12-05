@@ -57,6 +57,7 @@
     <Compile Include="Application\TestHelper.PowerUpCheckUtils.cs" />
     <Compile Include="Application\TestHelper.PowerUpCryptUtils.cs" />
     <Compile Include="Application\TestHelper.PowerUpDateTimeUtils.cs" />
+    <Compile Include="Application\ApplicationBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InMemoryLoaderCommon\InMemoryLoaderCommon.csproj">

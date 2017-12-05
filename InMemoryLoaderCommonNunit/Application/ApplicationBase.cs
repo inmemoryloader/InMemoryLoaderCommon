@@ -1,7 +1,7 @@
 ﻿//
-// TestHelper.Base.cs
+// ApplicationBase.cs
 //
-// Author: responsive kaysta <me@responsive-kaysta.ch>
+// Author: responsive it <>
 //
 // Copyright (c) 2017 responsive kaysta
 //
@@ -23,41 +23,60 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using InMemoryLoaderCommon;
+using System;
+using log4net;
 
 namespace Application
 {
     /// <summary>
-    /// Test helper.
+    /// Application base.
     /// </summary>
-    internal partial class TestHelper: AbstractCommonBase
+    internal sealed class ApplicationBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TestHelper"/> class.
+        /// The log.
         /// </summary>
-        /// <param name="culture">Culture.</param>
-        /// <param name="path">Path.</param>
-        /// <param name="initComponent">If set to <c>true</c> init component.</param>
-        internal TestHelper(string culture, string path, bool initComponent)
+        static readonly ILog log = LogManager.GetLogger(typeof(ApplicationBase));
+
+        /// <summary>
+        /// The instance.
+        /// </summary>
+        static volatile ApplicationBase instance;
+
+        /// <summary>
+        /// The sync root.
+        /// </summary>
+        static readonly object syncRoot = new Object();
+
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <value>The instance.</value>
+        internal static ApplicationBase Instance
         {
-            base.ConsoleCulture = culture;
-            base.AssemblyPath = path;
-            if (initComponent)
+            get
             {
-                InitCommonComponent();
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                        {
+                            instance = new ApplicationBase();
+                            log.DebugFormat("Create a new instance of Type: {0}", instance.GetType().ToString());
+                        }
+                    }
+                }
+                return instance;
             }
         }
 
         /// <summary>
-        /// Inits the common component.
+        /// Initializes a new instance of the <see cref="T:Application.ApplicationBase"/> class.
         /// </summary>
-        void InitCommonComponent()
+        private ApplicationBase()
         {
-            base.GetAssemblyPath();
-            base.SetCulture();
-            base.SetInMemoryLoader();
-            base.SetInMemoryLoaderCommon();
-            base.SetClassRegistry();
+            log4net.Config.XmlConfigurator.Configure();
         }
 
     }
