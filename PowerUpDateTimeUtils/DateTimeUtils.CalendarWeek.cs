@@ -34,7 +34,7 @@ namespace PowerUpDateTimeUtils
         /// <summary>
         /// The year.
         /// </summary>
-        int year;
+        int _year;
 
         /// <summary>
         /// Berechnet die Kalenderwoche eines internationalen Datums
@@ -72,9 +72,9 @@ namespace PowerUpDateTimeUtils
                 }
             }
             // Das Jahr der Kalenderwoche ermitteln
-            year = CalculateYear (calendarWeek, date);
+            _year = CalculateYear (calendarWeek, date);
             // Die ermittelte Kalenderwoche zurückgeben
-            return new CalendarWeek (year, calendarWeek);
+            return new CalendarWeek (_year, calendarWeek);
         }
 
         /// <summary>
@@ -105,15 +105,15 @@ namespace PowerUpDateTimeUtils
             double jd = date.Day + Math.Floor (((153 * m) + 2) / 5) + (365 * y) + Math.Floor (y / 4) - Math.Floor (y / 100) + Math.Floor (y / 400) - 32045;
 
             double d4 = (jd + 31741 - (jd % 7)) % 146097 % 36524 % 1461;
-            double L = Math.Floor (d4 / 1460);
-            double d1 = ((d4 - L) % 365) + L;
+            double l = Math.Floor (d4 / 1460);
+            double d1 = ((d4 - l) % 365) + l;
 
             // Kalenderwoche ermitteln
             int calendarWeek = (int)Math.Floor (d1 / 7) + 1;
             // Das Jahr der Kalenderwoche ermitteln
-            year = CalculateYear (calendarWeek, date);
+            _year = CalculateYear (calendarWeek, date);
             // Die ermittelte Kalenderwoche zurückgeben
-            return new CalendarWeek (year, calendarWeek);
+            return new CalendarWeek (_year, calendarWeek);
         }
 
         /// <summary>
@@ -124,14 +124,14 @@ namespace PowerUpDateTimeUtils
         /// <param name="paramDate">Parameter date.</param>
         private int CalculateYear (int calendarWeek, DateTime paramDate)
         {
-            year = paramDate.Year;
+            _year = paramDate.Year;
             if (calendarWeek == 1 && paramDate.Month == 12) {
-                year++;
+                _year++;
             }
             if (calendarWeek >= 52 && paramDate.Month == 1) {
-                year--;
+                _year--;
             }
-            return year;
+            return _year;
         }
 
     }

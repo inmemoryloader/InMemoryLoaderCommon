@@ -1,9 +1,30 @@
-﻿using System;
-using log4net;
+﻿//
+// EmailUtils.SendSimple.cs
+//
+// Author: responsive kaysta
+//
+// Copyright (c) 2017 responsive kaysta
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+using System;
 using InMemoryLoaderBase;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Net.Mail;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -31,11 +52,11 @@ namespace PowerUpEmailUtils
         /// <param name="smtp">Mailserver Adresse</param>
         /// <param name="sender">Emailadresse des Senders</param>
         /// <param name="empfaenger">gültige Emailadressen</param>
-        /// <param name="blind_empfaenger">gültige Emailadresse BCC</param>
+        /// <param name="blindEmpfaenger">gültige Emailadresse BCC</param>
         /// <param name="subject">Titel</param>
         /// <param name="body">EmailText</param>
         /// <param name="attachmentPfad">Pfadangaben der zu versendenden Attachments</param>
-        public bool SendSimple(string smtp, string sender, string[] empfaenger, string[] blind_empfaenger, string subject, string body, string[] attachmentPfad)
+        public bool SendSimple(string smtp, string sender, string[] empfaenger, string[] blindEmpfaenger, string subject, string body, string[] attachmentPfad)
         {
             int zaehler = 0;
             Attachment data = null;
@@ -78,7 +99,7 @@ namespace PowerUpEmailUtils
                 zaehler = empfaenger.Length;
                 for (int i = 0; i < zaehler; i++)
                 {
-                    Match match = Regex.Match(empfaenger[i], pattern);
+                    var match = Regex.Match(empfaenger[i], pattern);
                     if (!match.Success)
                     {
                         throw new ArgumentException("Empfänger Emailadr. falsch " + empfaenger[i]);
@@ -93,19 +114,19 @@ namespace PowerUpEmailUtils
                 //
                 // Parameter Check Blind Empfänger (BCC)
                 //
-                if (blind_empfaenger != null)
+                if (blindEmpfaenger != null)
                 {					
-                    zaehler = blind_empfaenger.Length;
-                    for (int i = 0; (i < zaehler) && (blind_empfaenger[i].Length > 0); i++)
+                    zaehler = blindEmpfaenger.Length;
+                    for (int i = 0; (i < zaehler) && (blindEmpfaenger[i].Length > 0); i++)
                     {
-                        Match match = Regex.Match(blind_empfaenger[i], pattern);
+                        Match match = Regex.Match(blindEmpfaenger[i], pattern);
                         if (!match.Success)
                         {
-                            throw new ArgumentException("BCC-Empfänger Emailadr. falsch " + blind_empfaenger[i]);
+                            throw new ArgumentException("BCC-Empfänger Emailadr. falsch " + blindEmpfaenger[i]);
                         }
                         else
                         {
-                            mailMsg.Bcc.Add(new MailAddress(blind_empfaenger[i]));
+                            mailMsg.Bcc.Add(new MailAddress(blindEmpfaenger[i]));
                         }
                     }
                 }
@@ -116,7 +137,7 @@ namespace PowerUpEmailUtils
                 mailMsg.Subject = subject;
                 mailMsg.Body = body;
 
-                SmtpClient client = new SmtpClient(smtp);
+                var client = new SmtpClient(smtp);
                 client.Send(mailMsg);
             }
             catch (Exception ex)

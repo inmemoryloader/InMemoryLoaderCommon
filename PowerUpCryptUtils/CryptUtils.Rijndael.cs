@@ -36,27 +36,27 @@ namespace PowerUpCryptUtils
         /// <summary>
         /// The crypt pass phrase.
         /// </summary>
-        static string cryptPassPhrase = "Pas5pr@se";
+        static string _cryptPassPhrase = "Pas5pr@se";
         /// <summary>
         /// The crypt salt value.
         /// </summary>
-        static string cryptSaltValue = "s@1tValue";
+        static string _cryptSaltValue = "s@1tValue";
         /// <summary>
         /// The crypt hash algorithm.
         /// </summary>
-        static string cryptHashAlgorithm = "SHA1";
+        static string _cryptHashAlgorithm = "SHA1";
         /// <summary>
         /// The crypt password iterations.
         /// </summary>
-        static int cryptPasswordIterations = 2;
+        static int _cryptPasswordIterations = 2;
         /// <summary>
         /// The crypt init vector.
         /// </summary>
-        static string cryptInitVector = "@1B2c3D4e5F6g7H8";
+        static string _cryptInitVector = "@1B2c3D4e5F6g7H8";
         /// <summary>
         /// The size of the crypt key.
         /// </summary>
-        static int cryptKeySize = 256;
+        static int _cryptKeySize = 256;
 
         /// <summary>
         /// Sets the crypto parameter.
@@ -70,12 +70,12 @@ namespace PowerUpCryptUtils
         /// <param name="paramKeySize">Parameter key size.</param>
         public bool SetCryptoParameter(string paramPhrase, string paramSalt, string paramHash, int paramIteration, string paramVector, int paramKeySize)
         {
-            cryptPassPhrase = paramPhrase;
-            cryptSaltValue = paramSalt;
-            cryptHashAlgorithm = paramHash;
-            cryptPasswordIterations = paramIteration;
-            cryptInitVector = paramVector;
-            cryptKeySize = paramKeySize;
+            _cryptPassPhrase = paramPhrase;
+            _cryptSaltValue = paramSalt;
+            _cryptHashAlgorithm = paramHash;
+            _cryptPasswordIterations = paramIteration;
+            _cryptInitVector = paramVector;
+            _cryptKeySize = paramKeySize;
             return true;
         }
 
@@ -95,8 +95,8 @@ namespace PowerUpCryptUtils
             // Let us assume that strings only contain ASCII codes.
             // If strings include Unicode characters, use Unicode, UTF7, or UTF8 
             // encoding.
-            var initVectorBytes = Encoding.ASCII.GetBytes(cryptInitVector);
-            var saltValueBytes = Encoding.ASCII.GetBytes(cryptSaltValue);
+            var initVectorBytes = Encoding.ASCII.GetBytes(_cryptInitVector);
+            var saltValueBytes = Encoding.ASCII.GetBytes(_cryptSaltValue);
 
             // Convert our plaintext into a byte array.
             // Let us assume that plaintext contains UTF8-encoded characters.
@@ -106,11 +106,11 @@ namespace PowerUpCryptUtils
             // This password will be generated from the specified passphrase and 
             // salt value. The password will be created using the specified hash 
             // algorithm. Password creation can be done in several iterations.
-            var password = new PasswordDeriveBytes(cryptPassPhrase, saltValueBytes, cryptHashAlgorithm, cryptPasswordIterations);
+            var password = new PasswordDeriveBytes(_cryptPassPhrase, saltValueBytes, _cryptHashAlgorithm, _cryptPasswordIterations);
 
             // Use the password to generate pseudo-random bytes for the encryption
             // key. Specify the size of the key in bytes (instead of bits).
-            var keyBytes = password.GetBytes(cryptKeySize / 8);
+            var keyBytes = password.GetBytes(_cryptKeySize / 8);
 
             // Create uninitialized Rijndael encryption object.
             var symmetricKey = new RijndaelManaged();
@@ -171,8 +171,8 @@ namespace PowerUpCryptUtils
             // arrays. Let us assume that strings only contain ASCII codes.
             // If strings include Unicode characters, use Unicode, UTF7, or UTF8
             // encoding.
-            var initVectorBytes = Encoding.ASCII.GetBytes(cryptInitVector);
-            var saltValueBytes = Encoding.ASCII.GetBytes(cryptSaltValue);
+            var initVectorBytes = Encoding.ASCII.GetBytes(_cryptInitVector);
+            var saltValueBytes = Encoding.ASCII.GetBytes(_cryptSaltValue);
 
             // Convert our ciphertext into a byte array.
             var cipherTextBytes = Convert.FromBase64String(cipherText);
@@ -182,11 +182,11 @@ namespace PowerUpCryptUtils
             // passphrase and salt value. The password will be created using
             // the specified hash algorithm. Password creation can be done in
             // several iterations.
-            var password = new PasswordDeriveBytes(cryptPassPhrase, saltValueBytes, cryptHashAlgorithm, cryptPasswordIterations);
+            var password = new PasswordDeriveBytes(_cryptPassPhrase, saltValueBytes, _cryptHashAlgorithm, _cryptPasswordIterations);
 
             // Use the password to generate pseudo-random bytes for the encryption
             // key. Specify the size of the key in bytes (instead of bits).
-            var keyBytes = password.GetBytes(cryptKeySize / 8);
+            var keyBytes = password.GetBytes(_cryptKeySize / 8);
 
             // Create uninitialized Rijndael encryption object.
             var symmetricKey = new RijndaelManaged();

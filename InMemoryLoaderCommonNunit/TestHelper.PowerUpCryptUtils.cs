@@ -35,35 +35,35 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The crypt pass phrase.
         /// </summary>
-        const string cryptPassPhrase = "Pa_s5pr@se";
+        const string CryptPassPhrase = "Pa_s5pr@se";
         /// <summary>
         /// The crypt salt value.
         /// </summary>
-        const string cryptSaltValue = "s@1tValue!";
+        const string CryptSaltValue = "s@1tValue!";
         /// <summary>
         /// The crypt hash algorithm.
         /// </summary>
-        const string cryptHashAlgorithm = "SHA256";
+        const string CryptHashAlgorithm = "SHA256";
         /// <summary>
         /// The crypt password iterations.
         /// </summary>
-        const int cryptPasswordIterations = 6;
+        const int CryptPasswordIterations = 6;
         /// <summary>
         /// The crypt init vector.
         /// </summary>
-        const string cryptInitVector = "@1B2c3D4e5F6g7H8!?";
+        const string CryptInitVector = "@1B2c3D4e5F6g7H8!?";
         /// <summary>
         /// The size of the crypt key.
         /// </summary>
-        const int cryptKeySize = 256;
+        const int CryptKeySize = 256;
         /// <summary>
         /// The password.
         /// </summary>
-        const string password = "some0RanD!!pWd";
+        const string Password = "some0RanD!!pWd";
         /// <summary>
         /// The encrypted.
         /// </summary>
-        const string encrypted = "5ifOfTikmyeQN3Cb3mczYA==";
+        const string Encrypted = "5ifOfTikmyeQN3Cb3mczYA==";
 
         /// <summary>
         /// Rijndaels the test.
@@ -74,20 +74,20 @@ namespace InMemoryLoaderCommonNunit
             bool isCorrectEncrypt = false;
 
             // SetCryptoParameter
-            object[] paramCryptArgs = { cryptPassPhrase, cryptSaltValue, cryptHashAlgorithm, cryptPasswordIterations, cryptInitVector, cryptKeySize };
+            object[] paramCryptArgs = { CryptPassPhrase, CryptSaltValue, CryptHashAlgorithm, CryptPasswordIterations, CryptInitVector, CryptKeySize };
             isCorrectEncrypt = ComponentLoader.InvokeMethod(base.CryptUtils, "SetCryptoParameter", paramCryptArgs);
 
             // Encrypt
-            object[] paramEncrypt = { password };
+            object[] paramEncrypt = { Password };
             string encryptedPwd = ComponentLoader.InvokeMethod(base.CryptUtils, "Encrypt", paramEncrypt);
 
-            isCorrectEncrypt = isCorrectEncrypt && encryptedPwd.Equals(encrypted) ? true : false;
+            isCorrectEncrypt = isCorrectEncrypt && encryptedPwd.Equals(Encrypted) ? true : false;
 
             // Decrypt
             object[] paramDecrypt = { encryptedPwd };
             string decryptedPwd = ComponentLoader.InvokeMethod(base.CryptUtils, "Decrypt", paramDecrypt);
 
-            isCorrectEncrypt = isCorrectEncrypt && decryptedPwd.Equals(password) ? true : false;
+            isCorrectEncrypt = isCorrectEncrypt && decryptedPwd.Equals(Password) ? true : false;
 
             return isCorrectEncrypt;
         }

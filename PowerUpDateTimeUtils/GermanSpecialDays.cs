@@ -33,13 +33,13 @@ namespace PowerUpDateTimeUtils
     /// </summary>
     public class GermanSpecialDays : Dictionary<GermanSpecialDayKey,  GermanSpecialDay>
     {
-        readonly int year;
+        readonly int _year;
 
         /// <summary>
         /// Gibt das Jahr zurück, für das diese speziellen Tage gelten
         /// </summary>
         public int Year {
-            get { return year; }
+            get { return _year; }
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace PowerUpDateTimeUtils
         /// <param name="paramYear">Das Jahr</param>
         internal GermanSpecialDays (int paramYear)
         {
-            year = paramYear;
+            _year = paramYear;
         }
 
         /// <summary>

@@ -35,18 +35,18 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The year to check.
         /// </summary>
-        const int yearToCheck = 2018;
+        const int YearToCheck = 2018;
 
         #region DateTimeUtils.SpecialDays
 
         /// <summary>
         /// The ostersonntag.
         /// </summary>
-        static readonly DateTime ostersonntag = new DateTime(2018, 4, 1);
+        static readonly DateTime Ostersonntag = new DateTime(2018, 4, 1);
         /// <summary>
         /// The pfingstsonntag.
         /// </summary>
-        static readonly DateTime pfingstsonntag = new DateTime(2018, 5, 20);
+        static readonly DateTime Pfingstsonntag = new DateTime(2018, 5, 20);
 
         /// <summary>
         /// Gets the easter sunday date test.
@@ -54,10 +54,10 @@ namespace InMemoryLoaderCommonNunit
         /// <returns><c>true</c>, if easter sunday date test was gotten, <c>false</c> otherwise.</returns>
         internal bool GetEasterSundayDateTest()
         {
-            object[] paramArg = { yearToCheck };
+            object[] paramArg = { YearToCheck };
             var result = (DateTime)ComponentLoader.InvokeMethod(base.DateTimeUtils, "GetEasterSundayDate", paramArg);
 
-            return result.Equals(ostersonntag);
+            return result.Equals(Ostersonntag);
         }
 
         /// <summary>
@@ -66,12 +66,12 @@ namespace InMemoryLoaderCommonNunit
         /// <returns><c>true</c>, if german special days test was gotten, <c>false</c> otherwise.</returns>
         internal bool GetGermanSpecialDaysTest()
         {
-            object[] paramArg = { yearToCheck };
+            object[] paramArg = { YearToCheck };
             var result = (GermanSpecialDays)ComponentLoader.InvokeMethod(base.DateTimeUtils, "GetGermanSpecialDays", paramArg);
 
             var gsdPfingstsonntag = result.SingleOrDefault(dt => dt.Key.Equals(GermanSpecialDayKey.Pfingstsonntag)).Value;
 
-            return gsdPfingstsonntag.Date.Equals(pfingstsonntag);
+            return gsdPfingstsonntag.Date.Equals(Pfingstsonntag);
         }
 
         #endregion
@@ -84,7 +84,7 @@ namespace InMemoryLoaderCommonNunit
         /// <returns><c>true</c>, if german holiday test was ised, <c>false</c> otherwise.</returns>
         internal bool IsGermanHolidayTest()
         {
-            object[] paramArg = { ostersonntag };
+            object[] paramArg = { Ostersonntag };
             var result = (GermanSpecialDay)ComponentLoader.InvokeMethod(base.DateTimeUtils, "IsGermanHoliday", paramArg);
 
             if (!result.IsHoliday || !result.IsNationwide)
@@ -99,7 +99,7 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The calendarweek date time.
         /// </summary>
-        static readonly DateTime calendarweekDateTime = new DateTime(2018, 12, 8);
+        static readonly DateTime CalendarweekDateTime = new DateTime(2018, 12, 8);
 
         /// <summary>
         /// Gets the calendar week test.
@@ -107,7 +107,7 @@ namespace InMemoryLoaderCommonNunit
         /// <returns><c>true</c>, if calendar week test was gotten, <c>false</c> otherwise.</returns>
         internal bool GetCalendarWeekTest()
         {
-            object[] paramArg = { calendarweekDateTime };
+            object[] paramArg = { CalendarweekDateTime };
             var result = (CalendarWeek)ComponentLoader.InvokeMethod(base.DateTimeUtils, "GetCalendarWeek", paramArg);
             return result.Week.Equals(49);
         }
@@ -118,7 +118,7 @@ namespace InMemoryLoaderCommonNunit
         /// <returns><c>true</c>, if german calendar week test was gotten, <c>false</c> otherwise.</returns>
         internal bool GetGermanCalendarWeekTest()
         {
-            object[] paramArg = { calendarweekDateTime };
+            object[] paramArg = { CalendarweekDateTime };
             var result = (CalendarWeek)ComponentLoader.InvokeMethod(base.DateTimeUtils, "GetGermanCalendarWeek", paramArg);
             return result.Week.Equals(49);
         }

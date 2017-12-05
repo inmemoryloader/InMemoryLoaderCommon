@@ -32,40 +32,40 @@ namespace PowerUpDateTimeUtils
     /// </summary>
     public class QuarterInfo
     {
-        readonly int quarter;
+        readonly int _quarter;
 
         /// <summary>
         /// Das Quartal
         /// </summary>
         public int Quarter {
-            get { return quarter; }
+            get { return _quarter; }
         }
 
-        readonly int year;
+        readonly int _year;
 
         /// <summary>
         /// Das Jahr
         /// </summary>
         public int Year {
-            get { return year; }
+            get { return _year; }
         }
 
-        readonly DateTime startDate;
+        readonly DateTime _startDate;
 
         /// <summary>
         /// Das Startdatum des Quartals
         /// </summary>
         public DateTime StartDate {
-            get { return startDate; }
+            get { return _startDate; }
         }
 
-        readonly DateTime endDate;
+        readonly DateTime _endDate;
 
         /// <summary>
         /// Das Enddatum des Quartals
         /// </summary>
         public DateTime EndDate {
-            get { return endDate; }
+            get { return _endDate; }
         }
 
         /// <summary>
@@ -77,16 +77,16 @@ namespace PowerUpDateTimeUtils
         public QuarterInfo (int paramQuarter, int paramYear)
         {
             // Das übergebene Quartal und das Jahr überprüfen
-            if (quarter >= 1 && quarter <= 4 && year >= 0 && year <= 9999) {
+            if (_quarter >= 1 && _quarter <= 4 && _year >= 0 && _year <= 9999) {
                 // Quartal und Jahr übergeben
-                quarter = paramQuarter;
-                year = paramYear;
+                _quarter = paramQuarter;
+                _year = paramYear;
 
                 // Ersten Tag im Quartal berechnen
-                startDate = new DateTime (year, (quarter * 3) - 2, 1);
+                _startDate = new DateTime (_year, (_quarter * 3) - 2, 1);
 
                 // Letzten Tag im Quartal berechnen
-                endDate = startDate.AddMonths (3).AddDays (-1);
+                _endDate = _startDate.AddMonths (3).AddDays (-1);
             } else {
                 throw new ArgumentException ("Das Quartal muss eine Zahl zwischen 1 und 4 und das Jahr eine Zahl zwischen 0 und 9999 sein");
             }

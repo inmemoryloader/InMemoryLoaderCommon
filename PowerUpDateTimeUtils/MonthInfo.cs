@@ -32,40 +32,40 @@ namespace PowerUpDateTimeUtils
     /// </summary>
     public class MonthInfo
     {
-        readonly int month;
+        readonly int _month;
 
         /// <summary>
         /// Das Quartal
         /// </summary>
         public int Month {
-            get { return month; }
+            get { return _month; }
         }
 
-        readonly int year;
+        readonly int _year;
 
         /// <summary>
         /// Das Jahr
         /// </summary>
         public int Year {
-            get { return year; }
+            get { return _year; }
         }
 
-        readonly DateTime startDate;
+        readonly DateTime _startDate;
 
         /// <summary>
         /// Das Startdatum des Monats
         /// </summary>
         public DateTime StartDate {
-            get { return startDate; }
+            get { return _startDate; }
         }
 
-        readonly DateTime endDate;
+        readonly DateTime _endDate;
 
         /// <summary>
         /// Das Enddatum des Monats
         /// </summary>
         public DateTime EndDate {
-            get { return endDate; }
+            get { return _endDate; }
         }
 
         /// <summary>
@@ -77,25 +77,25 @@ namespace PowerUpDateTimeUtils
         public MonthInfo (int paramMonth, int paramYear)
         {
             // Die Argumente überprüfen
-            if (month < 1 || month > 12 || year < 0 || year > 9999) {
+            if (_month < 1 || _month > 12 || _year < 0 || _year > 9999) {
                 throw new ArgumentException ("Der Monat muss ein Wert zwischen 1 und 12 " + "und das Jahr muss ein Wert zwischen 0 und 9999 sein");
             }
 
             // Argumente übergeben
-            month = paramMonth;
-            year = paramYear;
+            _month = paramMonth;
+            _year = paramYear;
 
             // Den ersten Tag des Monats ermitteln
-            startDate = new DateTime (year, month, 1);
+            _startDate = new DateTime (_year, _month, 1);
 
             // Den letzten Tag des Monats ermitteln
-            if (month == 12) {
-                month = 1;
-                year++;
+            if (_month == 12) {
+                _month = 1;
+                _year++;
             } else {
-                month++;
+                _month++;
             }
-            endDate = new DateTime (year, month, 1).AddDays (-1);
+            _endDate = new DateTime (_year, _month, 1).AddDays (-1);
         }
 
     }

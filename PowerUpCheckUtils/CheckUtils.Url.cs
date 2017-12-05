@@ -38,18 +38,18 @@ namespace PowerUpCheckUtils
         /// Determines whether this instance is URL valid the specified parmURL.
         /// </summary>
         /// <returns><c>true</c> if this instance is URL valid the specified parmURL; otherwise, <c>false</c>.</returns>
-        /// <param name="parmURL">Parm UR.</param>
-        public bool IsUrlValid(string parmURL)
+        /// <param name="parmUrl">Parm UR.</param>
+        public bool IsUrlValid(string parmUrl)
         {
             try
             {
-                var reqFP = WebRequest.Create(parmURL);
-                var rspFP = (HttpWebResponse)reqFP.GetResponse();
+                var reqFp = WebRequest.Create(parmUrl);
+                var rspFp = (HttpWebResponse)reqFp.GetResponse();
 
-                if (rspFP.StatusCode != HttpStatusCode.OK)
+                if (rspFp.StatusCode != HttpStatusCode.OK)
                     return false;
                 
-                rspFP.Close();
+                rspFp.Close();
                 return true;
             }
             catch (Exception ex)

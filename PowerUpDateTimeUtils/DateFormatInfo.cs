@@ -57,13 +57,13 @@ namespace PowerUpDateTimeUtils
         /// Der String, der für eine Zeitangabe bis 12:59 
         /// verwendet wird wenn die Zeit mit AM/PM angegeben wird
         /// </summary>
-        public readonly string AMString;
+        public readonly string AmString;
 
         /// <summary>
         /// Der String, der für eine Zeitangabe ab 13:00 
         /// verwendet wird wenn die Zeit mit AM/PM angegeben wird
         /// </summary>
-        public readonly string PMString;
+        public readonly string PmString;
 
         /// <summary>
         /// Gibt das Zeichen an, mit dem die AM/PM-Angabe von der Zeit getrennt ist
@@ -113,8 +113,8 @@ namespace PowerUpDateTimeUtils
         {
             DateFormat = dateFormat;
             AmPmType = amPmType;
-            AMString = aMString;
-            PMString = pMString;
+            AmString = aMString;
+            PmString = pMString;
             AmPmSeparator = amPmSeparator;
             CultureInfo = cultureInfo;
             DateSuffixPattern = dateSuffixPattern;
