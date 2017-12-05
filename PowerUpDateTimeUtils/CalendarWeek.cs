@@ -33,12 +33,12 @@ namespace PowerUpDateTimeUtils
         /// <summary>
         /// Das Jahr
         /// </summary>
-        public int Year { get; private set; }
+        public readonly int Year;
 
         /// <summary>
         /// Die Kalenderwoche
         /// </summary>
-        public int Week { get; private set; }
+        public readonly int Week;
 
         /// <summary>
         /// Konstruktor

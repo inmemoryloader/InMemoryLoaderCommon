@@ -42,11 +42,11 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The ostersonntag.
         /// </summary>
-        static DateTime ostersonntag = new DateTime(2018, 4, 1);
+        static readonly DateTime ostersonntag = new DateTime(2018, 4, 1);
         /// <summary>
         /// The pfingstsonntag.
         /// </summary>
-        static DateTime pfingstsonntag = new DateTime(2018, 5, 20);
+        static readonly DateTime pfingstsonntag = new DateTime(2018, 5, 20);
 
         /// <summary>
         /// Gets the easter sunday date test.
@@ -99,7 +99,7 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The calendarweek date time.
         /// </summary>
-        static DateTime calendarweekDateTime = new DateTime(2018, 12, 8);
+        static readonly DateTime calendarweekDateTime = new DateTime(2018, 12, 8);
 
         /// <summary>
         /// Gets the calendar week test.

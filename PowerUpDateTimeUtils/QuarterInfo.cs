@@ -32,7 +32,7 @@ namespace PowerUpDateTimeUtils
     /// </summary>
     public class QuarterInfo
     {
-        int quarter;
+        readonly int quarter;
 
         /// <summary>
         /// Das Quartal
@@ -41,7 +41,7 @@ namespace PowerUpDateTimeUtils
             get { return quarter; }
         }
 
-        int year;
+        readonly int year;
 
         /// <summary>
         /// Das Jahr
@@ -50,7 +50,7 @@ namespace PowerUpDateTimeUtils
             get { return year; }
         }
 
-        DateTime startDate;
+        readonly DateTime startDate;
 
         /// <summary>
         /// Das Startdatum des Quartals
@@ -59,7 +59,7 @@ namespace PowerUpDateTimeUtils
             get { return startDate; }
         }
 
-        DateTime endDate;
+        readonly DateTime endDate;
 
         /// <summary>
         /// Das Enddatum des Quartals

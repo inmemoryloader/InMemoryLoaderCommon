@@ -54,7 +54,7 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The is string URL.
         /// </summary>
-        const string isStringUrl = "http://www.google.ch/";
+        const string isStringUrl = "https://responsive-kaysta.ch";
         /// <summary>
         /// The is string no URL.
         /// </summary>
@@ -179,11 +179,11 @@ namespace InMemoryLoaderCommonNunit
         /// <summary>
         /// The is date.
         /// </summary>
-        static DateTime isDate = DateTime.Now;
+        static readonly DateTime isDate = DateTime.Now;
         /// <summary>
         /// The is string date.
         /// </summary>
-        static string isStringDate = DateTime.Now.ToString();
+        static readonly string isStringDate = DateTime.Now.ToString();
 
         /// <summary>
         /// Determines whether this instance is string date test1.

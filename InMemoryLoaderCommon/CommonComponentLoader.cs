@@ -39,7 +39,7 @@ namespace InMemoryLoaderCommon
         /// <summary>
         /// The log.
         /// </summary>
-        static ILog Log = LogManager.GetLogger(typeof(CommonComponentLoader));
+        static readonly ILog Log = LogManager.GetLogger(typeof(CommonComponentLoader));
 
         /// <summary>
         /// The components.

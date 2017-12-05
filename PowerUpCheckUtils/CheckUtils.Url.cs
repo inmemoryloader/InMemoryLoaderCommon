@@ -43,10 +43,12 @@ namespace PowerUpCheckUtils
         {
             try
             {
-                var reqFP = (HttpWebRequest)WebRequest.Create(parmURL);
+                var reqFP = WebRequest.Create(parmURL);
                 var rspFP = (HttpWebResponse)reqFP.GetResponse();
-                if (HttpStatusCode.OK != rspFP.StatusCode)
+
+                if (rspFP.StatusCode != HttpStatusCode.OK)
                     return false;
+                
                 rspFP.Close();
                 return true;
             }
@@ -54,9 +56,11 @@ namespace PowerUpCheckUtils
             {
                 if (Log.IsDebugEnabled)
                     Log.FatalFormat("{0}", ex);
+                
                 return false;
             }
         }
-    }
-}
 
+    }
+
+}

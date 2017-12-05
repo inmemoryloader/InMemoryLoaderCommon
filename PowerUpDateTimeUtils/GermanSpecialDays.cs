@@ -32,37 +32,37 @@ namespace PowerUpDateTimeUtils
     /// Auflistung zur Verwaltung der speziellen Tage in Deutschland
     /// </summary>
     public class GermanSpecialDays : Dictionary<GermanSpecialDayKey,  GermanSpecialDay>
-	{
-		int year;
-		/// <summary>
-		/// Gibt das Jahr zurück, für das diese speziellen Tage gelten
-		/// </summary>
-		public int Year
-		{
-			get { return year; }
-		}
+    {
+        readonly int year;
 
-		/// <summary>
-		/// Konstruktor
-		/// </summary>
-		/// <param name="paramYear">Das Jahr</param>
-		internal GermanSpecialDays(int paramYear)
-		{
-			year = paramYear;
-		}
+        /// <summary>
+        /// Gibt das Jahr zurück, für das diese speziellen Tage gelten
+        /// </summary>
+        public int Year {
+            get { return year; }
+        }
 
-		/// <summary>
-		/// Fügt der Auflistung ein neues GermanSpecialDay-Objekt hinzu
-		/// </summary>
-		/// <param name="paramKey">Der Konstanten-Wert des hinzuzufügenden Tags</param>
-		/// <param name="paramName">Der Name des Tags</param>
-		/// <param name="paramDate">Das Datum des Tags</param>
-		/// <param name="paramNationWide">Gibt an, ob der spezielle Tag bundesweit gilt</param>
-		/// <param name="paramHoliday">Gibt an, ob der spezielle Tag ein Feiertag ist</param>
-		internal void Add(GermanSpecialDayKey paramKey, string paramName, DateTime paramDate, bool paramNationWide, bool paramHoliday)
-		{
-			base.Add(paramKey, new GermanSpecialDay(paramKey, paramName, paramDate, paramNationWide, paramHoliday));
-		}
-	}
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// <param name="paramYear">Das Jahr</param>
+        internal GermanSpecialDays (int paramYear)
+        {
+            year = paramYear;
+        }
+
+        /// <summary>
+        /// Fügt der Auflistung ein neues GermanSpecialDay-Objekt hinzu
+        /// </summary>
+        /// <param name="paramKey">Der Konstanten-Wert des hinzuzufügenden Tags</param>
+        /// <param name="paramName">Der Name des Tags</param>
+        /// <param name="paramDate">Das Datum des Tags</param>
+        /// <param name="paramNationWide">Gibt an, ob der spezielle Tag bundesweit gilt</param>
+        /// <param name="paramHoliday">Gibt an, ob der spezielle Tag ein Feiertag ist</param>
+        internal void Add (GermanSpecialDayKey paramKey, string paramName, DateTime paramDate, bool paramNationWide, bool paramHoliday)
+        {
+            base.Add (paramKey, new GermanSpecialDay (paramKey, paramName, paramDate, paramNationWide, paramHoliday));
+        }
+    }
 }
 
