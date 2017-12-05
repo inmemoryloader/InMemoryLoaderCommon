@@ -59,7 +59,8 @@ namespace InMemoryLoaderCommonNunit
         public void TestCase_ApplicationBase()
         {
             var appBaseSet = AppBase.GetType().ToString();
-            Log.InfoFormat(AppBase.TestRunMessage, "TestCase_ApplicationBase");
+            Log.DebugFormat(AppBase.TestRunMessage, "TestCase_ApplicationBase");
+
             Assert.IsNotNullOrEmpty(appBaseSet);
         }
 
@@ -70,7 +71,8 @@ namespace InMemoryLoaderCommonNunit
         public void TestCase_AbstractCommonBase()
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, false);
-            Log.InfoFormat(AppBase.TestRunMessage, "TestCase_AbstractCommonBase");
+            Log.DebugFormat(AppBase.TestRunMessage, "TestCase_AbstractCommonBase");
+
             Assert.IsTrue(testHelper.GetAssemblyPath_Test());
             Assert.IsTrue(testHelper.SetCulture_Test());
             Assert.IsTrue(testHelper.SetInMemoryLoader_Test());
@@ -86,7 +88,8 @@ namespace InMemoryLoaderCommonNunit
         public void TestCase_PowerUpCheckUtilsByte()
         {
             var testHelper = new TestHelper(ConsoleCulture, Path, true);
-            Log.InfoFormat(AppBase.TestRunMessage, "TestCase_PowerUpCheckUtilsByte");
+            Log.DebugFormat(AppBase.TestRunMessage, "TestCase_PowerUpCheckUtilsByte");
+
             Assert.IsTrue(testHelper.IsStringByte_Test1());
         }
 
