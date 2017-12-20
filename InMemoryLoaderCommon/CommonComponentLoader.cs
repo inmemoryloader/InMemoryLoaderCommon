@@ -1,6 +1,6 @@
 ﻿// CommonComponentLoader.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: Kay Stuckenschmidt
 //
 // Copyright (c) 2017 responsive-kaysta
 //
@@ -98,10 +98,7 @@ namespace InMemoryLoaderCommon
         /// </summary>
         public CommonComponentLoader()
         {
-            if (Components == null)
-            {
-                Components = new Lazy<IList<IDynamicClassSetup>>();
-            }
+            Components = Components ?? new Lazy<IList<IDynamicClassSetup>>();
         }
 
         /// <summary>
@@ -136,9 +133,8 @@ namespace InMemoryLoaderCommon
                 Log.FatalFormat(ex.ToString());
             }
 
-            compLoader.InitClassRegistry();
-
-            return true;
+            var isSet = compLoader.InitClassRegistry();
+            return isSet;
         }
 
         /// <summary>

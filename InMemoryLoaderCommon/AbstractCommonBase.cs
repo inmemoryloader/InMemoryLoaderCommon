@@ -1,7 +1,7 @@
 ﻿//
 // AbstractApplicationBase.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: Kay Stuckenschmidt
 //
 // Copyright (c) 2017 responsive kaysta
 //
@@ -33,7 +33,7 @@ namespace InMemoryLoaderCommon
     /// <summary>
     /// AbstractCommonBase
     /// </summary>
-	public abstract class AbstractCommonBase : AbstractLoaderBase
+    public abstract class AbstractCommonBase : AbstractLoaderBase
     {
         /// <summary>
         /// The log.
@@ -54,7 +54,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("CheckUtils", System.StringComparison.CurrentCulture)).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault(str => str.Key.Class.EndsWith("CheckUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -66,7 +66,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-				return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("ConvertUtils", System.StringComparison.CurrentCulture)).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault(str => str.Key.Class.EndsWith("ConvertUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -78,7 +78,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("CryptUtils", System.StringComparison.CurrentCulture)).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault(str => str.Key.Class.EndsWith("CryptUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -90,7 +90,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("DateTimeUtils", System.StringComparison.CurrentCulture)).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault(str => str.Key.Class.EndsWith("DateTimeUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -102,7 +102,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("EmailUtils", System.StringComparison.CurrentCulture)).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault(str => str.Key.Class.EndsWith("EmailUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -114,7 +114,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("FileSystemUtils", System.StringComparison.CurrentCulture)).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault(str => str.Key.Class.EndsWith("FileSystemUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -126,7 +126,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("GetUtils", System.StringComparison.CurrentCulture)).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault(str => str.Key.Class.EndsWith("GetUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -138,7 +138,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("StringUtils", System.StringComparison.CurrentCulture)).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault(str => str.Key.Class.EndsWith("StringUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -150,7 +150,7 @@ namespace InMemoryLoaderCommon
         {
             get
             {
-                return base.ComponentLoader.ComponentRegistry.SingleOrDefault (str => str.Key.Class.EndsWith ("XmlUtils", System.StringComparison.CurrentCulture)).Value;
+                return base.ComponentLoader.ComponentRegistry.SingleOrDefault(str => str.Key.Class.EndsWith("XmlUtils", System.StringComparison.CurrentCulture)).Value;
             }
         }
 
@@ -163,7 +163,7 @@ namespace InMemoryLoaderCommon
             CommonComponentLoader = new CommonComponentLoader();
             var isSet = CommonComponentLoader.InitCommonComponents(base.AssemblyPath);
             Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
-            return true;
+            return isSet;
         }
 
     }
