@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace PowerUpFileSystemUtils
 {
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Gibt den Pfad zum Windows-Systemordner zurück

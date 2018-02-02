@@ -31,7 +31,7 @@ using InMemoryLoaderBase;
 
 namespace PowerUpCryptUtils
 {
-    public partial class CryptUtils : AbstractPowerUpComponent
+    public partial class CryptUtils : AbstractComponent
     {
         /// <summary>
         /// The crypt pass phrase.

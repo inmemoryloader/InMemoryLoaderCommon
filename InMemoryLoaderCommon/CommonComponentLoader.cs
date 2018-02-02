@@ -123,7 +123,7 @@ namespace InMemoryLoaderCommon
             {
                 foreach (var component in Components.Value)
                 {
-                    object[] paramArgument = { AbstractPowerUpComponent.Key };
+                    object[] paramArgument = { AbstractComponent.Key };
                     var init = compLoader.InvokeMethod(component.Assembly, component.Class, component.InitMethod, paramArgument);
                     Log.DebugFormat("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
                 }

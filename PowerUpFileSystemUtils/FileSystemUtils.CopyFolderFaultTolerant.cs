@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace PowerUpFileSystemUtils
 {
-    public partial class FileSystemUtils : AbstractPowerUpComponent
+    public partial class FileSystemUtils : AbstractComponent
     {
         /// <summary>
         /// Definiert, ob beim Kopieren mit <see cref="CopyFolderFaultTolerant"/>

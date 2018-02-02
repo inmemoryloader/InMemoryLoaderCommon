@@ -28,7 +28,7 @@ using InMemoryLoaderBase;
 
 namespace PowerUpDateTimeUtils
 {
-    public partial class DateTimeUtils : AbstractPowerUpComponent
+    public partial class DateTimeUtils : AbstractComponent
     {
         /// <summary>
         /// Ermittelt, ob ein bestimmter Tag ein Feiertag ist

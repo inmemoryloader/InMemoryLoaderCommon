@@ -4,7 +4,7 @@ using InMemoryLoaderBase;
 
 namespace PowerUpDateTimeUtils
 {
-	public partial class DateTimeUtils : AbstractPowerUpComponent
+	public partial class DateTimeUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Berechnet das Quartal eines gegebenen Datums

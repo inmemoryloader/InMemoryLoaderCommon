@@ -30,7 +30,7 @@ using System.Net.Sockets;
 
 namespace PowerUpDateTimeUtils
 {
-    public partial class DateTimeUtils : AbstractPowerUpComponent
+    public partial class DateTimeUtils : AbstractComponent
     {
         /// <summary>
         /// Fragt das aktuelle Datum (inklusive Zeit) bei einem NIST-Server ab

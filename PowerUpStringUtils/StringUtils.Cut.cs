@@ -6,7 +6,7 @@ using InMemoryLoaderBase.HelperEnum;
 
 namespace PowerUpStringUtils
 {
-	public partial class StringUtils : AbstractPowerUpComponent
+	public partial class StringUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Cut the specified value, size and direction.

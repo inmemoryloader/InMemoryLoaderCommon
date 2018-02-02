@@ -29,7 +29,7 @@ using System.Globalization;
 
 namespace PowerUpDateTimeUtils
 {
-    public partial class DateTimeUtils : AbstractPowerUpComponent
+    public partial class DateTimeUtils : AbstractComponent
     {
         /// <summary>
         /// Berechnet das Startdatum einer deutschen Kalenderwoche

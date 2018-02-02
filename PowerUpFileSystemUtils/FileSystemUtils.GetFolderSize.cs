@@ -5,7 +5,7 @@ using System.IO;
 
 namespace PowerUpFileSystemUtils
 {
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Ermittelt (rekursiv) die Gesamtgröße aller in einem Ordner und seinen Unterordnern enthaltenen Dateien

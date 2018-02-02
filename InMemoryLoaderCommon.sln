@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerUp", "PowerUp", "{B0C0F02D-14EE-4BFE-89D3-083FF7A13683}"
 EndProject
@@ -25,58 +25,55 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerUpXmlUtils", "PowerUpX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommon", "InMemoryLoaderCommon\InMemoryLoaderCommon.csproj", "{14803A71-3990-4D53-8BEC-085B76B200B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommonNunit", "InMemoryLoaderCommonNunit\InMemoryLoaderCommonNunit.csproj", "{8F5BE28A-3F1D-4AA7-9735-9F797F563B0F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{037A6543-CA5B-4DD3-97E6-1A526525C7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{037A6543-CA5B-4DD3-97E6-1A526525C7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{037A6543-CA5B-4DD3-97E6-1A526525C7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{037A6543-CA5B-4DD3-97E6-1A526525C7F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BE495D6-63E1-4E7F-BA0A-62D96E684706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BE495D6-63E1-4E7F-BA0A-62D96E684706}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BE495D6-63E1-4E7F-BA0A-62D96E684706}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BE495D6-63E1-4E7F-BA0A-62D96E684706}.Release|Any CPU.Build.0 = Release|Any CPU
-		{14803A71-3990-4D53-8BEC-085B76B200B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14803A71-3990-4D53-8BEC-085B76B200B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14803A71-3990-4D53-8BEC-085B76B200B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{14803A71-3990-4D53-8BEC-085B76B200B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F5BE28A-3F1D-4AA7-9735-9F797F563B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F5BE28A-3F1D-4AA7-9735-9F797F563B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F5BE28A-3F1D-4AA7-9735-9F797F563B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F5BE28A-3F1D-4AA7-9735-9F797F563B0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9824DE8B-6084-4421-BCC5-C68D19249C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9824DE8B-6084-4421-BCC5-C68D19249C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9824DE8B-6084-4421-BCC5-C68D19249C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9824DE8B-6084-4421-BCC5-C68D19249C1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9DF645D5-01BF-4C27-9998-D3B487A34828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9DF645D5-01BF-4C27-9998-D3B487A34828}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9DF645D5-01BF-4C27-9998-D3B487A34828}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9DF645D5-01BF-4C27-9998-D3B487A34828}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3D1C345-989C-487B-A3ED-C65338E52421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3D1C345-989C-487B-A3ED-C65338E52421}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3D1C345-989C-487B-A3ED-C65338E52421}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3D1C345-989C-487B-A3ED-C65338E52421}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CE40C941-6632-42B1-8250-01567C495FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE40C941-6632-42B1-8250-01567C495FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE40C941-6632-42B1-8250-01567C495FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE40C941-6632-42B1-8250-01567C495FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE495D6-63E1-4E7F-BA0A-62D96E684706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE495D6-63E1-4E7F-BA0A-62D96E684706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE495D6-63E1-4E7F-BA0A-62D96E684706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE495D6-63E1-4E7F-BA0A-62D96E684706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{037A6543-CA5B-4DD3-97E6-1A526525C7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{037A6543-CA5B-4DD3-97E6-1A526525C7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{037A6543-CA5B-4DD3-97E6-1A526525C7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{037A6543-CA5B-4DD3-97E6-1A526525C7F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D1C345-989C-487B-A3ED-C65338E52421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D1C345-989C-487B-A3ED-C65338E52421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D1C345-989C-487B-A3ED-C65338E52421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D1C345-989C-487B-A3ED-C65338E52421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9824DE8B-6084-4421-BCC5-C68D19249C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9824DE8B-6084-4421-BCC5-C68D19249C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9824DE8B-6084-4421-BCC5-C68D19249C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9824DE8B-6084-4421-BCC5-C68D19249C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C89A2FF-02A6-4573-9905-705ADC442A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DF645D5-01BF-4C27-9998-D3B487A34828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF645D5-01BF-4C27-9998-D3B487A34828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF645D5-01BF-4C27-9998-D3B487A34828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF645D5-01BF-4C27-9998-D3B487A34828}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D265F256-CD6D-48BF-9F68-FD01879EA958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D265F256-CD6D-48BF-9F68-FD01879EA958}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D265F256-CD6D-48BF-9F68-FD01879EA958}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D265F256-CD6D-48BF-9F68-FD01879EA958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14803A71-3990-4D53-8BEC-085B76B200B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14803A71-3990-4D53-8BEC-085B76B200B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14803A71-3990-4D53-8BEC-085B76B200B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14803A71-3990-4D53-8BEC-085B76B200B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CE40C941-6632-42B1-8250-01567C495FC5} = {B0C0F02D-14EE-4BFE-89D3-083FF7A13683}
@@ -88,6 +85,9 @@ Global
 		{2C89A2FF-02A6-4573-9905-705ADC442A8F} = {B0C0F02D-14EE-4BFE-89D3-083FF7A13683}
 		{9DF645D5-01BF-4C27-9998-D3B487A34828} = {B0C0F02D-14EE-4BFE-89D3-083FF7A13683}
 		{D265F256-CD6D-48BF-9F68-FD01879EA958} = {B0C0F02D-14EE-4BFE-89D3-083FF7A13683}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B449D49F-56DD-4125-9DE1-FC351213BEED}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
@@ -131,8 +131,5 @@ Global
 		$4.scope = text/x-csharp
 		description = @InMemoryLoader ermöglicht das Laden von .Dll's zur Laufzeit ohne fixe Referenzen \nin der Solution zu benötigen. Hierbei werden die .Dll’s einmalig geladen und geprüft, \nin eine Collection geschrieben und zur Laufzeit einmalig instanziiert.
 		version = 0.3.2
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B449D49F-56DD-4125-9DE1-FC351213BEED}
 	EndGlobalSection
 EndGlobal

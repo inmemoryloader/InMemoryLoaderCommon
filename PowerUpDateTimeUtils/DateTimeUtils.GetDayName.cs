@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace PowerUpDateTimeUtils
 {
-	public partial class DateTimeUtils : AbstractPowerUpComponent
+	public partial class DateTimeUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Liefert den Namen des angegebenen Wochentags in der aktuellen Kultur

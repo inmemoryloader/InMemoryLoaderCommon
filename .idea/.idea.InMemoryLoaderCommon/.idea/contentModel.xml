@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Dev\GitHub\InMemoryLoaderCommon" t="IncludeFlat">
+      <e p="InMemoryLoaderCommon" t="IncludeRecursive">
+        <e p="AbstractCommonBase.cs" t="Include" />
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CommonComponentLoader.cs" t="Include" />
+        <e p="Documentation" t="Include">
+          <e p="InMemoryLoaderCommon.cd" t="Include" />
+        </e>
+        <e p="InMemoryLoaderCommon.csproj" t="IncludeRecursive" />
+        <e p="InMemoryLoaderCommon.snk" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InMemoryLoaderCommon.sln" t="IncludeFlat" />
+      <e p="InMemoryLoaderCommonNunit" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="Application" t="Include">
+          <e p="ApplicationBase.cs" t="Include" />
+          <e p="TestHelper.AbstractCommonBase.cs" t="Include" />
+          <e p="TestHelper.Base.cs" t="Include" />
+          <e p="TestHelper.PowerUpCheckUtils.cs" t="Include" />
+          <e p="TestHelper.PowerUpCryptUtils.cs" t="Include" />
+          <e p="TestHelper.PowerUpDateTimeUtils.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="InMemoryLoaderCommonNunit.cs" t="Include" />
+        <e p="InMemoryLoaderCommonNunit.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="PowerUp" t="Include" />
+      <e p="PowerUpCheckUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CheckUtils.Byte.cs" t="Include" />
+        <e p="CheckUtils.cs" t="Include" />
+        <e p="CheckUtils.Date.cs" t="Include" />
+        <e p="CheckUtils.Decimal.cs" t="Include" />
+        <e p="CheckUtils.Double.cs" t="Include" />
+        <e p="CheckUtils.Float.cs" t="Include" />
+        <e p="CheckUtils.Integer.cs" t="Include" />
+        <e p="CheckUtils.Long.cs" t="Include" />
+        <e p="CheckUtils.Url.cs" t="Include" />
+        <e p="Documentation" t="Include">
+          <e p="PowerUpCheckUtils.cd" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PowerUpCheckUtils.csproj" t="IncludeRecursive" />
+        <e p="PowerUpCheckUtils.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="PowerUpConvertUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ConvertUtils.Bool.cs" t="Include" />
+        <e p="ConvertUtils.ByteArray.cs" t="Include" />
+        <e p="ConvertUtils.cs" t="Include" />
+        <e p="ConvertUtils.Hashtable.cs" t="Include" />
+        <e p="ConvertUtils.String.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PowerUpConvertUtils.cd" t="Include" />
+        <e p="PowerUpConvertUtils.csproj" t="IncludeRecursive" />
+        <e p="PowerUpConvertUtils.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="PowerUpCryptUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CryptUtils.cd" t="Include" />
+        <e p="CryptUtils.cs" t="Include" />
+        <e p="CryptUtils.HashUtils.MD5.cs" t="Include" />
+        <e p="CryptUtils.Rijndael.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PowerUpCryptUtils.csproj" t="IncludeRecursive" />
+        <e p="PowerUpCryptUtils.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="PowerUpDateTimeUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CalendarInfo.cs" t="Include" />
+        <e p="CalendarWeek.cs" t="Include" />
+        <e p="ClassDiagram.cd" t="Include" />
+        <e p="Culture.cs" t="Include" />
+        <e p="CultureComparer.cs" t="Include" />
+        <e p="DateFormat.cs" t="Include" />
+        <e p="DateFormatInfo.cs" t="Include" />
+        <e p="DateTimeUtils.CalendarWeek.cs" t="Include" />
+        <e p="DateTimeUtils.CalendarWeekStartDate.cs" t="Include" />
+        <e p="DateTimeUtils.cs" t="Include" />
+        <e p="DateTimeUtils.Diff.cs" t="Include" />
+        <e p="DateTimeUtils.GetAge.cs" t="Include" />
+        <e p="DateTimeUtils.GetCalendarWeekCount.cs" t="Include" />
+        <e p="DateTimeUtils.GetDayName.cs" t="Include" />
+        <e p="DateTimeUtils.GetQuarter.cs" t="Include" />
+        <e p="DateTimeUtils.IsGermanHoliday.cs" t="Include" />
+        <e p="DateTimeUtils.Iso.cs" t="Include" />
+        <e p="DateTimeUtils.IsPotentialDateTime.cs" t="Include" />
+        <e p="DateTimeUtils.MonthName.cs" t="Include" />
+        <e p="DateTimeUtils.Nist.cs" t="Include" />
+        <e p="DateTimeUtils.NormalizeDate.cs" t="Include" />
+        <e p="DateTimeUtils.SpecialDays.cs" t="Include" />
+        <e p="GermanSpecialDay.cs" t="Include" />
+        <e p="GermanSpecialDayKey.cs" t="Include" />
+        <e p="GermanSpecialDays.cs" t="Include" />
+        <e p="GlobalSuppressions.cs" t="Include" />
+        <e p="LeapMonthInfo.cs" t="Include" />
+        <e p="MonthInfo.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PowerUpDateTimeUtils.csproj" t="IncludeRecursive" />
+        <e p="PowerUpDateTimeUtils.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="QuarterInfo.cs" t="Include" />
+      </e>
+      <e p="PowerUpEmailUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="EmailUtils.cs" t="Include" />
+        <e p="EmailUtils.SendSimple.cs" t="Include" />
+        <e p="GlobalSuppressions.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PowerUpEmailUtils.csproj" t="IncludeRecursive" />
+        <e p="PowerUpEmailUtils.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="PowerUpFileSystemUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CopyFault.cs" t="Include" />
+        <e p="FileSystemUtils.CompareFiles.cs" t="Include" />
+        <e p="FileSystemUtils.CompareFolder.cs" t="Include" />
+        <e p="FileSystemUtils.CopyFile.cs" t="Include" />
+        <e p="FileSystemUtils.CopyFolder.cs" t="Include" />
+        <e p="FileSystemUtils.CopyFolderFaultTolerant.cs" t="Include" />
+        <e p="FileSystemUtils.CreateBinaryFileContent.cs" t="Include" />
+        <e p="FileSystemUtils.CreateFileFromBase64.cs" t="Include" />
+        <e p="FileSystemUtils.cs" t="Include" />
+        <e p="FileSystemUtils.EditFileAttributes.cs" t="Include" />
+        <e p="FileSystemUtils.FindFiles.cs" t="Include" />
+        <e p="FileSystemUtils.GetAbsolutePath.cs" t="Include" />
+        <e p="FileSystemUtils.GetApplicationFilename.cs" t="Include" />
+        <e p="FileSystemUtils.GetApplicationFolder.cs" t="Include" />
+        <e p="FileSystemUtils.GetDriveInfos.cs" t="Include" />
+        <e p="FileSystemUtils.GetFolderSize.cs" t="Include" />
+        <e p="FileSystemUtils.GetLibraryFilename.cs" t="Include" />
+        <e p="FileSystemUtils.GetLibraryFolder.cs" t="Include" />
+        <e p="FileSystemUtils.GetRunTimeFolder.cs" t="Include" />
+        <e p="FileSystemUtils.GetSubFolderSizes.cs" t="Include" />
+        <e p="FileSystemUtils.GetSystemDirectories.cs" t="Include" />
+        <e p="FileSystemUtils.IsPathValid.cs" t="Include" />
+        <e p="FileSystemUtils.ReadAsBase64.cs" t="Include" />
+        <e p="FileSystemUtils.WriteToFile.cs" t="Include" />
+        <e p="FolderSize.cs" t="Include" />
+        <e p="GlobalSuppressions.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PowerUpFileSystemUtils.csproj" t="IncludeRecursive" />
+        <e p="PowerUpFileSystemUtils.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="PowerUpGetUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GetUtils.cs" t="Include" />
+        <e p="GetUtils.GetDateTime.cs" t="Include" />
+        <e p="GetUtils.GetRandomNumbers.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PowerUpGetUtils.csproj" t="IncludeRecursive" />
+        <e p="PowerUpGetUtils.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="PowerUpStringUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PowerUpStringUtils.csproj" t="IncludeRecursive" />
+        <e p="PowerUpStringUtils.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="StringUtils.Abbreviate.cs" t="Include" />
+        <e p="StringUtils.CountOccurenceOfString.cs" t="Include" />
+        <e p="StringUtils.cs" t="Include" />
+        <e p="StringUtils.Cut.cs" t="Include" />
+        <e p="StringUtils.ExtractNumbers.cs" t="Include" />
+        <e p="StringUtils.GetWords.cs" t="Include" />
+        <e p="StringUtils.LeftRight.cs" t="Include" />
+        <e p="StringUtils.Replace.cs" t="Include" />
+        <e p="StringUtils.ReplaceLeadingString.cs" t="Include" />
+        <e p="StringUtils.SplitString.cs" t="Include" />
+        <e p="StringUtils.StartsWithNumber.cs" t="Include" />
+        <e p="StringUtils.StringContains.cs" t="Include" />
+        <e p="StringUtils.UpperLowerCase.cs" t="Include" />
+        <e p="StringUtils.WordCount.cs" t="Include" />
+        <e p="StringUtils.WordCountLatin.cs" t="Include" />
+        <e p="StringUtils.WordWrap.cs" t="Include" />
+      </e>
+      <e p="PowerUpXmlUtils" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GlobalSuppressions.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PowerUpXmlUtils.csproj" t="IncludeRecursive" />
+        <e p="PowerUpXmlUtils.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="XmlUtils.cs" t="Include" />
+      </e>
+    </e>
+    <e p="C:\Users\respo\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_InMemoryLoaderCommon.902923875.00" t="ExcludeRecursive" />
+  </component>
+</project>

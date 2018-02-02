@@ -30,7 +30,7 @@ using InMemoryLoaderBase;
 
 namespace PowerUpCryptUtils
 {
-    public partial class CryptUtils : AbstractPowerUpComponent
+    public partial class CryptUtils : AbstractComponent
     {
         /// <summary>
         /// Encrypts the string to a byte array using the MD5 Encryption Algorithm.

@@ -8,7 +8,7 @@ namespace PowerUpFileSystemUtils
     /// <summary>
     /// FileSystemUtils
     /// </summary>
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// The log.

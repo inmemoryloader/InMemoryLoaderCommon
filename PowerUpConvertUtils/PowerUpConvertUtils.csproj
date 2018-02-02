@@ -26,17 +26,17 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoader, Version=1.0.6605.33324, Culture=en-GB, PublicKeyToken=edaaf05874e4e21a, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoader.1.0.6605.33324\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase, Version=1.0.6605.24982, Culture=en-GB, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoader.1.0.6605.33324\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.10\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.10\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -32,7 +32,7 @@ namespace PowerUpGetUtils
     /// <summary>
     /// GetUtils
     /// </summary>
-    public partial class GetUtils : AbstractPowerUpComponent
+    public partial class GetUtils : AbstractComponent
     {
         /// <summary>
         /// Gets the current date time.

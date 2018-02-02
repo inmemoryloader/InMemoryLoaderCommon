@@ -30,7 +30,7 @@ using System.Text;
 
 namespace PowerUpStringUtils
 {
-    public partial class StringUtils : AbstractPowerUpComponent
+    public partial class StringUtils : AbstractComponent
     {
         /// <summary>
         /// Bricht einen String an einem (virtuellen) rechten Rand um
