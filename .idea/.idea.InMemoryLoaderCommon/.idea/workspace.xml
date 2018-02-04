@@ -23,11 +23,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82490270-1941-4371-aee2-37dc0f970c0f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.InMemoryLoaderCommon/.idea/contentModel.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.InMemoryLoaderCommon/.idea/indexLayout.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.InMemoryLoaderCommon/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.InMemoryLoaderCommon/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.InMemoryLoaderCommon/riderModule.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.InMemoryLoaderCommon/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.InMemoryLoaderCommon/.idea/contentModel.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.InMemoryLoaderCommon/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.InMemoryLoaderCommon/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/InMemoryLoaderCommon.UnitTests/InMemoryLoaderCommon.UnitTests.csproj" afterPath="$PROJECT_DIR$/InMemoryLoaderCommon.UnitTests/InMemoryLoaderCommon.UnitTests.csproj" />
+      <change beforePath="$PROJECT_DIR$/InMemoryLoaderCommon/InMemoryLoaderCommon.csproj" afterPath="$PROJECT_DIR$/InMemoryLoaderCommon/InMemoryLoaderCommon.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpCheckUtils/PowerUpCheckUtils.csproj" afterPath="$PROJECT_DIR$/PowerUpCheckUtils/PowerUpCheckUtils.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpCheckUtils/packages.config" afterPath="$PROJECT_DIR$/PowerUpCheckUtils/packages.config" />
+      <change beforePath="$PROJECT_DIR$/PowerUpConvertUtils/PowerUpConvertUtils.csproj" afterPath="$PROJECT_DIR$/PowerUpConvertUtils/PowerUpConvertUtils.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpConvertUtils/packages.config" afterPath="$PROJECT_DIR$/PowerUpConvertUtils/packages.config" />
+      <change beforePath="$PROJECT_DIR$/PowerUpCryptUtils/PowerUpCryptUtils.csproj" afterPath="$PROJECT_DIR$/PowerUpCryptUtils/PowerUpCryptUtils.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpCryptUtils/packages.config" afterPath="$PROJECT_DIR$/PowerUpCryptUtils/packages.config" />
+      <change beforePath="$PROJECT_DIR$/PowerUpDateTimeUtils/PowerUpDateTimeUtils.csproj" afterPath="$PROJECT_DIR$/PowerUpDateTimeUtils/PowerUpDateTimeUtils.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpDateTimeUtils/packages.config" afterPath="$PROJECT_DIR$/PowerUpDateTimeUtils/packages.config" />
+      <change beforePath="$PROJECT_DIR$/PowerUpEmailUtils/PowerUpEmailUtils.csproj" afterPath="$PROJECT_DIR$/PowerUpEmailUtils/PowerUpEmailUtils.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpEmailUtils/packages.config" afterPath="$PROJECT_DIR$/PowerUpEmailUtils/packages.config" />
+      <change beforePath="$PROJECT_DIR$/PowerUpFileSystemUtils/PowerUpFileSystemUtils.csproj" afterPath="$PROJECT_DIR$/PowerUpFileSystemUtils/PowerUpFileSystemUtils.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpFileSystemUtils/packages.config" afterPath="$PROJECT_DIR$/PowerUpFileSystemUtils/packages.config" />
+      <change beforePath="$PROJECT_DIR$/PowerUpGetUtils/PowerUpGetUtils.csproj" afterPath="$PROJECT_DIR$/PowerUpGetUtils/PowerUpGetUtils.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpGetUtils/packages.config" afterPath="$PROJECT_DIR$/PowerUpGetUtils/packages.config" />
+      <change beforePath="$PROJECT_DIR$/PowerUpStringUtils/PowerUpStringUtils.csproj" afterPath="$PROJECT_DIR$/PowerUpStringUtils/PowerUpStringUtils.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpStringUtils/packages.config" afterPath="$PROJECT_DIR$/PowerUpStringUtils/packages.config" />
+      <change beforePath="$PROJECT_DIR$/PowerUpXmlUtils/PowerUpXmlUtils.csproj" afterPath="$PROJECT_DIR$/PowerUpXmlUtils/PowerUpXmlUtils.csproj" />
+      <change beforePath="$PROJECT_DIR$/PowerUpXmlUtils/packages.config" afterPath="$PROJECT_DIR$/PowerUpXmlUtils/packages.config" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,8 +53,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/InMemoryLoaderCommon.UnitTests/Test.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -67,6 +90,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -82,12 +106,7 @@
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="InMemoryLoaderCommon (11 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="InMemoryLoaderCommon" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="InMemoryLoaderCommon (11 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="InMemoryLoaderCommonNunit" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="InMemoryLoaderCommon.UnitTests" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -95,7 +114,6 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -114,7 +132,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.Default">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -130,6 +148,9 @@
       <option name="PROJECT_KIND" value="None" />
       <option name="PROJECT_TFM" value="" />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -145,11 +166,14 @@
       <option name="presentableId" value="Default" />
       <updated>1517559006665</updated>
       <workItem from="1517559026501" duration="186000" />
+      <workItem from="1517740328463" duration="16000" />
+      <workItem from="1517740358673" duration="128000" />
+      <workItem from="1517740489990" duration="200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186000" />
+    <option name="totallyTimeSpent" value="530000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -161,29 +185,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25305623" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.828479" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647504" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -196,5 +221,21 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/InMemoryLoaderCommon.UnitTests/Test.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding>
+            <marker date="1517740349324" expanded="true" signature="0:1166" ph="/* Test.cs ... */" />
+            <marker date="1517740349324" expanded="false" signature="1173:1203" ph="..." />
+            <marker date="1517740349324" expanded="true" signature="1244:1478" ph="{...}" />
+            <marker date="1517740349324" expanded="true" signature="1289:1476" ph="{...}" />
+            <marker date="1517740349324" expanded="true" signature="1345:1470" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

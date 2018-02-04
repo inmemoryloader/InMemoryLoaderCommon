@@ -19,21 +19,12 @@
         </e>
       </e>
       <e p="InMemoryLoaderCommon.sln" t="IncludeFlat" />
-      <e p="InMemoryLoaderCommonNunit" t="IncludeRecursive">
-        <e p="app.config" t="Include" />
-        <e p="Application" t="Include">
-          <e p="ApplicationBase.cs" t="Include" />
-          <e p="TestHelper.AbstractCommonBase.cs" t="Include" />
-          <e p="TestHelper.Base.cs" t="Include" />
-          <e p="TestHelper.PowerUpCheckUtils.cs" t="Include" />
-          <e p="TestHelper.PowerUpCryptUtils.cs" t="Include" />
-          <e p="TestHelper.PowerUpDateTimeUtils.cs" t="Include" />
-        </e>
+      <e p="InMemoryLoaderCommon.UnitTests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="InMemoryLoaderCommonNunit.cs" t="Include" />
-        <e p="InMemoryLoaderCommonNunit.csproj" t="IncludeRecursive" />
+        <e p="InMemoryLoaderCommon.UnitTests.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
+        <e p="Test.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="PowerUp" t="Include" />
