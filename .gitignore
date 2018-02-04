@@ -113,3 +113,5 @@ FakesAssemblies/
 *.nupkg
 obj/
 bin/
+
+*.dll
