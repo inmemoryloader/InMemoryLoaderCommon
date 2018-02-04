@@ -53,7 +53,6 @@ Laufzeit einmalig instanziiert.</Description>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Documentation\InMemoryLoaderCommon.cd" />
     <None Include="InMemoryLoaderCommon.snk" />
     <None Include="packages.config" />
   </ItemGroup>

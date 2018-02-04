@@ -87,11 +87,7 @@ namespace InMemoryLoaderCommon
         /// Gets or sets the assembly path.
         /// </summary>
         /// <value>The assembly path.</value>
-        public string AssemblyPath
-        {
-            get;
-            set;
-        }
+        public string AssemblyPath { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:InMemoryLoaderCommon.CommonComponentLoader"/> class.
