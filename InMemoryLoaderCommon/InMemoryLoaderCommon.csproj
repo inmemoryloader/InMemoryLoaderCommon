@@ -30,6 +30,9 @@ Laufzeit einmalig instanziiert.</Description>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoader, Version=1.0.6612.30591, Culture=neutral, PublicKeyToken=edaaf05874e4e21a">
+      <HintPath>..\packages\InMemoryLoader.1.0.6612.30591\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -38,12 +41,6 @@ Laufzeit einmalig instanziiert.</Description>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.1.0.6609.20381\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoader.1.0.6609.20381\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
