@@ -26,8 +26,8 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InMemoryLoader, Version=1.0.6612.30591, Culture=neutral, PublicKeyToken=edaaf05874e4e21a">
-      <HintPath>..\packages\InMemoryLoader.1.0.6612.30591\lib\InMemoryLoader.dll</HintPath>
+    <Reference Include="InMemoryLoaderBase, Version=1.0.6612.39266, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9">
+      <HintPath>..\packages\InMemoryLoaderBase.1.0.6612.39266\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
