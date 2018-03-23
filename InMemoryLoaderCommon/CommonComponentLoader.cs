@@ -110,9 +110,7 @@ namespace InMemoryLoaderCommon
             }
 
             SetupCommonComponents(AssemblyPath);
-
             Log.Debug("Init Common Components");
-
             var compLoader = ComponentLoader.Instance;
 
             try

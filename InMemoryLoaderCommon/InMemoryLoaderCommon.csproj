@@ -11,7 +11,6 @@
 Referenzen in der Solution zu benötigen. Hierbei werden die .Dll’s 
 einmalig geladen und geprüft, in eine Collection geschrieben und zur 
 Laufzeit einmalig instanziiert.</Description>
-    <ReleaseVersion>0.3.2</ReleaseVersion>
     <SignAssembly>true</SignAssembly>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AssemblyOriginatorKeyFile>InMemoryLoaderCommon.snk</AssemblyOriginatorKeyFile>
@@ -30,12 +29,6 @@ Laufzeit einmalig instanziiert.</Description>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InMemoryLoader, Version=1.0.6612.39676, Culture=neutral, PublicKeyToken=edaaf05874e4e21a">
-      <HintPath>..\packages\InMemoryLoader.1.0.6612.39676\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase, Version=1.0.6612.39266, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9">
-      <HintPath>..\packages\InMemoryLoader.1.0.6612.39676\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -44,6 +37,12 @@ Laufzeit einmalig instanziiert.</Description>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\..\InMemoryLoader.Master\packages\InMemoryLoader.1.0.6612.39676\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\..\InMemoryLoader.Master\packages\InMemoryLoaderBase.1.0.6612.39266\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

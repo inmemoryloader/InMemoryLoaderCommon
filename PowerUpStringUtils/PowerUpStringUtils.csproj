@@ -7,7 +7,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>PowerUpStringUtils</RootNamespace>
     <AssemblyName>PowerUpStringUtils</AssemblyName>
-    <ReleaseVersion>0.3.2</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>PowerUpStringUtils.snk</AssemblyOriginatorKeyFile>
@@ -50,12 +49,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Reference Include="InMemoryLoaderBase, Version=1.0.6612.39266, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9">
-      <HintPath>..\packages\InMemoryLoaderBase.1.0.6612.39266\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\..\InMemoryLoader.Master\packages\InMemoryLoader.1.0.6612.39676\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\..\InMemoryLoader.Master\packages\InMemoryLoader.1.0.6612.39676\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
