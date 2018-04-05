@@ -2,7 +2,7 @@
 // GetUtils.GetRandomNumbers.cs
 //
 // Author:
-//       Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+//       Kay Stuckenschmidt 
 //
 // Copyright (c) 2017 responsive-kaysta
 //
