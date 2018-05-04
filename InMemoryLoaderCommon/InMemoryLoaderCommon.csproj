@@ -12,7 +12,7 @@ Referenzen in der Solution zu benötigen. Hierbei werden die .Dll’s
 einmalig geladen und geprüft, in eine Collection geschrieben und zur 
 Laufzeit einmalig instanziiert.</Description>
     <SignAssembly>true</SignAssembly>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AssemblyOriginatorKeyFile>InMemoryLoaderCommon.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
