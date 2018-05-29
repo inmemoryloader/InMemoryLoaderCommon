@@ -37,6 +37,12 @@ Laufzeit einmalig instanziiert.</Description>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\..\InMemoryLoader.Master\packages\InMemoryLoader.1.0.6669.34991\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\..\InMemoryLoader.Master\packages\InMemoryLoaderBase.1.0.6669.34525\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,15 +54,5 @@ Laufzeit einmalig instanziiert.</Description>
     <None Include="app.config" />
     <None Include="InMemoryLoaderCommon.snk" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
-      <Project>{55ec3ab9-da4b-4888-8aa3-513f393fbfb1}</Project>
-      <Name>InMemoryLoaderBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InMemoryLoader\InMemoryLoader\InMemoryLoader.csproj">
-      <Project>{03ebe292-5758-4919-a3a9-aaa31313fc1f}</Project>
-      <Name>InMemoryLoader</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>
