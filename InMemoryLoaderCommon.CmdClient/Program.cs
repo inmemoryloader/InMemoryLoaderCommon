@@ -49,14 +49,9 @@ namespace InMemoryLoaderCommon.CmdClient
 
             Log.InfoFormat("{0}", "Start InMemoryLoaderCommon.CmdCLient");
 
+            // logic and stuff
 
-
-
-
-
-
-
-
+            Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
             Console.Read();
         }
 

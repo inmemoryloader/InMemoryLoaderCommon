@@ -30,17 +30,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.1.0.6935.3567\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.1.0.6935.3150\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\packages\InMemoryLoader.1.0.6947.9946\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\packages\InMemoryLoader.1.0.6947.9946\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />

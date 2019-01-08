@@ -36,12 +36,11 @@ Laufzeit einmalig instanziiert.</Description>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
     <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.1.0.6935.3567\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.1.0.6947.9946\lib\InMemoryLoader.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.1.0.6935.3150\lib\InMemoryLoaderBase.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\packages\InMemoryLoader.1.0.6947.9946\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

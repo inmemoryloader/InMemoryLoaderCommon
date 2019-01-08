@@ -71,7 +71,6 @@ namespace InMemoryLoaderCommon.CmdClient
             }
         }
 
-
         private dynamic AsyncWrapper(IDynamicClassInfo classObject, string paramObject, object[] paramArgs)
         {
             if (string.IsNullOrEmpty(paramObject)) throw new ArgumentException();
