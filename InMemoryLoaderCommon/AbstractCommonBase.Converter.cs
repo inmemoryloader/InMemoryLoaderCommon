@@ -35,23 +35,28 @@ namespace InMemoryLoaderCommon
         #region Converter
 
         IDynamicClassInfo Converter;
+        bool CoverterSet;
 
         private void SetConverter()
         {
-            if (Converter == null) Converter = ComponentLoader.GetClassReference("Converter");
+            if (Converter == null)
+            {
+                Converter = ComponentLoader.GetClassReference("Converter");
+            }
+            CoverterSet = true;
         }
 
 
         public dynamic StringToBoolean(string paramValue)
         {
-            SetConverter();
+            if (!CoverterSet) SetConverter();
             object[] paramArgs = { paramValue };
             return ComponentLoader.InvokeMethod(Converter, "StringToBoolean", paramArgs);
         }
 
         public async Task<dynamic> StringToBooleanAsync(string paramValue)
         {
-            SetConverter();
+            if (!CoverterSet) SetConverter();
             object[] paramArgs = { paramValue };
             return await InvokeMethodAsync(Converter, "StringToBoolean", paramArgs);
         }
@@ -59,14 +64,14 @@ namespace InMemoryLoaderCommon
 
         public dynamic CharToBoolean(char paramValue)
         {
-            SetConverter();
+            if (!CoverterSet) SetConverter();
             object[] paramArgs = { paramValue };
             return ComponentLoader.InvokeMethod(Converter, "CharToBoolean", paramArgs);
         }
 
         public async Task<dynamic> CharToBooleanAsync(char paramValue)
         {
-            SetConverter();
+            if (!CoverterSet) SetConverter();
             object[] paramArgs = { paramValue };
             return await InvokeMethodAsync(Converter, "CharToBoolean", paramArgs);
         }
@@ -74,14 +79,14 @@ namespace InMemoryLoaderCommon
 
         public dynamic BooleanToString(bool paramValue)
         {
-            SetConverter();
+            if (!CoverterSet) SetConverter();
             object[] paramArgs = { paramValue };
             return ComponentLoader.InvokeMethod(Converter, "BooleanToString", paramArgs);
         }
 
         public async Task<dynamic> BooleanToStringAsync(bool paramValue)
         {
-            SetConverter();
+            if (!CoverterSet) SetConverter();
             object[] paramArgs = { paramValue };
             return await InvokeMethodAsync(Converter, "BooleanToString", paramArgs);
         }
