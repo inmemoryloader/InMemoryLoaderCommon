@@ -23,10 +23,7 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 using InMemoryLoader;
-using InMemoryLoaderBase;
 using log4net;
 
 namespace InMemoryLoaderCommon
