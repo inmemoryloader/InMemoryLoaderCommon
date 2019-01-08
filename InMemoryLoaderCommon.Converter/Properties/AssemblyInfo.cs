@@ -1,5 +1,5 @@
 ﻿//
-// Program.cs
+// AssemblyInfo.cs
 //
 // Author: Kay Stuckenschmidt <kay@responsive-it.biz>
 //
@@ -22,46 +22,29 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+using System.Reflection;
+using System.Runtime.CompilerServices;
 
-using System;
-using System.Threading.Tasks;
-using log4net;
+// Information about this assembly is defined by the following attributes. 
+// Change them to the values specific to your project.
 
-namespace InMemoryLoaderCommon.CmdClient
-{
-    class MainClass
-    {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(MainClass));
+[assembly: AssemblyTitle ("InMemoryLoaderCommon.Converter")]
+[assembly: AssemblyDescription ("")]
+[assembly: AssemblyConfiguration ("")]
+[assembly: AssemblyCompany ("responsive IT")]
+[assembly: AssemblyProduct ("")]
+[assembly: AssemblyCopyright ("responsive IT")]
+[assembly: AssemblyTrademark ("")]
+[assembly: AssemblyCulture ("")]
 
-        private static readonly ApplicationBase AppBase = ApplicationBase.Instance;
+// The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
+// The form "{Major}.{Minor}.*" will automatically update the build and revision,
+// and "{Major}.{Minor}.{Build}.*" will update just the revision.
 
-        public static async Task Main (string [] args)
-        {
-            var parameter = string.Empty;
+[assembly: AssemblyVersion ("1.0.*")]
 
-            if (args.Length == 0)
-            {
-                parameter = "null";
-            }
-            else
-            {
-                parameter = args[0];
-            }
+// The following attributes are used to specify the signing key for the assembly, 
+// if desired. See the Mono documentation for more information about signing.
 
-            Log.InfoFormat("{0}", "Start InMemoryLoaderCommon.CmdCLient");
-
-            // Init common components
-            var isCommonInit = await AppBase.SetInMemoryLoaderCommonAsync();
-            Log.InfoFormat("SetInMemoryLoaderCommonAsync [{0}]", isCommonInit);
-
-
-
-
-
-            Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
-            Console.Read();
-        }
-
-    }
-
-}
+//[assembly: AssemblyDelaySign(false)]
+//[assembly: AssemblyKeyFile("")]

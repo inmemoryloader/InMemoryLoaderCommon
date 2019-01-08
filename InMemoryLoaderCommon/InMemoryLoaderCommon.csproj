@@ -12,19 +12,21 @@ Referenzen in der Solution zu benötigen. Hierbei werden die .Dll’s
 einmalig geladen und geprüft, in eine Collection geschrieben und zur 
 Laufzeit einmalig instanziiert.</Description>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-    <ReleaseVersion>0.3.2</ReleaseVersion>
+    <ReleaseVersion>1.0.*</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
@@ -52,6 +54,12 @@ Laufzeit einmalig instanziiert.</Description>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InMemoryLoaderCommon.Converter\InMemoryLoaderCommon.Converter.csproj">
+      <Project>{AD2D0607-29E7-47F5-A29E-607A5DFB8E61}</Project>
+      <Name>InMemoryLoaderCommon.Converter</Name>
+    </ProjectReference>
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

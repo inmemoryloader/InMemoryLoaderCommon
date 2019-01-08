@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>PowerUpCheckUtils.snk</AssemblyOriginatorKeyFile>
-    <ReleaseVersion>0.3.2</ReleaseVersion>
+    <ReleaseVersion>1.0.*</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>false</Optimize>

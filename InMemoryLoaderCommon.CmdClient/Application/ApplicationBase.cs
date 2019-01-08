@@ -53,7 +53,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
             SetCulture();
             SetInMemoryLoader();
-            SetInMemoryLoaderCommon();
 
             Log.InfoFormat("Create a new instance of Type: {0}", GetType());
         }
@@ -71,18 +70,18 @@ namespace InMemoryLoaderCommon.CmdClient
             }
         }
 
-        private dynamic AsyncWrapper(IDynamicClassInfo classObject, string paramObject, object[] paramArgs)
+        internal async Task<dynamic> SetCommonComponetsAsync()
         {
-            if (string.IsNullOrEmpty(paramObject)) throw new ArgumentException();
-            return Task.Run(() => CompLoader.InvokeMethod(classObject, paramObject, paramArgs));
-        }
-
-        internal async Task<dynamic> SomeCallAsync(string argument)
-        {
-            object[] paramArgs = { "argument" };
-            IDynamicClassInfo dynamicClass = new DynamicClassInfo();
-            var result = await AsyncWrapper(dynamicClass, string.Empty, paramArgs);
+            var result = await SetInMemoryLoaderCommonAsync();
             return result;
         }
+
+        internal dynamic SetCommonComponets()
+        {
+            var result = SetInMemoryLoaderCommon();
+            return result;
+        }
+
+
     }
 }

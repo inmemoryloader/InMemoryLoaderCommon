@@ -23,40 +23,28 @@
 // THE SOFTWARE.
 
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using InMemoryLoader;
+using InMemoryLoaderBase;
 using log4net;
 
 namespace InMemoryLoaderCommon
 {
-    /// <summary>
-    /// Common component loader.
-    /// </summary>
     public sealed class CommonComponentLoader
     {
-        /// <summary>
-        /// The log.
-        /// </summary>
         static readonly ILog Log = LogManager.GetLogger(typeof(CommonComponentLoader));
 
-        /// <summary>
-        /// Gets or sets the assembly path.
-        /// </summary>
-        /// <value>The assembly path.</value>
         public string AssemblyPath { get; set; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:InMemoryLoaderCommon.CommonComponentLoader"/> class.
-        /// </summary>
+        public IList<IDynamicClassSetup> Components { get; set; }
+
         public CommonComponentLoader()
         {
-            
+            Log.DebugFormat("Create a new instance of Type: {0}", GetType());
         }
 
-        /// <summary>
-        /// Inits the common components.
-        /// </summary>
-        /// <returns><c>true</c>, if common components was inited, <c>false</c> otherwise.</returns>
-        /// <param name="paramPath">Parameter path.</param>
         public bool InitCommonComponents(string paramPath)
         {
             if (string.IsNullOrEmpty(AssemblyPath))
@@ -70,14 +58,12 @@ namespace InMemoryLoaderCommon
 
             try
             {
-                /*
-                foreach (var component in Components.Value)
+                foreach (var component in Components)
                 {
                     object[] paramArgument = { AbstractComponent.Key };
                     var init = compLoader.InvokeMethod(component.Assembly, component.Class, component.InitMethod, paramArgument);
                     Log.DebugFormat("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
                 }
-                */
             }
             catch (Exception ex)
             {
@@ -88,15 +74,53 @@ namespace InMemoryLoaderCommon
             return isSet;
         }
 
-        /// <summary>
-        /// Setups the common components.
-        /// </summary>
-        /// <returns><c>true</c>, if common components was setuped, <c>false</c> otherwise.</returns>
-        /// <param name="paramPath">Parameter path.</param>
+        public dynamic InitCommonComponentsAsync(string paramPath)
+        {
+            if (string.IsNullOrEmpty(paramPath)) throw new ArgumentException();
+            return Task.Run(() => InitCommonComponents(paramPath));
+        }
+
+
+
+        IDynamicClassSetup _converter;
+
+        private bool SetupConverter()
+        {
+            if (_converter == null)
+            {
+                _converter = new DynamicClassSetup
+                {
+                    Assembly = Path.Combine(AssemblyPath, "InMemoryLoaderCommon.Converter.dll"),
+                    Class = "Converter"
+                };
+            }
+            if (!Components.Contains(_converter))
+            {
+                Components.Add(_converter);
+            }
+            return true;
+        }
+
         void SetupCommonComponents(string paramPath)
         {
-            
+            if (string.IsNullOrEmpty(AssemblyPath))
+            {
+                AssemblyPath = paramPath;
+            }
+
+            if (Components == null)
+            {
+                Components = new List<IDynamicClassSetup>();
+            }
+
+            var setupConverter = SetupConverter();
+            Log.DebugFormat("Setup Converter: [{0}]", setupConverter);
+
+
         }
+
+
+
 
     }
 

@@ -23,6 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Threading.Tasks;
 using InMemoryLoader;
 using log4net;
 
@@ -52,6 +53,14 @@ namespace InMemoryLoaderCommon
         {
             CommonComponentLoader = new CommonComponentLoader();
             var isSet = CommonComponentLoader.InitCommonComponents(base.AssemblyPath);
+            Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
+            return isSet;
+        }
+
+        public virtual async Task<bool> SetInMemoryLoaderCommonAsync()
+        {
+            CommonComponentLoader = new CommonComponentLoader();
+            var isSet = await CommonComponentLoader.InitCommonComponentsAsync(base.AssemblyPath);
             Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
             return isSet;
         }
