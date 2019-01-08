@@ -24,7 +24,6 @@
 // THE SOFTWARE.
 
 using System;
-using System.Threading.Tasks;
 using log4net;
 
 namespace InMemoryLoaderCommon.CmdClient
@@ -49,6 +48,13 @@ namespace InMemoryLoaderCommon.CmdClient
             }
 
             Log.InfoFormat("{0}", "Start InMemoryLoaderCommon.CmdCLient");
+
+
+
+
+
+
+
 
 
             Console.Read();

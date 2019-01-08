@@ -34,7 +34,7 @@ using log4net.Config;
 
 namespace InMemoryLoaderCommon.CmdClient
 {
-    public sealed class ApplicationBase : AbstractCommonBase
+    internal sealed class ApplicationBase : AbstractCommonBase
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(ApplicationBase));
         private static readonly object SyncRoot = new object();
@@ -53,11 +53,12 @@ namespace InMemoryLoaderCommon.CmdClient
 
             SetCulture();
             SetInMemoryLoader();
+            SetInMemoryLoaderCommon();
 
             Log.InfoFormat("Create a new instance of Type: {0}", GetType());
         }
 
-        public static ApplicationBase Instance
+        internal static ApplicationBase Instance
         {
             get
             {
@@ -70,13 +71,14 @@ namespace InMemoryLoaderCommon.CmdClient
             }
         }
 
+
         private dynamic AsyncWrapper(IDynamicClassInfo classObject, string paramObject, object[] paramArgs)
         {
             if (string.IsNullOrEmpty(paramObject)) throw new ArgumentException();
             return Task.Run(() => CompLoader.InvokeMethod(classObject, paramObject, paramArgs));
         }
 
-        public async Task<dynamic> SomeCallAsync(string argument)
+        internal async Task<dynamic> SomeCallAsync(string argument)
         {
             object[] paramArgs = { "argument" };
             IDynamicClassInfo dynamicClass = new DynamicClassInfo();
