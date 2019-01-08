@@ -64,13 +64,19 @@ namespace InMemoryLoaderCommon.CmdClient
             var stringToBoolean = AppBase.StringToBoolean("1");
             Log.InfoFormat("StringToBoolean [{0}]", stringToBoolean);
 
-            var stringToBooleanAsync = await AppBase.StringToBooleanAsync("1");
+            var stringToBooleanAsync = await AppBase.StringToBooleanAsync("0");
             Log.InfoFormat("StringToBooleanAsync [{0}]", stringToBooleanAsync);
+
+            var charToBoolean = AppBase.CharToBoolean('1');
+            Log.InfoFormat("CharToBoolean [{0}]", charToBoolean);
+
+            var charToBooleanAsync = await AppBase.CharToBooleanAsync('0');
+            Log.InfoFormat("CharToBooleanAsync [{0}]", charToBooleanAsync);
 
 
 
             Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
-            Console.Read();
+            // Console.Read();
 
         }
 

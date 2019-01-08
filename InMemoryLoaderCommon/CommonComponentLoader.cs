@@ -107,7 +107,6 @@ namespace InMemoryLoaderCommon
             {
                 AssemblyPath = paramPath;
             }
-
             if (Components == null)
             {
                 Components = new List<IDynamicClassSetup>();
@@ -115,8 +114,6 @@ namespace InMemoryLoaderCommon
 
             var setupConverter = SetupConverter();
             Log.DebugFormat("Setup Converter: [{0}]", setupConverter);
-
-
         }
 
 

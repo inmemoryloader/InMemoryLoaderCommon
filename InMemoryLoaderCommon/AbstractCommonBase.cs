@@ -25,13 +25,15 @@
 
 using System.Threading.Tasks;
 using InMemoryLoader;
-using InMemoryLoaderBase;
 using log4net;
 
 namespace InMemoryLoaderCommon
 {
-    public abstract class AbstractCommonBase : AbstractLoaderBase
+    public abstract partial class AbstractCommonBase : AbstractLoaderBase
     {
+
+        #region ctor
+
         private static readonly ILog Log = LogManager.GetLogger(typeof(AbstractCommonBase));
 
         public CommonComponentLoader CommonComponentLoader { get; set; }
@@ -52,27 +54,7 @@ namespace InMemoryLoaderCommon
             return isSet;
         }
 
-        IDynamicClassInfo Converter;
-        private void SetConverter()
-        {
-            if (Converter == null) Converter = ComponentLoader.GetClassReference("Converter");
-        }
-
-        public bool StringToBoolean(string paramString)
-        {
-            SetConverter();
-            object[] paramArgs = { paramString };
-            return ComponentLoader.InvokeMethod(Converter, "StringToBoolean", paramArgs);
-        }
-
-        public async Task<bool> StringToBooleanAsync(string paramString)
-        {
-            SetConverter();
-            object[] paramArgs = { paramString };
-            return await InvokeMethodAsync(Converter, "StringToBoolean", paramArgs);
-        }
-
-
+        #endregion
 
     }
 

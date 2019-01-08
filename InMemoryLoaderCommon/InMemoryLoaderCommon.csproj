@@ -49,6 +49,7 @@ Laufzeit einmalig instanziiert.</Description>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonComponentLoader.cs" />
     <Compile Include="AbstractCommonBase.cs" />
+    <Compile Include="AbstractCommonBase.Converter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
