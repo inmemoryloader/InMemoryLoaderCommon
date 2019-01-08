@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerUpXmlUtils", "PowerUpX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommon", "InMemoryLoaderCommon\InMemoryLoaderCommon.csproj", "{14803A71-3990-4D53-8BEC-085B76B200B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommon.CmdClient", "InMemoryLoaderCommon.CmdClient\InMemoryLoaderCommon.CmdClient.csproj", "{6651E67E-6024-4533-B14B-C9D704854548}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{14803A71-3990-4D53-8BEC-085B76B200B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14803A71-3990-4D53-8BEC-085B76B200B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14803A71-3990-4D53-8BEC-085B76B200B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6651E67E-6024-4533-B14B-C9D704854548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6651E67E-6024-4533-B14B-C9D704854548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6651E67E-6024-4533-B14B-C9D704854548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6651E67E-6024-4533-B14B-C9D704854548}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
