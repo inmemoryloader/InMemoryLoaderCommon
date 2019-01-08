@@ -75,6 +75,9 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
 
+
+
+
             Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
             // Console.Read();
 

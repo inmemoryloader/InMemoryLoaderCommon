@@ -41,6 +41,7 @@ namespace InMemoryLoaderCommon
             if (Converter == null) Converter = ComponentLoader.GetClassReference("Converter");
         }
 
+
         public dynamic StringToBoolean(string paramValue)
         {
             SetConverter();
@@ -54,6 +55,7 @@ namespace InMemoryLoaderCommon
             object[] paramArgs = { paramValue };
             return await InvokeMethodAsync(Converter, "StringToBoolean", paramArgs);
         }
+
 
         public dynamic CharToBoolean(char paramValue)
         {
@@ -69,6 +71,7 @@ namespace InMemoryLoaderCommon
             return await InvokeMethodAsync(Converter, "CharToBoolean", paramArgs);
         }
 
+
         public dynamic BooleanToString(bool paramValue)
         {
             SetConverter();
@@ -82,6 +85,9 @@ namespace InMemoryLoaderCommon
             object[] paramArgs = { paramValue };
             return await InvokeMethodAsync(Converter, "BooleanToString", paramArgs);
         }
+
+
+
 
         #endregion
 
