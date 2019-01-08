@@ -37,6 +37,8 @@ namespace InMemoryLoaderCommon.CmdClient
 
         public static async Task Main (string [] args)
         {
+            #region start/init
+
             var parameter = string.Empty;
 
             if (args.Length == 0)
@@ -54,6 +56,7 @@ namespace InMemoryLoaderCommon.CmdClient
             var isCommonInit = await AppBase.SetInMemoryLoaderCommonAsync();
             Log.InfoFormat("SetInMemoryLoaderCommonAsync [{0}]", isCommonInit);
 
+            #endregion
 
             // Converter stuff --------------------------------------------------------------------
             // ####################################################################################
@@ -68,6 +71,7 @@ namespace InMemoryLoaderCommon.CmdClient
 
             Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
             Console.Read();
+
         }
 
     }
