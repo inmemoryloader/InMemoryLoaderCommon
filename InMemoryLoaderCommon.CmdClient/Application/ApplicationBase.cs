@@ -28,7 +28,6 @@ using System.Configuration;
 using System.IO;
 using System.Threading.Tasks;
 using InMemoryLoader;
-using InMemoryLoaderBase;
 using log4net;
 using log4net.Config;
 
@@ -81,7 +80,6 @@ namespace InMemoryLoaderCommon.CmdClient
             var result = SetInMemoryLoaderCommon();
             return result;
         }
-
 
     }
 }

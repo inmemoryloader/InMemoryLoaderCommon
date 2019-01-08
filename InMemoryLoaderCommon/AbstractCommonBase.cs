@@ -25,30 +25,17 @@
 
 using System.Threading.Tasks;
 using InMemoryLoader;
+using InMemoryLoaderBase;
 using log4net;
 
 namespace InMemoryLoaderCommon
 {
-    /// <summary>
-    /// AbstractCommonBase
-    /// </summary>
     public abstract class AbstractCommonBase : AbstractLoaderBase
     {
-        /// <summary>
-        /// The log.
-        /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(AbstractCommonBase));
 
-        /// <summary>
-        /// Gets or sets the common component loader.
-        /// </summary>
-        /// <value>The common component loader.</value>
         public CommonComponentLoader CommonComponentLoader { get; set; }
 
-        /// <summary>
-        /// Sets the in memory loader common.
-        /// </summary>
-        /// <returns><c>true</c>, if in memory loader common was set, <c>false</c> otherwise.</returns>
         public virtual bool SetInMemoryLoaderCommon()
         {
             CommonComponentLoader = new CommonComponentLoader();
@@ -64,6 +51,28 @@ namespace InMemoryLoaderCommon
             Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
             return isSet;
         }
+
+        IDynamicClassInfo Converter;
+        private void SetConverter()
+        {
+            if (Converter == null) Converter = ComponentLoader.GetClassReference("Converter");
+        }
+
+        public bool StringToBoolean(string paramString)
+        {
+            SetConverter();
+            object[] paramArgs = { paramString };
+            return ComponentLoader.InvokeMethod(Converter, "StringToBoolean", paramArgs);
+        }
+
+        public async Task<bool> StringToBooleanAsync(string paramString)
+        {
+            SetConverter();
+            object[] paramArgs = { paramString };
+            return await InvokeMethodAsync(Converter, "StringToBoolean", paramArgs);
+        }
+
+
 
 
 

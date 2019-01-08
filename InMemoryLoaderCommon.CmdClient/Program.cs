@@ -55,6 +55,14 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("SetInMemoryLoaderCommonAsync [{0}]", isCommonInit);
 
 
+            // Converter stuff --------------------------------------------------------------------
+            // ####################################################################################
+
+            var stringToBoolean = AppBase.StringToBoolean("1");
+            Log.InfoFormat("StringToBoolean [{0}]", stringToBoolean);
+
+            var stringToBooleanAsync = await AppBase.StringToBooleanAsync("1");
+            Log.InfoFormat("StringToBooleanAsync [{0}]", stringToBooleanAsync);
 
 
 
