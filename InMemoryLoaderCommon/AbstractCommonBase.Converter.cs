@@ -255,6 +255,25 @@ namespace InMemoryLoaderCommon
             return await InvokeMethodAsync(Converter, "StringFromUtf8ToLatin1", paramArgs);
         }
 
+        #endregion
+
+
+        #region Crypt
+
+        IDynamicClassInfo Crypt;
+        bool CryptSet;
+
+        private void SetCrypt()
+        {
+            if (Crypt == null)
+            {
+                Crypt = ComponentLoader.GetClassReference("Crypt");
+            }
+            CryptSet = true;
+        }
+
+
+
 
         #endregion
 

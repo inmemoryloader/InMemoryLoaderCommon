@@ -40,6 +40,7 @@ namespace InMemoryLoaderCommon.Converter
             Log.DebugFormat("Create a new instance of Type: {0}", GetType());
         }
 
+
         public bool StringToBoolean(string paramValue)
         {
             if (paramValue == "1") return true;

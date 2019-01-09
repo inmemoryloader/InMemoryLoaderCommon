@@ -80,7 +80,27 @@ namespace InMemoryLoaderCommon
             return Task.Run(() => InitCommonComponents(paramPath));
         }
 
+        void SetupCommonComponents(string paramPath)
+        {
+            if (string.IsNullOrEmpty(AssemblyPath))
+            {
+                AssemblyPath = paramPath;
+            }
+            if (Components == null)
+            {
+                Components = new List<IDynamicClassSetup>();
+            }
 
+            var setupConverter = SetupConverter();
+            Log.DebugFormat("Setup Converter: [{0}]", setupConverter);
+
+            var setupCrypt = SetupCrypt();
+            Log.DebugFormat("Setup Crypt: [{0}]", setupCrypt);
+        }
+
+
+        // Converter
+        // ####################################################################################
 
         IDynamicClassSetup _converter;
 
@@ -101,22 +121,28 @@ namespace InMemoryLoaderCommon
             return true;
         }
 
-        void SetupCommonComponents(string paramPath)
+
+        // Converter
+        // ####################################################################################
+
+        IDynamicClassSetup _crypt;
+
+        private bool SetupCrypt()
         {
-            if (string.IsNullOrEmpty(AssemblyPath))
+            if (_crypt == null)
             {
-                AssemblyPath = paramPath;
+                _crypt = new DynamicClassSetup
+                {
+                    Assembly = Path.Combine(AssemblyPath, "InMemoryLoaderCommon.Crypt.dll"),
+                    Class = "Crypt"
+                };
             }
-            if (Components == null)
+            if (!Components.Contains(_crypt))
             {
-                Components = new List<IDynamicClassSetup>();
+                Components.Add(_crypt);
             }
-
-            var setupConverter = SetupConverter();
-            Log.DebugFormat("Setup Converter: [{0}]", setupConverter);
+            return true;
         }
-
-
 
 
     }

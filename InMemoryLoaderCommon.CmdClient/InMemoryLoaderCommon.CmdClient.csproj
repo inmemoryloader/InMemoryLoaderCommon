@@ -62,6 +62,10 @@
       <Project>{AD2D0607-29E7-47F5-A29E-607A5DFB8E61}</Project>
       <Name>InMemoryLoaderCommon.Converter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\InMemoryLoaderCommon.Crypt\InMemoryLoaderCommon.Crypt.csproj">
+      <Project>{EC020D18-A5A8-47B7-9CBF-EE9D0B9BFA61}</Project>
+      <Name>InMemoryLoaderCommon.Crypt</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
