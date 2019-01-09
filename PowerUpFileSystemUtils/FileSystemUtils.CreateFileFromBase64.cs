@@ -5,7 +5,7 @@ using System.IO;
 
 namespace PowerUpFileSystemUtils
 {
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Erzeugt eine Datei aus den Daten eines Base64-kodierten Strings

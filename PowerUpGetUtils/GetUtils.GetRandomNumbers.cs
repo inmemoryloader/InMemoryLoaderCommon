@@ -2,7 +2,7 @@
 // GetUtils.GetRandomNumbers.cs
 //
 // Author:
-//       Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+//       Kay Stuckenschmidt 
 //
 // Copyright (c) 2017 responsive-kaysta
 //
@@ -33,7 +33,7 @@ namespace PowerUpGetUtils
     /// <summary>
     /// GetUtils
     /// </summary>
-    public partial class GetUtils : AbstractPowerUpComponent
+    public partial class GetUtils : AbstractComponent
     {
         /// <summary>
         /// Erzeugt echte Zufallszahlen

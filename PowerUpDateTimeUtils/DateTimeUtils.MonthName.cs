@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace PowerUpDateTimeUtils
 {
-	public partial class DateTimeUtils : AbstractPowerUpComponent
+	public partial class DateTimeUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Liefert den Namen des angegebenen Monats in der aktuellen Kultur

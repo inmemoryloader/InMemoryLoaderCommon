@@ -4,7 +4,7 @@ using InMemoryLoaderBase;
 
 namespace PowerUpDateTimeUtils
 {
-	public partial class DateTimeUtils : AbstractPowerUpComponent
+	public partial class DateTimeUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Konvertiert ein Datum in das ISO-8601-Format

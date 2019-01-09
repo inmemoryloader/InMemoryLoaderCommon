@@ -7,7 +7,7 @@ namespace PowerUpStringUtils
     /// <summary>
     /// StringUtils
     /// </summary>
-	public partial class StringUtils : AbstractPowerUpComponent
+	public partial class StringUtils : AbstractComponent
 	{
 		/// <summary>
 		/// The log.

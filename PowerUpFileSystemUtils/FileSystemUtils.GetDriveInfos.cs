@@ -6,7 +6,7 @@ using System.IO;
 
 namespace PowerUpFileSystemUtils
 {
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Liefert eine Liste von DriveInfo-Instanzen für alle Laufwerke,

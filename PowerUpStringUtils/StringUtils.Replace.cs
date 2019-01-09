@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PowerUpStringUtils
 {
-    public partial class StringUtils : AbstractPowerUpComponent
+    public partial class StringUtils : AbstractComponent
     {
         /// <summary>
         /// Ersetzt Teilstrings in einem String

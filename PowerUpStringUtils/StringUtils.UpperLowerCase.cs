@@ -4,7 +4,7 @@ using log4net;
 
 namespace PowerUpStringUtils
 {
-	public partial class StringUtils : AbstractPowerUpComponent
+	public partial class StringUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Uppercases the first.

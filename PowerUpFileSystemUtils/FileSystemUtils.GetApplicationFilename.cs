@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace PowerUpFileSystemUtils
 {
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Ermittelt den Dateinamen der Anwendung

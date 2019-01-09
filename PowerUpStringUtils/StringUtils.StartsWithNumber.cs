@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace PowerUpStringUtils
 {
-	public partial class StringUtils : AbstractPowerUpComponent
+	public partial class StringUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Überprüft, ob der übergebene String mit einer Zahl beginnt 

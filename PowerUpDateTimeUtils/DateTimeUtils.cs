@@ -31,7 +31,7 @@ namespace PowerUpDateTimeUtils
     /// <summary>
     /// DateTimeUtils
     /// </summary>
-    public partial class DateTimeUtils : AbstractPowerUpComponent
+    public partial class DateTimeUtils : AbstractComponent
     {
         /// <summary>
         /// The log.

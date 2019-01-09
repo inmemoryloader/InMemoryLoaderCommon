@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace PowerUpStringUtils
 {
-	public partial class StringUtils : AbstractPowerUpComponent
+	public partial class StringUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Ermittelt die Anzahl der Wörter in einem String mit lateinischen Zeichen (schnell im Vergleich zu <see cref="WordCount"/>)

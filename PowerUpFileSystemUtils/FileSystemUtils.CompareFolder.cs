@@ -6,7 +6,7 @@ using InMemoryLoaderBase;
 
 namespace PowerUpFileSystemUtils
 {
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Vergleicht zwei Ordner

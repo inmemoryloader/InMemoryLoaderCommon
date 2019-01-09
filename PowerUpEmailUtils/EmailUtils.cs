@@ -31,7 +31,7 @@ namespace PowerUpEmailUtils
     /// <summary>
     /// EmailUtils
     /// </summary>
-    public partial class EmailUtils : AbstractPowerUpComponent
+    public partial class EmailUtils : AbstractComponent
     {
         /// <summary>
         /// The log.

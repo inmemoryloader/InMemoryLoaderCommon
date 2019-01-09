@@ -29,7 +29,7 @@ using InMemoryLoaderBase.HelperEnum;
 
 namespace PowerUpDateTimeUtils
 {
-    public partial class DateTimeUtils : AbstractPowerUpComponent
+    public partial class DateTimeUtils : AbstractComponent
     {
         /// <summary>
         /// Berechnet die Differenz zwischen zwei Datumswerten

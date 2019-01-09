@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace PowerUpFileSystemUtils
 {
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Kopiert eine Datei

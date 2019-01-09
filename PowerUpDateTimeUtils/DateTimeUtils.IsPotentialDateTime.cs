@@ -34,7 +34,7 @@ using InMemoryLoaderBase.HelperEnum;
 
 namespace PowerUpDateTimeUtils
 {
-    public partial class DateTimeUtils : AbstractPowerUpComponent
+    public partial class DateTimeUtils : AbstractComponent
     {
         /// <summary>
         /// Überprüft eine Eingabe daraufhin, ob diese bezogen auf die aktuelle Kultur potenziell 

@@ -29,7 +29,7 @@ using InMemoryLoaderBase.HelperEnum;
 
 namespace PowerUpFileSystemUtils
 {
-    public partial class FileSystemUtils : AbstractPowerUpComponent
+    public partial class FileSystemUtils : AbstractComponent
     {
         /// <summary>
         /// Vergleich zwei Dateien

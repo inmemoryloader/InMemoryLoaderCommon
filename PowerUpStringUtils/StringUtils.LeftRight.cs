@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace PowerUpStringUtils
 {
-	public partial class StringUtils : AbstractPowerUpComponent
+	public partial class StringUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Extrahiert einen linken Teilstring aus einem String

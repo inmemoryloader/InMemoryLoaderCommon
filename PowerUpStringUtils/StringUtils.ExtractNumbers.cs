@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace PowerUpStringUtils
 {
-	public partial class StringUtils : AbstractPowerUpComponent
+	public partial class StringUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Ermittelt alle Zahlen aus einem String

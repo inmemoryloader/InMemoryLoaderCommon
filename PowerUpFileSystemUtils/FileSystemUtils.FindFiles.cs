@@ -30,7 +30,7 @@ using System.IO;
 
 namespace PowerUpFileSystemUtils
 {
-    public partial class FileSystemUtils : AbstractPowerUpComponent
+    public partial class FileSystemUtils : AbstractComponent
     {
         /// <summary>
         /// Sucht alle Dateien, die dem angegebenen Muster entsprechen

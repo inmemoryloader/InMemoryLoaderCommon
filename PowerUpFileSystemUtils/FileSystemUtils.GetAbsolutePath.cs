@@ -5,7 +5,7 @@ using System.IO;
 
 namespace PowerUpFileSystemUtils
 {
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Ermittelt für einen gegebenen relativen einen absoluten Pfad

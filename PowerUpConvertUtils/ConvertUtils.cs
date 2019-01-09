@@ -31,7 +31,7 @@ namespace PowerUpConvertUtils
     /// <summary>
     /// ConvertUtils
     /// </summary>
-    public partial class ConvertUtils : AbstractPowerUpComponent
+    public partial class ConvertUtils : AbstractComponent
     {
         /// <summary>
         /// The log.

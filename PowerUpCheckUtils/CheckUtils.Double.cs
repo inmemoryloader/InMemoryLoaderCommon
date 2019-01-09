@@ -30,7 +30,7 @@ namespace PowerUpCheckUtils
     /// <summary>
     /// Check utils.
     /// </summary>
-    public partial class CheckUtils : AbstractPowerUpComponent
+    public partial class CheckUtils : AbstractComponent
     {
         /// <summary>
         /// Determines whether this instance is string double the specified paramValue.

@@ -29,7 +29,7 @@ using System.Text;
 
 namespace PowerUpConvertUtils
 {
-    public partial class ConvertUtils : AbstractPowerUpComponent
+    public partial class ConvertUtils : AbstractComponent
 	{
         /// <summary>
         /// Strings to byte array.

@@ -35,7 +35,7 @@ namespace PowerUpXmlUtils
     /// <summary>
     /// XmlUtils
     /// </summary>
-    public class XmlUtils : AbstractPowerUpComponent
+    public class XmlUtils : AbstractComponent
     {
         /// <summary>
         /// The log.

@@ -7,7 +7,7 @@ using System.IO;
 
 namespace PowerUpFileSystemUtils
 {
-	public partial class FileSystemUtils : AbstractPowerUpComponent
+	public partial class FileSystemUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Ermittelt die Größe aller einem Ordner direkt untergeordneten Unterordner

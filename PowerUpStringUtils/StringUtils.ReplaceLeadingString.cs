@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace PowerUpStringUtils
 {
-	public partial class StringUtils : AbstractPowerUpComponent
+	public partial class StringUtils : AbstractComponent
 	{
 		/// <summary>
 		/// Ersetzt einen Teilstring im übergebenen String nur dann, wenn dieser

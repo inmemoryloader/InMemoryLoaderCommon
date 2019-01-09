@@ -11,88 +11,66 @@
 Referenzen in der Solution zu benötigen. Hierbei werden die .Dll’s 
 einmalig geladen und geprüft, in eine Collection geschrieben und zur 
 Laufzeit einmalig instanziiert.</Description>
-    <ReleaseVersion>0.3.2</ReleaseVersion>
-    <SignAssembly>true</SignAssembly>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <AssemblyOriginatorKeyFile>InMemoryLoaderCommon.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ReleaseVersion>1.0.*</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DocumentationFile>..\..\XmlDocumentation\InMemoryLoaderCommon.xml</DocumentationFile>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.10\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.1.0.6947.9946\lib\InMemoryLoader.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoader.0.3.2.10\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.1.0.6947.9946\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonComponentLoader.cs" />
     <Compile Include="AbstractCommonBase.cs" />
+    <Compile Include="AbstractCommonBase.Converter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Documentation\InMemoryLoaderCommon.cd" />
-    <None Include="InMemoryLoaderCommon.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PowerUpCheckUtils\PowerUpCheckUtils.csproj">
-      <Project>{CE40C941-6632-42B1-8250-01567C495FC5}</Project>
-      <Name>PowerUpCheckUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpConvertUtils\PowerUpConvertUtils.csproj">
-      <Project>{0BE495D6-63E1-4E7F-BA0A-62D96E684706}</Project>
-      <Name>PowerUpConvertUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpCryptUtils\PowerUpCryptUtils.csproj">
-      <Project>{037A6543-CA5B-4DD3-97E6-1A526525C7F6}</Project>
-      <Name>PowerUpCryptUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpDateTimeUtils\PowerUpDateTimeUtils.csproj">
-      <Project>{B3D1C345-989C-487B-A3ED-C65338E52421}</Project>
-      <Name>PowerUpDateTimeUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpEmailUtils\PowerUpEmailUtils.csproj">
-      <Project>{31BD76E2-85A4-4D9D-9E82-3A1BCA689C42}</Project>
-      <Name>PowerUpEmailUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpFileSystemUtils\PowerUpFileSystemUtils.csproj">
-      <Project>{9824DE8B-6084-4421-BCC5-C68D19249C1C}</Project>
-      <Name>PowerUpFileSystemUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpGetUtils\PowerUpGetUtils.csproj">
-      <Project>{2C89A2FF-02A6-4573-9905-705ADC442A8F}</Project>
-      <Name>PowerUpGetUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpStringUtils\PowerUpStringUtils.csproj">
-      <Project>{9DF645D5-01BF-4C27-9998-D3B487A34828}</Project>
-      <Name>PowerUpStringUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PowerUpXmlUtils\PowerUpXmlUtils.csproj">
-      <Project>{D265F256-CD6D-48BF-9F68-FD01879EA958}</Project>
-      <Name>PowerUpXmlUtils</Name>
+    <ProjectReference Include="..\InMemoryLoaderCommon.Converter\InMemoryLoaderCommon.Converter.csproj">
+      <Project>{AD2D0607-29E7-47F5-A29E-607A5DFB8E61}</Project>
+      <Name>InMemoryLoaderCommon.Converter</Name>
     </ProjectReference>
   </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <TextStylePolicy TabWidth="4" IndentWidth="4" RemoveTrailingWhitespace="True" NoTabsAfterNonTabs="False" EolMarker="Native" FileWidth="80" TabsToSpaces="True" scope="text/x-csharp" />
+          <CSharpFormattingPolicy IndentBlock="True" IndentBraces="False" IndentSwitchSection="True" IndentSwitchCaseSection="True" LabelPositioning="OneLess" NewLinesForBracesInTypes="True" NewLinesForBracesInMethods="True" NewLinesForBracesInProperties="True" NewLinesForBracesInAccessors="True" NewLinesForBracesInAnonymousMethods="True" NewLinesForBracesInControlBlocks="True" NewLinesForBracesInAnonymousTypes="True" NewLinesForBracesInObjectCollectionArrayInitializers="True" NewLinesForBracesInLambdaExpressionBody="True" NewLineForElse="True" NewLineForCatch="True" NewLineForFinally="True" NewLineForMembersInObjectInit="True" NewLineForMembersInAnonymousTypes="True" NewLineForClausesInQuery="True" SpacingAfterMethodDeclarationName="False" SpaceWithinMethodDeclarationParenthesis="False" SpaceBetweenEmptyMethodDeclarationParentheses="False" SpaceAfterMethodCallName="False" SpaceWithinMethodCallParentheses="False" SpaceBetweenEmptyMethodCallParentheses="False" SpaceAfterControlFlowStatementKeyword="True" SpaceWithinExpressionParentheses="False" SpaceWithinCastParentheses="False" SpaceWithinOtherParentheses="False" SpaceAfterCast="False" SpacesIgnoreAroundVariableDeclaration="False" SpaceBeforeOpenSquareBracket="False" SpaceBetweenEmptySquareBrackets="False" SpaceWithinSquareBrackets="False" SpaceAfterColonInBaseTypeDeclaration="True" SpaceAfterComma="True" SpaceAfterDot="False" SpaceAfterSemicolonsInForStatement="True" SpaceBeforeColonInBaseTypeDeclaration="True" SpaceBeforeComma="False" SpaceBeforeDot="False" SpaceBeforeSemicolonsInForStatement="False" SpacingAroundBinaryOperator="Single" WrappingPreserveSingleLine="True" WrappingKeepStatementsOnSingleLine="True" PlaceSystemDirectiveFirst="True" scope="text/x-csharp" />
+          <StandardHeader IncludeInNewFiles="True" Text="&#xA;${FileName}&#xA; &#xA;Author: ${AuthorName}&#xA;&#xA;Copyright (c) ${Year} ${CopyrightHolder}&#xA;&#xA;Permission is hereby granted, free of charge, to any person obtaining a copy&#xA;of this software and associated documentation files (the &quot;Software&quot;), to deal&#xA;in the Software without restriction, including without limitation the rights&#xA;to use, copy, modify, merge, publish, distribute, sublicense, and/or sell&#xA;copies of the Software, and to permit persons to whom the Software is&#xA;furnished to do so, subject to the following conditions:&#xA;&#xA;The above copyright notice and this permission notice shall be included in&#xA;all copies or substantial portions of the Software.&#xA;&#xA;THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR&#xA;IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,&#xA;FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE&#xA;AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER&#xA;LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,&#xA;OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN&#xA;THE SOFTWARE." />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
 </Project>

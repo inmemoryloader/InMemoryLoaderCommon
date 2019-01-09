@@ -31,7 +31,7 @@ namespace PowerUpCryptUtils
     /// <summary>
     /// CryptUtils
     /// </summary>
-    public partial class CryptUtils : AbstractPowerUpComponent
+    public partial class CryptUtils : AbstractComponent
     {
         /// <summary>
         /// The log.

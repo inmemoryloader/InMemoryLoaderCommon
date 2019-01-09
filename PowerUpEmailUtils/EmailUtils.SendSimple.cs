@@ -31,7 +31,7 @@ using System.Text.RegularExpressions;
 
 namespace PowerUpEmailUtils
 {
-    public partial class EmailUtils : AbstractPowerUpComponent
+    public partial class EmailUtils : AbstractComponent
     {
         // private string returnValue = null;
 
