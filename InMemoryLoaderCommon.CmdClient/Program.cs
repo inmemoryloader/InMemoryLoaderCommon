@@ -23,8 +23,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -180,6 +178,23 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("StringFromUtf8ToLatin1Async [{0}]", stringFromUtf8ToLatin1Async);
 
 
+            // StringTo converter
+            // ####################################################################################
+
+            var tryParseStringToLong = AppBase.TryParseStringToLong("123698");
+            Log.InfoFormat("TryParseStringToLong [{0}]", tryParseStringToLong);
+
+            var tryParseStringToLongAsync = await AppBase.TryParseStringToLongAsync("123698");
+            Log.InfoFormat("TryParseStringToLongAsync [{0}]", tryParseStringToLongAsync);
+
+
+            var tryParseStringToInt = AppBase.TryParseStringToInt("123698");
+            Log.InfoFormat("TryParseStringToInt [{0}]", tryParseStringToInt);
+
+            var tryParseStringToIntAsync = await AppBase.TryParseStringToIntAsync("123698");
+            Log.InfoFormat("TryParseStringToInt [{0}]", tryParseStringToIntAsync);
+
+
             // Crypt stuff ------------------------------------------------------------------------
             // ####################################################################################
 
@@ -228,9 +243,8 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("DecryptAsync [{0}]", decryptAsync);
 
 
-
-
-
+            // end
+            // ####################################################################################
 
             Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
             // Console.Read();

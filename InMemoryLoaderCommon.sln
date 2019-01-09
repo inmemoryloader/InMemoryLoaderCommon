@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommon.Conver
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommon.Crypt", "InMemoryLoaderCommon.Crypt\InMemoryLoaderCommon.Crypt.csproj", "{EC020D18-A5A8-47B7-9CBF-EE9D0B9BFA61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderCommon.Strings", "InMemoryLoaderCommon.Strings\InMemoryLoaderCommon.Strings.csproj", "{B03D70DC-AA07-4BF6-BE2D-5C4500911805}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{EC020D18-A5A8-47B7-9CBF-EE9D0B9BFA61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC020D18-A5A8-47B7-9CBF-EE9D0B9BFA61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC020D18-A5A8-47B7-9CBF-EE9D0B9BFA61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03D70DC-AA07-4BF6-BE2D-5C4500911805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03D70DC-AA07-4BF6-BE2D-5C4500911805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03D70DC-AA07-4BF6-BE2D-5C4500911805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03D70DC-AA07-4BF6-BE2D-5C4500911805}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{D265F256-CD6D-48BF-9F68-FD01879EA958} = {B0C0F02D-14EE-4BFE-89D3-083FF7A13683}
 		{AD2D0607-29E7-47F5-A29E-607A5DFB8E61} = {B6AF5D27-C470-4A53-8668-D832DB10E9F6}
 		{EC020D18-A5A8-47B7-9CBF-EE9D0B9BFA61} = {B6AF5D27-C470-4A53-8668-D832DB10E9F6}
+		{B03D70DC-AA07-4BF6-BE2D-5C4500911805} = {B6AF5D27-C470-4A53-8668-D832DB10E9F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B449D49F-56DD-4125-9DE1-FC351213BEED}

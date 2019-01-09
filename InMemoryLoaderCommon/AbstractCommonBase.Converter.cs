@@ -256,6 +256,39 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // StringTo converter
+        // ####################################################################################
+
+        public dynamic TryParseStringToLong(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Converter, "TryParseStringToLong", paramArgs);
+        }
+
+        public async Task<dynamic> TryParseStringToLongAsync(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Converter, "TryParseStringToLong", paramArgs);
+        }
+
+
+        public dynamic TryParseStringToInt(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Converter, "TryParseStringToInt", paramArgs);
+        }
+
+        public async Task<dynamic> TryParseStringToIntAsync(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Converter, "TryParseStringToInt", paramArgs);
+        }
+
+
         #endregion
 
 
@@ -273,6 +306,8 @@ namespace InMemoryLoaderCommon
             CryptSet = true;
         }
 
+        // Md5Encryption
+        // ####################################################################################
 
         public dynamic Md5Encryption(string paramValue)
         {
@@ -289,6 +324,9 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // Md5SaltedHashEncryption
+        // ####################################################################################
+
         public dynamic Md5SaltedHashEncryption(string paramValue)
         {
             if (!CryptSet) SetCrypt();
@@ -304,6 +342,9 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // GetMd5HashAsString
+        // ####################################################################################
+
         public dynamic GetMd5HashAsString(string paramValue)
         {
             if (!CryptSet) SetCrypt();
@@ -318,6 +359,9 @@ namespace InMemoryLoaderCommon
             return await InvokeMethodAsync(Crypt, "GetMd5HashAsString", paramArgs);
         }
 
+
+        // RijndaelManaged
+        // ####################################################################################
 
         public dynamic SetCryptoParameter(string paramPhrase, string paramSalt, string paramHash, int paramIteration, string paramVector, int paramKeySize)
         {
@@ -361,7 +405,6 @@ namespace InMemoryLoaderCommon
             object[] paramArgs = { paramValue };
             return await InvokeMethodAsync(Crypt, "Decrypt", paramArgs);
         }
-
 
 
         #endregion

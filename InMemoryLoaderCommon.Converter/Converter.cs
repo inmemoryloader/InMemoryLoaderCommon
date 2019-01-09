@@ -23,6 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using System.Collections;
 using System.IO;
 using System.Text;
@@ -154,6 +155,20 @@ namespace InMemoryLoaderCommon.Converter
             string msg = iso.GetString(isoBytes);
             return msg;
         }
+
+
+        public long TryParseStringToLong(string str)
+        {
+            long.TryParse(str, out long result);
+            return result;
+        }
+
+        public int TryParseStringToInt(string str)
+        {
+            int.TryParse(str, out int result);
+            return result;
+        }
+
 
     }
 
