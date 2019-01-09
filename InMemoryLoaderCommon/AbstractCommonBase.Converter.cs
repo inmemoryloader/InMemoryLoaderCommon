@@ -409,6 +409,42 @@ namespace InMemoryLoaderCommon
 
         #endregion
 
+
+        #region Strings
+
+        IDynamicClassInfo Strings;
+        bool StringsSet;
+
+        private void SetStrings()
+        {
+            if (Strings == null)
+            {
+                Strings = ComponentLoader.GetClassReference("Strings");
+            }
+            StringsSet = true;
+        }
+
+
+        public dynamic AbbreviateString(string paramValue, int maxCharCount)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, maxCharCount };
+            return ComponentLoader.InvokeMethod(Strings, "Abbreviate", paramArgs);
+        }
+
+        public async Task<dynamic> AbbreviateStringAsync(string paramValue, int maxCharCount)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, maxCharCount };
+            return await InvokeMethodAsync(Strings, "Abbreviate", paramArgs);
+        }
+
+
+
+
+        #endregion
+
+
     }
 
 }

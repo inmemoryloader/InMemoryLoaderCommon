@@ -243,6 +243,20 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("DecryptAsync [{0}]", decryptAsync);
 
 
+            // Strings stuff
+            // ####################################################################################
+
+            var longStringToWork = "InMemoryLoader ist eine in C# (Mono) geschriebene Funktions- oder Klassen-Bibliothek die das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht ohne eine Referenz in der Project-Solution vorauszusetzen.";
+
+            var abbreviateString = AppBase.AbbreviateString(longStringToWork, 64);
+            Log.InfoFormat("AbbreviateString [{0}]", abbreviateString);
+
+            var abbreviateStringAsync = await AppBase.AbbreviateStringAsync(longStringToWork, 64);
+            Log.InfoFormat("AbbreviateStringAsync [{0}]", abbreviateStringAsync);
+
+
+
+
             // end
             // ####################################################################################
 

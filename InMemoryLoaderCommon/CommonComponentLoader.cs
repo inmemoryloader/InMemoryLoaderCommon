@@ -96,6 +96,10 @@ namespace InMemoryLoaderCommon
 
             var setupCrypt = SetupCrypt();
             Log.DebugFormat("Setup Crypt: [{0}]", setupCrypt);
+
+            var setupStrings = SetupStrings();
+            Log.DebugFormat("Setup Strings: [{0}]", setupStrings);
+
         }
 
 
@@ -140,6 +144,29 @@ namespace InMemoryLoaderCommon
             if (!Components.Contains(_crypt))
             {
                 Components.Add(_crypt);
+            }
+            return true;
+        }
+
+
+        // Strings
+        // ####################################################################################
+
+        IDynamicClassSetup _strings;
+
+        private bool SetupStrings()
+        {
+            if (_strings == null)
+            {
+                _strings = new DynamicClassSetup
+                {
+                    Assembly = Path.Combine(AssemblyPath, "InMemoryLoaderCommon.Strings.dll"),
+                    Class = "Strings"
+                };
+            }
+            if (!Components.Contains(_strings))
+            {
+                Components.Add(_strings);
             }
             return true;
         }

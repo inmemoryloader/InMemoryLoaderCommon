@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="Strings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings.Abbreviate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
