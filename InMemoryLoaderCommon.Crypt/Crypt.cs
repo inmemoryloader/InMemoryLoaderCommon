@@ -89,8 +89,8 @@ namespace InMemoryLoaderCommon.Crypt
 
         public string GetMd5HashAsString(string text)
         {
-            var md5 = System.Security.Cryptography.MD5.Create();
-            var bytes = System.Text.Encoding.UTF8.GetBytes(text);
+            var md5 = MD5.Create();
+            var bytes = Encoding.UTF8.GetBytes(text);
             var hash = md5.ComputeHash(bytes);
             var result = BitConverter.ToString(hash);
             return result;

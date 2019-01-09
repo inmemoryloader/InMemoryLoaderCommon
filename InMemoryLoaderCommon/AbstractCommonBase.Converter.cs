@@ -255,6 +255,7 @@ namespace InMemoryLoaderCommon
             return await InvokeMethodAsync(Converter, "StringFromUtf8ToLatin1", paramArgs);
         }
 
+
         #endregion
 
 
@@ -273,7 +274,49 @@ namespace InMemoryLoaderCommon
         }
 
 
+        public dynamic Md5Encryption(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "Md5Encryption", paramArgs);
+        }
 
+        public async Task<dynamic> Md5EncryptionAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "Md5Encryption", paramArgs);
+        }
+
+
+        public dynamic Md5SaltedHashEncryption(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "Md5SaltedHashEncryption", paramArgs);
+        }
+
+        public async Task<dynamic> Md5SaltedHashEncryptionAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "Md5SaltedHashEncryption", paramArgs);
+        }
+
+
+        public dynamic GetMd5HashAsString(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "GetMd5HashAsString", paramArgs);
+        }
+
+        public async Task<dynamic> GetMd5HashAsStringAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "GetMd5HashAsString", paramArgs);
+        }
 
         #endregion
 

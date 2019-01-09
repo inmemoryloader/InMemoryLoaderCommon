@@ -180,6 +180,31 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("StringFromUtf8ToLatin1Async [{0}]", stringFromUtf8ToLatin1Async);
 
 
+            // Crypt stuff ------------------------------------------------------------------------
+            // ####################################################################################
+
+            // Md5Encryption
+            // ####################################################################################
+
+            var md5Encryption = (byte[])AppBase.Md5Encryption("0815 - 123698");
+            Log.InfoFormat("Md5Encryption [{0}]", md5Encryption.Length);
+
+            var md5EncryptionAsync = (byte[])await AppBase.Md5EncryptionAsync("0815 - 123698");
+            Log.InfoFormat("Md5EncryptionAsync [{0}]", md5EncryptionAsync.Length);
+
+            var md5SaltedHashEncryption = (byte[])AppBase.Md5SaltedHashEncryption("0815 - 123698");
+            Log.InfoFormat("Md5SaltedHashEncryption [{0}]", md5SaltedHashEncryption.Length);
+
+            var md5SaltedHashEncryptionAsync = (byte[])await AppBase.Md5SaltedHashEncryptionAsync("0815 - 123698");
+            Log.InfoFormat("Md5SaltedHashEncryptionAsync [{0}]", md5SaltedHashEncryptionAsync.Length);
+
+            var getMd5HashAsString = AppBase.GetMd5HashAsString("0815 - 123698");
+            Log.InfoFormat("GetMd5HashAsString [{0}]", getMd5HashAsString.Length);
+
+            var getMd5HashAsStringAsync = await AppBase.GetMd5HashAsStringAsync("0815 - 123698");
+            Log.InfoFormat("GetMd5HashAsStringAsync [{0}]", getMd5HashAsStringAsync.Length);
+
+
 
 
 
