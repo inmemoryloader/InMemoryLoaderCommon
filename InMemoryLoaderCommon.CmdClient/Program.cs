@@ -24,6 +24,8 @@
 // THE SOFTWARE.
 
 using System;
+using System.Collections;
+using System.Text;
 using System.Threading.Tasks;
 using log4net;
 
@@ -35,7 +37,7 @@ namespace InMemoryLoaderCommon.CmdClient
 
         private static readonly ApplicationBase AppBase = ApplicationBase.Instance;
 
-        public static async Task Main (string [] args)
+        public static async Task Main(string[] args)
         {
             #region start/init
 
@@ -82,6 +84,34 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("BooleanToStringAsync [{0}]", booleanToStringAsync);
 
 
+            var booleanToChar = AppBase.BooleanToChar(false);
+            Log.InfoFormat("BooleanToChar [{0}]", booleanToChar);
+
+            var booleanToCharAsync = await AppBase.BooleanToCharAsync(true);
+            Log.InfoFormat("BooleanToCharAsync [{0}]", booleanToCharAsync);
+
+
+            var stringToByteArray = (byte[])AppBase.StringToByteArray("0815");
+            Log.InfoFormat("StringToByteArray [{0}]", stringToByteArray.Length);
+
+            var stringToByteArrayAsync = (byte[])await AppBase.StringToByteArrayAsync("0815");
+            Log.InfoFormat("StringToByteArrayAsync [{0}]", stringToByteArrayAsync.Length);
+
+            var stringToByteArray2 = (byte[])AppBase.StringToByteArray("0815", Encoding.Default);
+            Log.InfoFormat("StringToByteArray [{0}]", stringToByteArray2.Length);
+
+            var stringToByteArrayAsync2 = (byte[])await AppBase.StringToByteArrayAsync("0815", Encoding.Default);
+            Log.InfoFormat("StringToByteArrayAsync [{0}]", stringToByteArrayAsync2.Length);
+
+
+            var toHashTable = "0=1|1=2|2=3";
+            char toHashTableFelimiter = '|';
+
+            var stringToHashtable = AppBase.StringToHashtable(toHashTable, toHashTableFelimiter);
+            Log.InfoFormat("StringToHashtable [{0}]", stringToHashtable);
+
+            var stringToHashtableAsync = await AppBase.StringToHashtableAsync(toHashTable, toHashTableFelimiter);
+            Log.InfoFormat("StringToHashtableAsync [{0}]", stringToHashtableAsync);
 
 
 

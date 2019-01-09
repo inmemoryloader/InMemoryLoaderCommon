@@ -23,6 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Text;
 using System.Threading.Tasks;
 using InMemoryLoader;
 using InMemoryLoaderBase;
@@ -92,6 +93,63 @@ namespace InMemoryLoaderCommon
         }
 
 
+        public dynamic BooleanToChar(bool paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Converter, "BooleanToChar", paramArgs);
+        }
+
+        public async Task<dynamic> BooleanToCharAsync(bool paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Converter, "BooleanToChar", paramArgs);
+        }
+
+
+        public dynamic StringToByteArray(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Converter, "StringToByteArray", paramArgs);
+        }
+
+        public async Task<dynamic> StringToByteArrayAsync(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Converter, "StringToByteArray", paramArgs);
+        }
+
+        public dynamic StringToByteArray(string paramValue, Encoding encoding)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Converter, "StringToByteArray", paramArgs);
+        }
+
+        public async Task<dynamic> StringToByteArrayAsync(string paramValue, Encoding encoding)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Converter, "StringToByteArray", paramArgs);
+        }
+
+
+        public dynamic StringToHashtable(string paramValue, char paramDelimit)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue, paramDelimit };
+            return ComponentLoader.InvokeMethod(Converter, "StringToHashtable", paramArgs);
+        }
+
+        public async Task<dynamic> StringToHashtableAsync(string paramValue, char paramDelimit)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue, paramDelimit };
+            return await InvokeMethodAsync(Converter, "StringToHashtable", paramArgs);
+        }
 
 
         #endregion

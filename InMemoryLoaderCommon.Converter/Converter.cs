@@ -69,40 +69,40 @@ namespace InMemoryLoaderCommon.Converter
         }
 
 
-        public byte[] StringToByteArray(string paramString)
+        public byte[] StringToByteArray(string paramValue)
         {
             MemoryStream ms = new MemoryStream();
             BinaryWriter br = new BinaryWriter(ms);
-            br.Write(paramString);
+            br.Write(paramValue);
             byte[] byteReturn = ms.ToArray();
             return byteReturn;
         }
 
-        public byte[] StringToByteArray(string paramString, Encoding paramEncoding)
+        public byte[] StringToByteArray(string paramValue, Encoding paramEncoding)
         {
             MemoryStream ms = new MemoryStream();
             BinaryWriter br = new BinaryWriter(ms, paramEncoding);
-            br.Write(paramString);
+            br.Write(paramValue);
             byte[] byteReturn = ms.ToArray();
             return byteReturn;
         }
 
-        public byte[] FileContentToByteArray(string paramFile)
+        public byte[] FileContentToByteArray(string paramValue)
         {
             byte[] buff = null;
-            FileStream fs = new FileStream(paramFile, FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(paramValue, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fs);
-            long numBytes = new FileInfo(paramFile).Length;
+            long numBytes = new FileInfo(paramValue).Length;
             buff = br.ReadBytes((int)numBytes);
             return buff;
         }
 
 
-        public Hashtable StringToHashtable(string paramString, char[] paramDelimit)
+        public Hashtable StringToHashtable(string paramValue, char paramDelimit)
         {
             Hashtable ht = new Hashtable();
             int count = 0;
-            foreach (string substr in paramString.Split(paramDelimit))
+            foreach (string substr in paramValue.Split(paramDelimit))
             {
                 ht.Add(count++, substr);
             }
