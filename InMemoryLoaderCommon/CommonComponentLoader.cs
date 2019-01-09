@@ -80,7 +80,31 @@ namespace InMemoryLoaderCommon
             return Task.Run(() => InitCommonComponents(paramPath));
         }
 
+        void SetupCommonComponents(string paramPath)
+        {
+            if (string.IsNullOrEmpty(AssemblyPath))
+            {
+                AssemblyPath = paramPath;
+            }
+            if (Components == null)
+            {
+                Components = new List<IDynamicClassSetup>();
+            }
 
+            var setupConverter = SetupConverter();
+            Log.DebugFormat("Setup Converter: [{0}]", setupConverter);
+
+            var setupCrypt = SetupCrypt();
+            Log.DebugFormat("Setup Crypt: [{0}]", setupCrypt);
+
+            var setupStrings = SetupStrings();
+            Log.DebugFormat("Setup Strings: [{0}]", setupStrings);
+
+        }
+
+
+        // Converter
+        // ####################################################################################
 
         IDynamicClassSetup _converter;
 
@@ -101,22 +125,51 @@ namespace InMemoryLoaderCommon
             return true;
         }
 
-        void SetupCommonComponents(string paramPath)
-        {
-            if (string.IsNullOrEmpty(AssemblyPath))
-            {
-                AssemblyPath = paramPath;
-            }
-            if (Components == null)
-            {
-                Components = new List<IDynamicClassSetup>();
-            }
 
-            var setupConverter = SetupConverter();
-            Log.DebugFormat("Setup Converter: [{0}]", setupConverter);
+        // Converter
+        // ####################################################################################
+
+        IDynamicClassSetup _crypt;
+
+        private bool SetupCrypt()
+        {
+            if (_crypt == null)
+            {
+                _crypt = new DynamicClassSetup
+                {
+                    Assembly = Path.Combine(AssemblyPath, "InMemoryLoaderCommon.Crypt.dll"),
+                    Class = "Crypt"
+                };
+            }
+            if (!Components.Contains(_crypt))
+            {
+                Components.Add(_crypt);
+            }
+            return true;
         }
 
 
+        // Strings
+        // ####################################################################################
+
+        IDynamicClassSetup _strings;
+
+        private bool SetupStrings()
+        {
+            if (_strings == null)
+            {
+                _strings = new DynamicClassSetup
+                {
+                    Assembly = Path.Combine(AssemblyPath, "InMemoryLoaderCommon.Strings.dll"),
+                    Class = "Strings"
+                };
+            }
+            if (!Components.Contains(_strings))
+            {
+                Components.Add(_strings);
+            }
+            return true;
+        }
 
 
     }

@@ -256,7 +256,194 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // StringTo converter
+        // ####################################################################################
+
+        public dynamic TryParseStringToLong(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Converter, "TryParseStringToLong", paramArgs);
+        }
+
+        public async Task<dynamic> TryParseStringToLongAsync(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Converter, "TryParseStringToLong", paramArgs);
+        }
+
+
+        public dynamic TryParseStringToInt(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Converter, "TryParseStringToInt", paramArgs);
+        }
+
+        public async Task<dynamic> TryParseStringToIntAsync(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Converter, "TryParseStringToInt", paramArgs);
+        }
+
+
         #endregion
+
+
+        #region Crypt
+
+        IDynamicClassInfo Crypt;
+        bool CryptSet;
+
+        private void SetCrypt()
+        {
+            if (Crypt == null)
+            {
+                Crypt = ComponentLoader.GetClassReference("Crypt");
+            }
+            CryptSet = true;
+        }
+
+        // Md5Encryption
+        // ####################################################################################
+
+        public dynamic Md5Encryption(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "Md5Encryption", paramArgs);
+        }
+
+        public async Task<dynamic> Md5EncryptionAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "Md5Encryption", paramArgs);
+        }
+
+
+        // Md5SaltedHashEncryption
+        // ####################################################################################
+
+        public dynamic Md5SaltedHashEncryption(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "Md5SaltedHashEncryption", paramArgs);
+        }
+
+        public async Task<dynamic> Md5SaltedHashEncryptionAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "Md5SaltedHashEncryption", paramArgs);
+        }
+
+
+        // GetMd5HashAsString
+        // ####################################################################################
+
+        public dynamic GetMd5HashAsString(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "GetMd5HashAsString", paramArgs);
+        }
+
+        public async Task<dynamic> GetMd5HashAsStringAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "GetMd5HashAsString", paramArgs);
+        }
+
+
+        // RijndaelManaged
+        // ####################################################################################
+
+        public dynamic SetCryptoParameter(string paramPhrase, string paramSalt, string paramHash, int paramIteration, string paramVector, int paramKeySize)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramPhrase, paramSalt, paramHash, paramIteration, paramVector, paramKeySize };
+            return ComponentLoader.InvokeMethod(Crypt, "SetCryptoParameter", paramArgs);
+        }
+
+        public dynamic Encrypt(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "Encrypt", paramArgs);
+        }
+
+        public dynamic Decrypt(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "Decrypt", paramArgs);
+        }
+
+
+        public async Task<dynamic> SetCryptoParameterAsync(string paramPhrase, string paramSalt, string paramHash, int paramIteration, string paramVector, int paramKeySize)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramPhrase, paramSalt, paramHash, paramIteration, paramVector, paramKeySize };
+            return await InvokeMethodAsync(Crypt, "SetCryptoParameter", paramArgs);
+        }
+
+        public async Task<dynamic> EncryptAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "Encrypt", paramArgs);
+        }
+
+        public async Task<dynamic> DecryptAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "Decrypt", paramArgs);
+        }
+
+
+        #endregion
+
+
+        #region Strings
+
+        IDynamicClassInfo Strings;
+        bool StringsSet;
+
+        private void SetStrings()
+        {
+            if (Strings == null)
+            {
+                Strings = ComponentLoader.GetClassReference("Strings");
+            }
+            StringsSet = true;
+        }
+
+
+        public dynamic AbbreviateString(string paramValue, int maxCharCount)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, maxCharCount };
+            return ComponentLoader.InvokeMethod(Strings, "Abbreviate", paramArgs);
+        }
+
+        public async Task<dynamic> AbbreviateStringAsync(string paramValue, int maxCharCount)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, maxCharCount };
+            return await InvokeMethodAsync(Strings, "Abbreviate", paramArgs);
+        }
+
+
+
+
+        #endregion
+
 
     }
 

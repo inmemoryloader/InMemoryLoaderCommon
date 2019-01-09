@@ -23,8 +23,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -180,8 +178,87 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("StringFromUtf8ToLatin1Async [{0}]", stringFromUtf8ToLatin1Async);
 
 
+            // StringTo converter
+            // ####################################################################################
+
+            var tryParseStringToLong = AppBase.TryParseStringToLong("123698");
+            Log.InfoFormat("TryParseStringToLong [{0}]", tryParseStringToLong);
+
+            var tryParseStringToLongAsync = await AppBase.TryParseStringToLongAsync("123698");
+            Log.InfoFormat("TryParseStringToLongAsync [{0}]", tryParseStringToLongAsync);
 
 
+            var tryParseStringToInt = AppBase.TryParseStringToInt("123698");
+            Log.InfoFormat("TryParseStringToInt [{0}]", tryParseStringToInt);
+
+            var tryParseStringToIntAsync = await AppBase.TryParseStringToIntAsync("123698");
+            Log.InfoFormat("TryParseStringToInt [{0}]", tryParseStringToIntAsync);
+
+
+            // Crypt stuff ------------------------------------------------------------------------
+            // ####################################################################################
+
+            // Md5Encryption
+            // ####################################################################################
+
+            var md5Encryption = (byte[])AppBase.Md5Encryption("0815 - 123698");
+            Log.InfoFormat("Md5Encryption [{0}]", md5Encryption.Length);
+
+            var md5EncryptionAsync = (byte[])await AppBase.Md5EncryptionAsync("0815 - 123698");
+            Log.InfoFormat("Md5EncryptionAsync [{0}]", md5EncryptionAsync.Length);
+
+            var md5SaltedHashEncryption = (byte[])AppBase.Md5SaltedHashEncryption("0815 - 123698");
+            Log.InfoFormat("Md5SaltedHashEncryption [{0}]", md5SaltedHashEncryption.Length);
+
+            var md5SaltedHashEncryptionAsync = (byte[])await AppBase.Md5SaltedHashEncryptionAsync("0815 - 123698");
+            Log.InfoFormat("Md5SaltedHashEncryptionAsync [{0}]", md5SaltedHashEncryptionAsync.Length);
+
+            var getMd5HashAsString = AppBase.GetMd5HashAsString("0815 - 123698");
+            Log.InfoFormat("GetMd5HashAsString [{0}]", getMd5HashAsString.Length);
+
+            var getMd5HashAsStringAsync = await AppBase.GetMd5HashAsStringAsync("0815 - 123698");
+            Log.InfoFormat("GetMd5HashAsStringAsync [{0}]", getMd5HashAsStringAsync.Length);
+
+
+            // RijndaelManaged
+            // ####################################################################################
+
+            var setCryptoParameter = AppBase.SetCryptoParameter("nEed!som_p", "s@lTe!lOl", "SHA1", 2, "!VaCztorR=qw712_X<>", 256);
+            Log.InfoFormat("SetCryptoParameter [{0}]", setCryptoParameter);
+
+            var encrypt = AppBase.Encrypt("tHa_Pwd0815!");
+            Log.InfoFormat("Encrypt [{0}]", encrypt);
+
+            var decrypt = AppBase.Decrypt(encrypt);
+            Log.InfoFormat("Decrypt [{0}]", decrypt);
+
+
+            var setCryptoParameterAsync = await AppBase.SetCryptoParameterAsync("nEed!som_p", "s@lTe!lOl", "SHA1", 2, "!VaCztorR=qw712_X<>", 256);
+            Log.InfoFormat("SetCryptoParameterAsync [{0}]", setCryptoParameterAsync);
+
+            var encryptAsync = await AppBase.EncryptAsync("tHa_Pwd0815!");
+            Log.InfoFormat("EncryptAsync [{0}]", encryptAsync);
+
+            var decryptAsync = await AppBase.DecryptAsync(encryptAsync);
+            Log.InfoFormat("DecryptAsync [{0}]", decryptAsync);
+
+
+            // Strings stuff
+            // ####################################################################################
+
+            var longStringToWork = "InMemoryLoader ist eine in C# (Mono) geschriebene Funktions- oder Klassen-Bibliothek die das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht ohne eine Referenz in der Project-Solution vorauszusetzen.";
+
+            var abbreviateString = AppBase.AbbreviateString(longStringToWork, 64);
+            Log.InfoFormat("AbbreviateString [{0}]", abbreviateString);
+
+            var abbreviateStringAsync = await AppBase.AbbreviateStringAsync(longStringToWork, 64);
+            Log.InfoFormat("AbbreviateStringAsync [{0}]", abbreviateStringAsync);
+
+
+
+
+            // end
+            // ####################################################################################
 
             Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
             // Console.Read();
