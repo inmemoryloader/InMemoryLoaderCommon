@@ -23,6 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using InMemoryLoader;
@@ -47,6 +48,8 @@ namespace InMemoryLoaderCommon
             CoverterSet = true;
         }
 
+        // StringToBoolean
+        // ####################################################################################
 
         public dynamic StringToBoolean(string paramValue)
         {
@@ -63,6 +66,9 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // CharToBoolean
+        // ####################################################################################
+
         public dynamic CharToBoolean(char paramValue)
         {
             if (!CoverterSet) SetConverter();
@@ -77,6 +83,9 @@ namespace InMemoryLoaderCommon
             return await InvokeMethodAsync(Converter, "CharToBoolean", paramArgs);
         }
 
+
+        // BooleanToString
+        // ####################################################################################
 
         public dynamic BooleanToString(bool paramValue)
         {
@@ -93,6 +102,9 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // BooleanToChar
+        // ####################################################################################
+
         public dynamic BooleanToChar(bool paramValue)
         {
             if (!CoverterSet) SetConverter();
@@ -107,6 +119,9 @@ namespace InMemoryLoaderCommon
             return await InvokeMethodAsync(Converter, "BooleanToChar", paramArgs);
         }
 
+
+        // StringToByteArray
+        // ####################################################################################
 
         public dynamic StringToByteArray(string paramValue)
         {
@@ -137,6 +152,9 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // StringToHashtable
+        // ####################################################################################
+
         public dynamic StringToHashtable(string paramValue, char paramDelimit)
         {
             if (!CoverterSet) SetConverter();
@@ -149,6 +167,92 @@ namespace InMemoryLoaderCommon
             if (!CoverterSet) SetConverter();
             object[] paramArgs = { paramValue, paramDelimit };
             return await InvokeMethodAsync(Converter, "StringToHashtable", paramArgs);
+        }
+
+
+        // MemoryStreamToString
+        // ####################################################################################
+
+        public dynamic MemoryStreamToString(MemoryStream parmStream)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { parmStream };
+            return ComponentLoader.InvokeMethod(Converter, "MemoryStreamToString", paramArgs);
+        }
+
+        public async Task<dynamic> MemoryStreamToStringAsync(MemoryStream parmStream)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { parmStream };
+            return await InvokeMethodAsync(Converter, "MemoryStreamToString", paramArgs);
+        }
+
+
+        // ByteArrayToString
+        // ####################################################################################
+
+        public dynamic ByteArrayToString(byte[] paramByteArray)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramByteArray };
+            return ComponentLoader.InvokeMethod(Converter, "ByteArrayToString", paramArgs);
+        }
+
+        public async Task<dynamic> ByteArrayToStringAsync(byte[] paramByteArray)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramByteArray };
+            return await InvokeMethodAsync(Converter, "ByteArrayToString", paramArgs);
+        }
+
+        public dynamic ByteArrayToString(byte[] paramByteArray, Encoding paramEncoding)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramByteArray, paramEncoding };
+            return ComponentLoader.InvokeMethod(Converter, "ByteArrayToString", paramArgs);
+        }
+
+        public async Task<dynamic> ByteArrayToStringAsync(byte[] paramByteArray, Encoding paramEncoding)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramByteArray, paramEncoding };
+            return await InvokeMethodAsync(Converter, "ByteArrayToString", paramArgs);
+        }
+
+
+        // StringFromUtf8ToAscii
+        // ####################################################################################
+
+        public dynamic StringFromUtf8ToAscii(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Converter, "StringFromUtf8ToAscii", paramArgs);
+        }
+
+        public async Task<dynamic> StringFromUtf8ToAsciiAsync(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Converter, "StringFromUtf8ToAscii", paramArgs);
+        }
+
+
+        // StringFromUtf8ToLatin1
+        // ####################################################################################
+
+        public dynamic StringFromUtf8ToLatin1(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Converter, "StringFromUtf8ToLatin1", paramArgs);
+        }
+
+        public async Task<dynamic> StringFromUtf8ToLatin1Async(string paramValue)
+        {
+            if (!CoverterSet) SetConverter();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Converter, "StringFromUtf8ToLatin1", paramArgs);
         }
 
 

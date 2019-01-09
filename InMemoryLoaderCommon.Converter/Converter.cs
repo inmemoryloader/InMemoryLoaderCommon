@@ -117,6 +117,7 @@ namespace InMemoryLoaderCommon.Converter
             return text;
         }
 
+
         public string ByteArrayToString(byte[] paramByteArray)
         {
             MemoryStream stream = new MemoryStream(paramByteArray);
@@ -134,10 +135,10 @@ namespace InMemoryLoaderCommon.Converter
         }
 
 
-        public string StringFromUtf8ToAscii(string paramString)
+        public string StringFromUtf8ToAscii(string paramValue)
         {
             ASCIIEncoding ascii = new ASCIIEncoding();
-            byte[] byteArray = Encoding.UTF8.GetBytes(paramString);
+            byte[] byteArray = Encoding.UTF8.GetBytes(paramValue);
             byte[] asciiArray = Encoding.Convert(Encoding.UTF8, Encoding.Default, byteArray);
             string finalString = ascii.GetString(asciiArray);
             return finalString;
