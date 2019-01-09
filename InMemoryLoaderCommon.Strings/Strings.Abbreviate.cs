@@ -16,18 +16,22 @@ namespace InMemoryLoaderCommon.Strings
 		public string Abbreviate(string paramValue, int maxCharCount)
 		{
 			var result = String.Empty;
+
 			// String an Leerzeichen splitten
 			string[] words = paramValue.Split(' ');
+
 			// Die Sonderfälle abhandeln, dass der gesamte String 
 			// kürzer oder das erste Wort schon zu lang ist
 			if (paramValue.Length <= maxCharCount)
 			{
 				return paramValue;
 			}
+
 			if (words.Length > 0 && words[0].Length > maxCharCount)
 			{
 				return words[0].Substring(0, maxCharCount - 3) + "...";
 			}
+
 			// Die Wörter durchgehen und in das Ergebnis schreiben bis die Maximallänge erreicht ist
 			for (int i = 0; i < words.Length; i++)
 			{
@@ -40,13 +44,12 @@ namespace InMemoryLoaderCommon.Strings
 					result += ' ' + words[i];
 				}
 			}
+
 			return paramValue;
 		}
 
 
-
-
-	}
+    }
 
 }
 
