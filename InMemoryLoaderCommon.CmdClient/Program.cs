@@ -205,6 +205,30 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("GetMd5HashAsStringAsync [{0}]", getMd5HashAsStringAsync.Length);
 
 
+            // RijndaelManaged
+            // ####################################################################################
+
+            var setCryptoParameter = AppBase.SetCryptoParameter("nEed!som_p", "s@lTe!lOl", "SHA1", 2, "!VaCztorR=qw712_X<>", 256);
+            Log.InfoFormat("SetCryptoParameter [{0}]", setCryptoParameter);
+
+            var encrypt = AppBase.Encrypt("tHa_Pwd0815!");
+            Log.InfoFormat("Encrypt [{0}]", encrypt);
+
+            var decrypt = AppBase.Decrypt(encrypt);
+            Log.InfoFormat("Decrypt [{0}]", decrypt);
+
+
+            var setCryptoParameterAsync = await AppBase.SetCryptoParameterAsync("nEed!som_p", "s@lTe!lOl", "SHA1", 2, "!VaCztorR=qw712_X<>", 256);
+            Log.InfoFormat("SetCryptoParameterAsync [{0}]", setCryptoParameterAsync);
+
+            var encryptAsync = await AppBase.EncryptAsync("tHa_Pwd0815!");
+            Log.InfoFormat("EncryptAsync [{0}]", encryptAsync);
+
+            var decryptAsync = await AppBase.DecryptAsync(encryptAsync);
+            Log.InfoFormat("DecryptAsync [{0}]", decryptAsync);
+
+
+
 
 
 

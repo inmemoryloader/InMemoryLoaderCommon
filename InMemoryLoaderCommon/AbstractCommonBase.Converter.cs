@@ -318,6 +318,52 @@ namespace InMemoryLoaderCommon
             return await InvokeMethodAsync(Crypt, "GetMd5HashAsString", paramArgs);
         }
 
+
+        public dynamic SetCryptoParameter(string paramPhrase, string paramSalt, string paramHash, int paramIteration, string paramVector, int paramKeySize)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramPhrase, paramSalt, paramHash, paramIteration, paramVector, paramKeySize };
+            return ComponentLoader.InvokeMethod(Crypt, "SetCryptoParameter", paramArgs);
+        }
+
+        public dynamic Encrypt(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "Encrypt", paramArgs);
+        }
+
+        public dynamic Decrypt(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Crypt, "Decrypt", paramArgs);
+        }
+
+
+        public async Task<dynamic> SetCryptoParameterAsync(string paramPhrase, string paramSalt, string paramHash, int paramIteration, string paramVector, int paramKeySize)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramPhrase, paramSalt, paramHash, paramIteration, paramVector, paramKeySize };
+            return await InvokeMethodAsync(Crypt, "SetCryptoParameter", paramArgs);
+        }
+
+        public async Task<dynamic> EncryptAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "Encrypt", paramArgs);
+        }
+
+        public async Task<dynamic> DecryptAsync(string paramValue)
+        {
+            if (!CryptSet) SetCrypt();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Crypt, "Decrypt", paramArgs);
+        }
+
+
+
         #endregion
 
     }
