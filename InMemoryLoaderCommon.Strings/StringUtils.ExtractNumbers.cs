@@ -23,14 +23,13 @@
 // THE SOFTWARE.
 
 using System;
-using InMemoryLoaderBase;
-using log4net;
 using System.Text.RegularExpressions;
 using System.Threading;
+using InMemoryLoaderBase;
 
 namespace InMemoryLoaderCommon.Strings
 {
-	public partial class Strings : AbstractComponent
+    public partial class Strings : AbstractComponent
 	{
 		/// <summary>
 		/// Ermittelt alle Zahlen aus einem String
@@ -39,7 +38,7 @@ namespace InMemoryLoaderCommon.Strings
 		/// <param name="extractOnlyIntegers">Gibt an, ob Ganzzahlen extrahiert werden sollen</param>
 		/// <returns>Gibt ein Array zurück, das alle Ganzzahlen speichert, 
 		/// die in dem übergebenen String vorkommen</returns>
-		public double[] ExtractNumbers(string source, bool extractOnlyIntegers)
+		public double[] ExtractNumbers(string paramValue, bool extractOnlyIntegers)
 		{
 			// Muster für den regulären Ausdruck definieren
 			string pattern;
@@ -49,11 +48,11 @@ namespace InMemoryLoaderCommon.Strings
 			}
 			else
 			{
-				string decimalSeparator = Regex.Escape( Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+				var decimalSeparator = Regex.Escape( Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator);
 				pattern = @"\d{1,}" + decimalSeparator + @"{0,1}\d{0,}";
 			}
 			// Die Treffer ermitteln
-			MatchCollection matches = Regex.Matches(source, pattern);
+			MatchCollection matches = Regex.Matches(paramValue, pattern);
 			// Das Ergebnis in ein double-Array kopieren
 			double[] result = new double[matches.Count];
 			for (int i = 0; i < matches.Count; i++)

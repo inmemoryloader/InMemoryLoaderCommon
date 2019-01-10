@@ -471,6 +471,21 @@ namespace InMemoryLoaderCommon
         }
 
 
+        public dynamic ExtractNumbers(string paramValue, bool extractOnlyIntegers)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, extractOnlyIntegers };
+            return ComponentLoader.InvokeMethod(Strings, "ExtractNumbers", paramArgs);
+        }
+
+        public async Task<dynamic> ExtractNumbersAsync(string paramValue, bool extractOnlyIntegers)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, extractOnlyIntegers };
+            return await InvokeMethodAsync(Strings, "ExtractNumbers", paramArgs);
+        }
+
+
 
 
         #endregion

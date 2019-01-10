@@ -23,6 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Collections;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -124,11 +125,17 @@ namespace InMemoryLoaderCommon.CmdClient
             var toHashTable = "0=1|1=2|2=3";
             char toHashTableFelimiter = '|';
 
-            var stringToHashtable = AppBase.StringToHashtable(toHashTable, toHashTableFelimiter);
-            Log.InfoFormat("StringToHashtable [{0}]", stringToHashtable[0]);
+            var stringToHashtable = (Hashtable)AppBase.StringToHashtable(toHashTable, toHashTableFelimiter);
+            foreach (DictionaryEntry item in stringToHashtable)
+            {
+                Log.InfoFormat("StringToHashtable [{0}]", item.Value);
+            }
 
-            var stringToHashtableAsync = await AppBase.StringToHashtableAsync(toHashTable, toHashTableFelimiter);
-            Log.InfoFormat("StringToHashtableAsync [{0}]", stringToHashtableAsync[0]);
+            var stringToHashtableAsync = (Hashtable)await AppBase.StringToHashtableAsync(toHashTable, toHashTableFelimiter);
+            foreach (DictionaryEntry item in stringToHashtableAsync)
+            {
+                Log.InfoFormat("StringToHashtableAsync [{0}]", item.Value);
+            }
 
 
             // MemoryStreamToString
@@ -270,6 +277,18 @@ namespace InMemoryLoaderCommon.CmdClient
             var cutStringAsync = await AppBase.CutStringAsync(longStringWithNumbers, 16, StringDirection.Right);
             Log.InfoFormat("CutString [{0}]", cutStringAsync);
 
+
+            var extractNumbers = AppBase.ExtractNumbers(longStringWithNumbers, true);
+            foreach (var item in extractNumbers)
+            {
+                Log.InfoFormat("ExtractNumbers [{0}]", item.ToString());
+            }
+
+            var extractNumbersAsync = await AppBase.ExtractNumbersAsync(longStringWithNumbers, true);
+            foreach (var item in extractNumbersAsync)
+            {
+                Log.InfoFormat("ExtractNumbersAsync [{0}]", item.ToString());
+            }
 
 
             // end
