@@ -23,9 +23,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Collections;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using InMemoryLoaderBase.HelperEnum;
 using log4net;
 
 namespace InMemoryLoaderCommon.CmdClient
@@ -123,11 +125,17 @@ namespace InMemoryLoaderCommon.CmdClient
             var toHashTable = "0=1|1=2|2=3";
             char toHashTableFelimiter = '|';
 
-            var stringToHashtable = AppBase.StringToHashtable(toHashTable, toHashTableFelimiter);
-            Log.InfoFormat("StringToHashtable [{0}]", stringToHashtable[0]);
+            var stringToHashtable = (Hashtable)AppBase.StringToHashtable(toHashTable, toHashTableFelimiter);
+            foreach (DictionaryEntry item in stringToHashtable)
+            {
+                Log.InfoFormat("StringToHashtable [{0}]", item.Value);
+            }
 
-            var stringToHashtableAsync = await AppBase.StringToHashtableAsync(toHashTable, toHashTableFelimiter);
-            Log.InfoFormat("StringToHashtableAsync [{0}]", stringToHashtableAsync[0]);
+            var stringToHashtableAsync = (Hashtable)await AppBase.StringToHashtableAsync(toHashTable, toHashTableFelimiter);
+            foreach (DictionaryEntry item in stringToHashtableAsync)
+            {
+                Log.InfoFormat("StringToHashtableAsync [{0}]", item.Value);
+            }
 
 
             // MemoryStreamToString
@@ -247,14 +255,40 @@ namespace InMemoryLoaderCommon.CmdClient
             // ####################################################################################
 
             var longStringToWork = "InMemoryLoader ist eine in C# (Mono) geschriebene Funktions- oder Klassen-Bibliothek die das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht ohne eine Referenz in der Project-Solution vorauszusetzen.";
+            var longStringWithNumbers = "211 commits, 4 branches und über 6000 Downloads sprechen für sich!";
 
-            var abbreviateString = AppBase.AbbreviateString(longStringToWork, 64);
+            var abbreviateString = AppBase.AbbreviateString(longStringToWork, 32);
             Log.InfoFormat("AbbreviateString [{0}]", abbreviateString);
 
-            var abbreviateStringAsync = await AppBase.AbbreviateStringAsync(longStringToWork, 64);
+            var abbreviateStringAsync = await AppBase.AbbreviateStringAsync(longStringToWork, 32);
             Log.InfoFormat("AbbreviateStringAsync [{0}]", abbreviateStringAsync);
 
 
+            var countOccurenceOfString = AppBase.CountOccurenceOfString(longStringToWork, "in");
+            Log.InfoFormat("CountOccurenceOfString [{0}]", countOccurenceOfString);
+
+            var countOccurenceOfStringAsync = await AppBase.CountOccurenceOfStringAsync(longStringToWork, "in");
+            Log.InfoFormat("CountOccurenceOfString [{0}]", countOccurenceOfStringAsync);
+
+
+            var cutString = AppBase.CutString(longStringWithNumbers, 16, StringDirection.Right);
+            Log.InfoFormat("CutString [{0}]", cutString);
+
+            var cutStringAsync = await AppBase.CutStringAsync(longStringWithNumbers, 16, StringDirection.Right);
+            Log.InfoFormat("CutString [{0}]", cutStringAsync);
+
+
+            var extractNumbers = AppBase.ExtractNumbers(longStringWithNumbers, true);
+            foreach (var item in extractNumbers)
+            {
+                Log.InfoFormat("ExtractNumbers [{0}]", item.ToString());
+            }
+
+            var extractNumbersAsync = await AppBase.ExtractNumbersAsync(longStringWithNumbers, true);
+            foreach (var item in extractNumbersAsync)
+            {
+                Log.InfoFormat("ExtractNumbersAsync [{0}]", item.ToString());
+            }
 
 
             // end

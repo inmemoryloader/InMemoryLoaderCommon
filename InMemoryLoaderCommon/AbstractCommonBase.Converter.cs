@@ -28,6 +28,7 @@ using System.Text;
 using System.Threading.Tasks;
 using InMemoryLoader;
 using InMemoryLoaderBase;
+using InMemoryLoaderBase.HelperEnum;
 
 namespace InMemoryLoaderCommon
 {
@@ -437,6 +438,51 @@ namespace InMemoryLoaderCommon
             if (!StringsSet) SetStrings();
             object[] paramArgs = { paramValue, maxCharCount };
             return await InvokeMethodAsync(Strings, "Abbreviate", paramArgs);
+        }
+
+
+        public dynamic CountOccurenceOfString(string paramValue, string paramMatch)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramMatch };
+            return ComponentLoader.InvokeMethod(Strings, "CountOccurenceOfString", paramArgs);
+        }
+
+        public async Task<dynamic> CountOccurenceOfStringAsync(string paramValue, string paramMatch)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramMatch };
+            return await InvokeMethodAsync(Strings, "CountOccurenceOfString", paramArgs);
+        }
+
+
+        public dynamic CutString(string paramValue, int paramSize, StringDirection paramDirection)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramSize, paramDirection };
+            return ComponentLoader.InvokeMethod(Strings, "CutString", paramArgs);
+        }
+
+        public async Task<dynamic> CutStringAsync(string paramValue, int paramSize, StringDirection paramDirection)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramSize, paramDirection };
+            return await InvokeMethodAsync(Strings, "CutString", paramArgs);
+        }
+
+
+        public dynamic ExtractNumbers(string paramValue, bool extractOnlyIntegers)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, extractOnlyIntegers };
+            return ComponentLoader.InvokeMethod(Strings, "ExtractNumbers", paramArgs);
+        }
+
+        public async Task<dynamic> ExtractNumbersAsync(string paramValue, bool extractOnlyIntegers)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, extractOnlyIntegers };
+            return await InvokeMethodAsync(Strings, "ExtractNumbers", paramArgs);
         }
 
 

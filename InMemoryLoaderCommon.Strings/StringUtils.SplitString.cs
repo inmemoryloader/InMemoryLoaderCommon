@@ -22,20 +22,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using InMemoryLoaderBase;
 using log4net;
+using System.Text.RegularExpressions;
 
 namespace InMemoryLoaderCommon.Strings
 {
-    public partial class Strings : AbstractComponent
-    {
-        static readonly ILog Log = LogManager.GetLogger(typeof(Strings));
-
-        public Strings()
-        {
-            Log.DebugFormat("Create a new instance of Type: {0}", GetType());
-        }
-
-    }
-
+	public partial class Strings : AbstractComponent
+	{
+		/// <summary>
+		/// Splits the string.
+		/// </summary>
+		/// <returns>The string.</returns>
+		/// <param name="source">Source.</param>
+		/// <param name="split">Split.</param>
+		public string[] SplitString(string source, char split)
+		{
+			string[] words = source.Split(split);
+			return words;
+		}
+	}
 }
+

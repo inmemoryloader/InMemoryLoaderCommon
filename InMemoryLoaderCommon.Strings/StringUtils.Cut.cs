@@ -23,19 +23,40 @@
 // THE SOFTWARE.
 
 using InMemoryLoaderBase;
-using log4net;
+using InMemoryLoaderBase.HelperEnum;
 
 namespace InMemoryLoaderCommon.Strings
 {
     public partial class Strings : AbstractComponent
-    {
-        static readonly ILog Log = LogManager.GetLogger(typeof(Strings));
+	{
+		/// <summary>
+		/// Cut the specified value, size and direction.
+		/// </summary>
+		/// <param name="value">Value.</param>
+		/// <param name="size">Size.</param>
+		/// <param name="direction">Direction.</param>
+		public string CutString(string paramValue, int paramSize, StringDirection paramDirection)
+		{
+			string str;
+			int length = paramValue.Length;
+			int cut;
 
-        public Strings()
-        {
-            Log.DebugFormat("Create a new instance of Type: {0}", GetType());
-        }
-
-    }
-
+			if (length > paramSize && paramDirection == StringDirection.Left)
+			{
+				cut = length - paramSize;
+				str = paramValue.Remove(paramSize, cut);
+			}
+			else if (length > paramSize && paramDirection == StringDirection.Right)
+			{
+				cut = paramSize;
+				str = paramValue.Remove(0, cut);
+			}
+			else
+			{
+				str = paramValue;
+			}
+			return str;
+		}
+	}
 }
+

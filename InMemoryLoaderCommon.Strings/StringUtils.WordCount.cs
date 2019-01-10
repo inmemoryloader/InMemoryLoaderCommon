@@ -22,20 +22,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using InMemoryLoaderBase;
 using log4net;
+using System.Text.RegularExpressions;
 
 namespace InMemoryLoaderCommon.Strings
 {
-    public partial class Strings : AbstractComponent
-    {
-        static readonly ILog Log = LogManager.GetLogger(typeof(Strings));
-
-        public Strings()
-        {
-            Log.DebugFormat("Create a new instance of Type: {0}", GetType());
-        }
-
-    }
-
+	public partial class Strings : AbstractComponent
+	{
+		/// <summary>
+		/// Ermittelt die Anzahl der Wörter in einem String mit beliebigen Zeichen (langsam im Vergleich zu <see cref="WordCountLatin"/>
+		/// </summary>
+		/// <param name="source">Der String</param>
+		/// <returns>Gibt die ermittelte Anzahl zurück</returns>
+		/// <remarks>Diese Methode arbeitet sehr sicher, auch für Wörter 
+		/// mit Unicode-Zeichen, die nicht aus der lateinischen Teiltabelle
+		/// stammen (Zeichen ab Zeichen 0x0370). 
+		/// WordCount ist im Vergleich zu <see cref="WordCountLatin"/>
+		/// aber leider auch recht langsam.</remarks>
+		public long WordCount(string source)
+		{
+			return Regex.Matches(source, @"\w{1,}").Count;
+		}
+	}
 }
+

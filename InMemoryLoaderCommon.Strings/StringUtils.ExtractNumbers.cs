@@ -22,20 +22,45 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
+using System.Text.RegularExpressions;
+using System.Threading;
 using InMemoryLoaderBase;
-using log4net;
 
 namespace InMemoryLoaderCommon.Strings
 {
     public partial class Strings : AbstractComponent
-    {
-        static readonly ILog Log = LogManager.GetLogger(typeof(Strings));
-
-        public Strings()
-        {
-            Log.DebugFormat("Create a new instance of Type: {0}", GetType());
-        }
-
-    }
-
+	{
+		/// <summary>
+		/// Ermittelt alle Zahlen aus einem String
+		/// </summary>
+		/// <param name="source">Der String</param>
+		/// <param name="extractOnlyIntegers">Gibt an, ob Ganzzahlen extrahiert werden sollen</param>
+		/// <returns>Gibt ein Array zurück, das alle Ganzzahlen speichert, 
+		/// die in dem übergebenen String vorkommen</returns>
+		public double[] ExtractNumbers(string paramValue, bool extractOnlyIntegers)
+		{
+			// Muster für den regulären Ausdruck definieren
+			string pattern;
+			if (extractOnlyIntegers)
+			{
+				pattern = @"\d{1,}";
+			}
+			else
+			{
+				var decimalSeparator = Regex.Escape( Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+				pattern = @"\d{1,}" + decimalSeparator + @"{0,1}\d{0,}";
+			}
+			// Die Treffer ermitteln
+			MatchCollection matches = Regex.Matches(paramValue, pattern);
+			// Das Ergebnis in ein double-Array kopieren
+			double[] result = new double[matches.Count];
+			for (int i = 0; i < matches.Count; i++)
+			{
+				result[i] = Convert.ToDouble(matches[i].Value);
+			}
+			return result;
+		}
+	}
 }
+

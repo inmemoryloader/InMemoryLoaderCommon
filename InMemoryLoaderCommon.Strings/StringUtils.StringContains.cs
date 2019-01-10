@@ -22,20 +22,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using InMemoryLoaderBase;
 using log4net;
+using System.Text.RegularExpressions;
 
 namespace InMemoryLoaderCommon.Strings
 {
-    public partial class Strings : AbstractComponent
-    {
-        static readonly ILog Log = LogManager.GetLogger(typeof(Strings));
-
-        public Strings()
-        {
-            Log.DebugFormat("Create a new instance of Type: {0}", GetType());
-        }
-
-    }
-
+	public partial class Strings : AbstractComponent
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="strToCheck"></param>
+		/// <param name="strContains"></param>
+		/// <returns></returns>
+		public bool StringContains(string strToCheck, string strContains)
+		{
+			if (strToCheck == null || strContains == null)
+			{
+				return false;
+			}
+			if (strToCheck.Contains(strContains))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
 }
+

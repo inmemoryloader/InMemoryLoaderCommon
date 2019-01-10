@@ -22,20 +22,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using InMemoryLoaderBase;
 using log4net;
 
 namespace InMemoryLoaderCommon.Strings
 {
-    public partial class Strings : AbstractComponent
-    {
-        static readonly ILog Log = LogManager.GetLogger(typeof(Strings));
-
-        public Strings()
-        {
-            Log.DebugFormat("Create a new instance of Type: {0}", GetType());
-        }
-
-    }
-
+	public partial class Strings : AbstractComponent
+	{
+		/// <summary>
+		/// Uppercases the first.
+		/// </summary>
+		/// <returns>The first.</returns>
+		/// <param name="paramString">Parameter string.</param>
+		public string UppercaseFirst(string paramString)
+		{
+			// Check for empty string.
+			if (string.IsNullOrEmpty(paramString))
+			{
+				return string.Empty;
+			}
+			// Return char and concat substring.
+			return char.ToUpper(paramString[0]) + paramString.Substring(1);
+		}
+		/// <summary>
+		/// Lowercases the first.
+		/// </summary>
+		/// <returns>The first.</returns>
+		/// <param name="paramString">Parameter string.</param>
+		public string LowercaseFirst(string paramString)
+		{
+			// Check for empty string.
+			if (string.IsNullOrEmpty(paramString))
+			{
+				return string.Empty;
+			}
+			// Return char and concat substring.
+			return char.ToLower(paramString[0]) + paramString.Substring(1);
+		}
+	}
 }
+

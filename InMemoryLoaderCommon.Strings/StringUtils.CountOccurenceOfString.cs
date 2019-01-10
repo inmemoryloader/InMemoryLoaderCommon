@@ -22,20 +22,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Text.RegularExpressions;
 using InMemoryLoaderBase;
-using log4net;
 
 namespace InMemoryLoaderCommon.Strings
 {
     public partial class Strings : AbstractComponent
-    {
-        static readonly ILog Log = LogManager.GetLogger(typeof(Strings));
+	{
+        /// <summary>
+        /// Counts the occurence of string.
+        /// </summary>
+        /// <returns>The occurence of string.</returns>
+        /// <param name="paramValue">Source.</param>
+        /// <param name="match">Match.</param>
+        public long CountOccurenceOfString(string paramValue, string match)
+		{
+			return Regex.Matches(paramValue, @match).Count;
+		}
 
-        public Strings()
-        {
-            Log.DebugFormat("Create a new instance of Type: {0}", GetType());
-        }
-
-    }
+	}
 
 }
