@@ -1,7 +1,7 @@
 ﻿//
 // StringUtils.WordWrap.cs
 //
-// Author: responsive kaysta <me@responsive-kaysta.ch>
+// Author: responsive kaysta
 //
 // Copyright (c) 2017 responsive kaysta
 //
@@ -28,9 +28,9 @@ using InMemoryLoaderBase;
 using System.Text.RegularExpressions;
 using System.Text;
 
-namespace PowerUpStringUtils
+namespace InMemoryLoaderCommon.Strings
 {
-    public partial class StringUtils : AbstractComponent
+    public partial class Strings : AbstractComponent
     {
         /// <summary>
         /// Bricht einen String an einem (virtuellen) rechten Rand um

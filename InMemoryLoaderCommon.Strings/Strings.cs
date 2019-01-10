@@ -1,9 +1,8 @@
-﻿//
-// MyClass.cs
+﻿// Strings.cs
 //
 // Author: Kay Stuckenschmidt
 //
-// Copyright (c) 2019 responsive IT
+// Copyright (c) 2017 responsive-kaysta
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
