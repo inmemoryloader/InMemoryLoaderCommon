@@ -256,7 +256,11 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("AbbreviateStringAsync [{0}]", abbreviateStringAsync);
 
 
+            var countOccurenceOfString = AppBase.CountOccurenceOfString(longStringToWork, "in");
+            Log.InfoFormat("CountOccurenceOfString [{0}]", countOccurenceOfString);
 
+            var countOccurenceOfStringAsync = await AppBase.CountOccurenceOfStringAsync(longStringToWork, "in");
+            Log.InfoFormat("CountOccurenceOfString [{0}]", countOccurenceOfStringAsync);
 
 
             // end

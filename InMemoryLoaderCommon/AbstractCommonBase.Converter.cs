@@ -440,6 +440,20 @@ namespace InMemoryLoaderCommon
         }
 
 
+        public dynamic CountOccurenceOfString(string paramValue, string paramMatch)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramMatch };
+            return ComponentLoader.InvokeMethod(Strings, "CountOccurenceOfString", paramArgs);
+        }
+
+        public async Task<dynamic> CountOccurenceOfStringAsync(string paramValue, string paramMatch)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramMatch };
+            return await InvokeMethodAsync(Strings, "CountOccurenceOfString", paramArgs);
+        }
+
 
 
         #endregion
