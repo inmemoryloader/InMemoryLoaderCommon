@@ -26,6 +26,7 @@
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using InMemoryLoaderBase.HelperEnum;
 using log4net;
 
 namespace InMemoryLoaderCommon.CmdClient
@@ -261,6 +262,14 @@ namespace InMemoryLoaderCommon.CmdClient
 
             var countOccurenceOfStringAsync = await AppBase.CountOccurenceOfStringAsync(longStringToWork, "in");
             Log.InfoFormat("CountOccurenceOfString [{0}]", countOccurenceOfStringAsync);
+
+
+            var cutString = AppBase.CutString(longStringWithNumbers, 16, StringDirection.Right);
+            Log.InfoFormat("CutString [{0}]", cutString);
+
+            var cutStringAsync = await AppBase.CutStringAsync(longStringWithNumbers, 16, StringDirection.Right);
+            Log.InfoFormat("CutString [{0}]", cutStringAsync);
+
 
 
             // end

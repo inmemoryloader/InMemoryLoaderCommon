@@ -28,6 +28,7 @@ using System.Text;
 using System.Threading.Tasks;
 using InMemoryLoader;
 using InMemoryLoaderBase;
+using InMemoryLoaderBase.HelperEnum;
 
 namespace InMemoryLoaderCommon
 {
@@ -453,6 +454,22 @@ namespace InMemoryLoaderCommon
             object[] paramArgs = { paramValue, paramMatch };
             return await InvokeMethodAsync(Strings, "CountOccurenceOfString", paramArgs);
         }
+
+
+        public dynamic CutString(string paramValue, int paramSize, StringDirection paramDirection)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramSize, paramDirection };
+            return ComponentLoader.InvokeMethod(Strings, "CutString", paramArgs);
+        }
+
+        public async Task<dynamic> CutStringAsync(string paramValue, int paramSize, StringDirection paramDirection)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramSize, paramDirection };
+            return await InvokeMethodAsync(Strings, "CutString", paramArgs);
+        }
+
 
 
 

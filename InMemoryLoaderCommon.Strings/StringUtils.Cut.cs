@@ -23,13 +23,11 @@
 // THE SOFTWARE.
 
 using InMemoryLoaderBase;
-using log4net;
-using System.Text.RegularExpressions;
 using InMemoryLoaderBase.HelperEnum;
 
 namespace InMemoryLoaderCommon.Strings
 {
-	public partial class Strings : AbstractComponent
+    public partial class Strings : AbstractComponent
 	{
 		/// <summary>
 		/// Cut the specified value, size and direction.
@@ -37,25 +35,25 @@ namespace InMemoryLoaderCommon.Strings
 		/// <param name="value">Value.</param>
 		/// <param name="size">Size.</param>
 		/// <param name="direction">Direction.</param>
-		public string Cut(string value, int size, StringDirection direction)
+		public string CutString(string paramValue, int paramSize, StringDirection paramDirection)
 		{
 			string str;
-			int length = value.Length;
+			int length = paramValue.Length;
 			int cut;
 
-			if (length > size && direction == StringDirection.Left)
+			if (length > paramSize && paramDirection == StringDirection.Left)
 			{
-				cut = length - size;
-				str = value.Remove(size, cut);
+				cut = length - paramSize;
+				str = paramValue.Remove(paramSize, cut);
 			}
-			else if (length > size && direction == StringDirection.Right)
+			else if (length > paramSize && paramDirection == StringDirection.Right)
 			{
-				cut = size;
-				str = value.Remove(0, cut);
+				cut = paramSize;
+				str = paramValue.Remove(0, cut);
 			}
 			else
 			{
-				str = value;
+				str = paramValue;
 			}
 			return str;
 		}
