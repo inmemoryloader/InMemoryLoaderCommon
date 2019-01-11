@@ -22,24 +22,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using InMemoryLoaderBase;
-using log4net;
 using System.Text.RegularExpressions;
+using InMemoryLoaderBase;
 
 namespace InMemoryLoaderCommon.Strings
 {
-	public partial class Strings : AbstractComponent
+    public partial class Strings : AbstractComponent
 	{
-		/// <summary>
-		/// Extrahiert alle Wörter aus einem String
-		/// </summary>
-		/// <param name="source">Der String</param>
-		/// <returns>Gibt ein String-Array mit den einzelnen Wörtern zurück</returns>
-		public string[] GetWords(string source)
+
+        /// <summary>
+        /// Extrahiert alle Wörter aus einem String
+        /// </summary>
+        /// <param name="paramValue">Der String</param>
+        /// <returns>Gibt ein String-Array mit den einzelnen Wörtern zurück</returns>
+        public string[] GetWords(string paramValue)
 		{
 			// Alle Wörter abfragen
-			MatchCollection matches = Regex.Matches(source, @"\w{1,}");
+			var matches = Regex.Matches(paramValue, @"\w{1,}");
 
 			// Die MatchCollection in ein String-Array kopieren und zurückgeben
 			string[] words = new string[matches.Count];
@@ -53,25 +52,26 @@ namespace InMemoryLoaderCommon.Strings
         /// <summary>
         /// GetWords
         /// </summary>
-        /// <param name="source"></param>
-        /// <param name="minLength"></param>
+        /// <param name="paramValue"></param>
+        /// <param name="paramMinLength"></param>
         /// <returns>GetWords</returns>
-		public string[] GetWords(string source, int minLength)
+		public string[] GetWords(string paramValue, int paramMinLength)
 		{
 			// Alle Wörter abfragen
-			MatchCollection matches = Regex.Matches(source, @"\w{1,}");
+			var matches = Regex.Matches(paramValue, @"\w{1,}");
 
 			// Die MatchCollection in ein String-Array kopieren und zurückgeben
 			string[] words = new string[matches.Count];
 			for (int i = 0; i < matches.Count; i++)
 			{
-				if (matches[i].Value.Length >= minLength)
+				if (matches[i].Value.Length >= paramMinLength)
 				{
 					words[i] = matches[i].Value; 
 				}
 			}
 			return words;
 		}
+
 	}
 }
 

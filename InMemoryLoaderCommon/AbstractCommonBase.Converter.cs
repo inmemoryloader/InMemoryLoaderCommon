@@ -426,6 +426,9 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // AbbreviateString
+        // ####################################################################################
+
         public dynamic AbbreviateString(string paramValue, int maxCharCount)
         {
             if (!StringsSet) SetStrings();
@@ -440,6 +443,9 @@ namespace InMemoryLoaderCommon
             return await InvokeMethodAsync(Strings, "Abbreviate", paramArgs);
         }
 
+
+        // CountOccurenceOfString
+        // ####################################################################################
 
         public dynamic CountOccurenceOfString(string paramValue, string paramMatch)
         {
@@ -456,6 +462,9 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // CutString
+        // ####################################################################################
+
         public dynamic CutString(string paramValue, int paramSize, StringDirection paramDirection)
         {
             if (!StringsSet) SetStrings();
@@ -470,6 +479,9 @@ namespace InMemoryLoaderCommon
             return await InvokeMethodAsync(Strings, "CutString", paramArgs);
         }
 
+
+        // ExtractNumbers
+        // ####################################################################################
 
         public dynamic ExtractNumbers(string paramValue, bool extractOnlyIntegers)
         {
