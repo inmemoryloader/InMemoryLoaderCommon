@@ -343,6 +343,19 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("ReplaceCharAtAsync [{0}]", replaceCharAtAsync);
 
 
+            var stringToSplit = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
+
+            var splitString = AppBase.SplitString(stringToSplit, ',');
+            foreach (var item in splitString)
+            {
+                Log.InfoFormat("SplitString [{0}]", item);
+            }
+
+            var splitStringAsync = await AppBase.SplitStringAsync(stringToSplit, ',');
+            foreach (var item in splitStringAsync)
+            {
+                Log.InfoFormat("SplitStringAsync [{0}]", item);
+            }
 
 
 
