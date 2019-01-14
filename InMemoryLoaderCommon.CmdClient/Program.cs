@@ -315,6 +315,7 @@ namespace InMemoryLoaderCommon.CmdClient
                 Log.InfoFormat("GetWordsAsync [{0}] with a minimum length of [{1}]", item, 5);
             }
 
+
             var stringToReplace = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
 
             var replaceString = AppBase.ReplaceString(stringToReplace, "consetetur", "[replaced]", false, 0, -1);
@@ -340,6 +341,10 @@ namespace InMemoryLoaderCommon.CmdClient
 
             var replaceCharAtAsync = await AppBase.ReplaceCharAtAsync(stringToReplace, 7, '!');
             Log.InfoFormat("ReplaceCharAtAsync [{0}]", replaceCharAtAsync);
+
+
+
+
 
             // end
             // ####################################################################################

@@ -590,6 +590,28 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // SplitString
+        // ####################################################################################
+
+        public dynamic SplitString(string source, char split)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, split };
+            return ComponentLoader.InvokeMethod(Strings, "SplitString", paramArgs);
+        }
+
+        public async Task<dynamic> SplitStringAsync(string source, char split)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, split };
+            return await InvokeMethodAsync(Strings, "SplitString", paramArgs);
+        }
+
+
+
+
+
+
         #endregion
 
 
