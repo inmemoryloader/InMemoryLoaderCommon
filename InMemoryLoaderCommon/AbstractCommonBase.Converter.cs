@@ -498,6 +498,40 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // GetWords
+        // ####################################################################################
+
+        public dynamic GetWords(string paramValue)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Strings, "GetWords", paramArgs);
+        }
+
+        public async Task<dynamic> GetWordsAsync(string paramValue)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Strings, "GetWords", paramArgs);
+        }
+
+        public dynamic GetWords(string paramValue, int paramMinLength)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramMinLength };
+            return ComponentLoader.InvokeMethod(Strings, "GetWords", paramArgs);
+        }
+
+        public async Task<dynamic> GetWordsAsync(string paramValue, int paramMinLength)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramMinLength };
+            return await InvokeMethodAsync(Strings, "GetWords", paramArgs);
+        }
+
+
+
+
 
 
         #endregion

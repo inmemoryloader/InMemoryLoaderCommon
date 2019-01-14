@@ -291,6 +291,33 @@ namespace InMemoryLoaderCommon.CmdClient
             }
 
 
+            var getWords = AppBase.GetWords(longStringWithNumbers);
+            foreach (var item in getWords)
+            {
+                Log.InfoFormat("GetWords [{0}]", item);
+            }
+
+            var getWordsAsync = await AppBase.GetWordsAsync(longStringWithNumbers);
+            foreach (var item in getWordsAsync)
+            {
+                Log.InfoFormat("GetWordsAsync [{0}]", item);
+            }
+
+            var getWordsMinLength = AppBase.GetWords(longStringToWork, 5);
+            foreach (var item in getWords)
+            {
+                Log.InfoFormat("GetWords [{0}] with a minimum length of [{1}]", item, 5);
+            }
+
+            var getWordsMinLengthAsync = await AppBase.GetWordsAsync(longStringToWork, 5);
+            foreach (var item in getWordsAsync)
+            {
+                Log.InfoFormat("GetWordsAsync [{0}] with a minimum length of [{1}]", item, 5);
+            }
+
+
+
+
 
 
 

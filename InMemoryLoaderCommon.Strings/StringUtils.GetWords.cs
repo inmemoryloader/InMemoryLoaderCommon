@@ -73,5 +73,5 @@ namespace InMemoryLoaderCommon.Strings
 		}
 
 	}
-}
 
+}
