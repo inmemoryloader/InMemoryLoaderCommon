@@ -531,8 +531,36 @@ namespace InMemoryLoaderCommon
 
 
 
+        // Left / Right
+        // ####################################################################################
 
+        public dynamic CutStringLeft(string paramValue, int paramCount)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramCount };
+            return ComponentLoader.InvokeMethod(Strings, "CutStringLeft", paramArgs);
+        }
 
+        public async Task<dynamic> CutStringLeftAsync(string paramValue, int paramCount)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramCount };
+            return await InvokeMethodAsync(Strings, "CutStringLeft", paramArgs);
+        }
+
+        public dynamic CutStringRight(string paramValue, int paramCount)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramCount };
+            return ComponentLoader.InvokeMethod(Strings, "CutStringRight", paramArgs);
+        }
+
+        public async Task<dynamic> CutStringRightAsync(string paramValue, int paramCount)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramCount };
+            return await InvokeMethodAsync(Strings, "CutStringRight", paramArgs);
+        }
 
         #endregion
 

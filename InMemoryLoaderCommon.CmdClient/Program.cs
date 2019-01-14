@@ -316,8 +316,17 @@ namespace InMemoryLoaderCommon.CmdClient
             }
 
 
+            var cutStringLeft = AppBase.CutStringLeft(longStringToWork, 7);
+            Log.InfoFormat("CutStringLeft [{0}] with a length of [{1}]", cutStringLeft, 7);
 
+            var cutStringLeftAsync = await AppBase.CutStringLeftAsync(longStringToWork, 7);
+            Log.InfoFormat("CutStringLeftAsync [{0}] with a length of [{1}]", cutStringLeftAsync, 7);
 
+            var cutStringRight = AppBase.CutStringRight(longStringToWork, 9);
+            Log.InfoFormat("CutStringRight [{0}] with a length of [{1}]", cutStringLeft, 9);
+
+            var cutStringRightAsync = await AppBase.CutStringRightAsync(longStringToWork, 9);
+            Log.InfoFormat("CutStringRightAsync [{0}] with a length of [{1}]", cutStringLeftAsync, 9);
 
 
 
