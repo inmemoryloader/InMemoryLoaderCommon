@@ -530,37 +530,65 @@ namespace InMemoryLoaderCommon
         }
 
 
-
-        // Left / Right
+        // ReplaceString/Char
         // ####################################################################################
 
-        public dynamic CutStringLeft(string paramValue, int paramCount)
+        public dynamic ReplaceString(string source, string find, string replacement, bool ignoreCase, int start, int count)
         {
             if (!StringsSet) SetStrings();
-            object[] paramArgs = { paramValue, paramCount };
-            return ComponentLoader.InvokeMethod(Strings, "CutStringLeft", paramArgs);
+            object[] paramArgs = { source, find, replacement, ignoreCase, start, count };
+            return ComponentLoader.InvokeMethod(Strings, "ReplaceString", paramArgs);
         }
 
-        public async Task<dynamic> CutStringLeftAsync(string paramValue, int paramCount)
+        public async Task<dynamic> ReplaceStringAsync(string source, string find, string replacement, bool ignoreCase, int start, int count)
         {
             if (!StringsSet) SetStrings();
-            object[] paramArgs = { paramValue, paramCount };
-            return await InvokeMethodAsync(Strings, "CutStringLeft", paramArgs);
+            object[] paramArgs = { source, find, replacement, ignoreCase, start, count };
+            return await InvokeMethodAsync(Strings, "ReplaceString", paramArgs);
         }
 
-        public dynamic CutStringRight(string paramValue, int paramCount)
+        public dynamic ReplaceString(string source, string find, string replacement, bool ignoreCase)
         {
             if (!StringsSet) SetStrings();
-            object[] paramArgs = { paramValue, paramCount };
-            return ComponentLoader.InvokeMethod(Strings, "CutStringRight", paramArgs);
+            object[] paramArgs = { source, find, replacement, ignoreCase };
+            return ComponentLoader.InvokeMethod(Strings, "ReplaceString", paramArgs);
         }
 
-        public async Task<dynamic> CutStringRightAsync(string paramValue, int paramCount)
+        public async Task<dynamic> ReplaceStringAsync(string source, string find, string replacement, bool ignoreCase)
         {
             if (!StringsSet) SetStrings();
-            object[] paramArgs = { paramValue, paramCount };
-            return await InvokeMethodAsync(Strings, "CutStringRight", paramArgs);
+            object[] paramArgs = { source, find, replacement, ignoreCase };
+            return await InvokeMethodAsync(Strings, "ReplaceString", paramArgs);
         }
+
+        public dynamic ReplaceString(string source, char ToReplace, char ReplaceWith)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, ToReplace, ReplaceWith };
+            return ComponentLoader.InvokeMethod(Strings, "ReplaceString", paramArgs);
+        }
+
+        public async Task<dynamic> ReplaceStringAsync(string source, char ToReplace, char ReplaceWith)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, ToReplace, ReplaceWith };
+            return await InvokeMethodAsync(Strings, "ReplaceString", paramArgs);
+        }
+
+        public dynamic ReplaceCharAt(string parmString, int parmPos, char parmChar)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { parmString, parmPos, parmChar };
+            return ComponentLoader.InvokeMethod(Strings, "ReplaceCharAt", paramArgs);
+        }
+
+        public async Task<dynamic> ReplaceCharAtAsync(string parmString, int parmPos, char parmChar)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { parmString, parmPos, parmChar };
+            return await InvokeMethodAsync(Strings, "ReplaceCharAt", paramArgs);
+        }
+
 
         #endregion
 

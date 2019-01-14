@@ -29,12 +29,7 @@ namespace InMemoryLoaderCommon.Strings
 {
     public partial class Strings : AbstractComponent
 	{
-		/// <summary>
-		/// Cut the specified value, size and direction.
-		/// </summary>
-		/// <param name="value">Value.</param>
-		/// <param name="size">Size.</param>
-		/// <param name="direction">Direction.</param>
+
 		public string CutString(string paramValue, int paramSize, StringDirection paramDirection)
 		{
 			string str;

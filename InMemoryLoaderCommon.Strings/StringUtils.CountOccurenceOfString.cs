@@ -29,12 +29,7 @@ namespace InMemoryLoaderCommon.Strings
 {
     public partial class Strings : AbstractComponent
 	{
-        /// <summary>
-        /// Counts the occurence of string.
-        /// </summary>
-        /// <returns>The occurence of string.</returns>
-        /// <param name="paramValue">Source.</param>
-        /// <param name="match">Match.</param>
+
         public long CountOccurenceOfString(string paramValue, string match)
 		{
 			return Regex.Matches(paramValue, @match).Count;
