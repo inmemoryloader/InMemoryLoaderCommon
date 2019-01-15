@@ -32,12 +32,7 @@ namespace InMemoryLoaderCommon.Strings
 {
     public partial class Strings : AbstractComponent
     {
-        /// <summary>
-        /// Bricht einen String an einem (virtuellen) rechten Rand um
-        /// </summary>
-        /// <param name="text">Der umzubrechende String</param>
-        /// <param name="maxCharWidth">Die maximale Zeichenbreite der Fläche auf der der String ausgegeben werden soll</param>
-        /// <returns>Gibt einen String zurück, der den Originalstring inklusive passenden Zeilenumbrüchen enthält</returns>
+
         public string WordWrap(string text, int maxCharWidth)
         {
             // StringBuilder für den umbrochenen Text erzeugen

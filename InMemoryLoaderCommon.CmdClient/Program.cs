@@ -65,7 +65,6 @@ namespace InMemoryLoaderCommon.CmdClient
             // ####################################################################################
 
             // StringToBoolean
-            // ####################################################################################
 
             var stringToBoolean = AppBase.StringToBoolean("1");
             Log.InfoFormat("StringToBoolean [{0}]", stringToBoolean);
@@ -74,7 +73,6 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("StringToBooleanAsync [{0}]", stringToBooleanAsync);
 
             // CharToBoolean
-            // ####################################################################################
 
             var charToBoolean = AppBase.CharToBoolean('1');
             Log.InfoFormat("CharToBoolean [{0}]", charToBoolean);
@@ -84,7 +82,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // BooleanToString
-            // ####################################################################################
 
             var booleanToString = AppBase.BooleanToString(false);
             Log.InfoFormat("BooleanToString [{0}]", booleanToString);
@@ -94,7 +91,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // BooleanToChar
-            // ####################################################################################
 
             var booleanToChar = AppBase.BooleanToChar(false);
             Log.InfoFormat("BooleanToChar [{0}]", booleanToChar);
@@ -104,7 +100,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // StringToByteArray
-            // ####################################################################################
 
             var stringToByteArray = (byte[])AppBase.StringToByteArray("0815");
             Log.InfoFormat("StringToByteArray [{0}]", stringToByteArray.Length);
@@ -120,7 +115,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // StringToHashtable
-            // ####################################################################################
 
             var toHashTable = "0=1|1=2|2=3";
             char toHashTableFelimiter = '|';
@@ -139,7 +133,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // MemoryStreamToString
-            // ####################################################################################
 
             var memoryStream = new MemoryStream(stringToByteArray2);
 
@@ -151,7 +144,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // ByteArrayToString
-            // ####################################################################################
 
             var byteArrayToString1 = AppBase.ByteArrayToString(stringToByteArray2);
             Log.InfoFormat("ByteArrayToString [{0}]", byteArrayToString1);
@@ -167,7 +159,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // StringFromUtf8ToAscii
-            // ####################################################################################
 
             var stringFromUtf8ToAscii = AppBase.StringFromUtf8ToAscii("0815 - 123698");
             Log.InfoFormat("StringFromUtf8ToAscii [{0}]", stringFromUtf8ToAscii);
@@ -177,7 +168,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // StringFromUtf8ToLatin1
-            // ####################################################################################
 
             var stringFromUtf8ToLatin1 = AppBase.StringFromUtf8ToLatin1("0815 - 123698");
             Log.InfoFormat("StringFromUtf8ToLatin1 [{0}]", stringFromUtf8ToLatin1);
@@ -187,7 +177,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // StringTo converter
-            // ####################################################################################
 
             var tryParseStringToLong = AppBase.TryParseStringToLong("123698");
             Log.InfoFormat("TryParseStringToLong [{0}]", tryParseStringToLong);
@@ -207,7 +196,6 @@ namespace InMemoryLoaderCommon.CmdClient
             // ####################################################################################
 
             // Md5Encryption
-            // ####################################################################################
 
             var md5Encryption = (byte[])AppBase.Md5Encryption("0815 - 123698");
             Log.InfoFormat("Md5Encryption [{0}]", md5Encryption.Length);
@@ -229,7 +217,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
 
             // RijndaelManaged
-            // ####################################################################################
 
             var setCryptoParameter = AppBase.SetCryptoParameter("nEed!som_p", "s@lTe!lOl", "SHA1", 2, "!VaCztorR=qw712_X<>", 256);
             Log.InfoFormat("SetCryptoParameter [{0}]", setCryptoParameter);
@@ -256,6 +243,11 @@ namespace InMemoryLoaderCommon.CmdClient
 
             var longStringToWork = "InMemoryLoader ist eine in C# (Mono) geschriebene Funktions- oder Klassen-Bibliothek die das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht ohne eine Referenz in der Project-Solution vorauszusetzen.";
             var longStringWithNumbers = "211 commits, 4 branches und über 6000 Downloads sprechen für sich!";
+            var stringToReplace = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
+            var stringToSplit = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
+
+
+            // AbbreviateString
 
             var abbreviateString = AppBase.AbbreviateString(longStringToWork, 32);
             Log.InfoFormat("AbbreviateString [{0}]", abbreviateString);
@@ -264,6 +256,8 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("AbbreviateStringAsync [{0}]", abbreviateStringAsync);
 
 
+            // CountOccurenceOfString
+
             var countOccurenceOfString = AppBase.CountOccurenceOfString(longStringToWork, "in");
             Log.InfoFormat("CountOccurenceOfString [{0}]", countOccurenceOfString);
 
@@ -271,12 +265,16 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("CountOccurenceOfStringAsync [{0}]", countOccurenceOfStringAsync);
 
 
+            // CutString
+
             var cutString = AppBase.CutString(longStringWithNumbers, 16, StringDirection.Right);
             Log.InfoFormat("CutString [{0}]", cutString);
 
             var cutStringAsync = await AppBase.CutStringAsync(longStringWithNumbers, 16, StringDirection.Right);
             Log.InfoFormat("CutStringAsync [{0}]", cutStringAsync);
 
+
+            // ExtractNumbers
 
             var extractNumbers = AppBase.ExtractNumbers(longStringWithNumbers, true);
             foreach (var item in extractNumbers)
@@ -290,6 +288,7 @@ namespace InMemoryLoaderCommon.CmdClient
                 Log.InfoFormat("ExtractNumbersAsync [{0}]", item.ToString());
             }
 
+            // GetWords
 
             var getWords = AppBase.GetWords(longStringWithNumbers);
             foreach (var item in getWords)
@@ -316,7 +315,7 @@ namespace InMemoryLoaderCommon.CmdClient
             }
 
 
-            var stringToReplace = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
+            // ReplaceString
 
             var replaceString = AppBase.ReplaceString(stringToReplace, "consetetur", "[replaced]", false, 0, -1);
             Log.InfoFormat("ReplaceString [{0}]", replaceString);
@@ -343,7 +342,7 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("ReplaceCharAtAsync [{0}]", replaceCharAtAsync);
 
 
-            var stringToSplit = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
+            // SplitString
 
             var splitString = AppBase.SplitString(stringToSplit, ',');
             foreach (var item in splitString)
@@ -357,6 +356,30 @@ namespace InMemoryLoaderCommon.CmdClient
                 Log.InfoFormat("SplitStringAsync [{0}]", item);
             }
 
+
+            // WordCount
+
+            var wordCount = AppBase.WordCount(stringToReplace);
+            Log.InfoFormat("WordCount [{0}]", wordCount);
+
+            var wordCountAsync = await AppBase.WordCountAsync(stringToReplace);
+            Log.InfoFormat("WordCountAsync [{0}]", wordCountAsync);
+
+
+            var wordCountLatin = AppBase.WordCountLatin(stringToReplace);
+            Log.InfoFormat("WordCountLatin [{0}]", wordCountLatin);
+
+            var wordCountLatinAsync = await AppBase.WordCountLatinAsync(stringToReplace);
+            Log.InfoFormat("WordCountLatinAsync [{0}]", wordCountLatinAsync);
+
+
+            // WordWrap
+
+            var wordWrap = AppBase.WordWrap(longStringToWork, 25);
+            Log.InfoFormat("WordWrap [{0}]", wordWrap);
+
+            var wordWrapAsync = await AppBase.WordWrapAsync(longStringToWork, 25);
+            Log.InfoFormat("WordWrapAsync [{0}]", wordWrapAsync);
 
 
             // end

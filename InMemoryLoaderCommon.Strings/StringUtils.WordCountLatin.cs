@@ -29,17 +29,7 @@ namespace InMemoryLoaderCommon.Strings
 {
     public partial class Strings : AbstractComponent
 	{
-		/// <summary>
-		/// Ermittelt die Anzahl der Wörter in einem String mit lateinischen Zeichen (schnell im Vergleich zu <see cref="WordCount"/>)
-		/// </summary>
-		/// <param name="source">Der String</param>
-		/// <returns>Gibt die ermittelte Anzahl zurück</returns>
-		/// <remarks>
-		/// Schnelle und speichersparende Methode zur Ermittlung der Anzahl 
-		/// der Wörter in einem String. Funktioniert nur für lateinische Zeichen.
-		/// Funktioniert nicht, wenn der Unicode-String Zeichen der Teiltabellen 
-		/// ab der griechischen (ab Zeichen 0x0370) enthält.
-		/// </remarks>
+
 		public long WordCountLatin(string source)
 		{
 			bool newWord = false;
