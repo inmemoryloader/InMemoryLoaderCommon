@@ -30,12 +30,6 @@ namespace InMemoryLoaderCommon.Strings
     public partial class Strings : AbstractComponent
 	{
 
-        /// <summary>
-        /// Kürzt einen Sting unter Berücksichtigung der Wörter
-        /// </summary>
-        /// <param name="paramValue">Der String</param>
-        /// <param name="maxCharCount">Die maximale Anzahl an Zeichen im resultierenden String</param>
-        /// <returns>Gibt den gekürzten String, gegebenenfalls mit drei Punkten am Ende zurück</returns>
         public string Abbreviate(string paramValue, int maxCharCount)
 		{
 			var result = String.Empty;

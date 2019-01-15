@@ -31,13 +31,7 @@ namespace InMemoryLoaderCommon.Strings
 {
     public partial class Strings : AbstractComponent
 	{
-		/// <summary>
-		/// Ermittelt alle Zahlen aus einem String
-		/// </summary>
-		/// <param name="source">Der String</param>
-		/// <param name="extractOnlyIntegers">Gibt an, ob Ganzzahlen extrahiert werden sollen</param>
-		/// <returns>Gibt ein Array zurück, das alle Ganzzahlen speichert, 
-		/// die in dem übergebenen String vorkommen</returns>
+
 		public double[] ExtractNumbers(string paramValue, bool extractOnlyIntegers)
 		{
 			// Muster für den regulären Ausdruck definieren
@@ -61,6 +55,8 @@ namespace InMemoryLoaderCommon.Strings
 			}
 			return result;
 		}
+
 	}
+
 }
 

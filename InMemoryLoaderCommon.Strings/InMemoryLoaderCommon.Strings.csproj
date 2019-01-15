@@ -44,13 +44,8 @@
     <Compile Include="StringUtils.Cut.cs" />
     <Compile Include="StringUtils.ExtractNumbers.cs" />
     <Compile Include="StringUtils.GetWords.cs" />
-    <Compile Include="StringUtils.LeftRight.cs" />
     <Compile Include="StringUtils.Replace.cs" />
-    <Compile Include="StringUtils.ReplaceLeadingString.cs" />
     <Compile Include="StringUtils.SplitString.cs" />
-    <Compile Include="StringUtils.StartsWithNumber.cs" />
-    <Compile Include="StringUtils.StringContains.cs" />
-    <Compile Include="StringUtils.UpperLowerCase.cs" />
     <Compile Include="StringUtils.WordCount.cs" />
     <Compile Include="StringUtils.WordCountLatin.cs" />
     <Compile Include="StringUtils.WordWrap.cs" />

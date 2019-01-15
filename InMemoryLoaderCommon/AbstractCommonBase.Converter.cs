@@ -498,6 +498,126 @@ namespace InMemoryLoaderCommon
         }
 
 
+        // GetWords
+        // ####################################################################################
+
+        public dynamic GetWords(string paramValue)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue };
+            return ComponentLoader.InvokeMethod(Strings, "GetWords", paramArgs);
+        }
+
+        public async Task<dynamic> GetWordsAsync(string paramValue)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue };
+            return await InvokeMethodAsync(Strings, "GetWords", paramArgs);
+        }
+
+        public dynamic GetWords(string paramValue, int paramMinLength)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramMinLength };
+            return ComponentLoader.InvokeMethod(Strings, "GetWords", paramArgs);
+        }
+
+        public async Task<dynamic> GetWordsAsync(string paramValue, int paramMinLength)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { paramValue, paramMinLength };
+            return await InvokeMethodAsync(Strings, "GetWords", paramArgs);
+        }
+
+
+        // ReplaceString/Char
+        // ####################################################################################
+
+        public dynamic ReplaceString(string source, string find, string replacement, bool ignoreCase, int start, int count)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, find, replacement, ignoreCase, start, count };
+            return ComponentLoader.InvokeMethod(Strings, "ReplaceString", paramArgs);
+        }
+
+        public async Task<dynamic> ReplaceStringAsync(string source, string find, string replacement, bool ignoreCase, int start, int count)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, find, replacement, ignoreCase, start, count };
+            return await InvokeMethodAsync(Strings, "ReplaceString", paramArgs);
+        }
+
+        public dynamic ReplaceString(string source, string find, string replacement, bool ignoreCase)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, find, replacement, ignoreCase };
+            return ComponentLoader.InvokeMethod(Strings, "ReplaceString", paramArgs);
+        }
+
+        public async Task<dynamic> ReplaceStringAsync(string source, string find, string replacement, bool ignoreCase)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, find, replacement, ignoreCase };
+            return await InvokeMethodAsync(Strings, "ReplaceString", paramArgs);
+        }
+
+        public dynamic ReplaceString(string source, char ToReplace, char ReplaceWith)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, ToReplace, ReplaceWith };
+            return ComponentLoader.InvokeMethod(Strings, "ReplaceString", paramArgs);
+        }
+
+        public async Task<dynamic> ReplaceStringAsync(string source, char ToReplace, char ReplaceWith)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, ToReplace, ReplaceWith };
+            return await InvokeMethodAsync(Strings, "ReplaceString", paramArgs);
+        }
+
+        public dynamic ReplaceCharAt(string parmString, int parmPos, char parmChar)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { parmString, parmPos, parmChar };
+            return ComponentLoader.InvokeMethod(Strings, "ReplaceCharAt", paramArgs);
+        }
+
+        public async Task<dynamic> ReplaceCharAtAsync(string parmString, int parmPos, char parmChar)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { parmString, parmPos, parmChar };
+            return await InvokeMethodAsync(Strings, "ReplaceCharAt", paramArgs);
+        }
+
+
+        // SplitString
+        // ####################################################################################
+
+        public dynamic SplitString(string source, char split)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, split };
+            return ComponentLoader.InvokeMethod(Strings, "SplitString", paramArgs);
+        }
+
+        public async Task<dynamic> SplitStringAsync(string source, char split)
+        {
+            if (!StringsSet) SetStrings();
+            object[] paramArgs = { source, split };
+            return await InvokeMethodAsync(Strings, "SplitString", paramArgs);
+        }
+
+
+        // WordCount
+        // ####################################################################################
+
+
+
+
+
+
+
+
 
 
         #endregion

@@ -23,10 +23,8 @@
 // THE SOFTWARE.
 
 using System;
-using InMemoryLoaderBase;
-using log4net;
-using System.Text.RegularExpressions;
 using System.Text;
+using InMemoryLoaderBase;
 
 namespace InMemoryLoaderCommon.Strings
 {
@@ -42,7 +40,7 @@ namespace InMemoryLoaderCommon.Strings
         /// <param name="start">Gibt an, ab welchem gefundenen Teilstring ersetzt werden soll. Dieses Argument ist, wie in C# üblich, 0-basiert.</param>
         /// <param name="count">Gibt an, wie viele gefundene Teilstrings maximal ersetzt werden sollen. -1 steht für alle gefundenen ab <paramref name="start"/></param>
         /// <returns>Gibt einen String zurück, in dem die gefundenen Teilstrings ersetzt wurden</returns>
-        public string Replace(string source, string find, string replacement, bool ignoreCase, int start, int count)
+        public string ReplaceString(string source, string find, string replacement, bool ignoreCase, int start, int count)
         {
             int pos1 = 0, pos2 = 0;
             int findStringLen = find.Length;
@@ -117,9 +115,9 @@ namespace InMemoryLoaderCommon.Strings
         /// <param name="replacement">Der String, der die gefundenen Teilstrings ersetzt</param>
         /// <param name="ignoreCase">Gibt an, ob die Groß-/Kleinschreibung nicht berücksichtigt werden soll</param>
         /// <returns>Gibt einen String zurück, in dem die gefundenen Teilstrings ersetzt wurden</returns>
-        public string Replace(string source, string find, string replacement, bool ignoreCase)
+        public string ReplaceString(string source, string find, string replacement, bool ignoreCase)
         {
-            return Replace(source, find, replacement, ignoreCase, 0, -1);
+            return ReplaceString(source, find, replacement, ignoreCase, 0, -1);
         }
 
         /// <summary>
@@ -129,7 +127,7 @@ namespace InMemoryLoaderCommon.Strings
         /// <param name="ToReplace"></param>
         /// <param name="ReplaceWith"></param>
         /// <returns>string, </returns>
-        public string Replace(string text, char ToReplace, char ReplaceWith)
+        public string ReplaceString(string text, char ToReplace, char ReplaceWith)
         {
             StringBuilder sb = new StringBuilder(text);
             sb.Replace(ToReplace, ReplaceWith);

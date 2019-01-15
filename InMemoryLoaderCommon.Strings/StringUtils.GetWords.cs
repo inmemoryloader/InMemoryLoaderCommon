@@ -30,11 +30,6 @@ namespace InMemoryLoaderCommon.Strings
     public partial class Strings : AbstractComponent
 	{
 
-        /// <summary>
-        /// Extrahiert alle Wörter aus einem String
-        /// </summary>
-        /// <param name="paramValue">Der String</param>
-        /// <returns>Gibt ein String-Array mit den einzelnen Wörtern zurück</returns>
         public string[] GetWords(string paramValue)
 		{
 			// Alle Wörter abfragen
@@ -49,12 +44,6 @@ namespace InMemoryLoaderCommon.Strings
 			return words;
 		}
 
-        /// <summary>
-        /// GetWords
-        /// </summary>
-        /// <param name="paramValue"></param>
-        /// <param name="paramMinLength"></param>
-        /// <returns>GetWords</returns>
 		public string[] GetWords(string paramValue, int paramMinLength)
 		{
 			// Alle Wörter abfragen
@@ -73,5 +62,5 @@ namespace InMemoryLoaderCommon.Strings
 		}
 
 	}
-}
 
+}

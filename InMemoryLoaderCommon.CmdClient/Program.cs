@@ -268,14 +268,14 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("CountOccurenceOfString [{0}]", countOccurenceOfString);
 
             var countOccurenceOfStringAsync = await AppBase.CountOccurenceOfStringAsync(longStringToWork, "in");
-            Log.InfoFormat("CountOccurenceOfString [{0}]", countOccurenceOfStringAsync);
+            Log.InfoFormat("CountOccurenceOfStringAsync [{0}]", countOccurenceOfStringAsync);
 
 
             var cutString = AppBase.CutString(longStringWithNumbers, 16, StringDirection.Right);
             Log.InfoFormat("CutString [{0}]", cutString);
 
             var cutStringAsync = await AppBase.CutStringAsync(longStringWithNumbers, 16, StringDirection.Right);
-            Log.InfoFormat("CutString [{0}]", cutStringAsync);
+            Log.InfoFormat("CutStringAsync [{0}]", cutStringAsync);
 
 
             var extractNumbers = AppBase.ExtractNumbers(longStringWithNumbers, true);
@@ -291,6 +291,71 @@ namespace InMemoryLoaderCommon.CmdClient
             }
 
 
+            var getWords = AppBase.GetWords(longStringWithNumbers);
+            foreach (var item in getWords)
+            {
+                Log.InfoFormat("GetWords [{0}]", item);
+            }
+
+            var getWordsAsync = await AppBase.GetWordsAsync(longStringWithNumbers);
+            foreach (var item in getWordsAsync)
+            {
+                Log.InfoFormat("GetWordsAsync [{0}]", item);
+            }
+
+            var getWordsMinLength = AppBase.GetWords(longStringToWork, 5);
+            foreach (var item in getWords)
+            {
+                Log.InfoFormat("GetWords [{0}] with a minimum length of [{1}]", item, 5);
+            }
+
+            var getWordsMinLengthAsync = await AppBase.GetWordsAsync(longStringToWork, 5);
+            foreach (var item in getWordsAsync)
+            {
+                Log.InfoFormat("GetWordsAsync [{0}] with a minimum length of [{1}]", item, 5);
+            }
+
+
+            var stringToReplace = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
+
+            var replaceString = AppBase.ReplaceString(stringToReplace, "consetetur", "[replaced]", false, 0, -1);
+            Log.InfoFormat("ReplaceString [{0}]", replaceString);
+
+            var replaceStringAsync = await AppBase.ReplaceStringAsync(stringToReplace, "consetetur", "[replaced]", false, 0, -1);
+            Log.InfoFormat("ReplaceStringAsync [{0}]", replaceStringAsync);
+
+            var replaceString2 = AppBase.ReplaceString(stringToReplace, "consetetur", "[replaced2]", false);
+            Log.InfoFormat("ReplaceString [{0}]", replaceString2);
+
+            var replaceStringAsync2 = await AppBase.ReplaceStringAsync(stringToReplace, "consetetur", "[replaced2]", false);
+            Log.InfoFormat("ReplaceStringAsync [{0}]", replaceStringAsync2);
+
+            var replaceString3 = AppBase.ReplaceString(stringToReplace, ',', '!');
+            Log.InfoFormat("ReplaceString [{0}]", replaceString3);
+
+            var replaceStringAsync3 = await AppBase.ReplaceStringAsync(stringToReplace, ',', '!');
+            Log.InfoFormat("ReplaceStringAsync [{0}]", replaceStringAsync3);
+
+            var replaceCharAt = AppBase.ReplaceCharAt(stringToReplace, 7, '!');
+            Log.InfoFormat("ReplaceCharAt [{0}]", replaceCharAt);
+
+            var replaceCharAtAsync = await AppBase.ReplaceCharAtAsync(stringToReplace, 7, '!');
+            Log.InfoFormat("ReplaceCharAtAsync [{0}]", replaceCharAtAsync);
+
+
+            var stringToSplit = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
+
+            var splitString = AppBase.SplitString(stringToSplit, ',');
+            foreach (var item in splitString)
+            {
+                Log.InfoFormat("SplitString [{0}]", item);
+            }
+
+            var splitStringAsync = await AppBase.SplitStringAsync(stringToSplit, ',');
+            foreach (var item in splitStringAsync)
+            {
+                Log.InfoFormat("SplitStringAsync [{0}]", item);
+            }
 
 
 

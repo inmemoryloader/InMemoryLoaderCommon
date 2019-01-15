@@ -24,12 +24,10 @@
 
 using System;
 using InMemoryLoaderBase;
-using log4net;
-using System.Text.RegularExpressions;
 
 namespace InMemoryLoaderCommon.Strings
 {
-	public partial class Strings : AbstractComponent
+    public partial class Strings : AbstractComponent
 	{
 		/// <summary>
 		/// Ermittelt die Anzahl der Wörter in einem String mit lateinischen Zeichen (schnell im Vergleich zu <see cref="WordCount"/>)
