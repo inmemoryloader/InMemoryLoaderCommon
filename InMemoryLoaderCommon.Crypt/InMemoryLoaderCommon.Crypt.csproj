@@ -5,6 +5,7 @@
     <OutputType>Library</OutputType>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <RootNamespace>InMemoryLoaderCommon.Crypt</RootNamespace>
+    <ReleaseVersion>1.0.*</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
