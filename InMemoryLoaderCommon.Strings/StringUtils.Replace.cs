@@ -30,16 +30,7 @@ namespace InMemoryLoaderCommon.Strings
 {
     public partial class Strings : AbstractComponent
     {
-        /// <summary>
-        /// Ersetzt Teilstrings in einem String
-        /// </summary>
-        /// <param name="source">Der String, in dem ersetzt werden soll</param>
-        /// <param name="find">Der zu suchende Teilstring</param>
-        /// <param name="replacement">Der String, der die gefundenen Teilstrings ersetzt</param>
-        /// <param name="ignoreCase">Gibt an, ob die Groß-/Kleinschreibung nicht berücksichtigt werden soll</param>
-        /// <param name="start">Gibt an, ab welchem gefundenen Teilstring ersetzt werden soll. Dieses Argument ist, wie in C# üblich, 0-basiert.</param>
-        /// <param name="count">Gibt an, wie viele gefundene Teilstrings maximal ersetzt werden sollen. -1 steht für alle gefundenen ab <paramref name="start"/></param>
-        /// <returns>Gibt einen String zurück, in dem die gefundenen Teilstrings ersetzt wurden</returns>
+
         public string ReplaceString(string source, string find, string replacement, bool ignoreCase, int start, int count)
         {
             int pos1 = 0, pos2 = 0;
@@ -107,26 +98,11 @@ namespace InMemoryLoaderCommon.Strings
             return result;
         }
 
-        /// <summary>
-        /// Ersetzt Teilstrings in einem String
-        /// </summary>
-        /// <param name="source">Der String, in dem ersetzt werden soll</param>
-        /// <param name="find">Der zu suchende Teilstring</param>
-        /// <param name="replacement">Der String, der die gefundenen Teilstrings ersetzt</param>
-        /// <param name="ignoreCase">Gibt an, ob die Groß-/Kleinschreibung nicht berücksichtigt werden soll</param>
-        /// <returns>Gibt einen String zurück, in dem die gefundenen Teilstrings ersetzt wurden</returns>
         public string ReplaceString(string source, string find, string replacement, bool ignoreCase)
         {
             return ReplaceString(source, find, replacement, ignoreCase, 0, -1);
         }
 
-        /// <summary>
-        /// Replace chars in a given text
-        /// </summary>
-        /// <param name="text"></param>
-        /// <param name="ToReplace"></param>
-        /// <param name="ReplaceWith"></param>
-        /// <returns>string, </returns>
         public string ReplaceString(string text, char ToReplace, char ReplaceWith)
         {
             StringBuilder sb = new StringBuilder(text);
@@ -134,13 +110,6 @@ namespace InMemoryLoaderCommon.Strings
             return sb.ToString();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="parmString"></param>
-        /// <param name="parmPos"></param>
-        /// <param name="parmChar"></param>
-        /// <returns></returns>
         public string ReplaceCharAt(string parmString, int parmPos, char parmChar)
         {
             return parmString.Substring(0, parmPos) + parmChar + parmString.Substring(parmPos + 1);

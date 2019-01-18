@@ -61,12 +61,10 @@ namespace InMemoryLoaderCommon.CmdClient
 
             #endregion
 
-            // Converter stuff --------------------------------------------------------------------
-            // ####################################################################################
+            #region Converter stuff
 
             // StringToBoolean
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var stringToBoolean = AppBase.StringToBoolean("1");
             Log.InfoFormat("StringToBoolean [{0}]", stringToBoolean);
 
@@ -74,38 +72,31 @@ namespace InMemoryLoaderCommon.CmdClient
             Log.InfoFormat("StringToBooleanAsync [{0}]", stringToBooleanAsync);
 
             // CharToBoolean
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var charToBoolean = AppBase.CharToBoolean('1');
             Log.InfoFormat("CharToBoolean [{0}]", charToBoolean);
 
             var charToBooleanAsync = await AppBase.CharToBooleanAsync('0');
             Log.InfoFormat("CharToBooleanAsync [{0}]", charToBooleanAsync);
 
-
             // BooleanToString
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var booleanToString = AppBase.BooleanToString(false);
             Log.InfoFormat("BooleanToString [{0}]", booleanToString);
 
             var booleanToStringAsync = await AppBase.BooleanToStringAsync(true);
             Log.InfoFormat("BooleanToStringAsync [{0}]", booleanToStringAsync);
 
-
             // BooleanToChar
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var booleanToChar = AppBase.BooleanToChar(false);
             Log.InfoFormat("BooleanToChar [{0}]", booleanToChar);
 
             var booleanToCharAsync = await AppBase.BooleanToCharAsync(true);
             Log.InfoFormat("BooleanToCharAsync [{0}]", booleanToCharAsync);
 
-
             // StringToByteArray
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var stringToByteArray = (byte[])AppBase.StringToByteArray("0815");
             Log.InfoFormat("StringToByteArray [{0}]", stringToByteArray.Length);
 
@@ -118,10 +109,8 @@ namespace InMemoryLoaderCommon.CmdClient
             var stringToByteArrayAsync2 = (byte[])await AppBase.StringToByteArrayAsync("0815", Encoding.UTF8);
             Log.InfoFormat("StringToByteArrayAsync [{0}]", stringToByteArrayAsync2.Length);
 
-
             // StringToHashtable
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var toHashTable = "0=1|1=2|2=3";
             char toHashTableFelimiter = '|';
 
@@ -137,10 +126,8 @@ namespace InMemoryLoaderCommon.CmdClient
                 Log.InfoFormat("StringToHashtableAsync [{0}]", item.Value);
             }
 
-
             // MemoryStreamToString
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var memoryStream = new MemoryStream(stringToByteArray2);
 
             var memoryStreamToString = AppBase.MemoryStreamToString(memoryStream);
@@ -149,10 +136,8 @@ namespace InMemoryLoaderCommon.CmdClient
             var memoryStreamToStringAsync = await AppBase.MemoryStreamToStringAsync(memoryStream);
             Log.InfoFormat("MemoryStreamToStringAsync [{0}]", memoryStreamToStringAsync);
 
-
             // ByteArrayToString
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var byteArrayToString1 = AppBase.ByteArrayToString(stringToByteArray2);
             Log.InfoFormat("ByteArrayToString [{0}]", byteArrayToString1);
 
@@ -165,30 +150,24 @@ namespace InMemoryLoaderCommon.CmdClient
             var byteArrayToStringAsync2 = await AppBase.ByteArrayToStringAsync(stringToByteArray2, Encoding.UTF8);
             Log.InfoFormat("ByteArrayToStringAsync [{0}]", byteArrayToStringAsync2);
 
-
             // StringFromUtf8ToAscii
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var stringFromUtf8ToAscii = AppBase.StringFromUtf8ToAscii("0815 - 123698");
             Log.InfoFormat("StringFromUtf8ToAscii [{0}]", stringFromUtf8ToAscii);
 
             var stringFromUtf8ToAsciiAsync = await AppBase.StringFromUtf8ToAsciiAsync("0815 - 123698");
             Log.InfoFormat("StringFromUtf8ToAsciiAsync [{0}]", stringFromUtf8ToAsciiAsync);
 
-
             // StringFromUtf8ToLatin1
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var stringFromUtf8ToLatin1 = AppBase.StringFromUtf8ToLatin1("0815 - 123698");
             Log.InfoFormat("StringFromUtf8ToLatin1 [{0}]", stringFromUtf8ToLatin1);
 
             var stringFromUtf8ToLatin1Async = await AppBase.StringFromUtf8ToLatin1Async("0815 - 123698");
             Log.InfoFormat("StringFromUtf8ToLatin1Async [{0}]", stringFromUtf8ToLatin1Async);
 
-
             // StringTo converter
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var tryParseStringToLong = AppBase.TryParseStringToLong("123698");
             Log.InfoFormat("TryParseStringToLong [{0}]", tryParseStringToLong);
 
@@ -202,13 +181,12 @@ namespace InMemoryLoaderCommon.CmdClient
             var tryParseStringToIntAsync = await AppBase.TryParseStringToIntAsync("123698");
             Log.InfoFormat("TryParseStringToInt [{0}]", tryParseStringToIntAsync);
 
+            #endregion
 
-            // Crypt stuff ------------------------------------------------------------------------
-            // ####################################################################################
+            #region Crypt stuff
 
             // Md5Encryption
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var md5Encryption = (byte[])AppBase.Md5Encryption("0815 - 123698");
             Log.InfoFormat("Md5Encryption [{0}]", md5Encryption.Length);
 
@@ -227,10 +205,8 @@ namespace InMemoryLoaderCommon.CmdClient
             var getMd5HashAsStringAsync = await AppBase.GetMd5HashAsStringAsync("0815 - 123698");
             Log.InfoFormat("GetMd5HashAsStringAsync [{0}]", getMd5HashAsStringAsync.Length);
 
-
             // RijndaelManaged
-            // ####################################################################################
-
+            // ------------------------------------------------------------------------------------
             var setCryptoParameter = AppBase.SetCryptoParameter("nEed!som_p", "s@lTe!lOl", "SHA1", 2, "!VaCztorR=qw712_X<>", 256);
             Log.InfoFormat("SetCryptoParameter [{0}]", setCryptoParameter);
 
@@ -239,7 +215,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
             var decrypt = AppBase.Decrypt(encrypt);
             Log.InfoFormat("Decrypt [{0}]", decrypt);
-
 
             var setCryptoParameterAsync = await AppBase.SetCryptoParameterAsync("nEed!som_p", "s@lTe!lOl", "SHA1", 2, "!VaCztorR=qw712_X<>", 256);
             Log.InfoFormat("SetCryptoParameterAsync [{0}]", setCryptoParameterAsync);
@@ -250,34 +225,41 @@ namespace InMemoryLoaderCommon.CmdClient
             var decryptAsync = await AppBase.DecryptAsync(encryptAsync);
             Log.InfoFormat("DecryptAsync [{0}]", decryptAsync);
 
+            #endregion
 
-            // Strings stuff
-            // ####################################################################################
+            #region Strings stuff
 
             var longStringToWork = "InMemoryLoader ist eine in C# (Mono) geschriebene Funktions- oder Klassen-Bibliothek die das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht ohne eine Referenz in der Project-Solution vorauszusetzen.";
             var longStringWithNumbers = "211 commits, 4 branches und über 6000 Downloads sprechen für sich!";
+            var stringToReplace = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
+            var stringToSplit = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
 
+            // AbbreviateString
+            // ------------------------------------------------------------------------------------
             var abbreviateString = AppBase.AbbreviateString(longStringToWork, 32);
             Log.InfoFormat("AbbreviateString [{0}]", abbreviateString);
 
             var abbreviateStringAsync = await AppBase.AbbreviateStringAsync(longStringToWork, 32);
             Log.InfoFormat("AbbreviateStringAsync [{0}]", abbreviateStringAsync);
 
-
+            // CountOccurenceOfString
+            // ------------------------------------------------------------------------------------
             var countOccurenceOfString = AppBase.CountOccurenceOfString(longStringToWork, "in");
             Log.InfoFormat("CountOccurenceOfString [{0}]", countOccurenceOfString);
 
             var countOccurenceOfStringAsync = await AppBase.CountOccurenceOfStringAsync(longStringToWork, "in");
             Log.InfoFormat("CountOccurenceOfStringAsync [{0}]", countOccurenceOfStringAsync);
 
-
+            // CutString
+            // ------------------------------------------------------------------------------------
             var cutString = AppBase.CutString(longStringWithNumbers, 16, StringDirection.Right);
             Log.InfoFormat("CutString [{0}]", cutString);
 
             var cutStringAsync = await AppBase.CutStringAsync(longStringWithNumbers, 16, StringDirection.Right);
             Log.InfoFormat("CutStringAsync [{0}]", cutStringAsync);
 
-
+            // ExtractNumbers
+            // ------------------------------------------------------------------------------------
             var extractNumbers = AppBase.ExtractNumbers(longStringWithNumbers, true);
             foreach (var item in extractNumbers)
             {
@@ -290,7 +272,8 @@ namespace InMemoryLoaderCommon.CmdClient
                 Log.InfoFormat("ExtractNumbersAsync [{0}]", item.ToString());
             }
 
-
+            // GetWords
+            // ------------------------------------------------------------------------------------
             var getWords = AppBase.GetWords(longStringWithNumbers);
             foreach (var item in getWords)
             {
@@ -315,9 +298,8 @@ namespace InMemoryLoaderCommon.CmdClient
                 Log.InfoFormat("GetWordsAsync [{0}] with a minimum length of [{1}]", item, 5);
             }
 
-
-            var stringToReplace = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
-
+            // ReplaceString
+            // ------------------------------------------------------------------------------------
             var replaceString = AppBase.ReplaceString(stringToReplace, "consetetur", "[replaced]", false, 0, -1);
             Log.InfoFormat("ReplaceString [{0}]", replaceString);
 
@@ -342,9 +324,8 @@ namespace InMemoryLoaderCommon.CmdClient
             var replaceCharAtAsync = await AppBase.ReplaceCharAtAsync(stringToReplace, 7, '!');
             Log.InfoFormat("ReplaceCharAtAsync [{0}]", replaceCharAtAsync);
 
-
-            var stringToSplit = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt";
-
+            // SplitString
+            // ------------------------------------------------------------------------------------
             var splitString = AppBase.SplitString(stringToSplit, ',');
             foreach (var item in splitString)
             {
@@ -357,10 +338,31 @@ namespace InMemoryLoaderCommon.CmdClient
                 Log.InfoFormat("SplitStringAsync [{0}]", item);
             }
 
+            // WordCount
+            // ------------------------------------------------------------------------------------
+            var wordCount = AppBase.WordCount(stringToReplace);
+            Log.InfoFormat("WordCount [{0}]", wordCount);
+
+            var wordCountAsync = await AppBase.WordCountAsync(stringToReplace);
+            Log.InfoFormat("WordCountAsync [{0}]", wordCountAsync);
 
 
-            // end
-            // ####################################################################################
+            var wordCountLatin = AppBase.WordCountLatin(stringToReplace);
+            Log.InfoFormat("WordCountLatin [{0}]", wordCountLatin);
+
+            var wordCountLatinAsync = await AppBase.WordCountLatinAsync(stringToReplace);
+            Log.InfoFormat("WordCountLatinAsync [{0}]", wordCountLatinAsync);
+
+            // WordWrap
+            // ------------------------------------------------------------------------------------
+            var wordWrap = AppBase.WordWrap(longStringToWork, 25);
+            Log.InfoFormat("WordWrap [{0}]", wordWrap);
+
+            var wordWrapAsync = await AppBase.WordWrapAsync(longStringToWork, 25);
+            Log.InfoFormat("WordWrapAsync [{0}]", wordWrapAsync);
+
+            #endregion
+
 
             Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
             // Console.Read();

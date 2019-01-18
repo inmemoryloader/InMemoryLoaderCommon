@@ -4,12 +4,14 @@ using System.Reflection;
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle("InMemoryLoaderCommon")]
-[assembly: AssemblyDescription("InMemoryLoader ist eine in C# geschriebene Funktionsbibliothek welche das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.")]
-[assembly: AssemblyCompany("responsive kaysta")]
-[assembly: AssemblyProduct("InMemoryLoader")]
-[assembly: AssemblyCopyright("responsive kaysta")]
-[assembly: AssemblyTrademark("responsive kaysta")]
+[assembly: AssemblyTitle("InMemoryLoaderCommon.CmdClient")]
+[assembly: AssemblyDescription("Erweiterung die zusätzliche Funktionen wie einen Async-Wrapper, Crypt-Tools, String-Utilities und Converter enthält. Wird NICHT zwingend benötigt!")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("responsive IT")]
+[assembly: AssemblyProduct("")]
+[assembly: AssemblyCopyright("responsive IT")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,

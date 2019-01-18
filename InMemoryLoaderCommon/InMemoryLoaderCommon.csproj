@@ -38,11 +38,11 @@ Laufzeit einmalig instanziiert.</Description>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
     <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.1.0.6947.9946\lib\InMemoryLoader.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.1.0.6957.2288\lib\InMemoryLoader.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoader.1.0.6947.9946\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoader.1.0.6957.2288\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +50,8 @@ Laufzeit einmalig instanziiert.</Description>
     <Compile Include="CommonComponentLoader.cs" />
     <Compile Include="AbstractCommonBase.cs" />
     <Compile Include="AbstractCommonBase.Converter.cs" />
+    <Compile Include="AbstractCommonBase.Crypt.cs" />
+    <Compile Include="AbstractCommonBase.Strings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
