@@ -1,19 +1,32 @@
-# InMemoryLoader 
+# InMemoryLoader
 
-## Beschreibung
-InMemoryLoader ist eine in C# (Mono) geschriebene Funktions- oder Klassen-Bibliothek die das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht ohne eine Referenz in der Project-Solution vorauszusetzen. 
+InMemoryLoader ist eine in C# (Mono) geschriebene Funktions- oder Klassen-Bibliothek die das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.
 
-Im Wesentlichen besteht sie aus zwei nuget-Packages die mit Mono entwickelt wurden und so über Plattformgrenzen hinweg verwendet werden können. 
+[Link zum Urheber/Blog](https://blog.responsive-kaysta.ch/post/inmemoryloader)
 
-[Link](https://responsive-kaysta.ch/blog/inmemoryloader/) Projektseite/Blog
+Das Projekt "InMemoryLoader" ist aus einer Anforderung oder Idee entstanden, ein möglichst modulares Web-Framework für Business-Anwendungen zu entwickeln. Es mussten unterschiedlichste Technologien (ASP Web-Sites, SAP Dienste, Web-Service, CMS Systeme, unterschiedliche Datenbanken) kombiniert bzw. Daten aus diesen Systemen in einer Applikation kombiniert werden.
 
-Hierbei werden die .Dll’s einmalig geladen und geprüft, in eine Collection geschrieben und zur Laufzeit einmalig instanziiert und im Memory gespeichert.
+Damit die einzelnen Anwendungen modular, schlank und einfach wartbar blieben, mussten die einzelnen Bestandteile in einzelne Module aufgeteilt werden. Die einzelnen Module mussten verknüpf oder kombinierbar sein weshalb ein Modul entwickelt wurde, dass die Verwaltung, Registrierung und Ausführung ermöglicht.
 
+Die Komponenten müssen ein Interface implementieren woraufhin die Initialisierungsmethode prüft und alle öffentlichen Methoden in einer Art „Registry“ einträgt und so zur Laufzeit im Kontext der Anwendung komplett erhalten bleiben.
 So werden sehr effiziente Applikationen ohne fixe Referenzen möglich, das Projekt kann so viel schlanker und effizienter gehalten werden. Zudem kann zur Laufzeit sehr einfach Funktionalität hinzugefügt werden und so die Startup-Time von Anwendungen massiv verkürzen.
 
-Ein weitere Vorteil besteht darin, dass so verschiedene Funktionscontainer erstellt werden können. Bsp.: je nach User-Context können so verschiedene Funktionen angeboten werden. Dies erhöht nicht nur die Performance, die Funktionen stehen so auch nur dem jeweiligen Context zur Verfügung was die Sicherheit ebenfalls positiv beeinflusst.
+Ein weiterer Vorteil besteht darin, dass so verschiedene Funktionscontainer erstellt werden können.
 
-## Release 0.3.2
-Dieser Release kann schon fast als Major-Release bezeichnet werden, ich habe diverse Dinge verbessert, erweitert und hinzugefügt. Dabei muss ich jedoch erwähnen, das InMemoryLoaderCommon (noch) nicht ganz soweit ist. Die Komponente wurde jedoch so erweitert dass die Verbesserungen von InMemoryLoaderBase als auch InMemoryLoader eingeflossen sind.
+Beispiel
 
-[Link](https://responsive-kaysta.ch/blog/inmemoryloader-base-common-release-032/) Release notes
+Bei einer Anwendung kann zuerst die Rolle des Benutzers abgefragt werden und danach die entsprechende Bibliothek/Komponenten dynamisch nachgeladen werden. Dies erhöht nicht nur die Performance, die Funktionen stehen so auch nur dem jeweiligen Kontext zur Verfügung wodurch die Anwendungen sicherer werden.
+
+## Bestandteile
+
+### InMemoryLoaderBase
+
+Komponente die eine abstrakte Klasse enthält die implementiert werden muss. Sie dient der Initialisierung und enthält ansonsten keinerlei notwendige Funktion.
+
+### InMemoryLoader
+
+Der Kern einer InMemoryLoader-Anwendung, sie enthält alle benötigten Methoden und Properties die zum Aufbau benötigt werden.
+
+### InMemoryLoaderCommon
+
+Erweiterung die zusätzliche Funktionen wie einen Async-Wrapper, Crypt-Tools, String-Utilities und Converter enthält. Wird NICHT zwingend benötigt!
