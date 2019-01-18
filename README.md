@@ -20,13 +20,10 @@ Bei einer Anwendung kann zuerst die Rolle des Benutzers abgefragt werden und dan
 ## Bestandteile
 
 ### InMemoryLoaderBase
-
-Komponente die eine abstrakte Klasse enthält die implementiert werden muss. Sie dient der Initialisierung und enthält ansonsten keinerlei notwendige Funktion.
+Komponente mit Interfaces und Abstract Classes die zur Implementierung von InMemoryLoader Anwendungen verwendet werden müssen. Dient der Initialisierung und Instanziierung, enthalten ansonsten keinerlei notwendige Funktionen.
 
 ### InMemoryLoader
-
-Der Kern einer InMemoryLoader-Anwendung, sie enthält alle benötigten Methoden und Properties die zum Aufbau benötigt werden.
+Der Kern einer InMemoryLoader-Anwendung, enthält alle benötigten Methoden und Properties die zum Aufbau benötigt werden.
 
 ### InMemoryLoaderCommon
-
 Erweiterung die zusätzliche Funktionen wie einen Async-Wrapper, Crypt-Tools, String-Utilities und Converter enthält. Wird NICHT zwingend benötigt!
