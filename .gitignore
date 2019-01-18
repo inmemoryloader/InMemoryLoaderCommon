@@ -113,3 +113,9 @@ FakesAssemblies/
 *.nupkg
 obj/
 bin/
+
+*.dll
+
+\.idea/\.idea\.InMemoryLoaderCommon/\.idea/
+
+\.idea/\.idea\.InMemoryLoaderCommon/

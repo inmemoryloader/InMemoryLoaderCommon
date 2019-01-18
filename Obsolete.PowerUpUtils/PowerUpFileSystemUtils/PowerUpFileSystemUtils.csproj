@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9824DE8B-6084-4421-BCC5-C68D19249C1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PowerUpFileSystemUtils</RootNamespace>
+    <AssemblyName>PowerUpFileSystemUtils</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PowerUpFileSystemUtils.snk</AssemblyOriginatorKeyFile>
+    <ReleaseVersion>1.0.*</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>..\..\XmlDocumentation\PowerUpFileSystemUtils.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\packages\InMemoryLoader.1.0.6935.3567\lib\InMemoryLoader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\packages\InMemoryLoaderBase.1.0.6935.3150\lib\InMemoryLoaderBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FileSystemUtils.cs" />
+    <Compile Include="FileSystemUtils.CompareFiles.cs" />
+    <Compile Include="FileSystemUtils.CompareFolder.cs" />
+    <Compile Include="FileSystemUtils.CopyFile.cs" />
+    <Compile Include="FileSystemUtils.CopyFolder.cs" />
+    <Compile Include="FileSystemUtils.CopyFolderFaultTolerant.cs" />
+    <Compile Include="CopyFault.cs" />
+    <Compile Include="FileSystemUtils.CreateBinaryFileContent.cs" />
+    <Compile Include="FileSystemUtils.CreateFileFromBase64.cs" />
+    <Compile Include="FileSystemUtils.EditFileAttributes.cs" />
+    <Compile Include="FileSystemUtils.FindFiles.cs" />
+    <Compile Include="FileSystemUtils.GetAbsolutePath.cs" />
+    <Compile Include="FileSystemUtils.GetApplicationFilename.cs" />
+    <Compile Include="FileSystemUtils.GetApplicationFolder.cs" />
+    <Compile Include="FileSystemUtils.GetDriveInfos.cs" />
+    <Compile Include="FileSystemUtils.GetFolderSize.cs" />
+    <Compile Include="FileSystemUtils.GetLibraryFilename.cs" />
+    <Compile Include="FileSystemUtils.GetLibraryFolder.cs" />
+    <Compile Include="FileSystemUtils.GetRunTimeFolder.cs" />
+    <Compile Include="FolderSize.cs" />
+    <Compile Include="FileSystemUtils.GetSubFolderSizes.cs" />
+    <Compile Include="FileSystemUtils.GetSystemDirectories.cs" />
+    <Compile Include="FileSystemUtils.IsPathValid.cs" />
+    <Compile Include="FileSystemUtils.ReadAsBase64.cs" />
+    <Compile Include="FileSystemUtils.WriteToFile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="PowerUpFileSystemUtils.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
