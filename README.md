@@ -4,6 +4,8 @@ InMemoryLoader ist eine in C# (Mono) geschriebene Funktions- oder Klassen-Biblio
 
 [Link zum Urheber/Blog](https://blog.responsive-kaysta.ch/post/inmemoryloader)
 
+[Link zum Release-Blog](https://blog.responsive-kaysta.ch/post/inmemoryloader-release-1-0)
+
 Das Projekt "InMemoryLoader" ist aus einer Anforderung oder Idee entstanden, ein möglichst modulares Web-Framework für Business-Anwendungen zu entwickeln. Es mussten unterschiedlichste Technologien (ASP Web-Sites, SAP Dienste, Web-Service, CMS Systeme, unterschiedliche Datenbanken) kombiniert bzw. Daten aus diesen Systemen in einer Applikation kombiniert werden.
 
 Damit die einzelnen Anwendungen modular, schlank und einfach wartbar blieben, mussten die einzelnen Bestandteile in einzelne Module aufgeteilt werden. Die einzelnen Module mussten verknüpf oder kombinierbar sein weshalb ein Modul entwickelt wurde, dass die Verwaltung, Registrierung und Ausführung ermöglicht.
