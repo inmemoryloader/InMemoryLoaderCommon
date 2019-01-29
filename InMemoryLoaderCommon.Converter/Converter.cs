@@ -1,7 +1,7 @@
 ﻿//
-// MyClass.cs
+// Converter.cs
 //
-// Author: Kay Stuckenschmidt <kay@responsive-it.biz>
+// Author: Kay Stuckenschmidt <dev-guru@responsive-it.biz>
 //
 // Copyright (c) 2019 responsive IT
 //
