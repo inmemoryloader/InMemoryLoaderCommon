@@ -40,7 +40,10 @@ namespace InMemoryLoaderCommon
 
         public virtual bool SetInMemoryLoaderCommon()
         {
-            CommonComponentLoader = new CommonComponentLoader();
+            if (CommonComponentLoader == null)
+            {
+                CommonComponentLoader = new CommonComponentLoader();
+            }
             var isSet = CommonComponentLoader.InitCommonComponents(base.AssemblyPath);
             Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
             return isSet;
@@ -48,7 +51,10 @@ namespace InMemoryLoaderCommon
 
         public virtual async Task<bool> SetInMemoryLoaderCommonAsync()
         {
-            CommonComponentLoader = new CommonComponentLoader();
+            if (CommonComponentLoader == null)
+            {
+                CommonComponentLoader = new CommonComponentLoader();
+            }
             var isSet = await CommonComponentLoader.InitCommonComponentsAsync(base.AssemblyPath);
             Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
             return isSet;

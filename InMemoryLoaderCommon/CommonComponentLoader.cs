@@ -61,7 +61,7 @@ namespace InMemoryLoaderCommon
                 foreach (var component in Components)
                 {
                     object[] paramArgument = { AbstractComponent.Key };
-                    var init = compLoader.InvokeMethod(component.Assembly, component.Class, component.InitMethod, paramArgument);
+                    var init = compLoader.InitComponent(component, paramArgument);
                     Log.DebugFormat("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
                 }
             }
