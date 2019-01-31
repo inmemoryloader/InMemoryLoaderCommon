@@ -32,20 +32,20 @@ using log4net;
 
 namespace InMemoryLoaderCommon
 {
-    public sealed class CommonComponentLoader
+    internal sealed class CommonComponentLoader
     {
-        static readonly ILog Log = LogManager.GetLogger(typeof(CommonComponentLoader));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(CommonComponentLoader));
 
-        public string AssemblyPath { get; set; }
+        internal string AssemblyPath { get; set; }
 
-        public IList<IDynamicClassSetup> Components { get; set; }
+        internal IList<IDynamicClassSetup> Components { get; set; }
 
-        public CommonComponentLoader()
+        internal CommonComponentLoader()
         {
             Log.DebugFormat("Create a new instance of Type: {0}", GetType());
         }
 
-        public bool InitCommonComponents(string paramPath)
+        internal bool InitCommonComponents(string paramPath)
         {
             if (string.IsNullOrEmpty(AssemblyPath))
             {
@@ -74,13 +74,13 @@ namespace InMemoryLoaderCommon
             return isSet;
         }
 
-        public dynamic InitCommonComponentsAsync(string paramPath)
+        internal dynamic InitCommonComponentsAsync(string paramPath)
         {
             if (string.IsNullOrEmpty(paramPath)) throw new ArgumentException();
             return Task.Run(() => InitCommonComponents(paramPath));
         }
 
-        void SetupCommonComponents(string paramPath)
+        private void SetupCommonComponents(string paramPath)
         {
             if (string.IsNullOrEmpty(AssemblyPath))
             {

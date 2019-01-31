@@ -36,7 +36,7 @@ namespace InMemoryLoaderCommon
 
         private static readonly ILog Log = LogManager.GetLogger(typeof(AbstractCommonBase));
 
-        public CommonComponentLoader CommonComponentLoader { get; set; }
+        internal CommonComponentLoader CommonComponentLoader { get; set; }
 
         public virtual bool SetInMemoryLoaderCommon()
         {
