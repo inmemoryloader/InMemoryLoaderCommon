@@ -64,6 +64,30 @@ namespace InMemoryLoaderCommon
             return isSet;
         }
 
+        public virtual bool SetInMemoryLoaderCommon(string paramPath)
+        {
+            if (CommonComponentLoader == null)
+            {
+                CommonComponentLoader = new CommonComponentLoader();
+            }
+            AssemblyPath = paramPath;
+            var isSet = InitCommonComponents(AssemblyPath);
+            Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
+            return isSet;
+        }
+
+        public virtual async Task<bool> SetInMemoryLoaderCommonAsync(string paramPath)
+        {
+            if (CommonComponentLoader == null)
+            {
+                CommonComponentLoader = new CommonComponentLoader();
+            }
+            AssemblyPath = paramPath;
+            var isSet = await InitCommonComponentsAsync(AssemblyPath);
+            Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
+            return isSet;
+        }
+
         private bool InitCommonComponents(string paramPath)
         {
             if (string.IsNullOrEmpty(AssemblyPath))
@@ -92,8 +116,9 @@ namespace InMemoryLoaderCommon
             {
                 Log.FatalFormat(ex.ToString());
             }
-            
-            return true;
+
+            var isSet = ComponentLoader.InitClassRegistry();
+            return isSet;
         }
 
         private dynamic InitCommonComponentsAsync(string paramPath)
