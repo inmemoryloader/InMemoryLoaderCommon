@@ -23,8 +23,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using System.Threading.Tasks;
 using InMemoryLoader;
+using InMemoryLoaderBase;
 using log4net;
 
 namespace InMemoryLoaderCommon
@@ -36,7 +38,7 @@ namespace InMemoryLoaderCommon
 
         private static readonly ILog Log = LogManager.GetLogger(typeof(AbstractCommonBase));
 
-        internal CommonComponentLoader CommonComponentLoader { get; set; }
+        private CommonComponentLoader CommonComponentLoader;
 
         public virtual bool SetInMemoryLoaderCommon()
         {
@@ -44,7 +46,8 @@ namespace InMemoryLoaderCommon
             {
                 CommonComponentLoader = new CommonComponentLoader();
             }
-            var isSet = CommonComponentLoader.InitCommonComponents(base.AssemblyPath);
+
+            var isSet = InitCommonComponents(base.AssemblyPath);
             Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
             return isSet;
         }
@@ -55,9 +58,50 @@ namespace InMemoryLoaderCommon
             {
                 CommonComponentLoader = new CommonComponentLoader();
             }
-            var isSet = await CommonComponentLoader.InitCommonComponentsAsync(base.AssemblyPath);
+
+            var isSet = await InitCommonComponentsAsync(base.AssemblyPath);
             Log.DebugFormat("CommonComponentLoader set: {0}", isSet);
             return isSet;
+        }
+
+        private bool InitCommonComponents(string paramPath)
+        {
+            if (string.IsNullOrEmpty(AssemblyPath))
+            {
+                AssemblyPath = paramPath;
+            }
+
+            if (CommonComponentLoader == null)
+            {
+                CommonComponentLoader = new CommonComponentLoader();
+            }
+
+            CommonComponentLoader.SetupCommonComponents(AssemblyPath);
+            Log.Debug("Init Common Components");
+            var compLoader = ComponentLoader.Instance;
+
+            try
+            {
+                foreach (var component in CommonComponentLoader.Components)
+                {
+                    object[] paramArgument = { AbstractComponent.Key };
+                    var init = compLoader.InitComponent(component, paramArgument);
+                    Log.DebugFormat("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.FatalFormat(ex.ToString());
+            }
+
+            var isSet = compLoader.InitClassRegistry();
+            return isSet;
+        }
+
+        private dynamic InitCommonComponentsAsync(string paramPath)
+        {
+            if (string.IsNullOrEmpty(paramPath)) throw new ArgumentException();
+            return Task.Run(() => InitCommonComponents(paramPath));
         }
 
         #endregion

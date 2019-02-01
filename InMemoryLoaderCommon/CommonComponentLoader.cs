@@ -45,42 +45,7 @@ namespace InMemoryLoaderCommon
             Log.DebugFormat("Create a new instance of Type: {0}", GetType());
         }
 
-        internal bool InitCommonComponents(string paramPath)
-        {
-            if (string.IsNullOrEmpty(AssemblyPath))
-            {
-                AssemblyPath = paramPath;
-            }
-
-            SetupCommonComponents(AssemblyPath);
-            Log.Debug("Init Common Components");
-            var compLoader = ComponentLoader.Instance;
-
-            try
-            {
-                foreach (var component in Components)
-                {
-                    object[] paramArgument = { AbstractComponent.Key };
-                    var init = compLoader.InitComponent(component, paramArgument);
-                    Log.DebugFormat("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.FatalFormat(ex.ToString());
-            }
-
-            var isSet = compLoader.InitClassRegistry();
-            return isSet;
-        }
-
-        internal dynamic InitCommonComponentsAsync(string paramPath)
-        {
-            if (string.IsNullOrEmpty(paramPath)) throw new ArgumentException();
-            return Task.Run(() => InitCommonComponents(paramPath));
-        }
-
-        private void SetupCommonComponents(string paramPath)
+        internal void SetupCommonComponents(string paramPath)
         {
             if (string.IsNullOrEmpty(AssemblyPath))
             {
@@ -101,7 +66,7 @@ namespace InMemoryLoaderCommon
             Log.DebugFormat("Setup Strings: [{0}]", setupStrings);
 
         }
-
+        
 
         // Converter
         // ####################################################################################
