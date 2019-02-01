@@ -78,14 +78,13 @@ namespace InMemoryLoaderCommon
 
             CommonComponentLoader.SetupCommonComponents(AssemblyPath);
             Log.Debug("Init Common Components");
-            var compLoader = ComponentLoader.Instance;
 
             try
             {
                 foreach (var component in CommonComponentLoader.Components)
                 {
                     object[] paramArgument = { AbstractComponent.Key };
-                    var init = compLoader.InitComponent(component, paramArgument);
+                    var init = InitComponent(component, paramArgument);
                     Log.DebugFormat("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
                 }
             }
@@ -93,9 +92,8 @@ namespace InMemoryLoaderCommon
             {
                 Log.FatalFormat(ex.ToString());
             }
-
-            var isSet = compLoader.InitClassRegistry();
-            return isSet;
+            
+            return true;
         }
 
         private dynamic InitCommonComponentsAsync(string paramPath)

@@ -36,7 +36,7 @@ namespace InMemoryLoaderCommon
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(CommonComponentLoader));
 
-        internal string AssemblyPath { get; set; }
+        private string AssemblyPath;
 
         internal IList<IDynamicClassSetup> Components { get; set; }
 
