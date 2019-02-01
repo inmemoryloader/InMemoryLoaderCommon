@@ -30,15 +30,15 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoader, Version=1.0.6971.5383, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoader.1.0.6971.5383\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase, Version=1.0.6957.1986, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoader.1.0.6971.5383\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.1.0.6957.2288\lib\InMemoryLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoader.1.0.6957.2288\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

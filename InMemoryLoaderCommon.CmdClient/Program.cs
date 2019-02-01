@@ -363,7 +363,6 @@ namespace InMemoryLoaderCommon.CmdClient
 
             #endregion
 
-
             Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
             // Console.Read();
 
