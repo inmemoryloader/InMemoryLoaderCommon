@@ -2,7 +2,9 @@
 
 InMemoryLoader ist eine in C# (Mono) geschriebene Funktions- oder Klassen-Bibliothek die das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.
 
-[Release Notes](https://blog.responsive-kaysta.ch/post/inmemoryloader-release-1-0) 
+[Release Notes v 1-0-6971-8180](https://blog.responsive-kaysta.ch/post/inmemoryloadercommon-1-0-6971-8180) 
+
+[Release Notes v 1.0](https://blog.responsive-kaysta.ch/post/inmemoryloader-release-1-0)
 
 Das Projekt "InMemoryLoader" ist aus einer Anforderung oder Idee entstanden, ein möglichst modulares Web-Framework für Business-Anwendungen zu entwickeln. Es mussten unterschiedlichste Technologien (ASP Web-Sites, SAP Dienste, Web-Service, CMS Systeme, unterschiedliche Datenbanken) kombiniert bzw. Daten aus diesen Systemen in einer Applikation kombiniert werden. 
 
