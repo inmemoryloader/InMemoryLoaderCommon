@@ -32,55 +32,20 @@ using log4net;
 
 namespace InMemoryLoaderCommon
 {
-    public sealed class CommonComponentLoader
+    internal sealed class CommonComponentLoader
     {
-        static readonly ILog Log = LogManager.GetLogger(typeof(CommonComponentLoader));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(CommonComponentLoader));
 
-        public string AssemblyPath { get; set; }
+        private string AssemblyPath;
 
-        public IList<IDynamicClassSetup> Components { get; set; }
+        internal IList<IDynamicClassSetup> Components { get; set; }
 
-        public CommonComponentLoader()
+        internal CommonComponentLoader()
         {
             Log.DebugFormat("Create a new instance of Type: {0}", GetType());
         }
 
-        public bool InitCommonComponents(string paramPath)
-        {
-            if (string.IsNullOrEmpty(AssemblyPath))
-            {
-                AssemblyPath = paramPath;
-            }
-
-            SetupCommonComponents(AssemblyPath);
-            Log.Debug("Init Common Components");
-            var compLoader = ComponentLoader.Instance;
-
-            try
-            {
-                foreach (var component in Components)
-                {
-                    object[] paramArgument = { AbstractComponent.Key };
-                    var init = compLoader.InvokeMethod(component.Assembly, component.Class, component.InitMethod, paramArgument);
-                    Log.DebugFormat("Assembly: {0}, Class: {1}, Is init: {2}", component.Assembly, component.Class, init);
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.FatalFormat(ex.ToString());
-            }
-
-            var isSet = compLoader.InitClassRegistry();
-            return isSet;
-        }
-
-        public dynamic InitCommonComponentsAsync(string paramPath)
-        {
-            if (string.IsNullOrEmpty(paramPath)) throw new ArgumentException();
-            return Task.Run(() => InitCommonComponents(paramPath));
-        }
-
-        void SetupCommonComponents(string paramPath)
+        internal void SetupCommonComponents(string paramPath)
         {
             if (string.IsNullOrEmpty(AssemblyPath))
             {
@@ -101,7 +66,7 @@ namespace InMemoryLoaderCommon
             Log.DebugFormat("Setup Strings: [{0}]", setupStrings);
 
         }
-
+        
 
         // Converter
         // ####################################################################################

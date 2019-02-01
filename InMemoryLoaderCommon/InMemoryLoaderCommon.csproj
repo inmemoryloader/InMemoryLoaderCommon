@@ -29,6 +29,12 @@ Laufzeit einmalig instanziiert.</Description>
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoader, Version=1.0.6971.5383, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoader.1.0.6971.5383\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase, Version=1.0.6957.1986, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoader.1.0.6971.5383\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -37,13 +43,6 @@ Laufzeit einmalig instanziiert.</Description>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
-    <Reference Include="InMemoryLoader">
-      <HintPath>..\packages\InMemoryLoader.1.0.6957.2288\lib\InMemoryLoader.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoader.1.0.6957.2288\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,7 +55,6 @@ Laufzeit einmalig instanziiert.</Description>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
