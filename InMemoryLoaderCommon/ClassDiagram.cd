@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="InMemoryLoaderCommon.AbstractCommonBase">
-    <Position X="0.75" Y="0.75" Width="3" />
+    <Position X="0.5" Y="0.5" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>gSyKAUhIRTRJGwKQFBAEIgAMGZsBAEFIIAI4BgA5EAA=</HashCode>
-      <FileName>AbstractCommonBase.Crypt.cs</FileName>
+      <HashCode>gSyKAUhIRTZJGwKQFBAEIgAMGZsBAEFIIAI4BgA5EAA=</HashCode>
+      <FileName>AbstractCommonBase.Converter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="InMemoryLoaderCommon.CommonComponentLoader">
-    <Position X="4.75" Y="0.75" Width="2.5" />
+    <Position X="4.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAABAIAAIIAAAAAAAQAAAgAQAAAQAAAAQIAEAA=</HashCode>
+      <HashCode>AAgAAAAABAAAAIIAAAAAAAQAAAgAQAAAQAAAAQIAAAA=</HashCode>
       <FileName>CommonComponentLoader.cs</FileName>
     </TypeIdentifier>
   </Class>
