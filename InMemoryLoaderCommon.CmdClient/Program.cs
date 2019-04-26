@@ -23,6 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using System.Collections;
 using System.IO;
 using System.Text;
@@ -364,10 +365,9 @@ namespace InMemoryLoaderCommon.CmdClient
             #endregion
 
             Log.InfoFormat("{0}", "End InMemoryLoaderCommon.CmdCLient");
-            // Console.Read();
+            Console.Read();
 
         }
 
     }
-
 }
