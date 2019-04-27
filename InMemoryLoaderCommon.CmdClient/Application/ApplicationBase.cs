@@ -48,10 +48,10 @@ namespace InMemoryLoaderCommon.CmdClient
             base.ConsoleCulture = ConfigurationManager.AppSettings["System.Culture"];
 
             var exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin");
-            AssemblyPath = exePath;
+            base.AssemblyPath = exePath;
 
-            SetCulture();
-            SetInMemoryLoader();
+            base.SetCulture();
+            base.SetInMemoryLoader();
 
             Log.InfoFormat("Create a new instance of Type: {0}", GetType());
         }
