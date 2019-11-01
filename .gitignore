@@ -119,3 +119,5 @@ bin/
 \.idea/\.idea\.InMemoryLoaderCommon/\.idea/
 
 \.idea/\.idea\.InMemoryLoaderCommon/
+
+*.metadata
